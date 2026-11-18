@@ -1,0 +1,76 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "HealingPotionCard",
+      "cost": 1,
+      "names": {
+        "english": "Healing Potion"
+      },
+      "descriptions": {
+        "english": "Restore [effect0.power] Health to unit."
+      },
+      "rarity": "common",
+      "targets_room": true,
+      "targetless": false,
+      "class": "@BountyClan",
+      "card_art": "@HealingPotionCardArt",
+      "pools": [
+      ],
+      "effects": [
+        "@Restore15HealthToUnit"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "Restore15HealthToUnit",
+      "name": "CardEffectHeal",
+      "target_mode": "drop_target_character",
+      "target_team": "both",
+      "param_int": 15
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "HealingPotionCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          //"shader": "Shiny Shoe/CardEffects",
+          "sprite": "@HealingPotionSprite"
+
+          //"base_layer": {
+          //  "type": "texture",
+          //  "texture": "@HealingPotionSprite"
+          //},
+          //"layers": [
+          //  {
+          //    "type": "glow",
+          //    "texture": "@HealingPotionSprite",
+          //    "motion_texture": "@HealingPotionSprite",
+          //    "additive": false
+          //  },
+          //  {
+          //    "type": "texture",
+          //    "texture": "@HealingPotionSprite",
+          //    "additive": false
+          //  },
+          //  {
+          //    "type": "glow",
+          //    "texture": "@HealingPotionSprite",
+          //    "motion_texture": "@HealingPotionSprite",
+          //    "stretch": false
+          //  }
+          //]
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "HealingPotionSprite",
+      "path": "textures/card_art/OrcHealingPotion.png"
+    }
+  ]
+}

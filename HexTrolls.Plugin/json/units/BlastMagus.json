@@ -1,0 +1,186 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "BlastMagus",
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "uncommon",
+      "class": "@BountyClan",
+      "pools": [
+        "MegaPool",
+        "@UnitsBountyClanBanner"
+      ],
+      "card_art": "@BlastMagusCardArt",
+      "effects": [
+        "@SpawnBlastMagus"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "BlastMagusCharacter",
+      "names": {
+        "english": "Blast Magus"
+      },
+      "character_art": "@BlastMagusCharacterArt",
+      "size": 2,
+      "attack_damage": 10,
+      "health": 10,
+      "starting_status_effects": [
+        {
+          "status": "armor",
+          "count": 10
+        },
+        {
+          "status": "@shockwave",
+          "count": 1
+        }
+      ],
+      "subtypes": [
+        "@Orc",
+        "SubtypesData_BannerUnit"
+      ],
+      "triggers": [ "@BlastMagusIncant" ]
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "BlastMagusIncant",
+      "trigger": "card_spell_played",
+      "descriptions": {
+        "english": "Apply <nobr>[HexTrolls.Plugin_mark] [effect0.status0.power]</nobr> to the front target enemy."
+      },
+      "effects": [ "@BlastMagusAddMark" ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "SpawnBlastMagus",
+      "name": "CardEffectSpawnMonster",
+      "param_character": "@BlastMagusCharacter"
+    },
+    {
+      "id": "BlastMagusAddMark",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "front_in_room",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "@mark",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "BlastMagusCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@BlastMagusCardSprite"
+        }
+      }
+    },
+    {
+      "id": "BlastMagusCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@BlastMagusCharacterSprite",
+          "animations": [
+            {
+              "animation": "idle",
+              "frames": [
+                "@BlastMagusIdle1",
+                "@BlastMagusIdle2",
+                "@BlastMagusIdle3"
+              ],
+              "framerate": 6,
+              "loop": true
+            },
+            {
+              "animation": "attack",
+              "frames": [
+                "@BlastMagusAttack1",
+                "@BlastMagusAttack2",
+                "@BlastMagusAttack3"
+              ],
+              "framerate": 20,
+              "loop": false
+            },
+            {
+              "animation": "hit_react",
+              "frames": [
+                "@BlastMagusHurt1",
+                "@BlastMagusHurt2",
+                "@BlastMagusHurt3"
+              ],
+              "framerate": 8,
+              "loop": false
+            }
+          ],
+          "transform": {
+            "position": {
+              "x": 0,
+              "y": 0.75,
+              "z": 0
+            },
+            "scale": {
+              "x": 3,
+              "y": 3,
+              "z": 1
+            }
+          }
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "BlastMagusCardSprite",
+      "path": "textures/card_art/orcshortmage1.png"
+    },
+    {
+      "id": "BlastMagusCharacterSprite",
+      "path": "textures/character_art/orcshortmage1.png"
+    },
+    {
+      "id": "BlastMagusIdle1",
+      "path": "textures/character_art/orcshortmage1.png"
+    },
+    {
+      "id": "BlastMagusIdle2",
+      "path": "textures/character_art/orcshortmage2.png"
+    },
+    {
+      "id": "BlastMagusIdle3",
+      "path": "textures/character_art/orcshortmage3.png"
+    },
+    {
+      "id": "BlastMagusAttack1",
+      "path": "textures/character_art/orcshortmage4.png"
+    },
+    {
+      "id": "BlastMagusAttack2",
+      "path": "textures/character_art/orcshortmage5.png"
+    },
+    {
+      "id": "BlastMagusAttack3",
+      "path": "textures/character_art/orcshortmage6.png"
+    },
+    {
+      "id": "BlastMagusHurt1",
+      "path": "textures/character_art/orcshortmage7.png"
+    },
+    {
+      "id": "BlastMagusHurt2",
+      "path": "textures/character_art/orcshortmage8.png"
+    },
+    {
+      "id": "BlastMagusHurt3",
+      "path": "textures/character_art/orcshortmage9.png"
+    }
+  ]
+}

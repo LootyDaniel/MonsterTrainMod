@@ -1,0 +1,46 @@
+{
+  "sprites": [
+    {
+      "id": "TremorstoneIconSprite",
+      "path": "textures/icons/TremorStone.png"
+    }
+  ],
+  "upgrade_masks": [
+    {
+      "id": "OnlyUnitsMask",
+      "card_type": "monster",
+      "excluded_status_effects": [
+        {
+          "status": "@shockwave",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "TremorstoneUpgrade",
+      "names": {
+        "english": "Tremorstone"
+      },
+      "descriptions": {
+        "english": "Upgrade a unit with +1 [capacity] and [@shockwave]."
+      },
+      "cost": 25,
+      "rarity": "common",
+      "class": "@BountyClan",
+      "bonus_size": 1,
+      "is_unit_upgrade": true,
+      "status_effect_upgrades": [
+        {
+          "status": "@shockwave",
+          "count": 1
+        }
+      ],
+      "filters": [
+        "@OnlyUnitsMask"
+      ],
+      "icon": "@TremorstoneIconSprite"
+    }
+  ]
+}

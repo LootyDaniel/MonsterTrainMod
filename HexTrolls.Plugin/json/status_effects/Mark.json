@@ -1,0 +1,47 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "status_effects": [
+    {
+      "id": "mark",
+      "class_name": "@StatusEffectMarkState",
+      "names": {
+        "english": "Mark"
+      },
+      "stackable_names": {
+        "english": "<nobr>Mark {0}</nobr>"
+      },
+      "card_tooltips": {
+        "english": "When a unit with mark dies gain 1 [gold] for every stack of mark. Attacker gains 1 [attack] for every stack of mark."
+      },
+      "character_tooltips": {
+        "english": "When this unit dies gain 1 [gold] for every stack of mark. Attacker gains 1 [attack] for every stack of mark."
+      },
+      "replacement_texts": {
+        "english": "<b>Mark</b>"
+      },
+      "notifications": {
+        "english": "Mark"
+      },
+      "display_category": "negative",
+      "trigger_stage": "on_attacked",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "param_int": 1,
+      "is_propagatable": true,
+      "exclude_monster_propagation": false,
+      "icon": "@Mark"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "Mark",
+      "path": "textures/statustest.png"
+    }
+  ],
+  "atlas_icons": [
+    {
+      "id": "Mark",
+      "path": "textures/statustest.png"
+    }
+  ]
+}

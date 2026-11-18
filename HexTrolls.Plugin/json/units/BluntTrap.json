@@ -1,0 +1,166 @@
+{
+    "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+    "cards": [
+      {
+        "names": { "english": "Concussive Trap" },
+        "id": "ConcussiveTrap",
+        "cost": 1,
+        "card_type": "monster",
+        "rarity": "starter",
+        "class": "@BountyClan",
+        "pools": [
+        ],
+        "card_art": "@ConcussiveTrapCardArt",
+        "effects": [
+          "@SpawnConcussiveTrap"
+        ]
+      }
+    ],
+    "characters": [
+      {
+        "id": "ConcussiveTrapCharacter",
+        "names": {
+          "english": "Concussive Trap"
+        },
+        "character_art": "@ConcussiveTrapCharacterArt",
+        "size": 1,
+        "attack_damage": 0,
+        "health": 1,
+        "subtypes": [
+          "@Trap"
+        ],
+        "triggers": [ "@ConcussiveTrapRevengeTrigger" ]
+      }
+    ],
+    "character_triggers": [
+        {
+            "id": "ConcussiveTrapRevengeTrigger",
+            "trigger": "on_death",
+          "descriptions": {
+            "english": "Deal [effect0.power] [damage] to the attacker and knock them back one."
+          },
+          "effects": [ "@ConcussiveTrapDamage", "@ConcussiveTrapPush" ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnConcussiveTrap",
+            "name": "CardEffectSpawnMonster",
+            "param_character": "@ConcussiveTrapCharacter"
+        },
+        {
+            "id": "ConcussiveTrapDamage",
+            "name": "CardEffectDamage",
+            "target_mode": "last_attacker_character",
+            "target_team": "heroes",
+            "param_int": 20
+        },
+        {
+            "id": "ConcussiveTrapPush",
+            "name": "CardEffectFloorRearrange",
+            "target_mode": "last_attacker_character",
+            "target_team": "heroes",
+            "param_int": 1
+        }
+    ],
+    "game_objects": [
+      {
+        "id": "ConcussiveTrapCardArt",
+        "type": "card_art",
+        "extensions": {
+          "card_art": {
+            "sprite": "@ConcussiveTrapCardSprite"
+          }
+        }
+      },
+      {
+        "id": "ConcussiveTrapCharacterArt",
+        "type": "character_art",
+        "extensions": {
+          "character_art": {
+            "sprite": "@ConcussiveTrapCharacterSprite1",
+            "animations": [
+              {
+                "animation": "hit_react",
+                "frames": [
+                  "@ConcussiveTrapCharacterSprite1",
+                  "@ConcussiveTrapCharacterSprite2",
+                  "@ConcussiveTrapCharacterSprite3",
+                  "@ConcussiveTrapCharacterSprite4",
+                  "@ConcussiveTrapCharacterSprite5",
+                  "@ConcussiveTrapCharacterSprite6",
+                  "@ConcussiveTrapCharacterSprite7",
+                  "@ConcussiveTrapCharacterSprite8",
+                  "@ConcussiveTrapCharacterSprite9"
+                ],
+                "framerate": 24,
+                "loop": false
+              },
+              {
+                "animation": "death",
+                "frames": [
+                  "@ConcussiveTrapCharacterSprite9"
+                ],
+                "framerate": 1,
+                "loop": false
+              }
+            ],
+            "transform": {
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": 0
+              },
+              "scale": {
+                "x": 2.5,
+                "y": 2.5,
+                "z": 1
+              }
+            }
+          }
+        }
+      }
+    ],
+  "sprites": [
+    {
+      "id": "ConcussiveTrapCardSprite",
+      "path": "textures/card_art/OrcSmashTrapCard.png"
+    },
+    {
+      "id": "ConcussiveTrapCharacterSprite1",
+      "path": "textures/character_art/LogTrap1.png"
+    },
+    {
+      "id": "ConcussiveTrapCharacterSprite2",
+      "path": "textures/character_art/LogTrap2.png"
+    },
+    {
+      "id": "ConcussiveTrapCharacterSprite3",
+      "path": "textures/character_art/LogTrap3.png"
+    },
+    {
+      "id": "ConcussiveTrapCharacterSprite4",
+      "path": "textures/character_art/LogTrap4.png"
+    },
+    {
+      "id": "ConcussiveTrapCharacterSprite5",
+      "path": "textures/character_art/LogTrap5.png"
+    },
+    {
+      "id": "ConcussiveTrapCharacterSprite6",
+      "path": "textures/character_art/LogTrap6.png"
+    },
+    {
+      "id": "ConcussiveTrapCharacterSprite7",
+      "path": "textures/character_art/LogTrap7.png"
+    },
+    {
+      "id": "ConcussiveTrapCharacterSprite8",
+      "path": "textures/character_art/LogTrap8.png"
+    },
+    {
+      "id": "ConcussiveTrapCharacterSprite9",
+      "path": "textures/character_art/LogTrap9.png"
+    }
+  ]
+}

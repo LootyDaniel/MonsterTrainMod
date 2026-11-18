@@ -1,0 +1,138 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "GuildMage",
+      "cost": 2,
+      "card_type": "monster",
+      "rarity": "uncommon",
+      "class": "@BountyClan",
+      "pools": [
+        "UnitsAllBanner",
+        "@UnitsBountyClanBanner"
+      ],
+      "card_art": "@GuildMageCardArt",
+      "effects": [
+        "@SpawnGuildMage"
+      ]
+    },
+    {
+      "id": "Blast",
+      "names": {
+        "english": "Blast"
+      },
+      "descriptions": {
+        "english": "Inflict [attack] damage to the front enemy unit. Starts on cooldown 1."
+      },
+      "is_an_ability": true,
+      "cooldown": 1,
+      "initial_cooldown": 1,
+      "targetless": true,
+      "targets_room": false,
+      "card_type": "spell",
+      "effects": [ "@BlastAbility" ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "GuildMageCharacter",
+      "names": {
+        "english": "Guild Mage"
+      },
+      "character_art": "@GuildMageCharacterArt",
+      "size": 2,
+      "attack_damage": 4,
+      "health": 12,
+      "ability": "@Blast",
+      "subtypes": [
+        "@Orc",
+        "SubtypesData_BannerUnit"
+      ],
+      "triggers": [ "@MageOnMarked" ]
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "MageOnMarked",
+      "trigger": "@OnMarked",
+      "descriptions": {
+        "english": "Reduces Ability Cooldown by 1."
+      },
+      "effects": [
+        "@ReduceCooldown"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "SpawnGuildMage",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@GuildMageCharacter"
+    },
+    {
+      "id": "BlastAbility",
+      "name": "@DealDamageBasedOnCasterAttack",
+      "target_mode": "front_in_room",
+      "target_team": "heroes",
+      "param_int": 1
+    },
+    {
+      "id": "ReduceCooldown",
+      "name": "CardEffectRemoveStatusEffect",
+      "target_mode": "self",
+      "param_status_effects": [
+        {
+          "status": "cooldown",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "UpdateUI",
+      "name": "@RefreshStatsUI",
+      "target_mode": "self"
+    }
+    //{
+    //  "id": "GuildMageAddMark",
+    //  "name": "CardEffectAddStatusEffect",
+    //  "target_mode": "last_attacked_character",
+    //  "param_status_effects": [
+    //    {
+    //      "status": "@mark",
+    //      "count": 1
+    //    }
+    //  ]
+    //}
+  ],
+  "game_objects": [
+    {
+      "id": "GuildMageCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@GuildMageCardSprite"
+        }
+      }
+    },
+    {
+      "id": "GuildMageCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@GuildMageCharacterSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "GuildMageCardSprite",
+      "path": "textures/card_art/OrcBattleMage.png"
+    },
+    {
+      "id": "GuildMageCharacterSprite",
+      "path": "textures/character_art/OrcBattleMage.png"
+    }
+  ]
+}

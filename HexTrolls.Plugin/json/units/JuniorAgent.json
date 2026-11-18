@@ -1,0 +1,94 @@
+{
+    "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+    "cards": [
+        {
+            "id": "JuniorAgent",
+            "cost": 1,
+            "card_type": "monster",
+            "rarity": "starter",
+            "class": "@BountyClan",
+            "pools": [
+                "StarterCardsOnly"
+            ],
+            "card_art": "@JuniorAgentCardArt",
+            "effects": [
+                "@SpawnJuniorAgent"
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "JuniorAgentCharacter",
+            "names": {
+                "english": "Junior Agent"
+            },
+            "character_art": "@JuniorAgentCharacterArt",
+            "size": 2,
+            "attack_damage": 4,
+            "health": 12,
+          "subtypes": [
+            "@Orc",
+            "SubtypesData_BannerUnit"
+          ],
+            "triggers": [ "@JuniorAgentStrike" ]
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "JuniorAgentStrike",
+            "trigger": "on_attacking",
+            "descriptions": {
+                "english": "Apply <nobr>[HexTrolls.Plugin_mark] [effect0.status0.power]</nobr> to defender."
+            },
+            "effects": [ "@JuniorAgentAddMark" ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnJuniorAgent",
+            "name": "CardEffectSpawnMonster",
+            "param_character": "@JuniorAgentCharacter"
+        },
+        {
+            "id": "JuniorAgentAddMark",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "last_attacked_character",
+            "param_status_effects": [
+                {
+                    "status": "@mark",
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "JuniorAgentCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@JuniorAgentCardSprite"
+                }
+            }
+        },
+        {
+            "id": "JuniorAgentCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@JuniorAgentCharacterSprite"
+                }
+            }
+        }
+    ],
+    "sprites": [
+      {
+        "id": "JuniorAgentCardSprite",
+        "path": "textures/card_art/OrcCrossbowmanCard.png"
+      },
+      {
+        "id": "JuniorAgentCharacterSprite",
+        "path": "textures/character_art/OrcCrossbowman.png"
+      }
+    ]
+}

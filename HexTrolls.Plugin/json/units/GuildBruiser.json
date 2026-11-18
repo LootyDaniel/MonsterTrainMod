@@ -1,0 +1,175 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "GuildBruiser",
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "uncommon",
+      "class": "@BountyClan",
+      "pools": [
+        "MegaPool",
+        "@UnitsBountyClanBanner"
+      ],
+      "card_art": "@GuildBruiserCardArt",
+      "effects": [
+        "@SpawnGuildBruiser"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "GuildBruiserCharacter",
+      "names": {
+        "english": "Guild Bruiser"
+      },
+      "character_art": "@GuildBruiserCharacterArt",
+      "size": 2,
+      "attack_damage": 5,
+      "health": 40,
+      "subtypes": [
+        "@Orc",
+        "SubtypesData_BannerUnit"
+      ],
+      "triggers": [ "@GuildBruiserStrike" ]
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "GuildBruiserStrike",
+      "trigger": "on_hit",
+      "descriptions": {
+        "english": "Apply <nobr>[HexTrolls.Plugin_mark] [effect0.status0.power]</nobr> to attacker."
+      },
+      "effects": [ "@GuildBruiserAddMark" ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "SpawnGuildBruiser",
+      "name": "CardEffectSpawnMonster",
+      "param_character": "@GuildBruiserCharacter"
+    },
+    {
+      "id": "GuildBruiserAddMark",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "last_attacker_character",
+      "param_status_effects": [
+        {
+          "status": "@mark",
+          "count": 3
+        }
+      ]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "GuildBruiserCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@GuildBruiserCardSprite"
+        }
+      }
+    },
+    {
+      "id": "GuildBruiserCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@GuildBruiserCharacterSprite",
+          "animations": [
+            {
+              "animation": "idle",
+              "frames": [
+                "@GuildBruiserIdle1",
+                "@GuildBruiserIdle2",
+                "@GuildBruiserIdle3"
+              ],
+              "framerate": 6,
+              "loop": true
+            },
+            {
+              "animation": "attack",
+              "frames": [
+                "@GuildBruiserAttack1",
+                "@GuildBruiserAttack2",
+                "@GuildBruiserAttack3"
+              ],
+              "framerate": 20,
+              "loop": false
+            },
+            {
+              "animation": "hit_react",
+              "frames": [
+                "@GuildBruiserHurt1",
+                "@GuildBruiserHurt2",
+                "@GuildBruiserHurt3"
+              ],
+              "framerate": 8,
+              "loop": false
+            }
+          ],
+          "transform": {
+            "position": {
+              "x": 0,
+              "y": 0.75,
+              "z": 0
+            },
+            "scale": {
+              "x": 3,
+              "y": 3,
+              "z": 1
+            }
+          }
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "GuildBruiserCardSprite",
+      "path": "textures/card_art/GuildBruiser1.png"
+    },
+    {
+      "id": "GuildBruiserCharacterSprite",
+      "path": "textures/character_art/GuildBruiser1.png"
+    },
+    {
+      "id": "GuildBruiserIdle1",
+      "path": "textures/character_art/GuildBruiser1.png"
+    },
+    {
+      "id": "GuildBruiserIdle2",
+      "path": "textures/character_art/GuildBruiser2.png"
+    },
+    {
+      "id": "GuildBruiserIdle3",
+      "path": "textures/character_art/GuildBruiser3.png"
+    },
+    {
+      "id": "GuildBruiserAttack1",
+      "path": "textures/character_art/GuildBruiser4.png"
+    },
+    {
+      "id": "GuildBruiserAttack2",
+      "path": "textures/character_art/GuildBruiser5.png"
+    },
+    {
+      "id": "GuildBruiserAttack3",
+      "path": "textures/character_art/GuildBruiser6.png"
+    },
+    {
+      "id": "GuildBruiserHurt1",
+      "path": "textures/character_art/GuildBruiser7.png"
+    },
+    {
+      "id": "GuildBruiserHurt2",
+      "path": "textures/character_art/GuildBruiser8.png"
+    },
+    {
+      "id": "GuildBruiserHurt3",
+      "path": "textures/character_art/GuildBruiser9.png"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Conductor/refs/heads/main/schemas/hud.json",
+  "huds": [
+    {
+      "id": "OrcClanCustomMechanic",
+      "name": "@OrcClanCustomUI",
+      "type": "small",
+      "background": "@hud_background",
+      "icons": [ "@hud_icon" ],
+      //"class": "@BountyClan",
+      "display": "battle_only",
+      "tooltip_titles": {
+        "english": "My Class Mechanic"
+      },
+      "tooltip_texts": {
+        "english": "Explanation of the class mechanic."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "OrcClanHudAbilityCard",
+      "names": {
+        "english": "Clan Warchief Command"
+      },
+      "descriptions": {
+        "english": "Spend 3 Ephemeral Cards Purged to deal 20 damage to the front enemy."
+      },
+      "cost": 0,
+      "card_art": "@ContractCardArt",
+      "card_type": "spell",
+      "targets_room": true,
+      "targetless": true,
+      "hide_in_logbook": true,
+      "effects": [
+        "@OrcClanHudDamageEffect"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "OrcClanHudDamageEffect",
+      "name": "CardEffectDamage",
+      "target_mode": "front_in_room",
+      "target_team": "heroes",
+      "param_int": 20
+    }
+  ],
+  "sprites": [
+    {
+      "id": "hud_background",
+      "path": "textures/icons/OrcCustomMechanicBG.png"
+    },
+    {
+      "id": "hud_icon",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    }
+  ]
+}

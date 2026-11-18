@@ -1,0 +1,97 @@
+{
+    "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+    "cards": [
+      {
+        "names": { "english": "Support Agent" },
+        "id": "SupportAgent",
+        "cost": 1,
+        "card_type": "monster",
+        "rarity": "starter",
+        "class": "@BountyClan",
+        "pools": [
+          "UnitsAllBanner",
+          "@UnitsBountyClanBanner"
+        ],
+        "card_art": "@SupportAgentCardArt",
+        "effects": [
+          "@SpawnSupportAgent"
+        ]
+      }
+    ],
+    "characters": [
+        {
+            "id": "SupportAgentCharacter",
+            "names": {
+                "english": "Support Agent"
+            },
+            "character_art": "@SupportAgentCharacterArt",
+            "size": 1,
+            "attack_damage": 5,
+            "health": 40,
+          "subtypes": [
+            "@Orc",
+            "SubtypesData_BannerUnit"
+          ],
+          "triggers": [ "@SupportAgentMeleeWeakness" ]
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "SupportAgentMeleeWeakness",
+            "trigger": "@OnMarked",
+          "descriptions": {
+            "english": "Apply <nobr>[meleeweakness] [effect0.status0.power]</nobr> to the front enemy unit."
+          },
+          "effects": [ "@SupportAgentAddMeleeWeakness" ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnSupportAgent",
+            "name": "CardEffectSpawnMonster",
+            "param_character": "@SupportAgentCharacter"
+        },
+        {
+            "id": "SupportAgentAddMeleeWeakness",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "front_in_room",
+            "target_team": "heroes",
+            "param_status_effects": [
+                {
+                    "status": "melee weakness",
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "SupportAgentCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@SupportAgentCardSprite"
+                }
+            }
+        },
+        {
+            "id": "SupportAgentCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@SupportAgentCharacterSprite"
+                }
+            }
+        }
+    ],
+    "sprites": [
+      {
+        "id": "SupportAgentCardSprite",
+        "path": "textures/card_art/OrcCrossbowmanCard.png"
+      },
+      {
+        "id": "SupportAgentCharacterSprite",
+        "path": "textures/character_art/OrcCrossbowman.png"
+      }
+    ]
+}

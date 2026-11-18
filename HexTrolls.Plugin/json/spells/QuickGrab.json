@@ -1,0 +1,63 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "QuickGrabCard",
+      "cost": 1,
+      "names": {
+        "english": "Quick Grab"
+      },
+      "descriptions": {
+        "english": "Randomly draw either a Healing Potion or Concussive Trap Card. It costs 0 this turn."
+      },
+      "rarity": "starter",
+      "targets_room": true,
+      "targetless": true,
+      "class": "@BountyClan",
+      "card_art": "@QuickGrabCardArt",
+      "pools": [
+        "MegaPool"
+      ],
+      "effects": [
+        "@QuickGrabEffect"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "QuickGrabEffect",
+      "name": "CardEffectAddBattleCard",
+      "param_int": 3,
+      "param_int_2": 1,
+      "param_subtype": "SubtypesData_None",
+      "param_card_pool": "@MySingleCardPool",
+      "target_mode": "hand"
+    }
+  ],
+  "card_pools": [
+    {
+      "id": "MySingleCardPool",
+      "cards": [
+        "@HealingPotionCard",
+        "@ConcussiveTrap"
+      ]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "QuickGrabCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@QuickGrabSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "QuickGrabSprite",
+      "path": "textures/card_art/OrcQuickGrabCardArt.png"
+    }
+  ]
+}

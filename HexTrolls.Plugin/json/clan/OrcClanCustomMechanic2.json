@@ -1,0 +1,321 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "huds": [
+    {
+      "id": "MercenaryMechanic",
+      "name": "@MercenaryMechanicUI",
+      "type": "small",
+      "background": "@ContractBanner_Hellhorned",
+      "icons": [ "@ContractIcon" ],
+      "class": "@BountyClan",
+      "display": "battle_only",
+      "tooltip_titles": {
+        "english": "Hire Mercenaries"
+      },
+      "tooltip_texts": {
+        "english": "Call on Mercenaries from another clan to aid you."
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "ContractAbility_Banished",
+      "names": { "english": "Banished Mercenaries" },
+      "card_art": "@ContractCardArt",
+      "cost": 0,
+      "card_type": "spell",
+      "targets_room": true,
+      "targetless": true,
+      "hide_in_logbook": true,
+      "effects": [ "@ContractEffect_Banished" ]
+    },
+    {
+      "id": "ContractAbility_Pyreborne",
+      "names": { "english": "Pyreborne Mercenaries" },
+      "card_art": "@ContractCardArt",
+      "cost": 0,
+      "card_type": "spell",
+      "targets_room": true,
+      "targetless": true,
+      "hide_in_logbook": true,
+      "effects": [ "@ContractEffect_Pyreborne" ]
+    },
+    {
+      "id": "ContractAbility_LunaCoven",
+      "names": { "english": "Luna Coven Mercenaries" },
+      "card_art": "@ContractCardArt",
+      "cost": 0,
+      "card_type": "spell",
+      "targets_room": true,
+      "targetless": true,
+      "hide_in_logbook": true,
+      "effects": [ "@ContractEffect_LunaCoven" ]
+    },
+    {
+      "id": "ContractAbility_Underlegion",
+      "names": { "english": "Underlegion Mercenaries" },
+      "card_art": "@ContractCardArt",
+      "cost": 0,
+      "card_type": "spell",
+      "targets_room": true,
+      "targetless": true,
+      "hide_in_logbook": true,
+      "effects": [ "@ContractEffect_Underlegion" ]
+    },
+    {
+      "id": "ContractAbility_LazarusLeague",
+      "names": { "english": "Lazarus Mercenaries" },
+      "card_art": "@ContractCardArt",
+      "cost": 0,
+      "card_type": "spell",
+      "targets_room": true,
+      "targetless": true,
+      "hide_in_logbook": true,
+      "effects": [ "@ContractEffect_LazarusLeague" ]
+    },
+    {
+      "id": "ContractAbility_Hellhorned",
+      "names": { "english": "Hellhorned Mercenaries" },
+      "card_art": "@ContractCardArt",
+      "cost": 0,
+      "card_type": "spell",
+      "targets_room": true,
+      "targetless": true,
+      "hide_in_logbook": true,
+      "effects": [ "@ContractEffect_Hellhorned" ]
+    },
+    {
+      "id": "ContractAbility_Awoken",
+      "names": { "english": "Awoken Mercenaries" },
+      "card_art": "@ContractCardArt",
+      "cost": 0,
+      "card_type": "spell",
+      "targets_room": true,
+      "targetless": true,
+      "hide_in_logbook": true,
+      "effects": [ "@ContractEffect_Awoken" ]
+    },
+    {
+      "id": "ContractAbility_Stygian",
+      "names": { "english": "Stygian Mercenaries" },
+      "card_art": "@ContractCardArt",
+      "cost": 0,
+      "card_type": "spell",
+      "targets_room": true,
+      "targetless": true,
+      "hide_in_logbook": true,
+      "effects": [ "@ContractEffect_Stygian" ]
+    },
+    {
+      "id": "ContractAbility_Umbra",
+      "names": { "english": "Umbra Mercenaries" },
+      "card_art": "@ContractCardArt",
+      "cost": 0,
+      "card_type": "spell",
+      "targets_room": true,
+      "targetless": true,
+      "hide_in_logbook": true,
+      "effects": [ "@ContractEffect_Umbra" ]
+    },
+    {
+      "id": "ContractAbility_Remnant",
+      "names": { "english": "Remnant Mercenaries" },
+      "card_art": "@ContractCardArt",
+      "cost": 0,
+      "card_type": "spell",
+      "targets_room": true,
+      "targetless": true,
+      "hide_in_logbook": true,
+      "effects": [ "@ContractEffect_Remnant" ]
+    },
+    {
+      "id": "ContractAbility_Wurmkin",
+      "names": { "english": "Wurmkin Mercenaries" },
+      "card_art": "@ContractCardArt",
+      "cost": 0,
+      "card_type": "spell",
+      "targets_room": true,
+      "targetless": true,
+      "hide_in_logbook": true,
+      "effects": [ "@ContractEffect_Wurmkin" ]
+    },
+    {
+      "id": "ContractAbility_Railforged",
+      "names": { "english": "Railforged Mercenaries" },
+      "card_art": "@ContractCardArt",
+      "cost": 0,
+      "card_type": "spell",
+      "targets_room": true,
+      "targetless": true,
+      "hide_in_logbook": true,
+      "effects": [ "@ContractEffect_Railforged" ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "ContractEffect_Banished",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 3,
+      "param_character_pool": [ "MonsterUpbeatWarbler", "MonsterAvenger", "MonsterHostguard" ]
+    },
+    {
+      "id": "ContractEffect_Pyreborne",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 3,
+      "param_character_pool": [ "MonsterSneezyWhelp", "MonsterHotHead", "MonsterZealot" ]
+    },
+    {
+      "id": "ContractEffect_LunaCoven",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 3,
+      "param_character_pool": [ "MonsterFaeMooncaller", "MonsterLunarPriestess", "MonsterMoonguard" ]
+    },
+    {
+      "id": "ContractEffect_Underlegion",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 3,
+      "param_character_pool": [ "MonsterEnchantrelle", "MonsterClusterColonel", "MonsterCheeryDeathcap" ]
+    },
+    {
+      "id": "ContractEffect_LazarusLeague",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 3,
+      "param_character_pool": [ "SanguineAssistant", "MonsterHulkingMass", "MonsterDoubleEdgedBearer" ]
+    },
+    {
+      "id": "ContractEffect_Hellhorned",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 3,
+      "param_character_pool": [ "MonsterAggressiveImp", "Railbeater", "ConsumerOfCrowns" ]
+    },
+    {
+      "id": "ContractEffect_Awoken",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 3,
+      "param_character_pool": [ "MonsterHollowGolem", "Vinemother", "MonsterAnimusBow" ]
+    },
+    {
+      "id": "ContractEffect_Stygian",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 3,
+      "param_character_pool": [ "MonsterEelGorgon", "MonsterColdstrikeSiren", "MonsterFrozenTotem" ]
+    },
+    {
+      "id": "ContractEffect_Umbra",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 3,
+      "param_character_pool": [ "Shadowsiege", "MonsterMorelMistress", "MonsterEmberFurnace" ]
+    },
+    {
+      "id": "ContractEffect_Remnant",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 3,
+      "param_character_pool": [ "LadyOfTheReformed", "MonsterFirstWaxer", "Draff" ]
+    },
+    {
+      "id": "ContractEffect_Wurmkin",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 3,
+      "param_character_pool": [ "MonsterBogFly", "MonsterKinhostPupa", "MonsterGlareminder" ]
+    },
+    {
+      "id": "ContractEffect_Railforged",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 3,
+      "param_character_pool": [ "MonsterRailgun", "WelderHelper", "MonsterSentryTurret" ]
+    }
+  ],
+  "sprites": [
+    {
+      "id": "ContractBanner_Banished",
+      "path": "textures/icons/BanishedMercFlag.png"
+    },
+    {
+      "id": "ContractBanner_Pyreborne",
+      "path": "textures/icons/PyreborneMercFlag.png"
+    },
+    {
+      "id": "ContractBanner_LunaCoven",
+      "path": "textures/icons/LunaCovenMercFlag.png"
+    },
+    {
+      "id": "ContractBanner_Underlegion",
+      "path": "textures/icons/UnderlegionMercFlag.png"
+    },
+    {
+      "id": "ContractBanner_LazarusLeague",
+      "path": "textures/icons/LazarusLeagueMercFlag.png"
+    },
+    {
+      "id": "ContractBanner_Hellhorned",
+      "path": "textures/icons/HellhornedMercFlag.png"
+    },
+    {
+      "id": "ContractBanner_Awoken",
+      "path": "textures/icons/AwokenMercFlag.png"
+    },
+    {
+      "id": "ContractBanner_Stygian",
+      "path": "textures/icons/StygianGuardMercFlag.png"
+    },
+    {
+      "id": "ContractBanner_Umbra",
+      "path": "textures/icons/UmbraMercFlag.png"
+    },
+    {
+      "id": "ContractBanner_Remnant",
+      "path": "textures/icons/MeltingRemnantMercFlag.png"
+    },
+    {
+      "id": "ContractBanner_Wurmkin",
+      "path": "textures/icons/WurmkinMercFlag.png"
+    },
+    {
+      "id": "ContractBanner_Railforged",
+      "path": "textures/icons/RailforgedMercFlag.png"
+    },
+    {
+      "id": "ContractIcon",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    },
+    {
+      "id": "ContractCardArt",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "ContractCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@ContractCardArt"
+        }
+      }
+    }
+  ]
+}

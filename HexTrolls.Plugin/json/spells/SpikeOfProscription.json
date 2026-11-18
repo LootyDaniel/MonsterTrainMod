@@ -1,0 +1,99 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "SpikeOfMarking", //just in case I don't actually fully understand how Proscription is typically used.
+      "names": {
+        "english": "Spike Of Proscription"
+      },
+      "descriptions": {
+        "english": "Apply [trait0.power][x] [HexTrolls.Plugin_mark] to enemies."
+      },
+      "lore_tooltips": [
+        {
+          "english": "The following, marked. Coin, listed. Property may be seized."
+        }
+      ],
+      "card_type": "spell",
+      "rarity": "rare",
+      "targets_room": true,
+      "targetless": true,
+      "class": "@BountyClan",
+      "card_art": "@SpikeOfMarkingCardArt",
+      "pools": [
+        "MegaPool"
+        //"UnitsPyreborneBannerReplacementMutator"
+      ],
+      "traits": [
+        "@SpikeOfMarking.traits0",
+        "@SpikeOfMarking.traits1"
+      ],
+      "effects": [
+        "@SpikeOfMarking.effects0"
+      ],
+      "cost_type": "x"
+    }
+  ],
+  "traits": [
+    {
+      "id": "SpikeOfMarking.traits0",
+      "name": "CardTraitScalingAddStatusEffect",
+      "param_status_effects": [
+        {
+          "status": "@mark",
+          "count": 0
+        }
+      ],
+      "param_tracked_value": "played_cost",
+      "param_entry_duration": "previous_turn",
+      "param_int": 3,
+      "param_team": "heroes"
+    },
+    {
+      "id": "SpikeOfMarking.traits1",
+      "name": "CardTraitExhaustState"
+    }
+  ],
+  "effects": [
+    {
+      "id": "SpikeOfMarking.effects0",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "both",
+      "param_status_effects": [
+        {
+          "status": "@mark",
+          "count": 0
+        }
+      ],
+      "applied_vfx": "@SpikeOfMarking.effects0.appliedVFX"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "SpikeOfMarkingCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@SpikeOfMarkingSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "SpikeOfMarkingSprite",
+      "path": "textures/card_art/SpikeOfMarking.png"
+    }
+  ],
+  "vfxs": [
+    {
+      "id": "SpikeOfMarking.effects0.appliedVFX",
+      "vfx_left": {
+        "asset_name": "Assets/VFX/Spells/Pyreborne/PyreSpike/FX_Pyrespike.prefab",
+        "asset_guid": "0a156ce7aa0e9c64499194e06696d5a5"
+      },
+      "spawn_location": "character_center"
+    }
+  ]
+}

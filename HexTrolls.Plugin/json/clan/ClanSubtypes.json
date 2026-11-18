@@ -1,0 +1,16 @@
+{
+  "subtypes": [
+    {
+      "id": "OrcSubtype",
+      "names": {
+        "english": "Orc"
+      }
+    },
+    {
+      "id": "Trap",
+      "names": {
+        "english": "Trap"
+      }
+    }
+  ]
+}

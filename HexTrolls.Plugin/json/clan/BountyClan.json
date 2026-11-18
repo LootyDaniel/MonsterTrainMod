@@ -1,0 +1,131 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "classes": [
+    {
+      "id": "BountyClan",
+      "titles": {
+        "english": "Bounty"
+      },
+      "descriptions": {
+        "english": "A basic minimal clan example as primary."
+      },
+      "subclass_descriptions": {
+        "english": "A basic minimal clan example as secondary."
+      },
+      "icons": {
+        "small": "@BasicClanSmallIcon",
+        "medium": "@BasicClanMediumIcon",
+        "large": "@BasicClanLargeIcon",
+        "silhouette": "@BasicClanSilhouetteIcon"
+      },
+      "card_draft_icon": "@CardDraftIcon",
+      "class_select_character_displays": [
+        "@GuildMasterClassDisplayCharacterArt",
+        "@OrcMerchantClassDisplayCharacterArt"
+      ],
+      "card_style": "@BountyClanCardFrame",
+      "ui_color": {
+        "r": 1,
+        "g": 1,
+        "b": 1
+      },
+      "ui_color_dark": {
+        "r": 0.75,
+        "g": 0.75,
+        "b": 0.75
+      },
+      "ui_gradient": [
+        {
+          "time": 0.0,
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        },
+        {
+          "time": 1.0,
+          "color": {
+            "r": 0.75,
+            "g": 0.75,
+            "b": 0.75
+          }
+        }
+      ],
+      "champions": [
+        {
+          "id": "GuildMaster",
+          "card_data": "@GuildMasterCard",
+          "starter_card": "@JuniorAgent",
+          "upgrade_tree": [
+            [
+              "@GuildMasterAgentI",
+              "@GuildMasterAgentII",
+              "@GuildMasterAgentIII"
+            ],
+            [
+              "@GuildMasterWaveKnightI",
+              "@GuildMasterWaveKnightII",
+              "@GuildMasterWaveKnightIII"
+            ],
+            [
+              "@GuildMasterCommanderPathI",
+              "@GuildMasterCommanderPathII",
+              "@GuildMasterCommanderPathIII"
+            ]
+          ],
+          "icon": "@GuildMasterIcon",
+          "locked_icon": "@GuildMageLockedIcon",
+          "portrait": "@GuildMasterPortrait"
+        },
+        {
+          "id": "OrcMerchant",
+          "card_data": "@OrcMerchantCard",
+          "starter_card": "@QuickGrabCard",
+          "upgrade_tree": [
+            [
+              "@OrcMerchantInvestorI",
+              "@OrcMerchantInvestorII",
+              "@OrcMerchantInvestorIII"
+            ],
+            [
+              "@OrcMerchantTrapperI",
+              "@OrcMerchantTrapperII",
+              "@OrcMerchantTrapperIII"
+            ],
+            [
+              "@OrcMerchantTesterI",
+              "@OrcMerchantTesterII",
+              "@OrcMerchantTesterIII"
+            ]
+          ],
+          "icon": "@OrcMerchantIcon",
+          "locked_icon": "@OrcMerchantLockedIcon",
+          "portrait": "@OrcMerchantPortrait"
+        }
+      ]
+    }
+  ],
+  "sprites": [
+    {
+      "id": "BasicClanSmallIcon",
+      "path": "textures/icons/OrcClanSmallIcon.png"
+    },
+    {
+      "id": "BasicClanMediumIcon",
+      "path": "textures/icons/OrcClanMediumIcon.png"
+    },
+    {
+      "id": "BasicClanLargeIcon",
+      "path": "textures/icons/OrcClanLargeIcon.png"
+    },
+    {
+      "id": "BasicClanSilhouetteIcon",
+      "path": "textures/icons/OrcClanSilhouetteIcon.png"
+    },
+    {
+      "id": "CardDraftIcon",
+      "path": "textures/icons/BasicClanCardDraft.png"
+    }
+  ]
+}

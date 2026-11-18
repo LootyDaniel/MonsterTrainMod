@@ -1,0 +1,27 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "character_trigger_types": [
+    {
+      "id": "OnMarked",
+      "names": {
+        "english": "Marked"
+      },
+      "descriptions": {
+        "english": "Triggers when a unit recieves Mark."
+      },
+      "sprite": "@trigger_marked"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "trigger_marked",
+      "path": "textures/NotHornBreak.png"
+    }
+  ],
+  "atlas_icons": [
+    {
+      "id": "trigger_marked",
+      "path": "textures/statustest.png"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "$schema": "https://githubusercontent.com",
+  "cards": [
+    {
+      "id": "DuplicateGearSpell",
+      "names": { "english": "Counterfeit Blueprint" },
+      "descriptions": { "english": "Target a friendly unit with Equipment. Add a permanent copy of its Equipment to your hand." },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "champion",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@DuplicateGearCardArt1",
+      "traits": [ "@FreezeTrait", "@PurgeTrait" ],
+      "effects": [ "@CopyEquippedGearEffect" ]
+    },
+    {
+      "id": "DuplicateGearSpell2",
+      "names": { "english": "Counterfeit Blueprint II" },
+      "descriptions": { "english": "Target a friendly unit with Equipment. Add a permanent copy of its Equipment to your hand with +[effect0.power] Attack." },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "champion",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@DuplicateGearCardArt2",
+      "traits": [ "@FreezeTrait", "@PurgeTrait" ],
+      "effects": [ "@CopyEquippedGearEffect2" ]
+    },
+    {
+      "id": "DuplicateGearSpell3",
+      "names": { "english": "Counterfeit Blueprint III" },
+      "descriptions": { "english": "Target a friendly unit with Equipment. Add a permanent copy of its Equipment to your hand with +[effect0.power] Attack." },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "champion",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@DuplicateGearCardArt3",
+      "traits": [ "@FreezeTrait", "@PurgeTrait" ],
+      "effects": [ "@CopyEquippedGearEffect3" ]
+    }
+  ],
+  "card_pools": [
+    {
+      "id": "DuplicateGearPool1",
+      "cards": [ "@DuplicateGearSpell" ]
+    },
+    {
+      "id": "DuplicateGearPool2",
+      "cards": [ "@DuplicateGearSpell2" ]
+    },
+    {
+      "id": "DuplicateGearPool3",
+      "cards": [ "@DuplicateGearSpell3" ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "FreezeTrait",
+      "name": "CardTraitFreeze"
+    },
+    {
+      "id": "PurgeTrait",
+      "name": "CardTraitSelfPurge"
+    }
+  ],
+  "effects": [
+    {
+      "id": "CopyEquippedGearEffect",
+      "name": "@CopyUnitEquipmentPermanentEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_int": 0
+    },
+    {
+      "id": "CopyEquippedGearEffect2",
+      "name": "@CopyUnitEquipmentPermanentEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_int": 10
+    },
+    {
+      "id": "CopyEquippedGearEffect3",
+      "name": "@CopyUnitEquipmentPermanentEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_int": 20
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "DuplicateGearCardArt1",
+      "type": "card_art",
+      "extensions": { "card_art": { "sprite": "@DuplicateGearSprite" } }
+    },
+    {
+      "id": "DuplicateGearCardArt2",
+      "type": "card_art",
+      "extensions": { "card_art": { "sprite": "@DuplicateGearSprite" } }
+    },
+    {
+      "id": "DuplicateGearCardArt3",
+      "type": "card_art",
+      "extensions": { "card_art": { "sprite": "@DuplicateGearSprite" } }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "DuplicateGearSprite",
+      "path": "textures/card_art/DuplicateGear.png"
+    }
+  ]
+}

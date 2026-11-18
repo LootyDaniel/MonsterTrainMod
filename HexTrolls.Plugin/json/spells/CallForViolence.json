@@ -1,0 +1,57 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "CallForViolenceCard",
+      "cost": 1,
+      "names": {
+        "english": "Call For Violence"
+      },
+      "descriptions": {
+        "english": "Apply [HexTrolls.Plugin_mark] [effect0.status0.power] to enemies."
+      },
+      "rarity": "common",
+      "targets_room": true,
+      "targetless": true,
+      "class": "@BountyClan",
+      "card_art": "@CallForViolenceCardArt",
+      "pools": [
+        "MegaPool"
+      ],
+      "effects": [
+        "@Apply3MarkToEnemies"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "Apply3MarkToEnemies",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "room",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "@mark",
+          "count": 3
+        }
+      ]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "CallForViolenceCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@CallForViolenceSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "CallForViolenceSprite",
+      "path": "textures/card_art/CallForViolence.png"
+    }
+  ]
+}

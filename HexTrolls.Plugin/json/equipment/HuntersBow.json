@@ -1,0 +1,123 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "HuntersBow",
+      "cost": 1,
+      "card_type": "equipment",
+      "names": {
+        "english": "Hunter's Crossbow'"
+      },
+      "descriptions": {
+        "english": " "
+      },
+      "rarity": "uncommon",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@HuntersBowCardArt",
+      "effects": [
+        "@HuntersBowEquip"
+      ],
+      "class": "@BountyClan",
+      "pools": [
+        "EquipmentPool",
+        "RoomAndEquipmentDraftPool",
+        "RoomAndEquipmentMerchant_EquipmentPool",
+        "RoomAndEquipmentMerchant_RoomAndEquipmentPool",
+        "EquipmentPoolNonEnemy",
+        "FreeEquipmentMutatorPool",
+        "RedCrownEquipmentPool",
+        "RandomGraftedEquipmentForEvent_NoVoidArms_EquipmentPool"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "HuntersBowEquip",
+      "name": "CardEffectAttachEquipment",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_upgrade": "@HuntersBowUpgrade"
+    },
+    {
+      "id": "SlayGet5Gold",
+      "name": "CardEffectRewardGold",
+      "target_mode": "self",
+      "param_int": 5
+    },
+    {
+      "id": "BonusDamageToDazedEffect",
+      "name": "@CardEffectCheckStatus",
+      "target_mode": "last_attacked_character",
+      "should_test": true,
+      "should_cancel_subsequent_effects_if_test_fails": true,
+      "param_status_effects": [
+        {
+          "status": "@mark",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "BonusDamageToDazedEffect2",
+      "name": "CardEffectDamage",
+      "target_mode": "last_attacked_character",
+      "param_int": 20
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "HuntersBowUpgrade",
+      "bonus_damage": 6,
+      "trigger_upgrades": [
+        "@SlayGet5GoldTrigger",
+        "@DazeStrikeTrigger"
+      ],
+      "icon": "@HuntersBowIcon"
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "SlayGet5GoldTrigger",
+      "trigger": "on_kill",
+      "descriptions": {
+        "english": "Gain +[effect0.power] [coin]."
+      },
+      "effects": [
+        "@SlayGet5Gold"
+      ]
+    },
+    {
+      "id": "DazeStrikeTrigger",
+      "trigger": "on_attacking",
+      "descriptions": {
+        "english": "Deal [effect1.power] damage to the attacked unit if it has <b>[HexTrolls.Plugin_mark] </b>."
+      },
+      "effects": [
+        "@BonusDamageToDazedEffect",
+        "@BonusDamageToDazedEffect2"
+      ]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "HuntersBowCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@HuntersBowCardSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "HuntersBowCardSprite",
+      "path": "textures/card_art/HuntersCrossbow.png"
+    },
+    {
+      "id": "HuntersBowIcon",
+      "path": "textures/statustest.png"
+    }
+  ]
+}

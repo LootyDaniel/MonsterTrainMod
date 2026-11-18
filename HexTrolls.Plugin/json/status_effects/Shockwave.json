@@ -1,0 +1,41 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "status_effects": [
+    {
+      "id": "shockwave",
+      "class_name": "@StatusEffectShockwaveState",
+      "names": {
+        "english": "Shockwave"
+      },
+      "card_tooltips": {
+        "english": "When this unit deals combat damage to a unit, deal 50% of that damage to the unit behind it, repeating and halving down the line."
+      },
+      "character_tooltips": {
+        "english": "When this unit deals combat damage to a unit, deal 50% of that damage to the unit behind it, repeating and halving down the line."
+      },
+      "replacement_texts": {
+        "english": "<b>Shockwave</b>"
+      },
+      "notifications": {
+        "english": "Shockwave"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "on_post_attacking",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "icon": "@ShockwaveIconSprite"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "ShockwaveIconSprite",
+      "path": "textures/icons/Shockwave.png"
+    }
+  ],
+  "atlas_icons": [
+    {
+      "id": "ShockwaveIconSprite",
+      "path": "textures/icons/Shockwave.png"
+    }
+  ]
+}
