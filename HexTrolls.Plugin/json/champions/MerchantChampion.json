@@ -84,7 +84,7 @@
       },
       "character_art": "@OrcMerchantCharacterArt",
       "size": 3,
-      "health": 10,
+      "health": 5,
       "attack_damage": 10,
       "subtypes": [ "SubtypesData_Champion_83f21cbe-9d9b-4566-a2c3-ca559ab8ff34" ]
     }
@@ -120,14 +120,16 @@
       "trigger_upgrades": [ "@OrcInvestorTrigger" ],
       "ability_upgrade": "@Wealth3"
     },
-
     {
       "id": "OrcMerchantTrapperI",
       "titles": {
         "english": "Trapper"
       },
       "bonus_damage": 15,
-      "bonus_hp": 15
+      "bonus_hp": 10,
+      "trigger_upgrades": [
+        "@OrcTrapperTrigger1"
+      ]
     },
     {
       "id": "OrcMerchantTrapperII",
@@ -135,7 +137,10 @@
         "english": "Trapper II"
       },
       "bonus_damage": 30,
-      "bonus_hp": 40
+      "bonus_hp": 40,
+      "trigger_upgrades": [
+        "@OrcTrapperTrigger2"
+      ]
     },
     {
       "id": "OrcMerchantTrapperIII",
@@ -143,7 +148,10 @@
         "english": "Trapper III"
       },
       "bonus_damage": 45,
-      "bonus_hp": 95
+      "bonus_hp": 95,
+      "trigger_upgrades": [
+        "@OrcTrapperTrigger3"
+      ]
     },
     {
       "id": "OrcMerchantTesterI",
@@ -154,7 +162,7 @@
         "@ChampionSummonBlueprintTrigger",
         "@EquipWeaponOnResolve"
       ],
-      "bonus_damage": 20,
+      "bonus_damage": 15,
       "bonus_hp": 20
     },
     {
@@ -190,6 +198,39 @@
         "english": "Reduces Ability Cooldown by 1."
       },
       "effects": [ "@InvestorCDReduction" ]
+    },
+    {
+      "id": "OrcTrapperTrigger1",
+      "trigger": "pre_combat",
+      "descriptions": {
+        "english": "Spawn a random Trap at the front of this floor and apply [effect1.status0.power] [spikes] to all Traps on this floor."
+      },
+      "effects": [
+        "@SpawnRandomTrapFront",
+        "@GrantTrapSpikes5"
+      ]
+    },
+    {
+      "id": "OrcTrapperTrigger2",
+      "trigger": "pre_combat",
+      "descriptions": {
+        "english": "Spawn a random Trap at the front of this floor and apply [effect1.status0.power] [spikes] to all Traps on this floor."
+      },
+      "effects": [
+        "@SpawnRandomTrapFront",
+        "@GrantTrapSpikes15"
+      ]
+    },
+    {
+      "id": "OrcTrapperTrigger3",
+      "trigger": "pre_combat",
+      "descriptions": {
+        "english": "Spawn a random Trap at the front of this floor and apply [effect1.status0.power] [spikes] to all Traps on this floor."
+      },
+      "effects": [
+        "@SpawnRandomTrapFront",
+        "@GrantTrapSpikes25"
+      ]
     },
     {
       "id": "EquipWeaponOnResolve",
@@ -264,6 +305,56 @@
       "id": "WealthAbility3",
       "name": "CardEffectAdjustRoomCapacity",
       "param_int": 1
+    },
+    {
+      "id": "SpawnRandomTrapFront",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character_pool": [
+        "@ConcussiveTrapCharacter",
+        "@StunTrapCharacter",
+        "@AttackTrapCharacter"
+      ],
+      "param_bool": true
+    },
+    {
+      "id": "GrantTrapSpikes5",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "target_subtype": "@Trap",
+      "param_status_effects": [
+        {
+          "status": "spikes",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "GrantTrapSpikes15",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "target_subtype": "@Trap",
+      "param_status_effects": [
+        {
+          "status": "spikes",
+          "count": 15
+        }
+      ]
+    },
+    {
+      "id": "GrantTrapSpikes25",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "target_subtype": "@Trap",
+      "param_status_effects": [
+        {
+          "status": "spikes",
+          "count": 25
+        }
+      ]
     },
     {
       "id": "RemoveCurrentEquipmentOnSelf",
@@ -378,12 +469,6 @@
             {
               "animation": "spell",
               "frames": [
-                "@VesperUnitSpellV2Frame1",
-                "@VesperUnitSpellV2Frame2",
-                "@VesperUnitSpellV2Frame2",
-                "@VesperUnitSpellV2Frame3",
-                "@VesperUnitSpellV2Frame3",
-                "@VesperUnitSpellV2Frame4",
                 "@GuildMasterIdleFrame1"
               ],
               "framerate": 8,
@@ -393,17 +478,6 @@
               "animation": "death",
               "frames": [
                 "@GuildMasterIdleFrame1",
-                "@VesperUnitDeathV2Frame1",
-                "@VesperUnitDeathV2Frame1",
-                "@VesperUnitDeathV2Frame2",
-                "@VesperUnitDeathV2Frame2",
-                "@VesperUnitDeathV2Frame3",
-                "@VesperUnitDeathV2Frame3",
-                "@VesperUnitDeathV2Frame4",
-                "@VesperUnitDeathV2Frame4",
-                "@VesperUnitDeathV2Frame4",
-                "@VesperUnitDeathV2Frame4",
-                "@VesperUnitDeathV2Frame4"
               ],
               "framerate": 18,
               "loop": false
@@ -411,12 +485,6 @@
             {
               "animation": "talk",
               "frames": [
-                "@VesperUnitTalkV2Frame1",
-                "@VesperUnitTalkV2Frame2",
-                "@VesperUnitTalkV2Frame3",
-                "@VesperUnitTalkV2Frame2",
-                "@VesperUnitTalkV2Frame4",
-                "@VesperUnitTalkV2Frame4"
               ],
               "framerate": 6,
               "loop": true
@@ -425,14 +493,6 @@
               "animation": "hover",
               "frames": [
                 "@GuildMasterHoverFrame1",
-                "@GuildMasterHoverFrame2",
-                "@GuildMasterHoverFrame3",
-                "@GuildMasterHoverFrame4",
-                "@GuildMasterHoverFrame5",
-                "@GuildMasterHoverFrame6",
-                "@GuildMasterHoverFrame7",
-                "@GuildMasterHoverFrame8",
-                "@GuildMasterHoverFrame9"
               ],
               "framerate": 6,
               "loop": true
@@ -440,62 +500,6 @@
             {
               "animation": "idle_relentless",
               "frames": [
-                "@VesperUnitIdleV3Frame1",
-                "@VesperUnitIdleV3Blend12_25",
-                "@VesperUnitIdleV3Blend12_50",
-                "@VesperUnitIdleV3Blend12_75",
-                "@VesperUnitIdleV3Frame2",
-                "@VesperUnitIdleV3Blend23_25",
-                "@VesperUnitIdleV3Blend23_50",
-                "@VesperUnitIdleV3Blend23_75",
-                "@VesperUnitIdleV3Frame3",
-                "@VesperUnitIdleV3Blend34_25",
-                "@VesperUnitIdleV3Blend34_50",
-                "@VesperUnitIdleV3Blend34_75",
-                "@VesperUnitIdleV3Frame4",
-                "@VesperUnitIdleV3Blend45_25",
-                "@VesperUnitIdleV3Blend45_50",
-                "@VesperUnitIdleV3Blend45_75",
-                "@VesperUnitIdleV3Frame5",
-                "@VesperUnitIdleV3Blend56_25",
-                "@VesperUnitIdleV3Blend56_50",
-                "@VesperUnitIdleV3Blend56_75",
-                "@VesperUnitIdleV3Frame6",
-                "@VesperUnitIdleV3Blend67_25",
-                "@VesperUnitIdleV3Blend67_50",
-                "@VesperUnitIdleV3Blend67_75",
-                "@VesperUnitIdleV3Frame7",
-                "@VesperUnitIdleV3Blend78_25",
-                "@VesperUnitIdleV3Blend78_50",
-                "@VesperUnitIdleV3Blend78_75",
-                "@VesperUnitIdleV3Frame8",
-                "@VesperUnitIdleV3Blend78_75",
-                "@VesperUnitIdleV3Blend78_50",
-                "@VesperUnitIdleV3Blend78_25",
-                "@VesperUnitIdleV3Frame7",
-                "@VesperUnitIdleV3Blend67_75",
-                "@VesperUnitIdleV3Blend67_50",
-                "@VesperUnitIdleV3Blend67_25",
-                "@VesperUnitIdleV3Frame6",
-                "@VesperUnitIdleV3Blend56_75",
-                "@VesperUnitIdleV3Blend56_50",
-                "@VesperUnitIdleV3Blend56_25",
-                "@VesperUnitIdleV3Frame5",
-                "@VesperUnitIdleV3Blend45_75",
-                "@VesperUnitIdleV3Blend45_50",
-                "@VesperUnitIdleV3Blend45_25",
-                "@VesperUnitIdleV3Frame4",
-                "@VesperUnitIdleV3Blend34_75",
-                "@VesperUnitIdleV3Blend34_50",
-                "@VesperUnitIdleV3Blend34_25",
-                "@VesperUnitIdleV3Frame3",
-                "@VesperUnitIdleV3Blend23_75",
-                "@VesperUnitIdleV3Blend23_50",
-                "@VesperUnitIdleV3Blend23_25",
-                "@VesperUnitIdleV3Frame2",
-                "@VesperUnitIdleV3Blend12_75",
-                "@VesperUnitIdleV3Blend12_50",
-                "@VesperUnitIdleV3Blend12_25"
               ],
               "framerate": 16,
               "loop": true
@@ -581,6 +585,14 @@
       "id": "DuplicateGearPool",
       "cards": [
         "@DuplicateGearSpell"
+      ]
+    },
+    {
+      "id": "MerchantTrapPool",
+      "cards": [
+        "@ConcussiveTrap",
+        "@StunTrapCard",
+        "@AttackTrapCard"
       ]
     },
     {

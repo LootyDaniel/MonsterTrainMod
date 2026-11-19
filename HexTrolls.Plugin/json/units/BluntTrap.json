@@ -24,8 +24,18 @@
         },
         "character_art": "@ConcussiveTrapCharacterArt",
         "size": 1,
-        "attack_damage": 0,
         "health": 1,
+        "attack_damage": 0,
+        "can_attack": false,
+        "starting_status_effects": [
+          {
+            "status": "fragile",
+            "count": 1
+          }
+        ],
+        "status_effect_immunities": [
+          "stealth"
+        ],
         "subtypes": [
           "@Trap"
         ],
@@ -81,27 +91,32 @@
             "sprite": "@ConcussiveTrapCharacterSprite1",
             "animations": [
               {
+                "animation": "idle",
+                "frames": [
+                  "@ConcussiveTrapCharacterSprite1"
+                ],
+                "framerate": 1
+              },
+              {
                 "animation": "hit_react",
                 "frames": [
-                  "@ConcussiveTrapCharacterSprite1",
                   "@ConcussiveTrapCharacterSprite2",
                   "@ConcussiveTrapCharacterSprite3",
                   "@ConcussiveTrapCharacterSprite4",
-                  "@ConcussiveTrapCharacterSprite5",
-                  "@ConcussiveTrapCharacterSprite6",
-                  "@ConcussiveTrapCharacterSprite7",
-                  "@ConcussiveTrapCharacterSprite8",
-                  "@ConcussiveTrapCharacterSprite9"
+                  "@ConcussiveTrapCharacterSprite5"
                 ],
-                "framerate": 24,
+                "framerate": 3,
                 "loop": false
               },
               {
                 "animation": "death",
                 "frames": [
+                  "@ConcussiveTrapCharacterSprite6",
+                  "@ConcussiveTrapCharacterSprite7",
+                  "@ConcussiveTrapCharacterSprite8",
                   "@ConcussiveTrapCharacterSprite9"
                 ],
-                "framerate": 1,
+                "framerate":3,
                 "loop": false
               }
             ],

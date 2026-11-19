@@ -1,0 +1,75 @@
+{
+  "$schema": "https://githubusercontent.com",
+  "sprites": [
+    {
+      "id": "ColossusSlabIconSprite",
+      "path": "textures/icons/TremorStone.png"
+    }
+  ],
+  "upgrade_masks": [
+    {
+      "id": "ColossusSlabMask",
+      "allowed_card_types": [
+        "monster"
+      ],
+      "excluded_status_effects": [
+        {
+          "status": "sweep",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "ColossusSlabUpgrade",
+      "titles": {
+        "english": "Colossus Slab"
+      },
+      "descriptions": {
+        "english": "Upgrade a unit with +2 [capacity], [HexTrolls.Plugin_shockwave], and [sweep]."
+      },
+      "bonus_size": 2,
+      "status_effect_upgrades": [
+        {
+          "status": "@shockwave",
+          "count": 1
+        },
+        {
+          "status": "sweep",
+          "count": 1
+        }
+      ],
+      "filters": [
+        "@ColossusSlabMask"
+      ],
+      "icon": "@ColossusSlabIconSprite"
+    }
+  ],
+  "relics": [
+    {
+      "id": "ColossusSlabEnhancer",
+      "type": "enhancer",
+      "names": {
+        "english": "Colossus Slab"
+      },
+      "descriptions": {
+        "english": "Upgrade a unit with +2 [capacity], [HexTrolls.Plugin_shockwave], and [sweep]."
+      },
+      "rarity": "rare",
+      "icon": "@ColossusSlabIconSprite",
+      "pools": [
+        "SoulSavior_UnitUpgradePoolRare"
+      ],
+      "extensions": [
+        {
+          "enhancer": {
+            "class": "@BountyClan",
+            "card_type": "monster",
+            "upgrade": "@ColossusSlabUpgrade"
+          }
+        }
+      ]
+    }
+  ]
+}

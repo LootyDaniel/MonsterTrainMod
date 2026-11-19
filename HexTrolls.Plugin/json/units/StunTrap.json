@@ -1,0 +1,148 @@
+{
+  "$schema": "https://githubusercontent.com",
+  "cards": [
+    {
+      "id": "StunTrapCard",
+      "names": {
+        "english": "Blast Trap"
+      },
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@StunTrapCardArt",
+      "pools": [
+      ],
+      "effects": [
+        "@SpawnStunTrap"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "StunTrapCharacter",
+      "names": {
+        "english": "Blast Trap"
+      },
+      "character_art": "@StunTrapCharacterArt",
+      "size": 1,
+      "health": 1,
+      "attack_damage": 0,
+      "can_attack": false,
+      "starting_status_effects": [
+        {
+          "status": "fragile",
+          "count": 1
+        }
+      ],
+      "status_effect_immunities": [
+        "stealth"
+      ],
+      "triggers": [
+        "@StunTrapTrigger"
+      ],
+      "subtypes": [
+        "@Trap"
+      ]
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "StunTrapTrigger",
+      "trigger": "on_death",
+      "descriptions": {
+        "english": "Deal 5 damage and apply 2 Sap to enemy units."
+      },
+      "effects": [
+        "@StunTrapDamageEffect",
+        "@StunTrapSapEffect"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "SpawnStunTrap",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@StunTrapCharacter"
+    },
+    {
+      "id": "StunTrapDamageEffect",
+      "name": "CardEffectDamage",
+      "target_mode": "room",
+      "target_team": "heroes",
+      "param_int": 5
+    },
+    {
+      "id": "StunTrapSapEffect",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "room",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "debuff",
+          "count": 2
+        }
+      ]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "StunTrapCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@StunTrapSprite1"
+        }
+      }
+    },
+    {
+      "id": "StunTrapCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@StunTrapSprite1",
+          "animations": [
+            {
+              "animation": "idle",
+              "frames": [
+                "@StunTrapSprite1",
+                "@StunTrapSprite2",
+                "@StunTrapSprite3"
+              ],
+              "framerate": 6
+            }
+          ],
+          "transform": {
+            "position": {
+              "x": 0,
+              "y": 0.5,
+              "z": 0
+            },
+            "scale": {
+              "x": 2.5,
+              "y": 2.5,
+              "z": 1
+            }
+          }
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "StunTrapSprite1",
+      "path": "textures/character_art/BlastTrap1.png"
+    },
+    {
+      "id": "StunTrapSprite2",
+      "path": "textures/character_art/BlastTrap2.png"
+    },
+    {
+      "id": "StunTrapSprite3",
+      "path": "textures/character_art/BlastTrap3.png"
+    }
+  ]
+}

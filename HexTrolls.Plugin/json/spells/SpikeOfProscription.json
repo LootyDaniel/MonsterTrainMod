@@ -59,7 +59,7 @@
       "id": "SpikeOfMarking.effects0",
       "name": "CardEffectAddStatusEffect",
       "target_mode": "drop_target_character",
-      "target_team": "both",
+      "target_team": "heroes",
       "param_status_effects": [
         {
           "status": "@mark",

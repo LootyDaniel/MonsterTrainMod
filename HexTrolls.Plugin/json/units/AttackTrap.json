@@ -1,0 +1,157 @@
+{
+  "$schema": "https://githubusercontent.com",
+  "cards": [
+    {
+      "id": "AttackTrapCard",
+      "names": {
+        "english": "Ambush Trap"
+      },
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@AttackTrapCardArt",
+      "pools": [
+      ],
+      "effects": [
+        "@SpawnAttackTrap"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "AttackTrapCharacter",
+      "names": {
+        "english": "Ambush Trap"
+      },
+      "character_art": "@AttackTrapCharacterArt",
+      "size": 1,
+      "health": 1,
+      "attack_damage": 5,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "ambush",
+          "count": 1
+        },
+        {
+          "status": "stealth",
+          "count": 3
+        },
+        {
+          "status": "fragile",
+          "count": 1
+        }
+      ],
+      "subtypes": [
+        "@Trap"
+      ],
+      "triggers": [
+        "@AttackTrapMarkTrigger"
+      ]
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "AttackTrapMarkTrigger",
+      "trigger": "on_attacking",
+
+      "effects": [
+        "@AttackTrapCheckMarkEffect",
+        "@AttackTrapBonusDamageEffect"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "SpawnAttackTrap",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@AttackTrapCharacter"
+    },
+    {
+      "id": "AttackTrapCheckMarkEffect",
+      "name": "@CardEffectCheckStatus",
+      "target_mode": "last_attacked_character",
+      "should_test": true,
+      "should_cancel_subsequent_effects_if_test_fails": true,
+      "param_status_effects": [
+        {
+          "status": "@mark",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "AttackTrapBonusDamageEffect",
+      "name": "CardEffectDamage",
+      "target_mode": "last_attacked_character",
+      "param_int": 20
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "AttackTrapCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@AttackTrapSprite1"
+        }
+      }
+    },
+    {
+      "id": "AttackTrapCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@AttackTrapSprite1",
+          "animations": [
+            {
+              "animation": "idle",
+              "frames": [
+                "@AttackTrapSprite1"
+              ],
+              "framerate": 1
+            },
+            {
+              "animation": "attack",
+              "frames": [
+                "@AttackTrapSprite2",
+                "@AttackTrapSprite3"
+              ],
+              "framerate": 6
+            }
+          ],
+          "transform": {
+            "position": {
+              "x": 0,
+              "y": 0.5,
+              "z": 0
+            },
+            "scale": {
+              "x": 2.5,
+              "y": 2.5,
+              "z": 1
+            }
+          }
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "AttackTrapSprite1",
+      "path": "textures/character_art/AttackTrap1.png"
+    },
+    {
+      "id": "AttackTrapSprite2",
+      "path": "textures/character_art/AttackTrap2.png"
+    },
+    {
+      "id": "AttackTrapSprite3",
+      "path": "textures/character_art/AttackTrap3.png"
+    }
+  ]
+}

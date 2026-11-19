@@ -1,4 +1,5 @@
 {
+  "$schema": "https://githubusercontent.com",
   "sprites": [
     {
       "id": "TremorstoneIconSprite",
@@ -8,7 +9,9 @@
   "upgrade_masks": [
     {
       "id": "OnlyUnitsMask",
-      "card_type": "monster",
+      "allowed_card_types": [
+        "monster"
+      ],
       "excluded_status_effects": [
         {
           "status": "@shockwave",
@@ -20,17 +23,13 @@
   "upgrades": [
     {
       "id": "TremorstoneUpgrade",
-      "names": {
+      "titles": {
         "english": "Tremorstone"
       },
       "descriptions": {
-        "english": "Upgrade a unit with +1 [capacity] and [@shockwave]."
+        "english": "Upgrade a unit with +1 [capacity] and [HexTrolls.Plugin_shockwave]."
       },
-      "cost": 25,
-      "rarity": "common",
-      "class": "@BountyClan",
       "bonus_size": 1,
-      "is_unit_upgrade": true,
       "status_effect_upgrades": [
         {
           "status": "@shockwave",
@@ -41,6 +40,32 @@
         "@OnlyUnitsMask"
       ],
       "icon": "@TremorstoneIconSprite"
+    }
+  ],
+  "relics": [
+    {
+      "id": "TremorstoneEnhancer",
+      "type": "enhancer",
+      "names": {
+        "english": "Tremorstone"
+      },
+      "descriptions": {
+        "english": "Upgrade a unit with +1 [capacity] and [HexTrolls.Plugin_shockwave]."
+      },
+      "rarity": "common",
+      "icon": "@TremorstoneIconSprite",
+      "pools": [
+        "UnitUpgradePoolCommon"
+      ],
+      "extensions": [
+        {
+          "enhancer": {
+            "class": "@BountyClan",
+            "card_type": "monster",
+            "upgrade": "@TremorstoneUpgrade"
+          }
+        }
+      ]
     }
   ]
 }

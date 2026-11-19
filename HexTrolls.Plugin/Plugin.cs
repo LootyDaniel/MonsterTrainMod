@@ -99,9 +99,12 @@ namespace HexTrolls.Plugin
                         "json/units/GuildBruiser.json",
                         "json/units/BlastMagus.json",
                         "json/units/BluntTrap.json",
+                        "json/units/StunTrap.json",
+                        "json/units/AttackTrap.json",
 
                         //upgrades
                         "json/upgrades/Tremorstone.json",
+                        "json/upgrades/ColossusSlab.json",
 
                         //Champions
                         "json/champions/GuildMasterChampion.json",
