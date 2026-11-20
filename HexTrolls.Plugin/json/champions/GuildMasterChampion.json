@@ -129,27 +129,38 @@
     {
       "id": "GuildMasterWaveKnightI",
       "titles": {
-        "english": "Wave Knight"
+        "english": "Lunarmancer"
       },
       "bonus_damage": 30,
-      "bonus_hp": 30
+      "bonus_hp": 30,
+      "status_effect_upgrades": [
+        { "status": "@moonrend", "count": 20 },
+        { "status": "@moonshock", "count": 5 }
+      ]
     },
     {
       "id": "GuildMasterWaveKnightII",
       "titles": {
-        "english": "Wave Knight II"
+        "english": "Lunarmancer II"
       },
-      "bonus_damage": 90,
-      "bonus_hp": 60
+      "bonus_damage": 80,
+      "bonus_hp": 40,
+      "status_effect_upgrades": [
+        { "status": "@moonrend", "count": 40 },
+        { "status": "@moonshock", "count": 10 }
+      ]
     },
     {
       "id": "GuildMasterWaveKnightIII",
       "titles": {
-        "english": "Wave Knight III"
+        "english": "Lunarmancer III"
       },
-      //"trigger_upgrades": [ "@GuildMasterTriggerIII" ],
-      "bonus_damage": 270,
-      "bonus_hp": 120
+      "bonus_damage": 130,
+      "bonus_hp": 50,
+      "status_effect_upgrades": [
+        { "status": "@moonrend", "count": 80 },
+        { "status": "@moonshock", "count": 20 }
+      ]
     },
 
     {
@@ -157,33 +168,39 @@
       "titles": {
         "english": "Commander"
       },
-      "bonus_damage": 30,
-      "bonus_hp": 30
+      "bonus_damage": 15,
+      "bonus_hp": 20,
+      "trigger_upgrades": [
+        "@GuildMasterSummonRecruitTrigger",
+        "@GuildMasterBuffMercTrigger1"
+      ]
     },
     {
       "id": "GuildMasterCommanderPathII",
       "titles": {
         "english": "Commander II"
       },
-      "bonus_damage": 90,
-      "bonus_hp": 60
+      "bonus_damage": 30,
+      "bonus_hp": 45,
+      "trigger_upgrades": [
+        "@GuildMasterSummonRecruitTrigger",
+        "@GuildMasterBuffMercTrigger2"
+      ]
     },
     {
       "id": "GuildMasterCommanderPathIII",
       "titles": {
         "english": "Commander III"
       },
-      //"trigger_upgrades": [ "@GuildMasterTriggerIII" ],
-      "bonus_damage": 270,
-      "bonus_hp": 120
+      "bonus_damage": 50,
+      "bonus_hp": 80,
+      "trigger_upgrades": [
+        "@GuildMasterSummonRecruitTrigger",
+        "@GuildMasterBuffMercTrigger3"
+      ]
     }
   ],
   "character_triggers": [
-    //{
-    //  "id": "GuildMasterTriggerIII",
-    //  "trigger": "post_combat",
-    //  "effects": [ "@GuildMasterGain5Rage" ]
-    //},
     {
       "id": "GuildMasterMarkResolve1",
       "trigger": "post_combat",
@@ -212,6 +229,48 @@
       },
       "effects": [
         "@GuildMasterPropagateMark4"
+      ]
+    },
+    {
+      "id": "GuildMasterSummonRecruitTrigger",
+      "trigger": "on_spawn",
+      "descriptions": {
+        "english": "Add a <b>Recruit</b> to your hand."
+      },
+      "effects": [
+        "@CreateRecruitSpellEffect"
+      ]
+    },
+    {
+      "id": "GuildMasterBuffMercTrigger1",
+      "trigger": "card_monster_played",
+      "descriptions": {
+        "english": "When a unit with [HexTrolls.Plugin_mercenary] is summoned on this floor, grant it 1 random basic upgrade."
+      },
+      "effects": [
+        "@GrantMercBasicUpgradeEffect"
+      ]
+    },
+    {
+      "id": "GuildMasterBuffMercTrigger2",
+      "trigger": "card_monster_played",
+      "descriptions": {
+        "english": "When a unit with [HexTrolls.Plugin_mercenary] is summoned on this floor, grant it 1 random basic upgrade and 1 random elite upgrade."
+      },
+      "effects": [
+        "@GrantMercBasicUpgradeEffect",
+        "@GrantMercEliteUpgradeEffect"
+      ]
+    },
+    {
+      "id": "GuildMasterBuffMercTrigger3",
+      "trigger": "card_monster_played",
+      "descriptions": {
+        "english": "When a unit with [HexTrolls.Plugin_mercenary] is summoned on this floor, grant it 2 random elite upgrades."
+      },
+      "effects": [
+        "@GrantMercEliteUpgradeEffect",
+        "@GrantMercEliteUpgradeEffect"
       ]
     }
   ],
@@ -305,6 +364,29 @@
           "count": 4
         }
       ]
+    },
+    {
+      "id": "CreateRecruitSpellEffect",
+      "name": "CardEffectAddBattleCard",
+      "param_int": 3,
+      "param_int_2": 1,
+      "param_subtype": "SubtypesData_None",
+      "param_card_pool": "@RecruitSpellPool",
+      "target_mode": "hand"
+    },
+    {
+      "id": "GrantMercBasicUpgradeEffect",
+      "name": "@GrantRandomMercenaryUpgradeEffect",
+      "target_mode": "last_spawned_character",
+      "target_team": "monsters",
+      "param_int": 1
+    },
+    {
+      "id": "GrantMercEliteUpgradeEffect",
+      "name": "@GrantRandomMercenaryUpgradeEffect",
+      "target_mode": "last_spawned_character",
+      "target_team": "monsters",
+      "param_int": 2
     }
   ],
   "game_objects": [
@@ -556,6 +638,14 @@
     {
       "id": "GuildMasterHoverFrame9",
       "path": "textures/character_art/GuildMasterHover9.png"
+    }
+  ],
+  "card_pools": [
+    {
+      "id": "RecruitSpellPool",
+      "cards": [
+        "@RecruitSpell"
+      ]
     }
   ]
 }

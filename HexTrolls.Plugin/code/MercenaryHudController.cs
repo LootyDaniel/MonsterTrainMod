@@ -1,4 +1,4 @@
-﻿using Conductor.UI;
+using Conductor.UI;
 using HarmonyLib;
 using System;
 using System.Collections;
@@ -457,12 +457,22 @@ namespace HexTrolls.Plugin.code
             var systemManagers = gameManagers.GetSystemManagers();
             combatManager.StartCoroutine(ExecuteMercenarySpawn(_currentBattleContract.CachedCardData, effectParams, coreManagers, systemManagers));
         }
+
         private static IEnumerator ExecuteMercenarySpawn(
-        CardData cardToCast,
-        CardEffectParams effectParams,
-        ICoreGameManagers coreManagers,
-        ISystemManagers systemManagers)
+            CardData cardToCast,
+            CardEffectParams effectParams,
+            ICoreGameManagers coreManagers,
+            ISystemManagers systemManagers)
         {
+            var roomManager = coreManagers.GetRoomManager();
+            RoomState targetRoom = roomManager?.GetRoom(effectParams.selectedRoom);
+
+            var beforeUnits = new List<CharacterState>();
+            if (targetRoom != null)
+            {
+                targetRoom.AddCharactersToList(beforeUnits, Team.Type.Monsters);
+            }
+
             foreach (var effectData in cardToCast.GetEffects())
             {
                 var effectState = new CardEffectState();
@@ -473,7 +483,107 @@ namespace HexTrolls.Plugin.code
                     yield return cardEffect.ApplyEffect(effectState, effectParams, coreManagers, systemManagers);
                 }
             }
+
+            if (targetRoom != null)
+            {
+                var afterUnits = new List<CharacterState>();
+                targetRoom.AddCharactersToList(afterUnits, Team.Type.Monsters);
+
+                // The HUD-spawned Mercenaries are not played as cards, so their
+                // Commander bonuses must be applied here rather than relying on
+                // the card_monster_played character trigger.
+                //
+                // Champion upgrades can reside on the spawner CardState rather
+                // than appearing in CharacterState.GetAppliedCardUpgrades().
+                // Inspect both without changing either one's upgrade collection.
+                int commanderLevel = 0;
+                foreach (var ally in beforeUnits)
+                {
+                    if (ally == null || !ally.IsAlive)
+                        continue;
+
+                    string charAsset = ally.GetSourceCharacterData()?.name ?? string.Empty;
+                    bool isGuildMaster = charAsset.IndexOf(
+                        "GuildMasterCharacter", StringComparison.OrdinalIgnoreCase) >= 0;
+                    CardState championCard = ally.GetSpawnerCard();
+
+                    Debug.Log($"[MercUpgrade] Existing unit character='{charAsset}', " +
+                              $"isChampion={ally.IsChampion()}, isGuildMaster={isGuildMaster}, " +
+                              $"hasSpawnerCard={championCard != null}");
+
+                    if (!isGuildMaster)
+                        continue;
+
+                    var liveUpgrades = ally.GetAppliedCardUpgrades();
+                    if (liveUpgrades != null)
+                    {
+                        foreach (var upgrade in liveUpgrades)
+                        {
+                            string name = upgrade?.GetSourceCardUpgradeData()?.name ?? string.Empty;
+                            Debug.Log($"[MercUpgrade] Live champion upgrade: '{name}'");
+                            if (name.IndexOf("GuildMasterCommanderPathIII", StringComparison.OrdinalIgnoreCase) >= 0)
+                                commanderLevel = Mathf.Max(commanderLevel, 3);
+                            else if (name.IndexOf("GuildMasterCommanderPathII", StringComparison.OrdinalIgnoreCase) >= 0)
+                                commanderLevel = Mathf.Max(commanderLevel, 2);
+                            else if (name.IndexOf("GuildMasterCommanderPathI", StringComparison.OrdinalIgnoreCase) >= 0)
+                                commanderLevel = Mathf.Max(commanderLevel, 1);
+                        }
+                    }
+
+                    var cardUpgrades = championCard?.GetCardStateModifiers()?.GetCardUpgrades();
+                    if (cardUpgrades != null)
+                    {
+                        foreach (var upgrade in cardUpgrades)
+                        {
+                            string name = upgrade?.GetSourceCardUpgradeData()?.name ?? string.Empty;
+                            Debug.Log($"[MercUpgrade] Spawner card upgrade: '{name}'");
+                            if (name.IndexOf("GuildMasterCommanderPathIII", StringComparison.OrdinalIgnoreCase) >= 0)
+                                commanderLevel = Mathf.Max(commanderLevel, 3);
+                            else if (name.IndexOf("GuildMasterCommanderPathII", StringComparison.OrdinalIgnoreCase) >= 0)
+                                commanderLevel = Mathf.Max(commanderLevel, 2);
+                            else if (name.IndexOf("GuildMasterCommanderPathI", StringComparison.OrdinalIgnoreCase) >= 0)
+                                commanderLevel = Mathf.Max(commanderLevel, 1);
+                        }
+                    }
+                }
+
+                Debug.Log($"[MercUpgrade] Commander level={commanderLevel}, " +
+                          $"unitsBefore={beforeUnits.Count}, unitsAfter={afterUnits.Count}");
+
+                foreach (var unit in afterUnits)
+                {
+                    if (unit != null && unit.IsAlive && !beforeUnits.Contains(unit))
+                    {
+                        // HUD-summoned units were not played from a deck card.
+                        // This is Monster Train 2's built-in Cardless status.
+                        // Do not add it to recruited cards replayed from the deck.
+                        if (!unit.HasStatusEffect("cardless"))
+                            unit.AddStatusEffect("cardless", 1);
+                        unit.AddStatusEffect("hextrolls.plugin_mercenary", 1);
+                        Debug.Log($"[MercUpgrade] cardless={unit.HasStatusEffect("cardless")}");
+                        Debug.Log($"[MercUpgrade] Spawned mercenary='{unit.GetSourceCharacterData()?.name}', " +
+                                  $"commanderLevel={commanderLevel}, " +
+                                  $"statusApplied={unit.HasStatusEffect("hextrolls.plugin_mercenary")}");
+
+                        if (commanderLevel == 1)
+                        {
+                            yield return GrantRandomMercenaryUpgradeEffect.ApplyRandomUpgradeToUnit(unit, 1);
+                        }
+                        else if (commanderLevel == 2)
+                        {
+                            yield return GrantRandomMercenaryUpgradeEffect.ApplyRandomUpgradeToUnit(unit, 1);
+                            yield return GrantRandomMercenaryUpgradeEffect.ApplyRandomUpgradeToUnit(unit, 2);
+                        }
+                        else if (commanderLevel >= 3)
+                        {
+                            yield return GrantRandomMercenaryUpgradeEffect.ApplyRandomUpgradeToUnit(unit, 2);
+                            yield return GrantRandomMercenaryUpgradeEffect.ApplyRandomUpgradeToUnit(unit, 2);
+                        }
+                    }
+                }
+            }
         }
+
     }
     [HarmonyPatch(typeof(CombatManager), "StartCombat")]
     public static class Patch_CombatManager_StartCombat_MercenaryHud
@@ -481,6 +591,64 @@ namespace HexTrolls.Plugin.code
         static void Postfix()
         {
             MercenaryHudController.OnCombatStarted();
+        }
+    }
+    [HarmonyPatch]
+    public static class Patch_CardUpgradeMaskData_BlockMercenaryUpgrades
+    {
+        static System.Reflection.MethodBase TargetMethod()
+        {
+            foreach (var m in typeof(CardUpgradeMaskData).GetMethods(
+                System.Reflection.BindingFlags.Public |
+                System.Reflection.BindingFlags.NonPublic |
+                System.Reflection.BindingFlags.Instance))
+            {
+                if (m.Name == "FilterCard")
+                {
+                    if (m.IsGenericMethodDefinition)
+                    {
+                        var args = m.GetGenericArguments();
+                        if (args.Length == 1)
+                            return m.MakeGenericMethod(typeof(CardState));
+                    }
+                    else
+                    {
+                        var parameters = m.GetParameters();
+                        if (parameters.Length > 0 && parameters[0].ParameterType == typeof(CardState))
+                            return m;
+                    }
+                }
+            }
+            return null;
+        }
+        static void Postfix(CardState card, ref bool __result)
+        {
+            if (!__result || card == null)
+                return;
+
+            var modifiers = card.GetCardStateModifiers();
+            if (modifiers == null)
+                return;
+
+            var upgrades = modifiers.GetCardUpgrades();
+            if (upgrades == null)
+                return;
+
+            foreach (var upg in upgrades)
+            {
+                var statusUpgrades = upg?.GetStatusEffectUpgrades();
+                if (statusUpgrades != null)
+                {
+                    foreach (var s in statusUpgrades)
+                    {
+                        if (s != null && s.statusId == "hextrolls.plugin_mercenary")
+                        {
+                            __result = false;
+                            return;
+                        }
+                    }
+                }
+            }
         }
     }
 }

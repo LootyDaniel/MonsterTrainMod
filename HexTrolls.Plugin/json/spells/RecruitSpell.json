@@ -1,0 +1,81 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "RecruitSpell",
+      "names": {
+        "english": "Recruit"
+      },
+      "descriptions": {
+        "english": "Target a Cardless friendly unit with [HexTrolls.Plugin_mercenary]. Remove it from battle and permanently recruit it with its existing upgrades. Cannot target a unit replayed from your deck."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "champion",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@RecruitCardArt",
+      "traits": [
+        "@RecruitFreezeTrait",
+        "@RecruitPurgeTrait"
+      ],
+      "effects": [
+        "@RecruitMercenaryEffectEntry"
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "RecruitFreezeTrait",
+      "name": "CardTraitFreeze"
+    },
+    {
+      "id": "RecruitPurgeTrait",
+      "name": "CardTraitSelfPurge"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "MercenaryPermanentStatusUpgrade",
+      "titles": {
+        "english": "Mercenary"
+      },
+      "status_effect_upgrades": [
+        {
+          "status": "@mercenary",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "RecruitMercenaryEffectEntry",
+      "name": "@RecruitMercenaryEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_upgrade": "@MercenaryPermanentStatusUpgrade",
+      "target_mode_status_effects_filter": [
+        "cardless"
+      ]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "RecruitCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@RecruitCardSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "RecruitCardSprite",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    }
+  ]
+}

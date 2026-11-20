@@ -33,7 +33,6 @@ namespace HexTrolls.Plugin
                 catch (Exception error)
                 {
                     ++failures;
-                    Logger.LogError($"FreeCompany failed to patch {type.FullName}: {error}");
                 }
             }
             return failures;
@@ -71,10 +70,14 @@ namespace HexTrolls.Plugin
                         //Clans
                         "json/clan/BountyClan.json",
 
+                        //Keywords
+                        "json/clan/LunarmancerKeywords.json",
+
 
                         //status_effects
                         "json/status_effects/Mark.json",
                         "json/status_effects/Shockwave.json",
+                        "json/status_effects/Mercenary.json",
 
                         //triggers
                         "json/triggers/MarkedTrigger.json",
@@ -86,6 +89,7 @@ namespace HexTrolls.Plugin
                         "json/spells/QuickGrab.json",
                         "json/spells/CallForViolence.json",
                         "json/spells/SpikeOfProscription.json",
+                        "json/spells/RecruitSpell.json",
 
                         //equipment
                         "json/equipment/HuntersBow.json",

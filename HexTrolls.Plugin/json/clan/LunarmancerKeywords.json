@@ -1,0 +1,45 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "status_effects": [
+    {
+      "id": "moonrend",
+      "class_name": "@StatusEffectMoonrendState",
+      "names": { "english": "Moonrend" },
+      "stackable_names": { "english": "Moonrend {0}" },
+      "card_tooltips": { "english": "During New Moon, Strike: Deal additional damage equal to Moonrend to a Marked enemy." },
+      "character_tooltips": { "english": "During New Moon, Strike: Deal [codeint0] bonus damage to Marked enemies." },
+      "replacement_texts": { "english": "<b>Moonrend</b>" },
+      "notifications": { "english": "Moonrend" },
+      "display_category": "persistent",
+      "trigger_stage": "on_post_attacking",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@MoonrendIcon"
+    },
+    {
+      "id": "moonshock",
+      "class_name": "@StatusEffectMoonshockState",
+      "names": { "english": "Moonshock" },
+      "stackable_names": { "english": "Moonshock {0}" },
+      "card_tooltips": { "english": "During Full Moon, gain Shockwave. Strike: Apply Pyregel equal to Moonshock." },
+      "character_tooltips": { "english": "During Full Moon, gain Shockwave. Strike: Apply [codeint0] Pyregel." },
+      "replacement_texts": { "english": "<b>Moonshock</b>" },
+      "notifications": { "english": "Moonshock" },
+      "display_category": "persistent",
+      "trigger_stage": "on_post_attacking",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@MoonshockIcon"
+    }
+  ],
+  "sprites": [
+    { "id": "MoonrendIcon", "path": "textures/icons/GuildMage.png" },
+    { "id": "MoonshockIcon", "path": "textures/icons/GuildMage.png" }
+  ],
+  "atlas_icons": [
+    { "id": "MoonrendIcon", "path": "textures/icons/GuildMage.png" },
+    { "id": "MoonshockIcon", "path": "textures/icons/GuildMage.png" }
+  ]
+}

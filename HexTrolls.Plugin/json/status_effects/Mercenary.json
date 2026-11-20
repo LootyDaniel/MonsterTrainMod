@@ -1,0 +1,41 @@
+{
+  "$schema": "https://github.com",
+  "status_effects": [
+    {
+      "id": "mercenary",
+      "class_name": "@StatusEffectMercenaryState",
+      "names": {
+        "english": "Mercenary"
+      },
+      "card_tooltips": {
+        "english": "Hired mercenary. Cannot receive shop upgrades."
+      },
+      "character_tooltips": {
+        "english": "Hired mercenary. Cannot receive shop upgrades."
+      },
+      "replacement_texts": {
+        "english": "<b>Mercenary</b>"
+      },
+      "notifications": {
+        "english": "Mercenary"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "icon": "@MercenaryStatusIcon"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "MercenaryStatusIcon",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    }
+  ],
+  "atlas_icons": [
+    {
+      "id": "MercenaryStatusIcon",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    }
+  ]
+}
