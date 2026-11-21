@@ -90,9 +90,11 @@ namespace HexTrolls.Plugin
                         "json/spells/CallForViolence.json",
                         "json/spells/SpikeOfProscription.json",
                         "json/spells/RecruitSpell.json",
+                        "json/spells/LibraryOfScrolls.json",
 
                         //equipment
                         "json/equipment/HuntersBow.json",
+                        "json/equipment/TrappingGear.json",
 
                         //rooms
 
@@ -109,6 +111,10 @@ namespace HexTrolls.Plugin
                         //upgrades
                         "json/upgrades/Tremorstone.json",
                         "json/upgrades/ColossusSlab.json",
+
+                        //relics
+                        "json/relics/OverflowClause.json",
+                        "json/relics/LibraryOfScrolls.json",
 
                         //Champions
                         "json/champions/GuildMasterChampion.json",

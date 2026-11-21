@@ -1,0 +1,1295 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "relics": [
+    {
+      "id": "LibraryOfScrolls",
+      "type": "collectable",
+      "names": {
+        "english": "Library of Scrolls"
+      },
+      "descriptions": {
+        "english": "At the start of each turn, add a random <b>Scroll</b> from the Library to your hand."
+      },
+      "lore_style": "herzal",
+      "relic_effects": [
+        "@LibraryOfScrollsGenerate"
+      ],
+      "icon": "@BasicClanMediumIcon",
+      "icon_small": "@BasicClanSmallIcon",
+      "extensions": [
+        {
+          "collectable": {
+            "class": "@BountyClan",
+            "pools": [
+              "MegaRelicPool"
+            ],
+            "rarity": "uncommon"
+          }
+        }
+      ]
+    }
+  ],
+  "relic_effects": [
+    {
+      "id": "LibraryOfScrollsGenerate",
+      "name": "RelicEffectAddBattleCardToHand",
+      "param_int": 1,
+      "param_card_pool": "@LibraryOfScrollsPool"
+    }
+  ],
+  "card_pools": [
+    {
+      "id": "LibraryOfScrollsPool",
+      "cards": [
+        "@ScrollOfEmbers",
+        "@ScrollOfBulwark",
+        "@ScrollOfFury",
+        "@ScrollOfRenewal",
+        "@ScrollOfThorns",
+        "@ScrollOfWarding",
+        "@ScrollOfAegis",
+        "@ScrollOfShadows",
+        "@ScrollOfSiphoning",
+        "@ScrollOfInitiative",
+        "@ScrollOfFlurries",
+        "@ScrollOfCleaving",
+        "@ScrollOfReturn",
+        "@ScrollOfHaste",
+        "@ScrollOfBravery",
+        "@ScrollOfTitanhide",
+        "@ScrollOfChanneling",
+        "@ScrollOfRuneblade",
+        "@ScrollOfOverload",
+        "@ScrollOfExhaustion",
+        "@ScrollOfStupor",
+        "@ScrollOfWinter",
+        "@ScrollOfArcaneFrailty",
+        "@ScrollOfBrittleness",
+        "@ScrollOfAsh",
+        "@ScrollOfFracture",
+        "@ScrollOfRot",
+        "@ScrollOfVines",
+        "@ScrollOfSilencing",
+        "@ScrollOfBlight",
+        "@ScrollOfReaping",
+        "@ScrollOfStaining",
+        "@ScrollOfWeakening",
+        "@ScrollOfWithering",
+        "@ScrollOfBounty"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "ScrollOfEmbers",
+      "names": {
+        "english": "Scroll of Embers"
+      },
+      "descriptions": {
+        "english": "Apply <b>Pyregel</b> 3 and deal 3 damage to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfEmbersPyregel",
+        "@ScrollOfEmbersDamage"
+      ]
+    },
+    {
+      "id": "ScrollOfBulwark",
+      "names": {
+        "english": "Scroll of Bulwark"
+      },
+      "descriptions": {
+        "english": "Apply <b>Armor</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfBulwarkStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfFury",
+      "names": {
+        "english": "Scroll of Fury"
+      },
+      "descriptions": {
+        "english": "Apply <b>Rage</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfFuryStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfRenewal",
+      "names": {
+        "english": "Scroll of Renewal"
+      },
+      "descriptions": {
+        "english": "Apply <b>Regen</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfRenewalStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfThorns",
+      "names": {
+        "english": "Scroll of Thorns"
+      },
+      "descriptions": {
+        "english": "Apply <b>Spikes</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfThornsStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfWarding",
+      "names": {
+        "english": "Scroll of Warding"
+      },
+      "descriptions": {
+        "english": "Apply <b>Damage Shield</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfWardingStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfAegis",
+      "names": {
+        "english": "Scroll of Aegis"
+      },
+      "descriptions": {
+        "english": "Apply <b>Spell Shield</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfAegisStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfShadows",
+      "names": {
+        "english": "Scroll of Shadows"
+      },
+      "descriptions": {
+        "english": "Apply <b>Stealth</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfShadowsStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfSiphoning",
+      "names": {
+        "english": "Scroll of Siphoning"
+      },
+      "descriptions": {
+        "english": "Apply <b>Lifesteal</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfSiphoningStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfInitiative",
+      "names": {
+        "english": "Scroll of Initiative"
+      },
+      "descriptions": {
+        "english": "Apply <b>Quick</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfInitiativeStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfFlurries",
+      "names": {
+        "english": "Scroll of Flurries"
+      },
+      "descriptions": {
+        "english": "Apply <b>Multistrike</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfFlurriesStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfCleaving",
+      "names": {
+        "english": "Scroll of Cleaving"
+      },
+      "descriptions": {
+        "english": "Apply <b>Sweep</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfCleavingStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfReturn",
+      "names": {
+        "english": "Scroll of Return"
+      },
+      "descriptions": {
+        "english": "Apply <b>Endless</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfReturnStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfHaste",
+      "names": {
+        "english": "Scroll of Haste"
+      },
+      "descriptions": {
+        "english": "Apply <b>Haste</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfHasteStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfBravery",
+      "names": {
+        "english": "Scroll of Bravery"
+      },
+      "descriptions": {
+        "english": "Apply <b>Valor</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfBraveryStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfTitanhide",
+      "names": {
+        "english": "Scroll of Titanhide"
+      },
+      "descriptions": {
+        "english": "Apply <b>Titanite</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfTitanhideStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfChanneling",
+      "names": {
+        "english": "Scroll of Channeling"
+      },
+      "descriptions": {
+        "english": "Apply <b>Conduit</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfChannelingStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfRuneblade",
+      "names": {
+        "english": "Scroll of Runeblade"
+      },
+      "descriptions": {
+        "english": "Apply <b>Mageblade</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfRunebladeStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfOverload",
+      "names": {
+        "english": "Scroll of Overload"
+      },
+      "descriptions": {
+        "english": "Apply <b>Burst</b> [effect0.status0.power] to a friendly unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfOverloadStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfExhaustion",
+      "names": {
+        "english": "Scroll of Exhaustion"
+      },
+      "descriptions": {
+        "english": "Apply <b>Sap</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfExhaustionStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfStupor",
+      "names": {
+        "english": "Scroll of Stupor"
+      },
+      "descriptions": {
+        "english": "Apply <b>Dazed</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfStuporStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfWinter",
+      "names": {
+        "english": "Scroll of Winter"
+      },
+      "descriptions": {
+        "english": "Apply <b>Frostbite</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfWinterStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfArcaneFrailty",
+      "names": {
+        "english": "Scroll of ArcaneFrailty"
+      },
+      "descriptions": {
+        "english": "Apply <b>Spell Weakness</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfArcaneFrailtyStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfBrittleness",
+      "names": {
+        "english": "Scroll of Brittleness"
+      },
+      "descriptions": {
+        "english": "Apply <b>Melee Weakness</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfBrittlenessStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfAsh",
+      "names": {
+        "english": "Scroll of Ash"
+      },
+      "descriptions": {
+        "english": "Apply <b>Burnout</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfAshStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfFracture",
+      "names": {
+        "english": "Scroll of Fracture"
+      },
+      "descriptions": {
+        "english": "Apply <b>Fragile</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfFractureStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfRot",
+      "names": {
+        "english": "Scroll of Rot"
+      },
+      "descriptions": {
+        "english": "Apply <b>Decay</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfRotStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfVines",
+      "names": {
+        "english": "Scroll of Vines"
+      },
+      "descriptions": {
+        "english": "Apply <b>Rooted</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfVinesStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfSilencing",
+      "names": {
+        "english": "Scroll of Silencing"
+      },
+      "descriptions": {
+        "english": "Apply <b>Mute</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfSilencingStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfBlight",
+      "names": {
+        "english": "Scroll of Blight"
+      },
+      "descriptions": {
+        "english": "Apply <b>Corruption</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfBlightStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfReaping",
+      "names": {
+        "english": "Scroll of Reaping"
+      },
+      "descriptions": {
+        "english": "Apply <b>Reap</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfReapingStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfStaining",
+      "names": {
+        "english": "Scroll of Staining"
+      },
+      "descriptions": {
+        "english": "Apply <b>Pyrestain</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfStainingStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfWeakening",
+      "names": {
+        "english": "Scroll of Weakening"
+      },
+      "descriptions": {
+        "english": "Apply <b>Malaise</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfWeakeningStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfWithering",
+      "names": {
+        "english": "Scroll of Withering"
+      },
+      "descriptions": {
+        "english": "Apply <b>Witherbloom</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfWitheringStatus"
+      ]
+    },
+    {
+      "id": "ScrollOfBounty",
+      "names": {
+        "english": "Scroll of Bounty"
+      },
+      "descriptions": {
+        "english": "Apply <b>Mark</b> [effect0.status0.power] to an enemy unit."
+      },
+      "cost": 0,
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@BountyClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "MegaPool"
+      ],
+      "card_art": "@ScrollOfEmbersCardArt",
+      "effects": [
+        "@ScrollOfBountyStatus"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "ScrollOfEmbersPyregel",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "pyregel",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfEmbersDamage",
+      "name": "CardEffectDamage",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_int": 3
+    },
+    {
+      "id": "ScrollOfBulwarkStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "armor",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfFuryStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "buff",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfRenewalStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "regen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfThornsStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "spikes",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfWardingStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "damage shield",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfAegisStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "spell shield",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfShadowsStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "stealth",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfSiphoningStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "lifesteal",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfInitiativeStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "ambush",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfFlurriesStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "multistrike",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfCleavingStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "sweep",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfReturnStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "endless",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfHasteStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "haste",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfBraveryStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "valor",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfTitanhideStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "titanite",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfChannelingStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "conduit",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfRunebladeStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "mageblade",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfOverloadStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "burst",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfExhaustionStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "debuff",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfStuporStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "dazed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfWinterStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "poison",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfArcaneFrailtyStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "spell weakness",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfBrittlenessStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "melee weakness",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfAshStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "ephemeral",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfFractureStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "fragile",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfRotStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "decay",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfVinesStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "rooted",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfSilencingStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "muted",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfBlightStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "corruption",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfReapingStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "corrupt_poison",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfStainingStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "pyrestain",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfWeakeningStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "malaise",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfWitheringStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "witherbloom",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "ScrollOfBountyStatus",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "@mark",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "ScrollOfEmbersCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@BasicClanMediumIcon"
+        }
+      }
+    }
+  ]
+}

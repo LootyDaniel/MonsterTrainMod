@@ -1,0 +1,137 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "TrappingGear",
+      "names": {
+        "english": "Trapping Gear"
+      },
+      "descriptions": {
+        "english": "Grants <b>Deploy Trap</b> (Cooldown 1): Spawn a random Trap at the front of this floor."
+      },
+      "card_type": "equipment",
+      "class": "@BountyClan",
+      "rarity": "uncommon",
+      "cost": 1,
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrappingGearCardArt",
+      "effects": [
+        "@EquipTrappingGear"
+      ],
+      "pools": [
+        "MegaPool",
+        "EquipmentPool",
+        "RoomAndEquipmentDraftPool",
+        "RoomAndEquipmentMerchant_EquipmentPool",
+        "RoomAndEquipmentMerchant_RoomAndEquipmentPool",
+        "EquipmentPoolNonEnemy"
+      ]
+    },
+    {
+      "id": "TrappingGearDeployTrapAbility",
+      "names": {
+        "english": "Deploy Trap"
+      },
+      "descriptions": {
+        "english": "Spawn a random Trap at the front of this floor."
+      },
+      "card_type": "spell",
+      "is_an_ability": true,
+      "cooldown": 1,
+      "initial_cooldown": 0,
+      "targetless": true,
+      "targets_room": false,
+      "effects": [
+        "@TrappingGearSpawnRandomTrap"
+      ]
+    },
+    {
+      "id": "TrappingGearTrapSpawnEffects",
+      "names": {
+        "english": "Trap Deployment (Internal)"
+      },
+      "descriptions": {
+        "english": "Internal trap spawn effects. Not part of any card pool."
+      },
+      "card_type": "spell",
+      "class": "@BountyClan",
+      "rarity": "common",
+      "cost": 0,
+      "targetless": true,
+      "targets_room": false,
+      "card_art": "@TrappingGearCardArt",
+      "pools": [],
+      "effects": [
+        "@TrappingGearSpawnConcussiveNoCopy",
+        "@TrappingGearSpawnBlastNoCopy",
+        "@TrappingGearSpawnAmbushNoCopy"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "EquipTrappingGear",
+      "name": "CardEffectAttachEquipment",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_upgrade": "@TrappingGearEquipmentUpgrade"
+    },
+    {
+      "id": "TrappingGearSpawnRandomTrap",
+      "name": "@CardEffectDeployRandomTrap",
+      "target_mode": "room"
+    },
+    {
+      "id": "TrappingGearSpawnConcussiveNoCopy",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@ConcussiveTrapCharacter",
+      "param_bool": true
+    },
+    {
+      "id": "TrappingGearSpawnBlastNoCopy",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@StunTrapCharacter",
+      "param_bool": true
+    },
+    {
+      "id": "TrappingGearSpawnAmbushNoCopy",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@AttackTrapCharacter",
+      "param_bool": true
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "TrappingGearEquipmentUpgrade",
+      "bonus_damage": 0,
+      "bonus_hp": 0,
+      "ability_upgrade": "@TrappingGearDeployTrapAbility",
+      "icon": "@TrappingGearEquipmentIcon"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "TrappingGearCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrappingGearCardSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrappingGearCardSprite",
+      "path": "textures/card_art/OrcMerchantChampion.png"
+    },
+    {
+      "id": "TrappingGearEquipmentIcon",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    }
+  ]
+}

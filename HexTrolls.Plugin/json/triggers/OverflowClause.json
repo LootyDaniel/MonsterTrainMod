@@ -1,0 +1,82 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "relics": [
+    {
+      "id": "OverflowClause",
+      "type": "collectable",
+      "names": {
+        "english": "Overflow Clause"
+      },
+      "descriptions": {
+        "english": "When a 7th friendly unit is summoned on a floor, move the frontmost friendly <b>Trap</b> down one floor and place it at the front. If it cannot move, nothing happens."
+      },
+      "lore_style": "herzal",
+      "relic_effects": [
+        "@OverflowClauseOnAllySpawn"
+      ],
+      "icon": "@BasicClanMediumIcon",
+      "icon_small": "@BasicClanSmallIcon",
+      "extensions": [
+        {
+          "collectable": {
+            "class": "@BountyClan",
+            "pools": ["MegaRelicPool"],
+            "rarity": "uncommon"
+          }
+        }
+      ]
+    }
+  ],
+  "relic_effects": [
+    {
+      "id": "OverflowClauseOnAllySpawn",
+      "name": "RelicEffectAddEffectOnUnitSpawn",
+      "source_team": "monsters",
+      "param_effects": [
+        "@OverflowClauseCheckSeventhUnit"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "OverflowClauseCheckSeventhUnit",
+      "name": "@CardEffectOverflowClause",
+      "target_mode": "room",
+      "target_team": "monsters"
+    },
+    {
+      "id": "OverflowClauseNativeDescend",
+      "name": "CardEffectBump",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": -1
+    },
+    {
+      "id": "OverflowClauseNativeFront",
+      "name": "CardEffectFloorRearrange",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 0
+    }
+  ],
+  "cards": [
+    {
+      "id": "OverflowClauseInternalMoveEffects",
+      "names": {
+        "english": "Overflow Clause (Internal)"
+      },
+      "card_type": "spell",
+      "class": "@BountyClan",
+      "cost": 0,
+      "targetless": true,
+      "targets_room": false,
+      "hide_in_logbook": true,
+      "card_art": "@HuntersBowCardArt",
+      "pools": [],
+      "effects": [
+        "@OverflowClauseNativeDescend",
+        "@OverflowClauseNativeFront"
+      ]
+    }
+  ]
+}
