@@ -1,0 +1,45 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "status_effects": [
+    {
+      "id": "level",
+      "class_name": "@StatusEffectTrainerLevelState",
+      "names": {
+        "english": "Level"
+      },
+      "stackable_names": {
+        "english": "Level {0}"
+      },
+      "card_tooltips": {
+        "english": "Training Level. Starts at 1. Every 10 x current Level EXP is spent to gain one Level; excess EXP is retained."
+      },
+      "character_tooltips": {
+        "english": "Earn 10 x current Level EXP to gain a level; spend that many EXP stacks, then check again. Each level increases Attack and Health by this unit's original stats."
+      },
+      "replacement_texts": {
+        "english": "<b>Level</b>"
+      },
+      "notifications": {
+        "english": "Level"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@TrainersLevelIcon"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersLevelIcon",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    }
+  ],
+  "atlas_icons": [
+    {
+      "id": "TrainersLevelIcon",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    }
+  ]
+}

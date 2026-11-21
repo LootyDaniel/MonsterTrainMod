@@ -1,0 +1,640 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "classes": [
+    {
+      "id": "TrainersClan",
+      "titles": {
+        "english": "Trainers"
+      },
+      "descriptions": {
+        "english": "Train your companions and build a powerful team."
+      },
+      "subclass_descriptions": {
+        "english": "A team of companions ready to be trained."
+      },
+      "icons": {
+        "small": "@BasicClanSmallIcon",
+        "medium": "@BasicClanMediumIcon",
+        "large": "@BasicClanLargeIcon",
+        "silhouette": "@BasicClanSilhouetteIcon"
+      },
+      "card_draft_icon": "@CardDraftIcon",
+      "class_select_character_displays": [
+        "@TrainersRedClassDisplayCharacterArt",
+        "@TrainersBlueClassDisplayCharacterArt"
+      ],
+      "card_style": "@BountyClanCardFrame",
+      "ui_color": {
+        "r": 0.94,
+        "g": 0.72,
+        "b": 0.25
+      },
+      "ui_color_dark": {
+        "r": 0.47,
+        "g": 0.3,
+        "b": 0.12
+      },
+      "ui_gradient": [
+        {
+          "time": 0.0,
+          "color": {
+            "r": 0.94,
+            "g": 0.72,
+            "b": 0.25
+          }
+        },
+        {
+          "time": 1.0,
+          "color": {
+            "r": 0.47,
+            "g": 0.3,
+            "b": 0.12
+          }
+        }
+      ],
+      "champions": [
+        {
+          "id": "TrainersRedChampion",
+          "card_data": "@TrainersRedChampionCard",
+          "starter_card": "@TrainersRedStarterCard",
+          "upgrade_tree": [
+            [
+              "@TrainersRedPathI",
+              "@TrainersRedPathII",
+              "@TrainersRedPathIII"
+            ]
+          ],
+          "icon": "@TrainersRedChampionIcon",
+          "locked_icon": "@TrainersRedChampionLockedIcon",
+          "portrait": "@TrainersRedChampionPortrait"
+        },
+        {
+          "id": "TrainersBlueChampion",
+          "card_data": "@TrainersBlueChampionCard",
+          "starter_card": "@TrainersBlueStarterCard",
+          "upgrade_tree": [
+            [
+              "@TrainersBluePathI",
+              "@TrainersBluePathII",
+              "@TrainersBluePathIII"
+            ]
+          ],
+          "icon": "@TrainersBlueChampionIcon",
+          "locked_icon": "@TrainersBlueChampionLockedIcon",
+          "portrait": "@TrainersBlueChampionPortrait"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "TrainersStarterCard",
+      "card_art": "@GuildMasterCardArt",
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "effects": [
+        "@SpawnTrainersStarter"
+      ],
+      "pools": [
+        "MegaPool"
+      ],
+      "names": {
+        "english": "Trainer's Assistant"
+      }
+    },
+    {
+      "id": "TrainersBannerCard",
+      "card_art": "@GuildMasterCardArt",
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "uncommon",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [
+        "UnitsAllBanner",
+        "UnitsTrainersBanner"
+      ],
+      "effects": [
+        "@SpawnTrainersBanner"
+      ],
+      "names": {
+        "english": "Practice Recruit"
+      }
+    },
+    {
+      "id": "TrainersVeteranAssistantCard",
+      "names": {
+        "english": "Veteran Assistant"
+      },
+      "card_art": "@GuildMasterCardArt",
+      "cost": 2,
+      "card_type": "monster",
+      "rarity": "uncommon",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "effects": [
+        "@SpawnTrainersVeteranAssistant"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "TrainersStarterCharacter",
+      "names": {
+        "english": "Trainer's Assistant"
+      },
+      "character_art": "@GuildMasterCharacterArt",
+      "size": 2,
+      "attack_damage": 5,
+      "health": 10,
+      "starting_status_effects": [
+        {
+          "status": "@level",
+          "count": 1
+        },
+        {
+          "status": "@evolve",
+          "count": 16
+        }
+      ],
+      "triggers": [
+        "@TrainersStarterReconcileSpawnTrigger",
+        "@TrainersStarterEarnEXP",
+        "@TrainersStarterReconcileCelebrateTrigger",
+        "@TrainersStarterEvolveCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersBannerCharacter",
+      "names": {
+        "english": "Practice Recruit"
+      },
+      "character_art": "@GuildMasterCharacterArt",
+      "size": 2,
+      "attack_damage": 10,
+      "health": 15,
+      "subtypes": [
+        "SubtypesData_BannerUnit"
+      ],
+      "starting_status_effects": [
+        {
+          "status": "@level",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersBannerReconcileSpawnTrigger",
+        "@TrainersBannerEarnEXP",
+        "@TrainersBannerReconcileCelebrateTrigger"
+      ]
+    },
+    {
+      "id": "TrainersVeteranAssistantCharacter",
+      "names": {
+        "english": "Veteran Assistant"
+      },
+      "character_art": "@GuildMasterCharacterArt",
+      "size": 2,
+      "attack_damage": 15,
+      "health": 30,
+      "starting_status_effects": [
+        {
+          "status": "@level",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersVeteranReconcileSpawnTrigger",
+        "@TrainersVeteranEarnEXP",
+        "@TrainersVeteranReconcileCelebrateTrigger"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "SpawnTrainersStarter",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersStarterCharacter",
+      "param_bool": false
+    },
+    {
+      "id": "SpawnTrainersBanner",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersBannerCharacter",
+      "param_bool": false
+    },
+    {
+      "id": "TrainersStarterEXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersStarterLevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersBannerEXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersBannerLevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "SpawnTrainersVeteranAssistant",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersVeteranAssistantCharacter",
+      "param_bool": false
+    },
+    {
+      "id": "TrainersStarterEvolveEffect",
+      "name": "@CardEffectTrainersEvolveOnCelebrate",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_card": "@TrainersVeteranAssistantCard"
+    },
+    {
+      "id": "TrainersVeteranEXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersVeteranLevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersStarterReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersStarterLevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersStarterReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersStarterLevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersBannerReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersBannerLevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersBannerReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersBannerLevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersVeteranReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersVeteranLevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersVeteranReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersVeteranLevelStatBonus",
+      "param_int": 1
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "TrainersStarterEarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "descriptions": {
+        "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
+      },
+      "effects": [
+        "@TrainersStarterEXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersBannerEarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "descriptions": {
+        "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
+      },
+      "effects": [
+        "@TrainersBannerEXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersStarterEvolveCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersStarterEvolveEffect"
+      ]
+    },
+    {
+      "id": "TrainersVeteranEarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "descriptions": {
+        "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
+      },
+      "effects": [
+        "@TrainersVeteranEXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersStarterReconcileSpawnTrigger",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersStarterReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersStarterReconcileCelebrateTrigger",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersStarterReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersBannerReconcileSpawnTrigger",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersBannerReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersBannerReconcileCelebrateTrigger",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersBannerReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersVeteranReconcileSpawnTrigger",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersVeteranReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersVeteranReconcileCelebrateTrigger",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersVeteranReconcileOnCelebrate"
+      ]
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "TrainersStarterLevelStatBonus",
+      "titles": {
+        "english": "Training Level Gain"
+      },
+      "bonus_damage": 5,
+      "bonus_hp": 10,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersBannerLevelStatBonus",
+      "titles": {
+        "english": "Training Level Gain"
+      },
+      "bonus_damage": 10,
+      "bonus_hp": 15,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersVeteranLevelStatBonus",
+      "titles": {
+        "english": "Training Level Gain"
+      },
+      "bonus_damage": 15,
+      "bonus_hp": 30,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit00",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit01",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 2,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit02",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 4,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit03",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 8,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit04",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 16,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit05",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 32,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit06",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 64,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit07",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 128,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit08",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 256,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit09",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 512,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit10",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 1024,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit11",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 2048,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit12",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 4096,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit13",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 8192,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit14",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 16384,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit15",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 32768,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit16",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 65536,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit17",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 131072,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit18",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 262144,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersEXPBit19",
+      "status_effect_upgrades": [
+        {
+          "status": "@exp",
+          "count": 524288,
+          "from_permanent_upgrade": true
+        }
+      ]
+    }
+  ]
+}

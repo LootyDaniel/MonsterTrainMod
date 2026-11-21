@@ -1,0 +1,79 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "map_nodes": [
+    {
+      "id": "RewardNodeUnitPackTrainers",
+      "type": "reward",
+      "map_icon": "@TrainersBannerPlaceholderSprite",
+      "minimap_icon": "@TrainersBannerPlaceholderSprite",
+      "prefab": "@TrainersBannerMapIcon",
+      "titles": {
+        "english": "Trainers Banner"
+      },
+      "descriptions": {
+        "english": "Recruit a Trainers unit."
+      },
+      "pools": [
+        "RandomChosenMainClassUnit",
+        "RandomChosenSubClassUnit"
+      ],
+      "is_banner_node": true,
+      "extensions": [
+        {
+          "reward": {
+            "class": "@TrainersClan",
+            "rewards": [
+              "@TrainersBannerReward"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "rewards": [
+    {
+      "id": "TrainersBannerReward",
+      "type": "draft",
+      "costs": [
+        100
+      ],
+      "extensions": [
+        {
+          "draft": {
+            "draft_pool": "@UnitsTrainersBanner",
+            "class_type": "main|subclass|nonclass",
+            "draft_options_count": 1,
+            "rarity_floor": "uncommon",
+            "ignore_relic_rarity_override": true,
+            "is_service_merchant_reward": true
+          }
+        }
+      ]
+    }
+  ],
+  "card_pools": [
+    {
+      "id": "UnitsTrainersBanner"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "TrainersBannerMapIcon",
+      "type": "map_node_icon",
+      "extensions": {
+        "map_node_icon": {
+          "disabled_sprite": "@TrainersBannerPlaceholderSprite",
+          "enabled_sprite": "@TrainersBannerPlaceholderSprite",
+          "frozen_sprite": "@TrainersBannerPlaceholderSprite",
+          "visited_sprite_disabled": "@TrainersBannerPlaceholderSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersBannerPlaceholderSprite",
+      "path": "textures/icons/OrcClanLargeIcon.png"
+    }
+  ]
+}

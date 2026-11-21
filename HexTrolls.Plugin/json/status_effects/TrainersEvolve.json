@@ -1,0 +1,45 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "status_effects": [
+    {
+      "id": "evolve",
+      "class_name": "@StatusEffectTrainerEvolveState",
+      "names": {
+        "english": "Evolve"
+      },
+      "stackable_names": {
+        "english": "Evolve {0}"
+      },
+      "card_tooltips": {
+        "english": "Celebrate: At Level equal to or greater than Evolve stacks, replace this card with its next form. Existing card upgrades are carried over."
+      },
+      "character_tooltips": {
+        "english": "Celebrate: At Level 16 or higher, permanently evolve into Veteran Assistant. Carries over existing card upgrades."
+      },
+      "replacement_texts": {
+        "english": "<b>Evolve</b>"
+      },
+      "notifications": {
+        "english": "Evolve!"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@EvolveIcon"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "EvolveIcon",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    }
+  ],
+  "atlas_icons": [
+    {
+      "id": "EvolveIcon",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    }
+  ]
+}

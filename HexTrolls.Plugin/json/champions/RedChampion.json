@@ -1,0 +1,157 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "TrainersRedChampionCard",
+      "names": {
+        "english": "Red"
+      },
+      "card_art": "@TrainersRedCardArt",
+      "cost": 0,
+      "card_type": "monster",
+      "rarity": "champion",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "effects": [
+        "@SpawnTrainersRedChampion"
+      ]
+    },
+    {
+      "id": "TrainersRedStarterCard",
+      "names": {
+        "english": "Red's Assistant"
+      },
+      "card_art": "@GuildMasterCardArt",
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "effects": [
+        "@SpawnTrainersStarter"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "TrainersRedChampionCharacter",
+      "names": {
+        "english": "Red"
+      },
+      "character_art": "@TrainersRedCharacterArt",
+      "size": 2,
+      "health": 20,
+      "attack_damage": 10,
+      "subtypes": [
+        "SubtypesData_Champion_83f21cbe-9d9b-4566-a2c3-ca559ab8ff34"
+      ]
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "TrainersRedPathI",
+      "titles": {
+        "english": "Red Training I"
+      },
+      "bonus_damage": 10,
+      "bonus_hp": 15
+    },
+    {
+      "id": "TrainersRedPathII",
+      "titles": {
+        "english": "Red Training II"
+      },
+      "bonus_damage": 25,
+      "bonus_hp": 35
+    },
+    {
+      "id": "TrainersRedPathIII",
+      "titles": {
+        "english": "Red Training III"
+      },
+      "bonus_damage": 45,
+      "bonus_hp": 70
+    }
+  ],
+  "effects": [
+    {
+      "id": "SpawnTrainersRedChampion",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersRedChampionCharacter"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersRedCharacterSprite",
+      "path": "textures/character_art/RedChampion.png"
+    },
+    {
+      "id": "TrainersRedChampionPortrait",
+      "path": "textures/character_art/RedChampion.png"
+    },
+    {
+      "id": "TrainersRedChampionIcon",
+      "path": "textures/character_art/RedChampion.png"
+    },
+    {
+      "id": "TrainersRedChampionLockedIcon",
+      "path": "textures/character_art/RedChampion.png"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "TrainersRedCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersRedCharacterSprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersRedCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersRedCharacterSprite",
+          "transform": {
+            "position": {
+              "x": 0,
+              "y": 1.25,
+              "z": 0
+            },
+            "scale": {
+              "x": 4,
+              "y": 4,
+              "z": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "TrainersRedClassDisplayCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersRedCharacterSprite",
+          "transform": {
+            "position": {
+              "x": 2,
+              "y": 1.4,
+              "z": 0
+            },
+            "scale": {
+              "x": 2.25,
+              "y": 2.25,
+              "z": 1
+            }
+          }
+        }
+      }
+    }
+  ]
+}

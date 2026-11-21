@@ -1,0 +1,45 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "status_effects": [
+    {
+      "id": "exp",
+      "class_name": "@StatusEffectTrainerExpState",
+      "names": {
+        "english": "EXP"
+      },
+      "stackable_names": {
+        "english": "EXP {0}"
+      },
+      "card_tooltips": {
+        "english": "Accumulated EXP. Enemy deaths on this floor grant (Max HP + Attack), shared among living allies. At Level N, spend 10 x N EXP to level up."
+      },
+      "character_tooltips": {
+        "english": "Gain EXP from enemy deaths on this floor. At Level N, spend 10 x N EXP to gain a level. Excess EXP is kept; multiple levels can be gained at once."
+      },
+      "replacement_texts": {
+        "english": "<b>EXP</b>"
+      },
+      "notifications": {
+        "english": "EXP"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@TrainersEXPStatusIcon"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersEXPStatusIcon",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    }
+  ],
+  "atlas_icons": [
+    {
+      "id": "TrainersEXPStatusIcon",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    }
+  ]
+}

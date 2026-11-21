@@ -59,6 +59,7 @@ namespace HexTrolls.Plugin
 
                         //ClanBanners
                         "json/nodes/BountyClanBanner.json",
+                        "json/nodes/TrainersClanBanner.json",
 
                         //ClanCardFrames
                         "json/clan/BountyClanCardFrame.json",
@@ -69,6 +70,7 @@ namespace HexTrolls.Plugin
 
                         //Clans
                         "json/clan/BountyClan.json",
+                        "json/clan/TrainersClan.json",
 
                         //Keywords
                         "json/clan/LunarmancerKeywords.json",
@@ -78,6 +80,9 @@ namespace HexTrolls.Plugin
                         "json/status_effects/Mark.json",
                         "json/status_effects/Shockwave.json",
                         "json/status_effects/Mercenary.json",
+                        "json/status_effects/TrainersLevel.json",
+                        "json/status_effects/TrainersEXP.json",
+                        "json/status_effects/TrainersEvolve.json",
 
                         //triggers
                         "json/triggers/MarkedTrigger.json",
@@ -90,7 +95,6 @@ namespace HexTrolls.Plugin
                         "json/spells/CallForViolence.json",
                         "json/spells/SpikeOfProscription.json",
                         "json/spells/RecruitSpell.json",
-                        "json/spells/LibraryOfScrolls.json",
 
                         //equipment
                         "json/equipment/HuntersBow.json",
@@ -118,7 +122,9 @@ namespace HexTrolls.Plugin
 
                         //Champions
                         "json/champions/GuildMasterChampion.json",
-                        "json/champions/MerchantChampion.json"
+                        "json/champions/MerchantChampion.json",
+                        "json/champions/RedChampion.json",
+                        "json/champions/BlueChampion.json"
 
                     );
                 }
