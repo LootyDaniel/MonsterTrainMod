@@ -1,0 +1,107 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Conductor/refs/heads/main/schemas/hud.json",
+  "huds": [
+    {
+      "id": "TrainersRosterHud01",
+      "name": "@TrainersRosterSlotHud",
+      "type": "small",
+      "background": "@BasicClanLargeIcon",
+      "icons": [
+        "@BasicClanSmallIcon"
+      ],
+      "class": "@TrainersClan",
+      "display": "run",
+      "tooltip_titles": {
+        "english": "Trainers Roster Slot 1"
+      },
+      "tooltip_texts": {
+        "english": "Click between battles to assign a unit card from your deck. Assigned units gain Deployable."
+      }
+    },
+    {
+      "id": "TrainersRosterHud02",
+      "name": "@TrainersRosterSlotHud",
+      "type": "small",
+      "background": "@BasicClanLargeIcon",
+      "icons": [
+        "@BasicClanSmallIcon"
+      ],
+      "class": "@TrainersClan",
+      "display": "run",
+      "tooltip_titles": {
+        "english": "Trainers Roster Slot 2"
+      },
+      "tooltip_texts": {
+        "english": "Click between battles to assign a unit card from your deck. Assigned units gain Deployable."
+      }
+    },
+    {
+      "id": "TrainersRosterHud03",
+      "name": "@TrainersRosterSlotHud",
+      "type": "small",
+      "background": "@BasicClanLargeIcon",
+      "icons": [
+        "@BasicClanSmallIcon"
+      ],
+      "class": "@TrainersClan",
+      "display": "run",
+      "tooltip_titles": {
+        "english": "Trainers Roster Slot 3"
+      },
+      "tooltip_texts": {
+        "english": "Click between battles to assign a unit card from your deck. Assigned units gain Deployable."
+      }
+    },
+    {
+      "id": "TrainersRosterHud04",
+      "name": "@TrainersRosterSlotHud",
+      "type": "small",
+      "background": "@BasicClanLargeIcon",
+      "icons": [
+        "@BasicClanSmallIcon"
+      ],
+      "class": "@TrainersClan",
+      "display": "run",
+      "tooltip_titles": {
+        "english": "Trainers Roster Slot 4"
+      },
+      "tooltip_texts": {
+        "english": "Click between battles to assign a unit card from your deck. Assigned units gain Deployable."
+      }
+    },
+    {
+      "id": "TrainersRosterHud05",
+      "name": "@TrainersRosterSlotHud",
+      "type": "small",
+      "background": "@BasicClanLargeIcon",
+      "icons": [
+        "@BasicClanSmallIcon"
+      ],
+      "class": "@TrainersClan",
+      "display": "run",
+      "tooltip_titles": {
+        "english": "Trainers Roster Slot 5"
+      },
+      "tooltip_texts": {
+        "english": "Click between battles to assign a unit card from your deck. Assigned units gain Deployable."
+      }
+    },
+    {
+      "id": "TrainersRosterHud06",
+      "name": "@TrainersRosterSlotHud",
+      "type": "small",
+      "background": "@BasicClanLargeIcon",
+      "icons": [
+        "@BasicClanSmallIcon"
+      ],
+      "class": "@TrainersClan",
+      "display": "run",
+      "tooltip_titles": {
+        "english": "Trainers Roster Slot 6"
+      },
+      "tooltip_texts": {
+        "english": "Click between battles to assign a unit card from your deck. Assigned units gain Deployable."
+      }
+    }
+  ]
+}

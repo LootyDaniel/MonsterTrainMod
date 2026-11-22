@@ -41,6 +41,7 @@ namespace HexTrolls.Plugin
         public void Awake()
         {
             Logger = base.Logger;
+           
 
             var builder = Railhead.GetBuilder();
             builder.Configure(
@@ -67,6 +68,8 @@ namespace HexTrolls.Plugin
                         //mechanics
                         //"json/clan/OrcClanCustomMechanic.json",
                         "json/clan/OrcClanCustomMechanic2.json",
+                        "json/clan/TrainersDeckDeploy.json",
+                        "json/clan/TrainersRosterConductorHUD.json",
 
                         //Clans
                         "json/clan/BountyClan.json",
@@ -83,6 +86,7 @@ namespace HexTrolls.Plugin
                         "json/status_effects/TrainersLevel.json",
                         "json/status_effects/TrainersEXP.json",
                         "json/status_effects/TrainersEvolve.json",
+                        "json/status_effects/TrainersRosterSlot.json",
 
                         //triggers
                         "json/triggers/MarkedTrigger.json",
@@ -111,6 +115,7 @@ namespace HexTrolls.Plugin
                         "json/units/BluntTrap.json",
                         "json/units/StunTrap.json",
                         "json/units/AttackTrap.json",
+                        "json/units/TrainersGen1Pokemon.json",
 
                         //upgrades
                         "json/upgrades/Tremorstone.json",

@@ -1,0 +1,95 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "traits": [
+    {
+      "id": "TrainersRosterDeployTrait",
+      "name": "CardTraitDrawInDeploymentPhase"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "TrainersRosterSlot01",
+      "hide_icon_on_card": true,
+      "trait_upgrades": [
+        "@TrainersRosterDeployTrait"
+      ],
+      "status_effect_upgrades": [
+        {
+          "status": "@roster_slot",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersRosterSlot02",
+      "hide_icon_on_card": true,
+      "trait_upgrades": [
+        "@TrainersRosterDeployTrait"
+      ],
+      "status_effect_upgrades": [
+        {
+          "status": "@roster_slot",
+          "count": 2,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersRosterSlot03",
+      "hide_icon_on_card": true,
+      "trait_upgrades": [
+        "@TrainersRosterDeployTrait"
+      ],
+      "status_effect_upgrades": [
+        {
+          "status": "@roster_slot",
+          "count": 3,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersRosterSlot04",
+      "hide_icon_on_card": true,
+      "trait_upgrades": [
+        "@TrainersRosterDeployTrait"
+      ],
+      "status_effect_upgrades": [
+        {
+          "status": "@roster_slot",
+          "count": 4,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersRosterSlot05",
+      "hide_icon_on_card": true,
+      "trait_upgrades": [
+        "@TrainersRosterDeployTrait"
+      ],
+      "status_effect_upgrades": [
+        {
+          "status": "@roster_slot",
+          "count": 5,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersRosterSlot06",
+      "hide_icon_on_card": true,
+      "trait_upgrades": [
+        "@TrainersRosterDeployTrait"
+      ],
+      "status_effect_upgrades": [
+        {
+          "status": "@roster_slot",
+          "count": 6,
+          "from_permanent_upgrade": true
+        }
+      ]
+    }
+  ]
+}

@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TrainworksReloaded.Base;
+using TrainworksReloaded.Core;
+using TrainworksReloaded.Core.Interfaces;
 
 namespace HexTrolls.Plugin.code
 {
@@ -27,14 +30,16 @@ namespace HexTrolls.Plugin.code
             ICoreGameManagers managers)
         {
             CharacterState unit = parameters != null ? parameters.selfTarget : null;
-            return unit != null && !unit.IsDestroyed && unit.IsAlive && IsReady(unit);
+            return unit != null && managers != null &&
+                managers.GetSaveManager() != null &&
+                !managers.GetSaveManager().PreviewMode;
         }
 
         public override IEnumerator ApplyEffect(CardEffectState effect, CardEffectParams parameters,
             ICoreGameManagers managers, ISystemManagers systems)
         {
             CharacterState unit = parameters != null ? parameters.selfTarget : null;
-            if (unit == null || unit.IsDestroyed || !unit.IsAlive || !IsReady(unit))
+            if (unit == null)
                 yield break;
 
             var save = managers != null ? managers.GetSaveManager() : null;
@@ -91,6 +96,29 @@ namespace HexTrolls.Plugin.code
                 yield break;
             }
 
+            int requirement = unit.GetStatusEffectStacks(EvolveId);
+            if (requirement <= 0)
+            {
+                // Trainer's Assistant is the only supported source in this first
+                // implementation, and its configured Evolve requirement is 16.
+                requirement = 16;
+                Warn("Evolve status was unavailable during Celebrate; using the configured Evolve 16 requirement.");
+            }
+
+            int savedLevel;
+            if (!TryReadPermanentLevel(oldCard, out savedLevel))
+            {
+                Warn("Could not read saved Level for " + oldCard.GetID() +
+                     "; evolution cancelled instead of using the stale spawned unit status.");
+                yield break;
+            }
+            Info("Celebrate: card=" + oldCard.GetID() +
+                 ", saved Level=" + savedLevel +
+                 ", live Level=" + unit.GetStatusEffectStacks(LevelId) +
+                 ", Evolve requirement=" + requirement);
+            if (savedLevel < requirement)
+                yield break;
+
             // A copied upgrade state retains its values (including shop upgrades).
             // Copy only the saved card's permanent upgrades, not temporary combat buffs.
             var carriedModifiers = new CardStateModifiers();
@@ -134,11 +162,47 @@ namespace HexTrolls.Plugin.code
             }
         }
 
-        private static bool IsReady(CharacterState unit)
+        // Same progression definition as CardEffectTrainersGainExp:
+        // Level = 1 + count of persistent stat bonus upgrades. The base marker
+        // contributes Level 1 to the CARD DISPLAY, not another level-up.
+        private static bool TryReadPermanentLevel(CardState card, out int level)
         {
-            int level = unit.GetStatusEffectStacks(LevelId);
-            int requirement = unit.GetStatusEffectStacks(EvolveId);
-            return level > 0 && requirement > 0 && level >= requirement;
+            level = 1;
+            if (card == null || card.GetCardStateModifiers() == null)
+                return false;
+            var upgrades = card.GetCardStateModifiers().GetCardUpgrades();
+            if (upgrades == null)
+                return false;
+
+            var registry = Railend.GetContainer().GetInstance<IRegister<CardUpgradeData>>();
+            if (registry == null)
+                return false;
+
+            var levelIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            string[] names = {
+                "TrainersStarterLevelStatBonus",
+                "TrainersBannerLevelStatBonus",
+                "TrainersVeteranLevelStatBonus"
+            };
+            foreach (string name in names)
+            {
+                CardUpgradeData definition;
+                if (!registry.TryGetValue(MyPluginInfo.PLUGIN_GUID + "-Upgrade-" + name,
+                    out definition) || definition == null)
+                    return false;
+                var probe = new CardUpgradeState();
+                probe.Setup(definition, false, false);
+                string id = probe.GetCardUpgradeDataId();
+                if (string.IsNullOrEmpty(id))
+                    return false;
+                levelIds.Add(id);
+            }
+            foreach (CardUpgradeState saved in upgrades)
+            {
+                if (saved != null && levelIds.Contains(saved.GetCardUpgradeDataId()))
+                    level++;
+            }
+            return true;
         }
 
         private static CardData FindRegisteredCard(AllGameData data, string shortName)
@@ -152,6 +216,11 @@ namespace HexTrolls.Plugin.code
                 c.name != null &&
                 (c.name == shortName || c.name.EndsWith("-Card-" + shortName,
                     StringComparison.OrdinalIgnoreCase)));
+        }
+
+        private static void Info(string message)
+        {
+            global::HexTrolls.Plugin.Plugin.Logger.LogInfo("[TrainersEvolve] " + message);
         }
 
         private static void Warn(string message)

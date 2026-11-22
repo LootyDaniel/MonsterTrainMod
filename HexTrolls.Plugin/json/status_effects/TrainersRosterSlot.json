@@ -1,0 +1,45 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "status_effects": [
+    {
+      "id": "roster_slot",
+      "class_name": "@StatusEffectTrainersRosterSlotState",
+      "names": {
+        "english": "Roster Slot"
+      },
+      "stackable_names": {
+        "english": "Slot {0}"
+      },
+      "card_tooltips": {
+        "english": "This PocketMon is assigned to a Trainers roster slot. The stack count is its slot number."
+      },
+      "character_tooltips": {
+        "english": "Assigned to the Trainers roster. The displayed stack count is its roster slot (1\u20136). This status grants no combat bonuses."
+      },
+      "replacement_texts": {
+        "english": "<b>Roster Slot</b>"
+      },
+      "notifications": {
+        "english": "Roster Slot"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@TrainersRosterSlotIcon"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersRosterSlotIcon",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    }
+  ],
+  "atlas_icons": [
+    {
+      "id": "TrainersRosterSlotIcon",
+      "path": "textures/icons/OrcCustomMechanic.png"
+    }
+  ]
+}

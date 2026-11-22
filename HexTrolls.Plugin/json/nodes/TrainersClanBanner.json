@@ -11,13 +11,10 @@
         "english": "Trainers Banner"
       },
       "descriptions": {
-        "english": "Recruit a Trainers unit."
+        "english": "Unused compatibility node (Trainers has no banner recruits)."
       },
-      "pools": [
-        "RandomChosenMainClassUnit",
-        "RandomChosenSubClassUnit"
-      ],
-      "is_banner_node": true,
+      "pools": [],
+      "is_banner_node": false,
       "extensions": [
         {
           "reward": {

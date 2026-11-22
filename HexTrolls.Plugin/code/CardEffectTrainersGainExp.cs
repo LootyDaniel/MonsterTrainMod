@@ -83,6 +83,29 @@ namespace HexTrolls.Plugin.code
                 yield break;
             }
 
+            // Migrate existing run cards (created before TrainersLevelBaseMarker
+            // was added) and verify all new cards have their one base Level stack.
+            // The marker has no stats: 1 Level comes from this marker, and
+            // subsequent Levels come from the permanent stat upgrades.
+            string baseLevelId = catalog.RuntimeIds["TrainersLevelBaseMarker"];
+            if (CountUpgrade(savedUpgrades, baseLevelId) == 0)
+            {
+                var baseMarker = new CardUpgradeState();
+                baseMarker.Setup(catalog.Templates["TrainersLevelBaseMarker"], false, false);
+                modifiers.AddUpgrade(baseMarker);
+                savedUpgrades = GetSavedUpgrades(modifiers);
+                if (CountUpgrade(savedUpgrades, baseLevelId) != 1)
+                {
+                    Warn("Could not persist base Level 1 marker. Cancelling reconciliation.");
+                    yield break;
+                }
+                Info("Migrated a saved Trainers card to the single permanent Level status.");
+            }
+            else if (CountUpgrade(savedUpgrades, baseLevelId) > 1)
+            {
+                Warn("Multiple base Level markers on one card. This run may have duplicate Level status displays.");
+            }
+
             // CARD is authoritative. A character's initial Level 1 and its
             // permanent Level bonuses may not be combined in the UI; do not
             // make leveling decisions from those visible status stacks.
@@ -251,6 +274,8 @@ namespace HexTrolls.Plugin.code
                 return false;
             }
 
+            if (!RegisterRuntimeId(registry, catalog, "TrainersLevelBaseMarker"))
+                return false;
             string[] levelNames = {
                 "TrainersStarterLevelStatBonus",
                 "TrainersBannerLevelStatBonus",

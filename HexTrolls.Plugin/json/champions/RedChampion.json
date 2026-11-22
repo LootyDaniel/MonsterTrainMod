@@ -45,7 +45,8 @@
       "health": 20,
       "attack_damage": 10,
       "subtypes": [
-        "SubtypesData_Champion_83f21cbe-9d9b-4566-a2c3-ca559ab8ff34"
+        "SubtypesData_Champion_83f21cbe-9d9b-4566-a2c3-ca559ab8ff34",
+        "@TrainersPocketMon"
       ]
     }
   ],

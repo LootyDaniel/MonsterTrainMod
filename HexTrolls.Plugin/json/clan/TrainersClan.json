@@ -104,7 +104,10 @@
       ],
       "names": {
         "english": "Trainer's Assistant"
-      }
+      },
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ]
     },
     {
       "id": "TrainersBannerCard",
@@ -124,7 +127,10 @@
       ],
       "names": {
         "english": "Practice Recruit"
-      }
+      },
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ]
     },
     {
       "id": "TrainersVeteranAssistantCard",
@@ -155,10 +161,6 @@
       "health": 10,
       "starting_status_effects": [
         {
-          "status": "@level",
-          "count": 1
-        },
-        {
           "status": "@evolve",
           "count": 16
         }
@@ -168,6 +170,9 @@
         "@TrainersStarterEarnEXP",
         "@TrainersStarterReconcileCelebrateTrigger",
         "@TrainersStarterEvolveCelebrate"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
       ]
     },
     {
@@ -180,14 +185,10 @@
       "attack_damage": 10,
       "health": 15,
       "subtypes": [
-        "SubtypesData_BannerUnit"
+        "SubtypesData_BannerUnit",
+        "@TrainersPocketMon"
       ],
-      "starting_status_effects": [
-        {
-          "status": "@level",
-          "count": 1
-        }
-      ],
+      "starting_status_effects": [],
       "triggers": [
         "@TrainersBannerReconcileSpawnTrigger",
         "@TrainersBannerEarnEXP",
@@ -203,16 +204,14 @@
       "size": 2,
       "attack_damage": 15,
       "health": 30,
-      "starting_status_effects": [
-        {
-          "status": "@level",
-          "count": 1
-        }
-      ],
+      "starting_status_effects": [],
       "triggers": [
         "@TrainersVeteranReconcileSpawnTrigger",
         "@TrainersVeteranEarnEXP",
         "@TrainersVeteranReconcileCelebrateTrigger"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
       ]
     }
   ],
@@ -391,6 +390,21 @@
     }
   ],
   "upgrades": [
+    {
+      "id": "TrainersLevelBaseMarker",
+      "titles": {
+        "english": "Level"
+      },
+      "hide_icon_on_card": true,
+      "is_unique": true,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
     {
       "id": "TrainersStarterLevelStatBonus",
       "titles": {
@@ -635,6 +649,14 @@
           "from_permanent_upgrade": true
         }
       ]
+    }
+  ],
+  "subtypes": [
+    {
+      "id": "TrainersPocketMon",
+      "names": {
+        "english": "PocketMon"
+      }
     }
   ]
 }
