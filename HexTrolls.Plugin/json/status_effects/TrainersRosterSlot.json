@@ -14,7 +14,7 @@
         "english": "This PocketMon is assigned to a Trainers roster slot. The stack count is its slot number."
       },
       "character_tooltips": {
-        "english": "Assigned to the Trainers roster. The displayed stack count is its roster slot (1\u20136). This status grants no combat bonuses."
+        "english": "Assigned to the Trainers roster. The displayed stack count is its roster slot (1–6). This status grants no combat bonuses."
       },
       "replacement_texts": {
         "english": "<b>Roster Slot</b>"

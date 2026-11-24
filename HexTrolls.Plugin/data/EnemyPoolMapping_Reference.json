@@ -1,0 +1,129 @@
+{
+  "source_workbook": "MonsterTrain2_Enemy_PocketMon_Replacement_Planner(1).xlsx",
+  "explicit_enemy_assignments": {
+    "Cowering Sycophant": "Ring 1 Large",
+    "Fallen Champion": "Ring 1 Large",
+    "Forsaken": "Ring 1 Small",
+    "Lurking Miscreant": "Ring 1 Small",
+    "Ominous Acolyte": "Ring 1 Small",
+    "Energizing Flautist": "Ring 2 Small",
+    "Flagellant": "Ring 2 Large",
+    "Savage Spearman": "Ring 2 Small",
+    "Sloven Knight": "Ring 2 Large",
+    "Chosen Acolyte": "Ring 3 Small",
+    "Chosen Flagellant": "Ring 3 Small",
+    "Chosen Shieldbearer": "Ring 3 Large",
+    "Misshapen Fiend": "Ring 3 Small"
+  },
+  "explicit_keep_enemies": [
+    "Collector",
+    "Skull Collector",
+    "Penitent Prayerstone"
+  ],
+  "defined_pool_forms_original_spelling": {
+    "Ring 1 Small": [
+      "DragonMoth",
+      "Vampirant"
+    ],
+    "Ring 1 Large": [
+      "Umbrabeak"
+    ],
+    "Ring 2 Small": [
+      "Manshrimp",
+      "BloodWorm"
+    ],
+    "Ring 2 Large": [
+      "DragonMoth2",
+      "Vampirant2"
+    ],
+    "Ring 3 Small": [
+      "Hyena",
+      "Cuttlfish"
+    ],
+    "Ring 3 Large": [
+      "Umbrabeak2"
+    ],
+    "Ring 4 Small": [
+      "Manshrimp2",
+      "Hyena2"
+    ],
+    "Ring 4 Large": [
+      "Fireary",
+      "Leafshrew"
+    ],
+    "Ring 5 Small": [
+      "Jourmancoil"
+    ],
+    "Ring 5 Large": [
+      "Leafshrew2"
+    ],
+    "Ring 6 Small": [
+      "Magmoth"
+    ],
+    "Ring 6 Large": [
+      "Magmoth2"
+    ],
+    "Ring 7 Small": [
+      "Jourmancoil2"
+    ],
+    "Ring 7 Large": [
+      "Chilload"
+    ]
+  },
+  "resolved_pool_forms": {
+    "Ring 1 Small": [
+      "DragonMoth1",
+      "Vampirant1"
+    ],
+    "Ring 1 Large": [
+      "Umbrabeak1"
+    ],
+    "Ring 2 Small": [
+      "Manshrimp1",
+      "BloodWorm1"
+    ],
+    "Ring 2 Large": [
+      "DragonMoth2",
+      "Vampirant2"
+    ],
+    "Ring 3 Small": [
+      "Hyena1",
+      "Cuttlfish1"
+    ],
+    "Ring 3 Large": [
+      "Umbrabeak2"
+    ],
+    "Ring 4 Small": [
+      "Manshrimp2",
+      "Hyena2"
+    ],
+    "Ring 4 Large": [
+      "Fireary1",
+      "Leafshrew1"
+    ],
+    "Ring 5 Small": [
+      "Jourmancoil1"
+    ],
+    "Ring 5 Large": [
+      "Leafshrew2"
+    ],
+    "Ring 6 Small": [
+      "Magmoth1"
+    ],
+    "Ring 6 Large": [
+      "Magmoth2"
+    ],
+    "Ring 7 Small": [
+      "Jourmancoil2"
+    ],
+    "Ring 7 Large": [
+      "Chilload1"
+    ]
+  },
+  "unsafe_excluded_forms": [
+    "Cuttlfish1",
+    "Cuttlfish2",
+    "Cuttlfish3"
+  ],
+  "notes": "Only enemies assigned in workbook are replaced. Other enemies unchanged, including all unmapped Ring4+ and Soul Savior enemies. Mapped Fallen Champion still respects native boss flags. Mapping.json is for reference and is NOT loaded at game runtime."
+}

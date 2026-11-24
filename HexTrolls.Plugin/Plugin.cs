@@ -41,7 +41,8 @@ namespace HexTrolls.Plugin
         public void Awake()
         {
             Logger = base.Logger;
-           
+
+            gameObject.AddComponent<HexTrolls.Plugin.code.TrainersRosterProtocolBehaviour>();
 
             var builder = Railhead.GetBuilder();
             builder.Configure(
@@ -115,7 +116,7 @@ namespace HexTrolls.Plugin
                         "json/units/BluntTrap.json",
                         "json/units/StunTrap.json",
                         "json/units/AttackTrap.json",
-                        "json/units/TrainersGen1Pokemon.json",
+                        "json/units/TrainersPocketMon39.json",
 
                         //upgrades
                         "json/upgrades/Tremorstone.json",
@@ -124,6 +125,8 @@ namespace HexTrolls.Plugin
                         //relics
                         "json/relics/OverflowClause.json",
                         "json/relics/LibraryOfScrolls.json",
+                        "json/relics/TrainersRosterProtocol.json",
+                        "json/relics/TrainersWildPocketMonInvasion.json",
 
                         //Champions
                         "json/champions/GuildMasterChampion.json",

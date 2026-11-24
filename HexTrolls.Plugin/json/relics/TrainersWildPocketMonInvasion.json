@@ -1,0 +1,30 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "relics": [
+    {
+      "id": "TrainersWildPocketMonInvasion",
+      "type": "collectable",
+      "names": {
+        "english": "Wild PocketMon Invasion"
+      },
+      "descriptions": {
+        "english": "Replace only designated regular enemies with a random <b>PocketMon</b> from their assigned pool. Unmapped enemies, bosses and special enemies remain unchanged."
+      },
+      "lore_style": "herzal",
+      "relic_effects": [],
+      "icon": "@BasicClanMediumIcon",
+      "icon_small": "@BasicClanSmallIcon",
+      "extensions": [
+        {
+          "collectable": {
+            "class": "@TrainersClan",
+            "pools": [
+              "MegaRelicPool"
+            ],
+            "rarity": "rare"
+          }
+        }
+      ]
+    }
+  ]
+}

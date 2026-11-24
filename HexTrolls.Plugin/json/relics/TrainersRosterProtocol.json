@@ -1,0 +1,30 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "relics": [
+    {
+      "id": "TrainersRosterProtocol",
+      "type": "collectable",
+      "names": {
+        "english": "Trainer's Roster Protocol"
+      },
+      "descriptions": {
+        "english": "At the start of each battle, silently Consume unassigned unit cards before Deployment. This does not trigger Consume effects."
+      },
+      "lore_style": "herzal",
+      "relic_effects": [],
+      "icon": "@BasicClanMediumIcon",
+      "icon_small": "@BasicClanSmallIcon",
+      "extensions": [
+        {
+          "collectable": {
+            "class": "@TrainersClan",
+            "pools": [
+              "MegaRelicPool"
+            ],
+            "rarity": "uncommon"
+          }
+        }
+      ]
+    }
+  ]
+}

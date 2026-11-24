@@ -14,7 +14,7 @@
         "english": "Celebrate: At Level equal to or greater than Evolve stacks, replace this card with its next form. Existing card upgrades are carried over."
       },
       "character_tooltips": {
-        "english": "Celebrate: At Level 16 or higher, permanently evolve into Veteran Assistant. Carries over existing card upgrades."
+        "english": "Celebrate: At Level equal to or above this Evolve threshold, replace the card with its configured next form and preserve permanent upgrades."
       },
       "replacement_texts": {
         "english": "<b>Evolve</b>"

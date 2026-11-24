@@ -83,6 +83,9 @@
           "locked_icon": "@TrainersBlueChampionLockedIcon",
           "portrait": "@TrainersBlueChampionPortrait"
         }
+      ],
+      "starter_relics": [
+        "@TrainersRosterProtocol"
       ]
     }
   ],
@@ -120,7 +123,7 @@
       "targetless": false,
       "pools": [
         "UnitsAllBanner",
-        "UnitsTrainersBanner"
+        "@UnitsTrainersBanner"
       ],
       "effects": [
         "@SpawnTrainersBanner"

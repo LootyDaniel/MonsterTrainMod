@@ -1,6 +1,6 @@
 // TrainersPocketMonCatalog.cs
 // Optional catalog for code that needs to enumerate the 39 new cards.
-// Data-driven evolution and actual effects are in TrainersGen1Pokemon.json.
+// Evolutions and base unit data are in TrainersPocketMon39.json; custom abilities require runtime code.
 // Safe to add to your existing project: no Harmony hooks, no asset registrations.
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ namespace HexTrolls.Plugin.code
     {
         public const string ClanId = "TrainersClan";
         public const string SubtypeId = "TrainersPocketMon";
-        public const string CardPoolId = "TrainersPokemonPool";
+        public const string CardPoolId = "TrainersPocketMonPool";
         public sealed class Form
         {
             public readonly string Line;

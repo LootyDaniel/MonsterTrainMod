@@ -1,0 +1,1091 @@
+{
+  "schema_version": "2026-11-24",
+  "notes": "AUTHORITATIVE design definitions. This file must not be passed to AddMergedJsonFile. Custom abilities, statuses, floor effects, and conditional triggers need matching registered runtime C# to execute. Unit cards currently describe them; see RUNTIME_STATUS.md.",
+  "forms": [
+    {
+      "line": "Cuttlfish",
+      "stage": 1,
+      "attack": 0,
+      "health": 6,
+      "cost": 3,
+      "size": 1,
+      "starting_armor": 0,
+      "native_statuses": [
+        [
+          "conduit",
+          3
+        ]
+      ],
+      "ability": null,
+      "rule_events": [],
+      "description": "Conduit 3.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Cuttlfish",
+      "stage": 2,
+      "attack": 1,
+      "health": 7,
+      "cost": 3,
+      "size": 1,
+      "starting_armor": 0,
+      "native_statuses": [
+        [
+          "conduit",
+          10
+        ]
+      ],
+      "ability": {
+        "name": "Silence",
+        "cooldown": 2,
+        "target": "front_enemy",
+        "description": "Silence the selected target for 2 turns.",
+        "effects": []
+      },
+      "rule_events": [],
+      "description": "Conduit 10. Activated (Cooldown 2): Silence a target for 2 turns.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Cuttlfish",
+      "stage": 3,
+      "attack": 1,
+      "health": 8,
+      "cost": 3,
+      "size": 1,
+      "starting_armor": 0,
+      "native_statuses": [
+        [
+          "conduit",
+          25
+        ]
+      ],
+      "ability": {
+        "name": "Silence",
+        "cooldown": 2,
+        "target": "front_enemy",
+        "description": "Silence the selected target for 2 turns.",
+        "effects": []
+      },
+      "rule_events": [
+        {
+          "trigger": "turn_start",
+          "description": "Apply Spell Weakness 1 to the front enemy.",
+          "status": "spell weakness",
+          "count": 1
+        }
+      ],
+      "description": "Conduit 25. Activated (Cooldown 2): Silence a target for 2 turns. Turn Start: Apply Spell Weakness 1 to the front enemy.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Hyena",
+      "stage": 1,
+      "attack": 3,
+      "health": 5,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "summon",
+          "description": "Apply Mark 3 to all enemies.",
+          "status": "mark",
+          "count": 3
+        }
+      ],
+      "description": "Summon: Apply Mark 3 to ALL enemies.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Hyena",
+      "stage": 2,
+      "attack": 4,
+      "health": 7,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": {
+        "name": "Burst",
+        "cooldown": 5,
+        "target": "self",
+        "description": "Gain Burst 3.",
+        "effects": [
+          {
+            "type": "add_native_status",
+            "status": "burst",
+            "count": 3,
+            "target": "self"
+          }
+        ]
+      },
+      "rule_events": [
+        {
+          "trigger": "summon",
+          "description": "Apply Mark 8 to all enemies.",
+          "status": "mark",
+          "count": 8
+        }
+      ],
+      "description": "Summon: Apply Mark 8 to ALL enemies. Activated (Cooldown 5): Gain Burst 3.",
+      "runtime_binding": "native_unit_ability"
+    },
+    {
+      "line": "BloodWorm",
+      "stage": 1,
+      "attack": 3,
+      "health": 3,
+      "cost": 3,
+      "size": 1,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": {
+        "name": "Hook Pull",
+        "cooldown": 2,
+        "target": "self",
+        "description": "Gain Stealth 1 and Hook Pull.",
+        "effects": []
+      },
+      "rule_events": [],
+      "description": "Activated (Cooldown 2): Gain Stealth 1 and Hook Pull.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "BloodWorm",
+      "stage": 2,
+      "attack": 5,
+      "health": 3,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": {
+        "name": "Hook Pull",
+        "cooldown": 2,
+        "target": "self",
+        "description": "Gain Stealth 1 and Hook Pull.",
+        "effects": []
+      },
+      "rule_events": [
+        {
+          "trigger": "end_turn",
+          "description": "Recover 10 Health.",
+          "amount": 10
+        }
+      ],
+      "description": "Activated (Cooldown 2): Gain Stealth 1 and Hook Pull. End of Turn: Recover 10 Health.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Snapsaurus",
+      "stage": 1,
+      "attack": 2,
+      "health": 4,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "on_attacked",
+          "description": "Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful.",
+          "stacks": 1
+        }
+      ],
+      "description": "Start with Snap 1. Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Snapsaurus",
+      "stage": 2,
+      "attack": 3,
+      "health": 5,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": {
+        "name": "Snap",
+        "cooldown": 4,
+        "target": "front_enemy",
+        "description": "Trigger Snap on target; requires and consumes Snap 1.",
+        "effects": [
+          {
+            "type": "snap_activation",
+            "requires": "snap",
+            "count": 1
+          }
+        ]
+      },
+      "rule_events": [
+        {
+          "trigger": "on_attacked",
+          "description": "Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful.",
+          "stacks": 2
+        }
+      ],
+      "description": "Start with Snap 2. Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful. Activated (Cooldown 4): Trigger Snap on a chosen target; requires and consumes one Snap stack.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Snapsaurus",
+      "stage": 3,
+      "attack": 4,
+      "health": 6,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": {
+        "name": "Snap",
+        "cooldown": 4,
+        "target": "front_enemy",
+        "description": "Trigger Snap on target; requires and consumes Snap 1.",
+        "effects": [
+          {
+            "type": "snap_activation",
+            "requires": "snap",
+            "count": 1
+          }
+        ]
+      },
+      "rule_events": [
+        {
+          "trigger": "on_attacked",
+          "description": "Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful.",
+          "stacks": 6
+        }
+      ],
+      "description": "Start with Snap 6. Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful. Activated (Cooldown 4): Trigger Snap on a chosen target; requires and consumes one Snap stack.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Teslasaurus",
+      "stage": 1,
+      "attack": 1,
+      "health": 7,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "revenge",
+          "description": "Gain Tesla Charge 1.",
+          "count": 1,
+          "status": "tesla_charge"
+        },
+        {
+          "trigger": "resolve",
+          "description": "Deal damage equal to all Tesla Charge stacks to all enemies.",
+          "multiplier": 1,
+          "target": "all_enemies"
+        }
+      ],
+      "description": "Revenge: Gain Tesla Charge 1. Resolve: Deal 1 damage for each Tesla Charge to ALL enemies. Charges are not consumed by Resolve; reset after combat.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Teslasaurus",
+      "stage": 2,
+      "attack": 3,
+      "health": 9,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "revenge",
+          "description": "Gain Tesla Charge 2.",
+          "count": 2,
+          "status": "tesla_charge"
+        },
+        {
+          "trigger": "resolve",
+          "description": "Deal damage equal to all Tesla Charge stacks to all enemies.",
+          "multiplier": 1,
+          "target": "all_enemies"
+        }
+      ],
+      "description": "Revenge: Gain Tesla Charge 2. Resolve: Deal 1 damage for each Tesla Charge to ALL enemies. Charges are not consumed by Resolve; reset after combat.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Teslasaurus",
+      "stage": 3,
+      "attack": 4,
+      "health": 10,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "revenge",
+          "description": "Gain Tesla Charge 3.",
+          "count": 3,
+          "status": "tesla_charge"
+        },
+        {
+          "trigger": "resolve",
+          "description": "Deal damage equal to all Tesla Charge stacks to all enemies.",
+          "multiplier": 1,
+          "target": "all_enemies"
+        }
+      ],
+      "description": "Revenge: Gain Tesla Charge 3. Resolve: Deal 1 damage for each Tesla Charge to ALL enemies. Charges are not consumed by Resolve; reset after combat.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Garhound",
+      "stage": 1,
+      "attack": 3,
+      "health": 4,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "passive",
+          "description": "Fly between floors."
+        }
+      ],
+      "description": "Fly: Move between floors.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Garhound",
+      "stage": 2,
+      "attack": 6,
+      "health": 6,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "on_floor_landing",
+          "description": "Damage all enemies 4; Pyregel 2.",
+          "damage": 4,
+          "pyregel": 2
+        }
+      ],
+      "description": "Burning Fly: Move between floors. On landing, deal 4 damage and apply Pyregel 2 to all enemies on the destination floor.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Garhound",
+      "stage": 3,
+      "attack": 7,
+      "health": 7,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "on_floor_landing",
+          "description": "Damage all enemies 20; Pyregel 10.",
+          "damage": 20,
+          "pyregel": 10
+        }
+      ],
+      "description": "Burning Flight 2: Move to any floor; on landing deal 20 damage and apply Pyregel 10 to all enemies there.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Fireary",
+      "stage": 1,
+      "attack": 5,
+      "health": 2,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "on_floor_entry",
+          "description": "Immediately attack front enemy and apply Pyregel 3.",
+          "pyregel": 3
+        }
+      ],
+      "description": "Floor Entry: Immediately attack the front enemy and apply Pyregel 3 whenever this unit enters a floor.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Frosset",
+      "stage": 1,
+      "attack": 2,
+      "health": 3,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "strike",
+          "description": "Apply Freeze 3 to defender.",
+          "freeze": 3
+        }
+      ],
+      "description": "Strike: Apply Freeze 3 to the enemy struck.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Frosset",
+      "stage": 2,
+      "attack": 4,
+      "health": 3,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "strike",
+          "description": "Apply Freeze 5 to defender.",
+          "freeze": 5
+        },
+        {
+          "trigger": "starting_status",
+          "description": "Haste 3: grant Quick while active; lose 1 per turn.",
+          "haste": 3
+        }
+      ],
+      "description": "Strike: Apply Freeze 5. Haste 3: Has Quick while Haste stacks remain; loses one stack at the end of each turn.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Frosset",
+      "stage": 3,
+      "attack": 6,
+      "health": 4,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "strike",
+          "description": "Apply Freeze 5 to defender.",
+          "freeze": 5
+        },
+        {
+          "trigger": "starting_status",
+          "description": "Haste 3.",
+          "haste": 3
+        },
+        {
+          "trigger": "passive",
+          "description": "Freeze Breaker doubles Freeze physical damage bonuses.",
+          "multiplier": 2
+        }
+      ],
+      "description": "Strike: Apply Freeze 5. Haste 3. Freeze Breaker: Doubles the physical damage bonus from Freeze against this unit’s targets.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Umbrabeak",
+      "stage": 1,
+      "attack": 2,
+      "health": 3,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "passive",
+          "description": "Shadow Walker: +20% damage while Stealthed."
+        },
+        {
+          "trigger": "summon",
+          "description": "Summon: Play Shadow Veil in this room. Shadow Veil (Room Ability, Cooldown 3): Grant Stealth 1 and Burst 1 to allies with Shadow Walker on this floor.",
+          "room": "Shadow Veil",
+          "cooldown": 3,
+          "stealth": 1,
+          "burst": 1
+        }
+      ],
+      "description": "Shadow Walker (Passive): Deal 20% more damage while Stealthed. Summon: Play Shadow Veil in this room. Shadow Veil (Room Ability, Cooldown 3): Grant Stealth 1 and Burst 1 to allies with Shadow Walker on this floor.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Umbrabeak",
+      "stage": 2,
+      "attack": 3,
+      "health": 4,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "passive",
+          "description": "Fly and Shadow Walker."
+        },
+        {
+          "trigger": "summon",
+          "description": "Summon: Play Shadow Veil in this room. Shadow Veil (Room Ability, Cooldown 3): Grant Stealth 1 and Burst 1 to allies with Shadow Walker on this floor.",
+          "room": "Shadow Veil",
+          "cooldown": 3,
+          "stealth": 1,
+          "burst": 1
+        }
+      ],
+      "description": "Fly. Shadow Walker (Passive): Deal 20% more damage while Stealthed. Summon: Play Shadow Veil in this room. Shadow Veil (Room Ability, Cooldown 3): Grant Stealth 1 and Burst 1 to allies with Shadow Walker on this floor.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Umbrabeak",
+      "stage": 3,
+      "attack": 5,
+      "health": 4,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "passive",
+          "description": "Shadow Walker: +20% damage while Stealthed."
+        },
+        {
+          "trigger": "summon",
+          "description": "Summon: Play Umbra Veil in this room. Umbra Veil (Room Ability, Cooldown 3): Grant Stealth 2 and Burst 3 to allies with Shadow Walker on this floor.",
+          "room": "Umbra Veil",
+          "cooldown": 3,
+          "stealth": 2,
+          "burst": 3
+        }
+      ],
+      "description": "Shadow Walker (Passive): Deal 20% more damage while Stealthed. Summon: Play Umbra Veil in this room. Umbra Veil (Room Ability, Cooldown 3): Grant Stealth 2 and Burst 3 to allies with Shadow Walker on this floor.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Magmoth",
+      "stage": 1,
+      "attack": 2,
+      "health": 6,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [
+        [
+          "trample",
+          1
+        ]
+      ],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "revenge",
+          "description": "Apply Pyregel 6 to the attacker.",
+          "pyregel": 6
+        }
+      ],
+      "description": "Trample. Revenge: Apply Pyregel 6 to the attacker.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Magmoth",
+      "stage": 2,
+      "attack": 3,
+      "health": 12,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [
+        [
+          "trample",
+          1
+        ]
+      ],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "revenge",
+          "description": "Apply Pyregel 12 to the attacker.",
+          "pyregel": 12
+        }
+      ],
+      "description": "Trample. Revenge: Apply Pyregel 12 to the attacker.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Chilload",
+      "stage": 1,
+      "attack": 3,
+      "health": 9,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 30,
+      "native_statuses": [],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "passive",
+          "description": "Frost Skin: 1 Frostbite per 5 current Armor. Revenge to attacker; Strike to defender; Resolve to all units including friendlies."
+        },
+        {
+          "trigger": "resolve",
+          "description": "Gain Armor 5.",
+          "armor": 5
+        }
+      ],
+      "description": "Start with Armor 30. Frost Skin (Passive): For every 5 current Armor, apply Frostbite 1 on Revenge to the attacker, Strike to defender, and Resolve to ALL units on this floor (including friendly units). Resolve: Gain Armor 5.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "DragonMoth",
+      "stage": 1,
+      "attack": 1,
+      "health": 1,
+      "cost": 1,
+      "size": 1,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": {
+        "name": "String Shot",
+        "cooldown": 1,
+        "target": "front_enemy",
+        "description": "Apply Web 1 to selected target.",
+        "effects": [
+          {
+            "type": "apply_web",
+            "count": 1
+          }
+        ]
+      },
+      "rule_events": [],
+      "description": "String Shot (Cooldown 1): Apply Web 1 to target.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "DragonMoth",
+      "stage": 2,
+      "attack": 1,
+      "health": 1,
+      "cost": 1,
+      "size": 1,
+      "starting_armor": 15,
+      "native_statuses": [],
+      "ability": {
+        "name": "String Shot",
+        "cooldown": 1,
+        "target": "front_enemy",
+        "description": "Apply Web 1 to selected target.",
+        "effects": [
+          {
+            "type": "apply_web",
+            "count": 1
+          }
+        ]
+      },
+      "rule_events": [
+        {
+          "trigger": "resolve",
+          "description": "Gain Armor 3.",
+          "armor": 3
+        }
+      ],
+      "description": "Start with Armor 15. String Shot (Cooldown 1): Apply Web 1 to target. Resolve: Gain Armor 3.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "DragonMoth",
+      "stage": 3,
+      "attack": 1,
+      "health": 1,
+      "cost": 1,
+      "size": 1,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": {
+        "name": "Death Dusting",
+        "cooldown": 1,
+        "target": "all_enemies",
+        "description": "Deal 15 damage and apply Web 1 to all enemies.",
+        "effects": [
+          {
+            "type": "area_damage",
+            "damage": 15
+          },
+          {
+            "type": "apply_web",
+            "count": 1
+          }
+        ]
+      },
+      "rule_events": [
+        {
+          "trigger": "revenge",
+          "description": "Apply Sap 1 to attacker.",
+          "sap": 1
+        }
+      ],
+      "description": "Death Dusting (Cooldown 1): Deal 15 damage to all enemies and apply Web 1 to each. Revenge: Apply Sap 1 to attacker. No starting armor and no Resolve.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Leafshrew",
+      "stage": 1,
+      "attack": 3,
+      "health": 5,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": {
+        "name": "Seeding",
+        "cooldown": 1,
+        "target": "front_enemy",
+        "description": "Apply Leech 10 to the front enemy.",
+        "effects": [
+          {
+            "type": "apply_leech",
+            "count": 10
+          }
+        ]
+      },
+      "rule_events": [],
+      "description": "Seeding (Cooldown 1): Apply Leech 10 to front enemy. End turn: affected enemy loses Health equal to Leech stacks; original applier recovers Health equal to actual damage.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Leafshrew",
+      "stage": 2,
+      "attack": 5,
+      "health": 7,
+      "cost": 3,
+      "size": 3,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": {
+        "name": "Seeding 2",
+        "cooldown": 1,
+        "target": "front_enemy",
+        "description": "Apply Leech 25 to the front enemy.",
+        "effects": [
+          {
+            "type": "apply_leech",
+            "count": 25
+          }
+        ]
+      },
+      "rule_events": [],
+      "description": "Seeding 2 (Cooldown 1): Apply Leech 25 to front enemy. End turn: affected enemy loses Health equal to Leech stacks; original applier recovers Health equal to actual damage.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Manshrimp",
+      "stage": 1,
+      "attack": 6,
+      "health": 1,
+      "cost": 3,
+      "size": 2,
+      "starting_armor": 0,
+      "native_statuses": [
+        [
+          "burst",
+          1
+        ]
+      ],
+      "ability": null,
+      "rule_events": [],
+      "description": "Start with Burst 1.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Manshrimp",
+      "stage": 2,
+      "attack": 8,
+      "health": 2,
+      "cost": 3,
+      "size": 2,
+      "starting_armor": 0,
+      "native_statuses": [
+        [
+          "burst",
+          1
+        ]
+      ],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "strike",
+          "description": "Push the target back 1 position.",
+          "pushback": 1
+        }
+      ],
+      "description": "Start with Burst 1. Strike: Pushback 1 to target.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Manshrimp",
+      "stage": 3,
+      "attack": 10,
+      "health": 3,
+      "cost": 3,
+      "size": 2,
+      "starting_armor": 0,
+      "native_statuses": [
+        [
+          "burst",
+          2
+        ]
+      ],
+      "ability": null,
+      "rule_events": [
+        {
+          "trigger": "strike",
+          "description": "Push the target back 1 position.",
+          "pushback": 1
+        },
+        {
+          "trigger": "resolve",
+          "description": "Gain Burst 2.",
+          "burst": 2
+        }
+      ],
+      "description": "Start with Burst 2. Strike: Pushback 1. Resolve: Gain Burst 2.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Jourmancoil",
+      "stage": 1,
+      "attack": 4,
+      "health": 2,
+      "cost": 3,
+      "size": 2,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": {
+        "name": "Electric Coil",
+        "cooldown": 1,
+        "target": "front_enemy",
+        "description": "Deal 15 damage to target; then Root and Daze both target and self.",
+        "effects": [
+          {
+            "type": "damage",
+            "damage": 15
+          },
+          {
+            "type": "root_and_daze_target_and_self"
+          }
+        ]
+      },
+      "rule_events": [],
+      "description": "Electric Coil (Cooldown 1): Deal 15 damage to target, then Root and Daze both target and self.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Jourmancoil",
+      "stage": 2,
+      "attack": 6,
+      "health": 6,
+      "cost": 3,
+      "size": 2,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": {
+        "name": "Electric Coil",
+        "cooldown": 1,
+        "target": "front_enemy",
+        "description": "Deal 15 damage to target; then Root and Daze both target and self.",
+        "effects": [
+          {
+            "type": "damage",
+            "damage": 15
+          },
+          {
+            "type": "root_and_daze_target_and_self"
+          }
+        ]
+      },
+      "rule_events": [
+        {
+          "trigger": "resolve",
+          "description": "If Electric Coil is on cooldown, deal 15 damage to all enemies.",
+          "damage": 15
+        }
+      ],
+      "description": "Electric Coil (Cooldown 1): Deal 15 damage to target, then Root and Daze both target and self. Resolve: If Electric Coil is on cooldown, deal 15 damage to ALL enemies.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Vampirant",
+      "stage": 1,
+      "attack": 1,
+      "health": 1,
+      "cost": 1,
+      "size": 1,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": {
+        "name": "Bloodbag",
+        "cooldown": 1,
+        "target": "friendly_unit",
+        "description": "Consume all BloodStore; heal selected friendly unit by 3 Health per stack.",
+        "effects": [
+          {
+            "type": "consume_bloodstore_heal",
+            "health_per_stack": 3
+          }
+        ]
+      },
+      "rule_events": [
+        {
+          "trigger": "strike",
+          "description": "Gain BloodStore 2.",
+          "count": 2,
+          "status": "bloodstore"
+        }
+      ],
+      "description": "Strike: Gain BloodStore 2. Bloodbag (Cooldown 1): Consume ALL BloodStore to heal selected target 3 Health per stack. BloodStore: At end of turn, heal its holder 5 Health (once, not per stack), then lose 1 stack.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Vampirant",
+      "stage": 2,
+      "attack": 2,
+      "health": 2,
+      "cost": 1,
+      "size": 1,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": {
+        "name": "Bloodbag",
+        "cooldown": 1,
+        "target": "friendly_unit",
+        "description": "Consume all BloodStore; heal selected friendly unit by 3 Health per stack.",
+        "effects": [
+          {
+            "type": "consume_bloodstore_heal",
+            "health_per_stack": 3
+          }
+        ]
+      },
+      "rule_events": [
+        {
+          "trigger": "strike",
+          "description": "Gain BloodStore 3.",
+          "count": 3,
+          "status": "bloodstore"
+        }
+      ],
+      "description": "Strike: Gain BloodStore 3. Bloodbag (Cooldown 1): Consume ALL BloodStore to heal selected target 3 Health per stack. BloodStore: At end of turn, heal its holder 5 Health (once, not per stack), then lose 1 stack.",
+      "runtime_binding": "description_and_rules_only"
+    },
+    {
+      "line": "Vampirant",
+      "stage": 3,
+      "attack": 5,
+      "health": 5,
+      "cost": 1,
+      "size": 1,
+      "starting_armor": 0,
+      "native_statuses": [],
+      "ability": {
+        "name": "Bloodbag",
+        "cooldown": 1,
+        "target": "friendly_unit",
+        "description": "Consume all BloodStore; heal selected friendly unit by 3 Health per stack.",
+        "effects": [
+          {
+            "type": "consume_bloodstore_heal",
+            "health_per_stack": 3
+          }
+        ]
+      },
+      "rule_events": [
+        {
+          "trigger": "strike",
+          "description": "Gain BloodStore 4.",
+          "count": 4,
+          "status": "bloodstore"
+        }
+      ],
+      "description": "Strike: Gain BloodStore 4. Bloodbag (Cooldown 1): Consume ALL BloodStore to heal selected target 3 Health per stack. BloodStore: At end of turn, heal its holder 5 Health (once, not per stack), then lose 1 stack.",
+      "runtime_binding": "description_and_rules_only"
+    }
+  ],
+  "global_custom_status_rules": {
+    "freeze": {
+      "physical_damage_taken_bonus_per_stack_percent": 20,
+      "decay_per_turn": 1,
+      "consumed_on_attack": false,
+      "max_stacks": null,
+      "freeze_breaker_multiplier": 2
+    },
+    "haste": {
+      "grants_quick_while_positive": true,
+      "decay_per_end_turn": 1
+    },
+    "web": {
+      "attack_reduction_per_stack_percent": 20,
+      "max_stacks": 5,
+      "rooted_while_positive": true,
+      "decay_on_damage_taken": 1,
+      "decay_per_end_turn": 1
+    },
+    "snap": {
+      "condition": "attacker.max_hp < defender.current_hp",
+      "kills_attacker": true,
+      "heal_on_success": "attacker.max_hp",
+      "consume_stacks_on_success": 1,
+      "active_requires_and_consumes": 1
+    },
+    "leech": {
+      "end_turn_damage": "target_leech_stacks",
+      "healing_to": "original_applier",
+      "healing_amount": "actual_leech_damage_dealt",
+      "decay": 0
+    },
+    "bloodstore": {
+      "heal_holder_at_end_turn_if_positive": 5,
+      "decay_per_end_turn": 1,
+      "bloodbag_heal_per_consumed_stack": 3
+    },
+    "tesla_charge": {
+      "accumulates_during_combat": true,
+      "resolve_damage_per_stack": 1,
+      "resolve_consumes_stacks": false,
+      "resets_after_combat": true
+    },
+    "shadow_walker": {
+      "passive_damage_bonus_percent_when_stealthed": 20
+    },
+    "frost_skin": {
+      "frostbite_per_current_armor": 5,
+      "revenge_target": "attacker",
+      "strike_target": "defender",
+      "resolve_targets": "all_units_on_floor_including_friendlies"
+    },
+    "pyregel": {
+      "type": "base_game_status"
+    },
+    "mark": {
+      "requires_custom_or_existing_mod_status_definition": true
+    }
+  }
+}
