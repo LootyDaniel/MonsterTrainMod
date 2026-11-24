@@ -1,6 +1,6 @@
 // Trainers Wild PocketMon Invasion — isolated enemy-spawn replacement relic.
 // Does NOT modify your Trainer roster controller, existing roster relic,
-// run deck, or any CharacterData assets. v8 adds enemy-only facing;
+// run deck, or any CharacterData assets. v9 adds enemy-only facing;
 // retains v7 pools and Cuttlfish protection; no coroutine wrapping.
 using System;
 using System.Collections;
@@ -14,89 +14,116 @@ using UnityEngine;
 
 namespace HexTrolls.Plugin.code
 {
-    // v8: The actual visual sprite lives under CharacterUI (not on
-    // CharacterData). CharacterUI is instantiated separately for each unit.
-    // Patch the getter rather than CharacterState.Setup: that coroutine has
-    // different overloads on different MT2 builds and previously caused
-    // a startup/patch failure. No changes to the working spawn hooks.
+    // v9: Enemy-only visual orientation. Registered CharacterData.GetID()
+    // returns a generated runtime GUID, not the string TrainersPocketMon*.
+    // Detect known REGISTERED CharacterData, rather than substring matching IDs.
     [HarmonyPatch(typeof(CharacterState), "GetCharacterUI")]
     internal static class TrainersWildPocketMonEnemyFacingPatch
     {
         [HarmonyPostfix]
         private static void Postfix(CharacterState __instance, CharacterUI __result)
         {
-            if (__instance == null || __result == null) return;
-            try
-            {
-                bool shouldMirror = false;
-                // In Monster Train, Heroes are the ENEMY team. Player units
-                // are Monsters. Never mirror a player's PocketMon.
-                if (__instance.GetTeamType() == Team.Type.Heroes)
-                {
-                    var data = __instance.GetSourceCharacterData();
-                    var id = data == null ? null : data.GetID();
-                    shouldMirror = !String.IsNullOrEmpty(id) &&
-                        id.IndexOf("TrainersPocketMon", StringComparison.OrdinalIgnoreCase) >= 0;
-                }
-
-                // A pooled CharacterUI instance can be recycled later for a
-                // different team. Restore its original art orientation in
-                // that case; do not permanently mutate character prefabs.
-                var marker = __result.GetComponent<TrainersWildPocketMonFacingVisual>();
-                if (!shouldMirror)
-                {
-                    if (marker != null) marker.Restore();
-                    return;
-                }
-                if (marker == null)
-                    marker = __result.gameObject.AddComponent<TrainersWildPocketMonFacingVisual>();
-                if (marker.SetEnemy(__instance))
-                    TrainersWildPocketMonInvasion.LogFacingOnce(__instance);
-            }
-            catch (Exception ex)
-            {
-                TrainersWildPocketMonInvasion.LogFacingErrorOnce(ex);
-            }
+            TrainersWildPocketMonInvasion.TryFlipEnemyVisual(__instance, __result);
         }
     }
 
-    // Exists ONLY on a live CharacterUI instance, not a shared CharacterData
-    // prefab or the entire character's root transform. A negative local X
-    // scale mirrors 2D sprites and animated mesh quads around the vertical
-    // (Y) axis while leaving gameplay positions and combat logic untouched.
-    // LateUpdate keeps the facing stable when animations update child meshes.
+    // Even if the game's GetCharacterUI getter isn't normally invoked during
+    // a spawn, poll live scene CharacterState objects until their art has been
+    // constructed. Never alter shared GameObject prefabs or card art.
+    [DefaultExecutionOrder(10000)]
+    public sealed class TrainersWildPocketMonFacingWatcher : MonoBehaviour
+    {
+        private float nextScan;
+        private int diagnostics;
+
+        private void Update()
+        {
+            if (Time.unscaledTime < nextScan) return;
+            nextScan = Time.unscaledTime + 0.25f;
+            try
+            {
+                int matched = 0;
+                int artReady = 0;
+                var live = UnityEngine.Object.FindObjectsOfType<CharacterState>();
+                foreach (var unit in live)
+                {
+                    if (unit == null || !TrainersWildPocketMonInvasion.IsEnemyPocketMon(unit)) continue;
+                    matched++;
+                    CharacterUI ui = unit.GetCharacterUI();
+                    if (ui == null) continue;
+                    artReady++;
+                    TrainersWildPocketMonInvasion.TryFlipEnemyVisual(unit, ui);
+                }
+                if (diagnostics < 4 && (matched > 0 || (++diagnostics % 2) == 0))
+                {
+                    TrainersWildPocketMonInvasion.LogDiagnostic(
+                        "v9 facing scan: live CharacterState=" + live.Length +
+                        "; enemy PocketMon=" + matched + "; ready CharacterUI=" + artReady);
+                    if (matched > 0) diagnostics = 4;
+                }
+            }
+            catch (Exception ex) { TrainersWildPocketMonInvasion.LogFacingErrorOnce(ex); }
+        }
+    }
+
+    // Attach to the per-unit CharacterUI, but flip ONLY the rendered artwork
+    // child. Trainworks animated 2D character sheets are rendered on
+    // CharacterScale/CharacterUI/Quad_Default (CharacterUIMeshAnimatedSprite).
+    // Scaling CharacterUI itself does not reliably mirror that active quad.
+    [DefaultExecutionOrder(10000)]
     public sealed class TrainersWildPocketMonFacingVisual : MonoBehaviour
     {
-        private float unflippedX;
-        private bool activeMirror;
+        private Transform art;
         private CharacterState owner;
+        private int nativeSign;
+        private bool activeMirror;
 
-        // Returns true only when this live visual is first flipped.
         internal bool SetEnemy(CharacterState newOwner)
         {
+            if (newOwner == null) return false;
+            if (activeMirror && owner != null && !object.ReferenceEquals(owner, newOwner))
+                Restore();
+
+            if (art == null)
+            {
+                art = transform.Find("Quad_Default");
+                if (art == null)
+                {
+                    var spriteAnimation = GetComponentInChildren<CharacterUIMeshAnimatedSprite>(true);
+                    if (spriteAnimation != null) art = spriteAnimation.transform;
+                }
+                if (art == null)
+                {
+                    var mesh = GetComponentInChildren<MeshRenderer>(true);
+                    if (mesh != null && mesh.transform != transform) art = mesh.transform;
+                }
+                if (art == null) return false; // sprite can be instantiated later
+            }
+
             bool first = !activeMirror;
             if (first)
             {
-                unflippedX = transform.localScale.x;
-                // Do not touch transforms while Unity is animating a zero
-                // scale spawn transition. We will retry on next getter.
-                if (Mathf.Approximately(unflippedX, 0f)) return false;
+                float x = art.localScale.x;
+                if (Mathf.Approximately(x, 0f)) return false;
+                nativeSign = x < 0f ? -1 : 1;
                 activeMirror = true;
             }
             owner = newOwner;
-            Mirror();
+            ApplyMirror();
             return first;
         }
 
-        private void Mirror()
+        private void ApplyMirror()
         {
-            if (!activeMirror) return;
-            var scale = transform.localScale;
-            float mirroredX = -unflippedX;
-            if (!Mathf.Approximately(scale.x, mirroredX))
+            if (!activeMirror || art == null) return;
+            var scale = art.localScale;
+            float currentMagnitude = Mathf.Abs(scale.x);
+            if (currentMagnitude <= 0.00001f) return;
+            float desired = -nativeSign * currentMagnitude;
+            if (!Mathf.Approximately(scale.x, desired))
             {
-                scale.x = mirroredX;
-                transform.localScale = scale;
+                scale.x = desired;
+                art.localScale = scale;
             }
         }
 
@@ -105,29 +132,30 @@ namespace HexTrolls.Plugin.code
             if (!activeMirror) return;
             try
             {
-                if (owner == null || owner.GetTeamType() != Team.Type.Heroes)
+                if (owner == null || !TrainersWildPocketMonInvasion.IsEnemyPocketMon(owner))
                 {
                     Restore();
                     return;
                 }
-                Mirror();
+                ApplyMirror();
             }
-            catch (Exception)
-            {
-                Restore(); // Visual errors must never break combat.
-            }
+            catch (Exception) { Restore(); }
         }
+
+        internal string ArtPath => art == null ? "not-loaded" : art.name;
 
         internal void Restore()
         {
-            if (!activeMirror) return;
-            var scale = transform.localScale;
-            scale.x = unflippedX;
-            transform.localScale = scale;
+            if (activeMirror && art != null)
+            {
+                var scale = art.localScale;
+                scale.x = nativeSign * Mathf.Abs(scale.x);
+                art.localScale = scale;
+            }
             owner = null;
             activeMirror = false;
+            art = null;
         }
-
         private void OnDisable() { Restore(); }
     }
 
@@ -144,7 +172,7 @@ namespace HexTrolls.Plugin.code
                     m.GetParameters().Length == 5 &&
                     m.GetParameters()[0].ParameterType == typeof(CharacterData) &&
                     m.GetParameters()[4].ParameterType == typeof(CharacterData));
-            TrainersWildPocketMonInvasion.LogDiagnostic("v8 CreateHeroState hook=" + found);
+            TrainersWildPocketMonInvasion.LogDiagnostic("v9 CreateHeroState hook=" + found);
             return found;
         }
 
@@ -162,7 +190,7 @@ namespace HexTrolls.Plugin.code
             }
             catch (Exception ex)
             {
-                TrainersWildPocketMonInvasion.LogDiagnostic("v8 CreateHeroState ERROR " + ex);
+                TrainersWildPocketMonInvasion.LogDiagnostic("v9 CreateHeroState ERROR " + ex);
             }
         }
     }
@@ -177,7 +205,7 @@ namespace HexTrolls.Plugin.code
                 .FirstOrDefault(m => m.Name == "SpawnHeroInRoom" &&
                     m.GetParameters().Length == 5 &&
                     m.GetParameters()[0].ParameterType == typeof(CharacterData));
-            TrainersWildPocketMonInvasion.LogDiagnostic("v8 SpawnHeroInRoom hook=" + found);
+            TrainersWildPocketMonInvasion.LogDiagnostic("v9 SpawnHeroInRoom hook=" + found);
             return found;
         }
 
@@ -194,7 +222,7 @@ namespace HexTrolls.Plugin.code
             }
             catch (Exception ex)
             {
-                TrainersWildPocketMonInvasion.LogDiagnostic("v8 SpawnHeroInRoom ERROR " + ex);
+                TrainersWildPocketMonInvasion.LogDiagnostic("v9 SpawnHeroInRoom ERROR " + ex);
             }
         }
     }
@@ -294,52 +322,103 @@ namespace HexTrolls.Plugin.code
 
         private static int facingLogs;
         private static bool facingErrorLogged;
-        internal static void LogFacingOnce(CharacterState unit)
+        private static TrainersWildPocketMonFacingWatcher facingWatcher;
+
+        internal static void EnableFacingWatcher()
         {
-            if (facingLogs++ >= 12) return;
             try
             {
-                var data = unit.GetSourceCharacterData();
-                Log("v8 FLIPPED enemy PocketMon art to face LEFT: " +
-                    (data == null ? "(unknown)" : data.GetName()));
+                if (facingWatcher != null) return;
+                var host = new GameObject("TrainersWildPocketMon_FacingWatcher");
+                UnityEngine.Object.DontDestroyOnLoad(host);
+                facingWatcher = host.AddComponent<TrainersWildPocketMonFacingWatcher>();
+                Log("v9 ENEMY FACING watcher installed (checks spawned art every 0.25 sec)");
             }
-            catch { /* Logging must not affect combat. */ }
+            catch (Exception ex) { LogFacingErrorOnce(ex); }
         }
+
+        internal static bool IsEnemyPocketMon(CharacterState unit)
+        {
+            if (unit == null || unit.GetTeamType() != Team.Type.Heroes) return false;
+            var data = unit.GetSourceCharacterData();
+            if (data == null || !EnsureCatalog()) return false;
+
+            // Matching by substring GetID() fails with Trainworks runtime GUIDs.
+            // Match exact registered runtime identity/ID, then displayed name.
+            string runtimeId = data.GetID();
+            string displayName = data.GetName();
+            foreach (var known in Candidates)
+            {
+                if (known == null) continue;
+                if (object.ReferenceEquals(known, data)) return true;
+                if (!String.IsNullOrEmpty(runtimeId) &&
+                    String.Equals(known.GetID(), runtimeId, StringComparison.OrdinalIgnoreCase))
+                    return true;
+                if (!String.IsNullOrEmpty(displayName) &&
+                    String.Equals(known.GetName(), displayName, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
+        }
+
+        internal static void TryFlipEnemyVisual(CharacterState unit, CharacterUI ui)
+        {
+            if (unit == null || ui == null) return;
+            try
+            {
+                bool enemy = IsEnemyPocketMon(unit);
+                var marker = ui.GetComponent<TrainersWildPocketMonFacingVisual>();
+                if (!enemy)
+                {
+                    if (marker != null) marker.Restore();
+                    return;
+                }
+                if (marker == null)
+                    marker = ui.gameObject.AddComponent<TrainersWildPocketMonFacingVisual>();
+                if (marker.SetEnemy(unit) && facingLogs++ < 20)
+                    Log("v9 MIRRORED enemy PocketMon LEFT: " +
+                        unit.GetSourceCharacterData().GetName() +
+                        " using artwork child " + marker.ArtPath);
+            }
+            catch (Exception ex) { LogFacingErrorOnce(ex); }
+        }
+
         internal static void LogFacingErrorOnce(Exception ex)
         {
             if (facingErrorLogged) return;
             facingErrorLogged = true;
-            Warn("v8 enemy-only visual flip skipped: " + ex);
+            Warn("v9 enemy-only facing visual skipped: " + ex);
         }
 
         internal static void RecordSpawn(CharacterData original, CharacterData candidate, string path)
         {
             if (original == null || candidate == null) return;
             if (loggedSwapPaths++ < 35)
-                Log("v8 SWAPPED " + path + ": " + original.GetName() +
+                Log("v9 SWAPPED " + path + ": " + original.GetName() +
                     " -> " + candidate.GetName());
         }
 
         internal static void DiagnoseBattleStart()
         {
-            Log("v8 BeginInitialSpawn entered. Checking relic ownership and safe catalog before wave.");
+            Log("v9 BeginInitialSpawn entered. Checking relic ownership and safe catalog before wave.");
             try
             {
                 var game=AllGameManagers.Instance;
                 var save=game==null ? null : game.GetSaveManager();
                 if (save == null || save.PreviewMode) return;
                 bool owned=OwnsThisRelic(save);
-                Log("v8 battle-start ownership=" + owned);
+                Log("v9 battle-start ownership=" + owned);
                 if (owned)
                 {
-                    Log("v8 battle-start PocketMon catalog=" + EnsureCatalog() +
+                    Log("v9 battle-start PocketMon catalog=" + EnsureCatalog() +
                         "; enemy-safe forms=" + Candidates.Count);
-                    Log("v8 explicit mappings=" + EnemyPools.Count +
+                    Log("v9 explicit mappings=" + EnemyPools.Count +
                         "; defined pools=" + PocketMonPools.Count +
                         "; unmapped enemies stay original. Cuttlfish excluded.");
+                    EnableFacingWatcher();
                 }
             }
-            catch(Exception ex) { Warn("v8 battle-start probe failed: " + ex); }
+            catch(Exception ex) { Warn("v9 battle-start probe failed: " + ex); }
         }
 
         internal static bool TryChoose(CharacterData original, out CharacterData replacement)
@@ -361,7 +440,7 @@ namespace HexTrolls.Plugin.code
             if (!IsOrdinaryEnemy(original))
             {
                 if (blockedMappedEnemiesLogged++ < 8)
-                    Warn("v8 MAPPED BUT PROTECTED by boss/special safeguards: " +
+                    Warn("v9 MAPPED BUT PROTECTED by boss/special safeguards: " +
                          enemyName + " (pool " + poolName + ")");
                 return false;
             }
@@ -384,7 +463,7 @@ namespace HexTrolls.Plugin.code
                 configuredForms == null || configuredForms.Length == 0)
             {
                 if (WarnedMissingPool.Add(poolName))
-                    Warn("v8 no configured forms for pool '" + poolName +
+                    Warn("v9 no configured forms for pool '" + poolName +
                          "'. Skipping enemy replacement rather than choosing randomly.");
                 return false;
             }
@@ -404,7 +483,7 @@ namespace HexTrolls.Plugin.code
             if (eligible.Count == 0)
             {
                 if (WarnedMissingPool.Add(poolName))
-                    Warn("v8 pool '" + poolName + "' has no enemy-safe registered forms. " +
+                    Warn("v9 pool '" + poolName + "' has no enemy-safe registered forms. " +
                          "Keeping original enemy " + enemyName);
                 return false;
             }
@@ -413,7 +492,7 @@ namespace HexTrolls.Plugin.code
             if (replacementsLogged < 35)
             {
                 ++replacementsLogged;
-                Log("v8 Enemy swap [" + poolName + "]: " + enemyName +
+                Log("v9 Enemy swap [" + poolName + "]: " + enemyName +
                     " -> " + chosen.GetName() + " (enemy team)");
                 if (replacementsLogged == 35)
                     Log("Further per-unit swap messages suppressed until restart.");
@@ -530,7 +609,7 @@ namespace HexTrolls.Plugin.code
                 }
                 catalogReady = Candidates.Count > 0;
                 if (catalogReady)
-                    Log("v8 Loaded " + Candidates.Count + "/39 enemy-safe Trainer PocketMon characters" +
+                    Log("v9 Loaded " + Candidates.Count + "/39 enemy-safe Trainer PocketMon characters" +
                         " (skipped " + excludedUnsafe + " Conduit-bearing Cuttlfish forms)" +
                         (unresolved > 0 ? " (missing " + unresolved + "; check unit JSON registration)" : ""));
                 else if (!loggedMissingCatalog)
