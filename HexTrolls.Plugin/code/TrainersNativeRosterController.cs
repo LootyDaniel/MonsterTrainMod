@@ -81,7 +81,8 @@ namespace HexTrolls.Plugin.code
         private static bool combatWasRunning;
         private static bool deathHookInstalled;
         private static bool pileApiWarningLogged;
-        private static bool deployTextHookInstalled;
+        private static bool cardBadgeHookInstalled;
+        private const string CardBadgeObjectName = "TrainersRosterSlotAlwaysVisible";
         private static CardUI canonicalDeckCardPrefab;
         // Registered in json/status_effects/TrainersRosterSlot.json. The stack
         // count is the ONE-based roster slot number (1-6), not a power level.
@@ -173,7 +174,7 @@ namespace HexTrolls.Plugin.code
             }
             ready = true;
             InstallDeathHook();
-            InstallDeployTextHook();
+            InstallCardBadgeHook();
             Info("Native Conductor roster: Trainers GUID=" + trainersRuntimeGuid + "; six markers ready.");
             AttachAllHuds();
         }
@@ -759,65 +760,97 @@ namespace HexTrolls.Plugin.code
             }
         }
 
-        // Roster Slot is now a REAL permanent status_effect_upgrade on the
-        // assigned CardState, so it shows in the deck and hand before spawn.
-        // The existing native deployment trait remains in that same upgrade
-        // because it already works. Only its redundant *card text* is hidden;
-        // the trait itself keeps its deployment-phase behavior.
-        private static void InstallDeployTextHook()
+        // A CharacterState status doesn't exist until the unit is spawned.
+        // Show the permanent card's roster assignment BEFORE it is played as
+        // a badge on every CardUI rendering (run deck, hand, picker, previews).
+        // The deployed unit continues to receive the actual passive status.
+        // This uses the saved CardState marker and does NOT change shared
+        // CharacterData (so identical PocketMon copies stay independent).
+        private static void InstallCardBadgeHook()
         {
-            if (deployTextHookInstalled) return;
+            if (cardBadgeHookInstalled) return;
             try
             {
-                var traitType = typeof(CardState).Assembly.GetType("CardTraitDrawInDeploymentPhase");
-                if (traitType == null)
+                var methods = typeof(CardUI).GetMethods(BindingFlags.Instance |
+                    BindingFlags.Public | BindingFlags.NonPublic)
+                    .Where(m => m.Name == "ApplyStateToUI" && !m.IsGenericMethod &&
+                        m.GetParameters().Length > 0 &&
+                        m.GetParameters()[0].ParameterType == typeof(CardState))
+                    .ToArray();
+                if (methods.Length == 0)
                 {
-                    traitType = AppDomain.CurrentDomain.GetAssemblies()
-                        .Select(a => a.GetType("CardTraitDrawInDeploymentPhase", false))
-                        .FirstOrDefault(t => t != null);
-                }
-                if (traitType == null)
-                {
-                    Warn("Could not find CardTraitDrawInDeploymentPhase; keeping its visible text for safety.");
+                    Warn("CardUI.ApplyStateToUI(CardState, ...) not found; " +
+                         "pre-play Roster Slot badges unavailable.");
                     return;
                 }
-
-                var method = traitType.GetMethod("GetCardText",
-                    BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-                if (method == null || method.ReturnType != typeof(string))
-                {
-                    Warn("Cannot find deployment trait GetCardText; keeping its visible text for safety.");
-                    return;
-                }
-
-                var harmony = new Harmony(MyPluginInfo.PLUGIN_GUID + ".TrainersRosterDeployText");
-                var patch = new HarmonyMethod(typeof(TrainersNativeRosterController)
-                    .GetMethod(nameof(HideRosterDeployText),
-                        BindingFlags.NonPublic | BindingFlags.Static));
-                harmony.Patch(method, postfix: patch);
-                deployTextHookInstalled = true;
-                Info("Roster Slot status handles card display; redundant Deployable label hidden for assigned cards.");
+                var harmony = new Harmony(MyPluginInfo.PLUGIN_GUID + ".TrainersRosterCardBadge");
+                var postfix = new HarmonyMethod(typeof(TrainersNativeRosterController)
+                    .GetMethod(nameof(OnCardUIRendered), BindingFlags.NonPublic | BindingFlags.Static));
+                foreach (var method in methods)
+                    harmony.Patch(method, postfix: postfix);
+                cardBadgeHookInstalled = true;
+                Info("Permanent Roster Slot card badges installed (" + methods.Length +
+                     " CardUI ApplyStateToUI overloads).");
             }
             catch (Exception ex)
             {
-                // Never sacrifice functioning deployment just to hide text.
-                Warn("Could not hide Deployable card text: " + ex.Message);
+                Warn("Unable to install always-visible Roster Slot card badges: " + ex);
             }
         }
 
-        // Only hide the word on cards carrying a roster marker. All other
-        // Deployable cards keep their normal text and functionality.
-        private static void HideRosterDeployText(object __instance, ref string __result)
+        private static void OnCardUIRendered(CardUI __instance, CardState __0)
         {
-            if (!ready || __instance == null ||
-                __instance.GetType().Name != "CardTraitDrawInDeploymentPhase") return;
+            if (__instance == null || !ready) return;
             try
             {
-                var trait = __instance as CardTraitState;
-                if (trait != null && IsRosterAssigned(trait.GetCard()))
-                    __result = string.Empty;
+                int slot = SlotOf(__0);
+                var transform = __instance.transform;
+                var badge = transform.Find(CardBadgeObjectName);
+                if (slot < 0)
+                {
+                    if (badge != null) badge.gameObject.SetActive(false);
+                    return;
+                }
+                if (badge == null)
+                {
+                    var obj = new GameObject(CardBadgeObjectName, typeof(RectTransform), typeof(Image));
+                    obj.transform.SetParent(transform, false);
+                    var rect = obj.GetComponent<RectTransform>();
+                    rect.anchorMin = rect.anchorMax = new Vector2(1f, 1f);
+                    rect.pivot = new Vector2(1f, 1f);
+                    rect.sizeDelta = new Vector2(156f, 28f);
+                    rect.anchoredPosition = new Vector2(-9f, -8f);
+                    var background = obj.GetComponent<Image>();
+                    background.color = new Color(.12f, .09f, .22f, .94f);
+                    background.raycastTarget = false;
+                    var textObj = new GameObject("Label", typeof(RectTransform), typeof(TextMeshProUGUI));
+                    textObj.transform.SetParent(obj.transform, false);
+                    var textRect = textObj.GetComponent<RectTransform>();
+                    textRect.anchorMin = Vector2.zero;
+                    textRect.anchorMax = Vector2.one;
+                    textRect.offsetMin = Vector2.zero;
+                    textRect.offsetMax = Vector2.zero;
+                    var text = textObj.GetComponent<TextMeshProUGUI>();
+                    text.fontSize = 18f;
+                    text.fontStyle = FontStyles.Bold;
+                    text.alignment = TextAlignmentOptions.Center;
+                    text.color = Color.white;
+                    text.raycastTarget = false;
+                    badge = obj.transform;
+                }
+                badge.gameObject.SetActive(true);
+                badge.SetAsLastSibling();
+                var label = badge.Find("Label");
+                if (label != null)
+                {
+                    var text = label.GetComponent<TextMeshProUGUI>();
+                    if (text != null) text.text = "ROSTER SLOT " + (slot + 1);
+                }
             }
-            catch { /* presentation-only hook; don't interfere with the trait */ }
+            catch (Exception ex)
+            {
+                Warn("Could not render Roster Slot card badge: " + ex.Message);
+            }
         }
 
         public static void RefreshLabels()
@@ -963,7 +996,6 @@ namespace HexTrolls.Plugin.code
                         rect.pivot = new Vector2(.5f, .5f);
                         rect.sizeDelta = new Vector2(61f, 55f);
                         rect.anchoredPosition = new Vector2(0f, 2f);
-                        root.AddComponent<RectMask2D>();
                         // This is the COMBAT character sprite, not the deck
                         // CardUI, so no card frame, cost, stats or card text.
                         var sprite = FindCombatCharacterSprite(owner);
@@ -972,11 +1004,16 @@ namespace HexTrolls.Plugin.code
                             var picture = new GameObject("PocketMonCombatSprite",
                                 typeof(RectTransform), typeof(Image));
                             picture.transform.SetParent(rect, false);
+
                             var pr = picture.GetComponent<RectTransform>();
-                            pr.anchorMin = Vector2.zero;
-                            pr.anchorMax = Vector2.one;
-                            pr.offsetMin = new Vector2(2f, 1f);
-                            pr.offsetMax = new Vector2(-2f, -1f);
+                            pr.anchorMin = pr.anchorMax = new Vector2(.5f, .5f);
+                            pr.pivot = new Vector2(.5f, .5f);
+
+                            // Make the art bigger than the button so it can overflow visually.
+                            // 2x is what you asked for earlier; bump this if you want even more.
+                            pr.sizeDelta = new Vector2(rect.sizeDelta.x * 2f, rect.sizeDelta.y * 2f);
+                            pr.anchoredPosition = new Vector2(0f, 2f);
+
                             var img = picture.GetComponent<Image>();
                             img.sprite = sprite;
                             img.preserveAspect = true;

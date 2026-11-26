@@ -16,22 +16,6 @@
       "effects": [
         "@SpawnTrainersRedChampion"
       ]
-    },
-    {
-      "id": "TrainersRedStarterCard",
-      "names": {
-        "english": "Red's Assistant"
-      },
-      "card_art": "@GuildMasterCardArt",
-      "cost": 1,
-      "card_type": "monster",
-      "rarity": "common",
-      "class": "@TrainersClan",
-      "targets_room": true,
-      "targetless": false,
-      "effects": [
-        "@SpawnTrainersStarter"
-      ]
     }
   ],
   "characters": [
@@ -54,7 +38,7 @@
     {
       "id": "TrainersRedPathI",
       "titles": {
-        "english": "Red Training I"
+        "english": "Garhound Trainer I"
       },
       "bonus_damage": 10,
       "bonus_hp": 15
@@ -62,15 +46,72 @@
     {
       "id": "TrainersRedPathII",
       "titles": {
-        "english": "Red Training II"
+        "english": "Companion Draft II"
       },
       "bonus_damage": 25,
-      "bonus_hp": 35
+      "bonus_hp": 35,
+      "descriptions": {
+        "english": "Choose one of 3 random PocketMon companions to add permanently to your deck at Level 5."
+      }
     },
     {
       "id": "TrainersRedPathIII",
       "titles": {
-        "english": "Red Training III"
+        "english": "Garhound Trainer III"
+      },
+      "bonus_damage": 45,
+      "bonus_hp": 70
+    },
+    {
+      "id": "TrainersRedTeslaPathI",
+      "titles": {
+        "english": "Teslasaurus Trainer I"
+      },
+      "bonus_damage": 10,
+      "bonus_hp": 15
+    },
+    {
+      "id": "TrainersRedTeslaPathII",
+      "titles": {
+        "english": "Companion Draft II"
+      },
+      "bonus_damage": 25,
+      "bonus_hp": 35,
+      "descriptions": {
+        "english": "Choose one of 3 random PocketMon companions to add permanently to your deck at Level 5."
+      }
+    },
+    {
+      "id": "TrainersRedTeslaPathIII",
+      "titles": {
+        "english": "Teslasaurus Trainer III"
+      },
+      "bonus_damage": 45,
+      "bonus_hp": 70
+    },
+    {
+      "id": "TrainersRedFrostPathI",
+      "titles": {
+        "english": "Frosset Trainer I"
+      },
+      "bonus_damage": 10,
+      "bonus_hp": 15
+    },
+    {
+      "id": "TrainersRedFrostPathII",
+      "titles": {
+        "english": "Companion Draft II"
+      },
+      "bonus_damage": 25,
+      "bonus_hp": 35,
+      "descriptions": {
+        "english": "Choose one of 3 random PocketMon companions to add permanently to your deck at Level 5."
+      }
+    },
+    {
+      "id": "TrainersRedFrostPathIII",
+      "titles": {
+        "english": "Frosset Trainer III"
       },
       "bonus_damage": 45,
       "bonus_hp": 70

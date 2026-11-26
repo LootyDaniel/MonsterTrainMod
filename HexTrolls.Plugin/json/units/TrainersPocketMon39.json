@@ -21,11 +21,7 @@
         "@TrainersPocketMonCuttlfishForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonCuttlfishForm1LevelStatBonus",
-        "@TrainersPocketMonCuttlfishForm1LevelStatBonus",
-        "@TrainersPocketMonCuttlfishForm1LevelStatBonus",
-        "@TrainersPocketMonCuttlfishForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Conduit 3."
@@ -93,11 +89,7 @@
         "@TrainersPocketMonHyenaForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonHyenaForm1LevelStatBonus",
-        "@TrainersPocketMonHyenaForm1LevelStatBonus",
-        "@TrainersPocketMonHyenaForm1LevelStatBonus",
-        "@TrainersPocketMonHyenaForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Summon: Apply Mark 3 to ALL enemies."
@@ -162,11 +154,7 @@
         "@TrainersPocketMonBloodWormForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonBloodWormForm1LevelStatBonus",
-        "@TrainersPocketMonBloodWormForm1LevelStatBonus",
-        "@TrainersPocketMonBloodWormForm1LevelStatBonus",
-        "@TrainersPocketMonBloodWormForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Activated (Cooldown 2): Gain Stealth 1 and Hook Pull."
@@ -213,11 +201,7 @@
         "@TrainersPocketMonSnapsaurusForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonSnapsaurusForm1LevelStatBonus",
-        "@TrainersPocketMonSnapsaurusForm1LevelStatBonus",
-        "@TrainersPocketMonSnapsaurusForm1LevelStatBonus",
-        "@TrainersPocketMonSnapsaurusForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Start with Snap 1. Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful."
@@ -285,11 +269,7 @@
         "@TrainersPocketMonTeslasaurusForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonTeslasaurusForm1LevelStatBonus",
-        "@TrainersPocketMonTeslasaurusForm1LevelStatBonus",
-        "@TrainersPocketMonTeslasaurusForm1LevelStatBonus",
-        "@TrainersPocketMonTeslasaurusForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Revenge: Gain Tesla Charge 1. Resolve: Deal 1 damage for each Tesla Charge to ALL enemies. Charges are not consumed by Resolve; reset after combat."
@@ -357,11 +337,7 @@
         "@TrainersPocketMonGarhoundForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonGarhoundForm1LevelStatBonus",
-        "@TrainersPocketMonGarhoundForm1LevelStatBonus",
-        "@TrainersPocketMonGarhoundForm1LevelStatBonus",
-        "@TrainersPocketMonGarhoundForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Fly: Move between floors."
@@ -429,11 +405,7 @@
         "@TrainersPocketMonFirearyForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonFirearyForm1LevelStatBonus",
-        "@TrainersPocketMonFirearyForm1LevelStatBonus",
-        "@TrainersPocketMonFirearyForm1LevelStatBonus",
-        "@TrainersPocketMonFirearyForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Floor Entry: Immediately attack the front enemy and apply Pyregel 3 whenever this unit enters a floor."
@@ -459,11 +431,7 @@
         "@TrainersPocketMonFrossetForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonFrossetForm1LevelStatBonus",
-        "@TrainersPocketMonFrossetForm1LevelStatBonus",
-        "@TrainersPocketMonFrossetForm1LevelStatBonus",
-        "@TrainersPocketMonFrossetForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Strike: Apply Freeze 3 to the enemy struck."
@@ -531,11 +499,7 @@
         "@TrainersPocketMonUmbrabeakForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonUmbrabeakForm1LevelStatBonus",
-        "@TrainersPocketMonUmbrabeakForm1LevelStatBonus",
-        "@TrainersPocketMonUmbrabeakForm1LevelStatBonus",
-        "@TrainersPocketMonUmbrabeakForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Shadow Walker (Passive): Deal 20% more damage while Stealthed. Summon: Play Shadow Veil in this room. Shadow Veil (Room Ability, Cooldown 3): Grant Stealth 1 and Burst 1 to allies with Shadow Walker on this floor."
@@ -603,11 +567,7 @@
         "@TrainersPocketMonMagmothForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonMagmothForm1LevelStatBonus",
-        "@TrainersPocketMonMagmothForm1LevelStatBonus",
-        "@TrainersPocketMonMagmothForm1LevelStatBonus",
-        "@TrainersPocketMonMagmothForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Trample. Revenge: Apply Pyregel 6 to the attacker."
@@ -654,11 +614,7 @@
         "@TrainersPocketMonChilloadForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonChilloadForm1LevelStatBonus",
-        "@TrainersPocketMonChilloadForm1LevelStatBonus",
-        "@TrainersPocketMonChilloadForm1LevelStatBonus",
-        "@TrainersPocketMonChilloadForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Start with Armor 30. Frost Skin (Passive): For every 5 current Armor, apply Frostbite 1 on Revenge to the attacker, Strike to defender, and Resolve to ALL units on this floor (including friendly units). Resolve: Gain Armor 5."
@@ -684,11 +640,7 @@
         "@TrainersPocketMonDragonMothForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonDragonMothForm1LevelStatBonus",
-        "@TrainersPocketMonDragonMothForm1LevelStatBonus",
-        "@TrainersPocketMonDragonMothForm1LevelStatBonus",
-        "@TrainersPocketMonDragonMothForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "String Shot (Cooldown 1): Apply Web 1 to target."
@@ -756,11 +708,7 @@
         "@TrainersPocketMonLeafshrewForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonLeafshrewForm1LevelStatBonus",
-        "@TrainersPocketMonLeafshrewForm1LevelStatBonus",
-        "@TrainersPocketMonLeafshrewForm1LevelStatBonus",
-        "@TrainersPocketMonLeafshrewForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Seeding (Cooldown 1): Apply Leech 10 to front enemy. End turn: affected enemy loses Health equal to Leech stacks; original applier recovers Health equal to actual damage."
@@ -807,11 +755,7 @@
         "@TrainersPocketMonManshrimpForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonManshrimpForm1LevelStatBonus",
-        "@TrainersPocketMonManshrimpForm1LevelStatBonus",
-        "@TrainersPocketMonManshrimpForm1LevelStatBonus",
-        "@TrainersPocketMonManshrimpForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Start with Burst 1."
@@ -879,11 +823,7 @@
         "@TrainersPocketMonJourmancoilForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonJourmancoilForm1LevelStatBonus",
-        "@TrainersPocketMonJourmancoilForm1LevelStatBonus",
-        "@TrainersPocketMonJourmancoilForm1LevelStatBonus",
-        "@TrainersPocketMonJourmancoilForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Electric Coil (Cooldown 1): Deal 15 damage to target, then Root and Daze both target and self."
@@ -930,11 +870,7 @@
         "@TrainersPocketMonVampirantForm1SpawnEffect"
       ],
       "initial_upgrades": [
-        "@TrainersLevelBaseMarker",
-        "@TrainersPocketMonVampirantForm1LevelStatBonus",
-        "@TrainersPocketMonVampirantForm1LevelStatBonus",
-        "@TrainersPocketMonVampirantForm1LevelStatBonus",
-        "@TrainersPocketMonVampirantForm1LevelStatBonus"
+        "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
         "english": "Strike: Gain BloodStore 2. Bloodbag (Cooldown 1): Consume ALL BloodStore to heal selected target 3 Health per stack. BloodStore: At end of turn, heal its holder 5 Health (once, not per stack), then lose 1 stack."
@@ -1005,9 +941,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonCuttlfishForm1ReconcileSpawn",
         "@TrainersPocketMonCuttlfishForm1EarnEXP",
-        "@TrainersPocketMonCuttlfishForm1ReconcileCelebrate",
         "@TrainersPocketMonCuttlfishForm1EvolveCelebrate"
       ],
       "subtypes": [
@@ -1035,9 +969,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonCuttlfishForm2ReconcileSpawn",
         "@TrainersPocketMonCuttlfishForm2EarnEXP",
-        "@TrainersPocketMonCuttlfishForm2ReconcileCelebrate",
         "@TrainersPocketMonCuttlfishForm2EvolveCelebrate"
       ],
       "subtypes": [
@@ -1061,9 +993,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonCuttlfishForm3ReconcileSpawn",
-        "@TrainersPocketMonCuttlfishForm3EarnEXP",
-        "@TrainersPocketMonCuttlfishForm3ReconcileCelebrate"
+        "@TrainersPocketMonCuttlfishForm3EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1086,9 +1016,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonHyenaForm1ReconcileSpawn",
         "@TrainersPocketMonHyenaForm1EarnEXP",
-        "@TrainersPocketMonHyenaForm1ReconcileCelebrate",
         "@TrainersPocketMonHyenaForm1EvolveCelebrate"
       ],
       "subtypes": [
@@ -1107,9 +1035,7 @@
       "can_attack": true,
       "starting_status_effects": [],
       "triggers": [
-        "@TrainersPocketMonHyenaForm2ReconcileSpawn",
-        "@TrainersPocketMonHyenaForm2EarnEXP",
-        "@TrainersPocketMonHyenaForm2ReconcileCelebrate"
+        "@TrainersPocketMonHyenaForm2EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1133,9 +1059,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonBloodWormForm1ReconcileSpawn",
         "@TrainersPocketMonBloodWormForm1EarnEXP",
-        "@TrainersPocketMonBloodWormForm1ReconcileCelebrate",
         "@TrainersPocketMonBloodWormForm1EvolveCelebrate"
       ],
       "subtypes": [
@@ -1154,9 +1078,7 @@
       "can_attack": true,
       "starting_status_effects": [],
       "triggers": [
-        "@TrainersPocketMonBloodWormForm2ReconcileSpawn",
-        "@TrainersPocketMonBloodWormForm2EarnEXP",
-        "@TrainersPocketMonBloodWormForm2ReconcileCelebrate"
+        "@TrainersPocketMonBloodWormForm2EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1179,9 +1101,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonSnapsaurusForm1ReconcileSpawn",
         "@TrainersPocketMonSnapsaurusForm1EarnEXP",
-        "@TrainersPocketMonSnapsaurusForm1ReconcileCelebrate",
         "@TrainersPocketMonSnapsaurusForm1EvolveCelebrate"
       ],
       "subtypes": [
@@ -1205,9 +1125,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonSnapsaurusForm2ReconcileSpawn",
         "@TrainersPocketMonSnapsaurusForm2EarnEXP",
-        "@TrainersPocketMonSnapsaurusForm2ReconcileCelebrate",
         "@TrainersPocketMonSnapsaurusForm2EvolveCelebrate"
       ],
       "subtypes": [
@@ -1226,9 +1144,7 @@
       "can_attack": true,
       "starting_status_effects": [],
       "triggers": [
-        "@TrainersPocketMonSnapsaurusForm3ReconcileSpawn",
-        "@TrainersPocketMonSnapsaurusForm3EarnEXP",
-        "@TrainersPocketMonSnapsaurusForm3ReconcileCelebrate"
+        "@TrainersPocketMonSnapsaurusForm3EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1251,9 +1167,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonTeslasaurusForm1ReconcileSpawn",
         "@TrainersPocketMonTeslasaurusForm1EarnEXP",
-        "@TrainersPocketMonTeslasaurusForm1ReconcileCelebrate",
         "@TrainersPocketMonTeslasaurusForm1EvolveCelebrate"
       ],
       "subtypes": [
@@ -1277,9 +1191,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonTeslasaurusForm2ReconcileSpawn",
         "@TrainersPocketMonTeslasaurusForm2EarnEXP",
-        "@TrainersPocketMonTeslasaurusForm2ReconcileCelebrate",
         "@TrainersPocketMonTeslasaurusForm2EvolveCelebrate"
       ],
       "subtypes": [
@@ -1298,9 +1210,7 @@
       "can_attack": true,
       "starting_status_effects": [],
       "triggers": [
-        "@TrainersPocketMonTeslasaurusForm3ReconcileSpawn",
-        "@TrainersPocketMonTeslasaurusForm3EarnEXP",
-        "@TrainersPocketMonTeslasaurusForm3ReconcileCelebrate"
+        "@TrainersPocketMonTeslasaurusForm3EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1323,9 +1233,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonGarhoundForm1ReconcileSpawn",
         "@TrainersPocketMonGarhoundForm1EarnEXP",
-        "@TrainersPocketMonGarhoundForm1ReconcileCelebrate",
         "@TrainersPocketMonGarhoundForm1EvolveCelebrate"
       ],
       "subtypes": [
@@ -1349,9 +1257,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonGarhoundForm2ReconcileSpawn",
         "@TrainersPocketMonGarhoundForm2EarnEXP",
-        "@TrainersPocketMonGarhoundForm2ReconcileCelebrate",
         "@TrainersPocketMonGarhoundForm2EvolveCelebrate"
       ],
       "subtypes": [
@@ -1370,9 +1276,7 @@
       "can_attack": true,
       "starting_status_effects": [],
       "triggers": [
-        "@TrainersPocketMonGarhoundForm3ReconcileSpawn",
-        "@TrainersPocketMonGarhoundForm3EarnEXP",
-        "@TrainersPocketMonGarhoundForm3ReconcileCelebrate"
+        "@TrainersPocketMonGarhoundForm3EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1390,9 +1294,7 @@
       "can_attack": true,
       "starting_status_effects": [],
       "triggers": [
-        "@TrainersPocketMonFirearyForm1ReconcileSpawn",
-        "@TrainersPocketMonFirearyForm1EarnEXP",
-        "@TrainersPocketMonFirearyForm1ReconcileCelebrate"
+        "@TrainersPocketMonFirearyForm1EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1415,9 +1317,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonFrossetForm1ReconcileSpawn",
         "@TrainersPocketMonFrossetForm1EarnEXP",
-        "@TrainersPocketMonFrossetForm1ReconcileCelebrate",
         "@TrainersPocketMonFrossetForm1EvolveCelebrate"
       ],
       "subtypes": [
@@ -1441,9 +1341,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonFrossetForm2ReconcileSpawn",
         "@TrainersPocketMonFrossetForm2EarnEXP",
-        "@TrainersPocketMonFrossetForm2ReconcileCelebrate",
         "@TrainersPocketMonFrossetForm2EvolveCelebrate"
       ],
       "subtypes": [
@@ -1462,9 +1360,7 @@
       "can_attack": true,
       "starting_status_effects": [],
       "triggers": [
-        "@TrainersPocketMonFrossetForm3ReconcileSpawn",
-        "@TrainersPocketMonFrossetForm3EarnEXP",
-        "@TrainersPocketMonFrossetForm3ReconcileCelebrate"
+        "@TrainersPocketMonFrossetForm3EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1487,9 +1383,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonUmbrabeakForm1ReconcileSpawn",
         "@TrainersPocketMonUmbrabeakForm1EarnEXP",
-        "@TrainersPocketMonUmbrabeakForm1ReconcileCelebrate",
         "@TrainersPocketMonUmbrabeakForm1EvolveCelebrate"
       ],
       "subtypes": [
@@ -1513,9 +1407,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonUmbrabeakForm2ReconcileSpawn",
         "@TrainersPocketMonUmbrabeakForm2EarnEXP",
-        "@TrainersPocketMonUmbrabeakForm2ReconcileCelebrate",
         "@TrainersPocketMonUmbrabeakForm2EvolveCelebrate"
       ],
       "subtypes": [
@@ -1534,9 +1426,7 @@
       "can_attack": true,
       "starting_status_effects": [],
       "triggers": [
-        "@TrainersPocketMonUmbrabeakForm3ReconcileSpawn",
-        "@TrainersPocketMonUmbrabeakForm3EarnEXP",
-        "@TrainersPocketMonUmbrabeakForm3ReconcileCelebrate"
+        "@TrainersPocketMonUmbrabeakForm3EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1563,9 +1453,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonMagmothForm1ReconcileSpawn",
         "@TrainersPocketMonMagmothForm1EarnEXP",
-        "@TrainersPocketMonMagmothForm1ReconcileCelebrate",
         "@TrainersPocketMonMagmothForm1EvolveCelebrate"
       ],
       "subtypes": [
@@ -1589,9 +1477,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonMagmothForm2ReconcileSpawn",
-        "@TrainersPocketMonMagmothForm2EarnEXP",
-        "@TrainersPocketMonMagmothForm2ReconcileCelebrate"
+        "@TrainersPocketMonMagmothForm2EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1614,9 +1500,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonChilloadForm1ReconcileSpawn",
-        "@TrainersPocketMonChilloadForm1EarnEXP",
-        "@TrainersPocketMonChilloadForm1ReconcileCelebrate"
+        "@TrainersPocketMonChilloadForm1EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1639,9 +1523,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonDragonMothForm1ReconcileSpawn",
         "@TrainersPocketMonDragonMothForm1EarnEXP",
-        "@TrainersPocketMonDragonMothForm1ReconcileCelebrate",
         "@TrainersPocketMonDragonMothForm1EvolveCelebrate"
       ],
       "subtypes": [
@@ -1669,9 +1551,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonDragonMothForm2ReconcileSpawn",
         "@TrainersPocketMonDragonMothForm2EarnEXP",
-        "@TrainersPocketMonDragonMothForm2ReconcileCelebrate",
         "@TrainersPocketMonDragonMothForm2EvolveCelebrate"
       ],
       "subtypes": [
@@ -1690,9 +1570,7 @@
       "can_attack": true,
       "starting_status_effects": [],
       "triggers": [
-        "@TrainersPocketMonDragonMothForm3ReconcileSpawn",
-        "@TrainersPocketMonDragonMothForm3EarnEXP",
-        "@TrainersPocketMonDragonMothForm3ReconcileCelebrate"
+        "@TrainersPocketMonDragonMothForm3EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1715,9 +1593,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonLeafshrewForm1ReconcileSpawn",
         "@TrainersPocketMonLeafshrewForm1EarnEXP",
-        "@TrainersPocketMonLeafshrewForm1ReconcileCelebrate",
         "@TrainersPocketMonLeafshrewForm1EvolveCelebrate"
       ],
       "subtypes": [
@@ -1736,9 +1612,7 @@
       "can_attack": true,
       "starting_status_effects": [],
       "triggers": [
-        "@TrainersPocketMonLeafshrewForm2ReconcileSpawn",
-        "@TrainersPocketMonLeafshrewForm2EarnEXP",
-        "@TrainersPocketMonLeafshrewForm2ReconcileCelebrate"
+        "@TrainersPocketMonLeafshrewForm2EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1765,9 +1639,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonManshrimpForm1ReconcileSpawn",
         "@TrainersPocketMonManshrimpForm1EarnEXP",
-        "@TrainersPocketMonManshrimpForm1ReconcileCelebrate",
         "@TrainersPocketMonManshrimpForm1EvolveCelebrate"
       ],
       "subtypes": [
@@ -1795,9 +1667,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonManshrimpForm2ReconcileSpawn",
         "@TrainersPocketMonManshrimpForm2EarnEXP",
-        "@TrainersPocketMonManshrimpForm2ReconcileCelebrate",
         "@TrainersPocketMonManshrimpForm2EvolveCelebrate"
       ],
       "subtypes": [
@@ -1821,9 +1691,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonManshrimpForm3ReconcileSpawn",
-        "@TrainersPocketMonManshrimpForm3EarnEXP",
-        "@TrainersPocketMonManshrimpForm3ReconcileCelebrate"
+        "@TrainersPocketMonManshrimpForm3EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1846,9 +1714,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonJourmancoilForm1ReconcileSpawn",
         "@TrainersPocketMonJourmancoilForm1EarnEXP",
-        "@TrainersPocketMonJourmancoilForm1ReconcileCelebrate",
         "@TrainersPocketMonJourmancoilForm1EvolveCelebrate"
       ],
       "subtypes": [
@@ -1867,9 +1733,7 @@
       "can_attack": true,
       "starting_status_effects": [],
       "triggers": [
-        "@TrainersPocketMonJourmancoilForm2ReconcileSpawn",
-        "@TrainersPocketMonJourmancoilForm2EarnEXP",
-        "@TrainersPocketMonJourmancoilForm2ReconcileCelebrate"
+        "@TrainersPocketMonJourmancoilForm2EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1892,9 +1756,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonVampirantForm1ReconcileSpawn",
         "@TrainersPocketMonVampirantForm1EarnEXP",
-        "@TrainersPocketMonVampirantForm1ReconcileCelebrate",
         "@TrainersPocketMonVampirantForm1EvolveCelebrate"
       ],
       "subtypes": [
@@ -1918,9 +1780,7 @@
         }
       ],
       "triggers": [
-        "@TrainersPocketMonVampirantForm2ReconcileSpawn",
         "@TrainersPocketMonVampirantForm2EarnEXP",
-        "@TrainersPocketMonVampirantForm2ReconcileCelebrate",
         "@TrainersPocketMonVampirantForm2EvolveCelebrate"
       ],
       "subtypes": [
@@ -1939,9 +1799,7 @@
       "can_attack": true,
       "starting_status_effects": [],
       "triggers": [
-        "@TrainersPocketMonVampirantForm3ReconcileSpawn",
-        "@TrainersPocketMonVampirantForm3EarnEXP",
-        "@TrainersPocketMonVampirantForm3ReconcileCelebrate"
+        "@TrainersPocketMonVampirantForm3EarnEXP"
       ],
       "subtypes": [
         "@TrainersPocketMon"
@@ -1958,20 +1816,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonCuttlfishForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonCuttlfishForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonCuttlfishForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonCuttlfishForm1ReconcileOnCelebrate"
-      ]
     },
     {
       "id": "TrainersPocketMonCuttlfishForm1EvolveCelebrate",
@@ -1991,20 +1835,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonCuttlfishForm2ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonCuttlfishForm2ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonCuttlfishForm2ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonCuttlfishForm2ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonCuttlfishForm2EvolveCelebrate",
       "trigger": "on_encounter_complete",
       "effects": [
@@ -2022,20 +1852,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonCuttlfishForm3ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonCuttlfishForm3ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonCuttlfishForm3ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonCuttlfishForm3ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonHyenaForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2044,20 +1860,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonHyenaForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonHyenaForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonHyenaForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonHyenaForm1ReconcileOnCelebrate"
-      ]
     },
     {
       "id": "TrainersPocketMonHyenaForm1EvolveCelebrate",
@@ -2077,20 +1879,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonHyenaForm2ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonHyenaForm2ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonHyenaForm2ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonHyenaForm2ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonBloodWormForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2099,20 +1887,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonBloodWormForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonBloodWormForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonBloodWormForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonBloodWormForm1ReconcileOnCelebrate"
-      ]
     },
     {
       "id": "TrainersPocketMonBloodWormForm1EvolveCelebrate",
@@ -2132,20 +1906,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonBloodWormForm2ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonBloodWormForm2ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonBloodWormForm2ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonBloodWormForm2ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonSnapsaurusForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2154,20 +1914,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonSnapsaurusForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonSnapsaurusForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonSnapsaurusForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonSnapsaurusForm1ReconcileOnCelebrate"
-      ]
     },
     {
       "id": "TrainersPocketMonSnapsaurusForm1EvolveCelebrate",
@@ -2187,20 +1933,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonSnapsaurusForm2ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonSnapsaurusForm2ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonSnapsaurusForm2ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonSnapsaurusForm2ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonSnapsaurusForm2EvolveCelebrate",
       "trigger": "on_encounter_complete",
       "effects": [
@@ -2218,20 +1950,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonSnapsaurusForm3ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonSnapsaurusForm3ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonSnapsaurusForm3ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonSnapsaurusForm3ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonTeslasaurusForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2240,20 +1958,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonTeslasaurusForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonTeslasaurusForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonTeslasaurusForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonTeslasaurusForm1ReconcileOnCelebrate"
-      ]
     },
     {
       "id": "TrainersPocketMonTeslasaurusForm1EvolveCelebrate",
@@ -2273,20 +1977,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonTeslasaurusForm2ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonTeslasaurusForm2ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonTeslasaurusForm2ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonTeslasaurusForm2ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonTeslasaurusForm2EvolveCelebrate",
       "trigger": "on_encounter_complete",
       "effects": [
@@ -2304,20 +1994,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonTeslasaurusForm3ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonTeslasaurusForm3ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonTeslasaurusForm3ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonTeslasaurusForm3ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonGarhoundForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2326,20 +2002,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonGarhoundForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonGarhoundForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonGarhoundForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonGarhoundForm1ReconcileOnCelebrate"
-      ]
     },
     {
       "id": "TrainersPocketMonGarhoundForm1EvolveCelebrate",
@@ -2359,20 +2021,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonGarhoundForm2ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonGarhoundForm2ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonGarhoundForm2ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonGarhoundForm2ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonGarhoundForm2EvolveCelebrate",
       "trigger": "on_encounter_complete",
       "effects": [
@@ -2390,20 +2038,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonGarhoundForm3ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonGarhoundForm3ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonGarhoundForm3ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonGarhoundForm3ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonFirearyForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2414,20 +2048,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonFirearyForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonFirearyForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonFirearyForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonFirearyForm1ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonFrossetForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2436,20 +2056,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonFrossetForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonFrossetForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonFrossetForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonFrossetForm1ReconcileOnCelebrate"
-      ]
     },
     {
       "id": "TrainersPocketMonFrossetForm1EvolveCelebrate",
@@ -2469,20 +2075,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonFrossetForm2ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonFrossetForm2ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonFrossetForm2ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonFrossetForm2ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonFrossetForm2EvolveCelebrate",
       "trigger": "on_encounter_complete",
       "effects": [
@@ -2500,20 +2092,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonFrossetForm3ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonFrossetForm3ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonFrossetForm3ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonFrossetForm3ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonUmbrabeakForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2522,20 +2100,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonUmbrabeakForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonUmbrabeakForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonUmbrabeakForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonUmbrabeakForm1ReconcileOnCelebrate"
-      ]
     },
     {
       "id": "TrainersPocketMonUmbrabeakForm1EvolveCelebrate",
@@ -2555,20 +2119,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonUmbrabeakForm2ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonUmbrabeakForm2ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonUmbrabeakForm2ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonUmbrabeakForm2ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonUmbrabeakForm2EvolveCelebrate",
       "trigger": "on_encounter_complete",
       "effects": [
@@ -2586,20 +2136,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonUmbrabeakForm3ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonUmbrabeakForm3ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonUmbrabeakForm3ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonUmbrabeakForm3ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonMagmothForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2608,20 +2144,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonMagmothForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonMagmothForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonMagmothForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonMagmothForm1ReconcileOnCelebrate"
-      ]
     },
     {
       "id": "TrainersPocketMonMagmothForm1EvolveCelebrate",
@@ -2641,20 +2163,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonMagmothForm2ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonMagmothForm2ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonMagmothForm2ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonMagmothForm2ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonChilloadForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2665,20 +2173,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonChilloadForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonChilloadForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonChilloadForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonChilloadForm1ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonDragonMothForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2687,20 +2181,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonDragonMothForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonDragonMothForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonDragonMothForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonDragonMothForm1ReconcileOnCelebrate"
-      ]
     },
     {
       "id": "TrainersPocketMonDragonMothForm1EvolveCelebrate",
@@ -2720,20 +2200,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonDragonMothForm2ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonDragonMothForm2ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonDragonMothForm2ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonDragonMothForm2ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonDragonMothForm2EvolveCelebrate",
       "trigger": "on_encounter_complete",
       "effects": [
@@ -2751,20 +2217,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonDragonMothForm3ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonDragonMothForm3ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonDragonMothForm3ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonDragonMothForm3ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonLeafshrewForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2773,20 +2225,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonLeafshrewForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonLeafshrewForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonLeafshrewForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonLeafshrewForm1ReconcileOnCelebrate"
-      ]
     },
     {
       "id": "TrainersPocketMonLeafshrewForm1EvolveCelebrate",
@@ -2806,20 +2244,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonLeafshrewForm2ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonLeafshrewForm2ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonLeafshrewForm2ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonLeafshrewForm2ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonManshrimpForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2828,20 +2252,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonManshrimpForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonManshrimpForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonManshrimpForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonManshrimpForm1ReconcileOnCelebrate"
-      ]
     },
     {
       "id": "TrainersPocketMonManshrimpForm1EvolveCelebrate",
@@ -2861,20 +2271,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonManshrimpForm2ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonManshrimpForm2ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonManshrimpForm2ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonManshrimpForm2ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonManshrimpForm2EvolveCelebrate",
       "trigger": "on_encounter_complete",
       "effects": [
@@ -2892,20 +2288,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonManshrimpForm3ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonManshrimpForm3ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonManshrimpForm3ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonManshrimpForm3ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonJourmancoilForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2914,20 +2296,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonJourmancoilForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonJourmancoilForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonJourmancoilForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonJourmancoilForm1ReconcileOnCelebrate"
-      ]
     },
     {
       "id": "TrainersPocketMonJourmancoilForm1EvolveCelebrate",
@@ -2947,20 +2315,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonJourmancoilForm2ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonJourmancoilForm2ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonJourmancoilForm2ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonJourmancoilForm2ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonVampirantForm1EarnEXP",
       "trigger": "on_any_hero_death_on_floor",
       "effects": [
@@ -2969,20 +2323,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonVampirantForm1ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonVampirantForm1ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonVampirantForm1ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonVampirantForm1ReconcileOnCelebrate"
-      ]
     },
     {
       "id": "TrainersPocketMonVampirantForm1EvolveCelebrate",
@@ -3002,20 +2342,6 @@
       }
     },
     {
-      "id": "TrainersPocketMonVampirantForm2ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonVampirantForm2ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonVampirantForm2ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonVampirantForm2ReconcileOnCelebrate"
-      ]
-    },
-    {
       "id": "TrainersPocketMonVampirantForm2EvolveCelebrate",
       "trigger": "on_encounter_complete",
       "effects": [
@@ -3031,20 +2357,6 @@
       "descriptions": {
         "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
       }
-    },
-    {
-      "id": "TrainersPocketMonVampirantForm3ReconcileSpawn",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersPocketMonVampirantForm3ReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersPocketMonVampirantForm3ReconcileCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersPocketMonVampirantForm3ReconcileOnCelebrate"
-      ]
     }
   ],
   "effects": [
@@ -3054,20 +2366,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonCuttlfishForm1LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonCuttlfishForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonCuttlfishForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonCuttlfishForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonCuttlfishForm1LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonCuttlfishForm1EvolveEffect",
@@ -3090,20 +2388,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonCuttlfishForm2ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonCuttlfishForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonCuttlfishForm2ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonCuttlfishForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonCuttlfishForm2EvolveEffect",
       "name": "@CardEffectTrainersEvolveOnCelebrate",
       "target_mode": "self",
@@ -3124,20 +2408,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonCuttlfishForm3ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonCuttlfishForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonCuttlfishForm3ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonCuttlfishForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonCuttlfishForm3SpawnEffect",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
@@ -3149,20 +2419,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonHyenaForm1LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonHyenaForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonHyenaForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonHyenaForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonHyenaForm1LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonHyenaForm1EvolveEffect",
@@ -3183,20 +2439,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonHyenaForm2LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonHyenaForm2ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonHyenaForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonHyenaForm2ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonHyenaForm2LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonHyenaForm2SpawnEffect",
@@ -3224,20 +2466,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonBloodWormForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonBloodWormForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonBloodWormForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonBloodWormForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonBloodWormForm1EvolveEffect",
       "name": "@CardEffectTrainersEvolveOnCelebrate",
       "target_mode": "self",
@@ -3258,20 +2486,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonBloodWormForm2ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonBloodWormForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonBloodWormForm2ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonBloodWormForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonBloodWormForm2SpawnEffect",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
@@ -3283,20 +2497,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonSnapsaurusForm1LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonSnapsaurusForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonSnapsaurusForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonSnapsaurusForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonSnapsaurusForm1LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonSnapsaurusForm1EvolveEffect",
@@ -3319,20 +2519,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonSnapsaurusForm2ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonSnapsaurusForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonSnapsaurusForm2ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonSnapsaurusForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonSnapsaurusForm2EvolveEffect",
       "name": "@CardEffectTrainersEvolveOnCelebrate",
       "target_mode": "self",
@@ -3353,20 +2539,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonSnapsaurusForm3ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonSnapsaurusForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonSnapsaurusForm3ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonSnapsaurusForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonSnapsaurusForm3SpawnEffect",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
@@ -3378,20 +2550,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonTeslasaurusForm1LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonTeslasaurusForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonTeslasaurusForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonTeslasaurusForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonTeslasaurusForm1LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonTeslasaurusForm1EvolveEffect",
@@ -3414,20 +2572,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonTeslasaurusForm2ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonTeslasaurusForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonTeslasaurusForm2ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonTeslasaurusForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonTeslasaurusForm2EvolveEffect",
       "name": "@CardEffectTrainersEvolveOnCelebrate",
       "target_mode": "self",
@@ -3448,20 +2592,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonTeslasaurusForm3ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonTeslasaurusForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonTeslasaurusForm3ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonTeslasaurusForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonTeslasaurusForm3SpawnEffect",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
@@ -3473,20 +2603,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonGarhoundForm1LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonGarhoundForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonGarhoundForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonGarhoundForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonGarhoundForm1LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonGarhoundForm1EvolveEffect",
@@ -3509,20 +2625,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonGarhoundForm2ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonGarhoundForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonGarhoundForm2ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonGarhoundForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonGarhoundForm2EvolveEffect",
       "name": "@CardEffectTrainersEvolveOnCelebrate",
       "target_mode": "self",
@@ -3543,20 +2645,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonGarhoundForm3ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonGarhoundForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonGarhoundForm3ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonGarhoundForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonGarhoundForm3SpawnEffect",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
@@ -3570,20 +2658,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonFirearyForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonFirearyForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonFirearyForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonFirearyForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonFirearyForm1SpawnEffect",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
@@ -3595,20 +2669,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonFrossetForm1LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonFrossetForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonFrossetForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonFrossetForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonFrossetForm1LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonFrossetForm1EvolveEffect",
@@ -3631,20 +2691,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonFrossetForm2ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonFrossetForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonFrossetForm2ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonFrossetForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonFrossetForm2EvolveEffect",
       "name": "@CardEffectTrainersEvolveOnCelebrate",
       "target_mode": "self",
@@ -3665,20 +2711,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonFrossetForm3ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonFrossetForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonFrossetForm3ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonFrossetForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonFrossetForm3SpawnEffect",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
@@ -3690,20 +2722,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonUmbrabeakForm1LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonUmbrabeakForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonUmbrabeakForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonUmbrabeakForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonUmbrabeakForm1LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonUmbrabeakForm1EvolveEffect",
@@ -3726,20 +2744,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonUmbrabeakForm2ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonUmbrabeakForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonUmbrabeakForm2ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonUmbrabeakForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonUmbrabeakForm2EvolveEffect",
       "name": "@CardEffectTrainersEvolveOnCelebrate",
       "target_mode": "self",
@@ -3760,20 +2764,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonUmbrabeakForm3ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonUmbrabeakForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonUmbrabeakForm3ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonUmbrabeakForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonUmbrabeakForm3SpawnEffect",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
@@ -3785,20 +2775,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonMagmothForm1LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonMagmothForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonMagmothForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonMagmothForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonMagmothForm1LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonMagmothForm1EvolveEffect",
@@ -3821,20 +2797,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonMagmothForm2ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonMagmothForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonMagmothForm2ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonMagmothForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonMagmothForm2SpawnEffect",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
@@ -3848,20 +2810,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonChilloadForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonChilloadForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonChilloadForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonChilloadForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonChilloadForm1SpawnEffect",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
@@ -3873,20 +2821,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonDragonMothForm1LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonDragonMothForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonDragonMothForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonDragonMothForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonDragonMothForm1LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonDragonMothForm1EvolveEffect",
@@ -3909,20 +2843,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonDragonMothForm2ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonDragonMothForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonDragonMothForm2ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonDragonMothForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonDragonMothForm2EvolveEffect",
       "name": "@CardEffectTrainersEvolveOnCelebrate",
       "target_mode": "self",
@@ -3943,20 +2863,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonDragonMothForm3ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonDragonMothForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonDragonMothForm3ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonDragonMothForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonDragonMothForm3SpawnEffect",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
@@ -3968,20 +2874,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonLeafshrewForm1LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonLeafshrewForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonLeafshrewForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonLeafshrewForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonLeafshrewForm1LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonLeafshrewForm1EvolveEffect",
@@ -4004,20 +2896,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonLeafshrewForm2ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonLeafshrewForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonLeafshrewForm2ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonLeafshrewForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonLeafshrewForm2SpawnEffect",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
@@ -4029,20 +2907,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonManshrimpForm1LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonManshrimpForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonManshrimpForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonManshrimpForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonManshrimpForm1LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonManshrimpForm1EvolveEffect",
@@ -4065,20 +2929,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonManshrimpForm2ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonManshrimpForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonManshrimpForm2ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonManshrimpForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonManshrimpForm2EvolveEffect",
       "name": "@CardEffectTrainersEvolveOnCelebrate",
       "target_mode": "self",
@@ -4099,20 +2949,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonManshrimpForm3ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonManshrimpForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonManshrimpForm3ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonManshrimpForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonManshrimpForm3SpawnEffect",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
@@ -4124,20 +2960,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonJourmancoilForm1LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonJourmancoilForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonJourmancoilForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonJourmancoilForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonJourmancoilForm1LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonJourmancoilForm1EvolveEffect",
@@ -4160,20 +2982,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonJourmancoilForm2ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonJourmancoilForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonJourmancoilForm2ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonJourmancoilForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonJourmancoilForm2SpawnEffect",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
@@ -4185,20 +2993,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonVampirantForm1LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonVampirantForm1ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonVampirantForm1LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonVampirantForm1ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonVampirantForm1LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonVampirantForm1EvolveEffect",
@@ -4221,20 +3015,6 @@
       "param_int": 0
     },
     {
-      "id": "TrainersPocketMonVampirantForm2ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonVampirantForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonVampirantForm2ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonVampirantForm2LevelStatBonus",
-      "param_int": 1
-    },
-    {
       "id": "TrainersPocketMonVampirantForm2EvolveEffect",
       "name": "@CardEffectTrainersEvolveOnCelebrate",
       "target_mode": "self",
@@ -4253,20 +3033,6 @@
       "target_mode": "self",
       "param_upgrade": "@TrainersPocketMonVampirantForm3LevelStatBonus",
       "param_int": 0
-    },
-    {
-      "id": "TrainersPocketMonVampirantForm3ReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonVampirantForm3LevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersPocketMonVampirantForm3ReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersPocketMonVampirantForm3LevelStatBonus",
-      "param_int": 1
     },
     {
       "id": "TrainersPocketMonVampirantForm3SpawnEffect",

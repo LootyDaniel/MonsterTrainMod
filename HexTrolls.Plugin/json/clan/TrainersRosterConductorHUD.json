@@ -5,9 +5,9 @@
       "id": "TrainersRosterHud01",
       "name": "@TrainersRosterSlotHud",
       "type": "small",
-      "background": "@BasicClanLargeIcon",
+      "background": "@TrainersRosterBlankBackground",
       "icons": [
-        "@BasicClanSmallIcon"
+        "@TrainersRosterSmallIcon"
       ],
       "class": "@TrainersClan",
       "display": "run",
@@ -22,9 +22,9 @@
       "id": "TrainersRosterHud02",
       "name": "@TrainersRosterSlotHud",
       "type": "small",
-      "background": "@BasicClanLargeIcon",
+      "background": "@TrainersRosterBlankBackground",
       "icons": [
-        "@BasicClanSmallIcon"
+        "@TrainersRosterSmallIcon"
       ],
       "class": "@TrainersClan",
       "display": "run",
@@ -39,9 +39,9 @@
       "id": "TrainersRosterHud03",
       "name": "@TrainersRosterSlotHud",
       "type": "small",
-      "background": "@BasicClanLargeIcon",
+      "background": "@TrainersRosterBlankBackground",
       "icons": [
-        "@BasicClanSmallIcon"
+        "@TrainersRosterSmallIcon"
       ],
       "class": "@TrainersClan",
       "display": "run",
@@ -56,9 +56,9 @@
       "id": "TrainersRosterHud04",
       "name": "@TrainersRosterSlotHud",
       "type": "small",
-      "background": "@BasicClanLargeIcon",
+      "background": "@TrainersRosterBlankBackground",
       "icons": [
-        "@BasicClanSmallIcon"
+        "@TrainersRosterSmallIcon"
       ],
       "class": "@TrainersClan",
       "display": "run",
@@ -73,9 +73,9 @@
       "id": "TrainersRosterHud05",
       "name": "@TrainersRosterSlotHud",
       "type": "small",
-      "background": "@BasicClanLargeIcon",
+      "background": "@TrainersRosterBlankBackground",
       "icons": [
-        "@BasicClanSmallIcon"
+        "@TrainersRosterSmallIcon"
       ],
       "class": "@TrainersClan",
       "display": "run",
@@ -90,9 +90,9 @@
       "id": "TrainersRosterHud06",
       "name": "@TrainersRosterSlotHud",
       "type": "small",
-      "background": "@BasicClanLargeIcon",
+      "background": "@TrainersRosterBlankBackground",
       "icons": [
-        "@BasicClanSmallIcon"
+        "@TrainersRosterSmallIcon"
       ],
       "class": "@TrainersClan",
       "display": "run",
@@ -102,6 +102,16 @@
       "tooltip_texts": {
         "english": "Click between battles to assign a unit card from your deck. Assigned units gain Deployable."
       }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersRosterSmallIcon",
+      "path": "textures/icons/TrainersSmallIcon.png"
+    },
+    {
+      "id": "TrainersRosterBlankBackground",
+      "path": "textures/icons/TrainersRosterBlankBackground.png"
     }
   ]
 }

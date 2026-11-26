@@ -9,14 +9,14 @@ using TrainworksReloaded.Core.Interfaces;
 namespace HexTrolls.Plugin.code
 {
     /// <summary>
-    /// Permanent progression reconciliation.
+    /// Permanent EXP / Level progression. No mutation on summon or celebrate.
     ///
     /// Source of truth: saved deck card upgrades, never temporary unit stacks.
-    /// Level = 1 + number of permanent Trainers level upgrades.
+    /// Level = 1 + number of permanent level-bonus upgrades for any supported unit.
     /// EXP = sum of binary TrainersEXPBit upgrades (1, 2, 4 ...).
     ///
-    /// param_int=0: Siphon/kill award + reconcile.
-    /// param_int=1: reconcile only (Summon, Celebrate).
+    /// param_int=0: kill EXP award, and permanent upgrade ONLY on level-up.
+    /// param_int=1: summon / celebrate => strictly NO OPERATION.
     ///
     /// On a level-up, spend 10 * current Level, keep leftovers, and support
     /// as many consecutive level-ups as the EXP permits.
@@ -26,7 +26,6 @@ namespace HexTrolls.Plugin.code
         private const int ExpPerLevel = 10;
         private const int ExpBitCount = 20;
         private const int MaxLevel = 100000;
-        private const string LevelId = "hextrolls.plugin_level";
         private const string ExpId = "hextrolls.plugin_exp";
 
         public override PropDescriptions CreateEditorInspectorDescriptions()
@@ -49,7 +48,19 @@ namespace HexTrolls.Plugin.code
             if (!TestEffect(effect, parameters, managers))
                 yield break;
 
+            // Summon and Celebrate are observational only.  Never change the
+            // unit's Level, EXP, stats, or saved card when it enters combat.
+            // Initial permanent upgrades are already transferred by the game,
+            // like Multistrike.  Only a real kill can earn EXP and level up.
+            if (effect == null || effect.GetParamInt() != 0 ||
+                parameters.dyingCharacter == null)
+                yield break;
+
             CharacterState unit = parameters.selfTarget;
+            int earned = CalculateKillExp(unit, parameters.dyingCharacter);
+            if (earned <= 0)
+                yield break;
+
             SaveManager save = managers.GetSaveManager();
             CardState sourceCard = FindSavedSourceCard(unit, save);
             if (sourceCard == null)
@@ -63,7 +74,8 @@ namespace HexTrolls.Plugin.code
             // Railhead's registration key is not guaranteed to be equal to
             // CardUpgradeState.GetCardUpgradeDataId() on a saved deck card.
             UpgradeIdCatalog catalog;
-            if (!TryBuildUpgradeCatalog(out catalog))
+            if (!TryBuildUpgradeCatalog(out catalog,
+                effect != null ? effect.GetParamCardUpgradeData() : null))
             {
                 Warn("Cannot reconcile: upgrade identity catalog is incomplete.");
                 yield break;
@@ -83,43 +95,17 @@ namespace HexTrolls.Plugin.code
                 yield break;
             }
 
-            // Migrate existing run cards (created before TrainersLevelBaseMarker
-            // was added) and verify all new cards have their one base Level stack.
-            // The marker has no stats: 1 Level comes from this marker, and
-            // subsequent Levels come from the permanent stat upgrades.
-            string baseLevelId = catalog.RuntimeIds["TrainersLevelBaseMarker"];
-            if (CountUpgrade(savedUpgrades, baseLevelId) == 0)
-            {
-                var baseMarker = new CardUpgradeState();
-                baseMarker.Setup(catalog.Templates["TrainersLevelBaseMarker"], false, false);
-                modifiers.AddUpgrade(baseMarker);
-                savedUpgrades = GetSavedUpgrades(modifiers);
-                if (CountUpgrade(savedUpgrades, baseLevelId) != 1)
-                {
-                    Warn("Could not persist base Level 1 marker. Cancelling reconciliation.");
-                    yield break;
-                }
-                Info("Migrated a saved Trainers card to the single permanent Level status.");
-            }
-            else if (CountUpgrade(savedUpgrades, baseLevelId) > 1)
-            {
-                Warn("Multiple base Level markers on one card. This run may have duplicate Level status displays.");
-            }
-
-            // CARD is authoritative. A character's initial Level 1 and its
-            // permanent Level bonuses may not be combined in the UI; do not
-            // make leveling decisions from those visible status stacks.
+            // No legacy migration during combat: the permanent card is the
+            // source of truth and is never altered merely to reconcile status.
+            // New cards begin with exactly one LevelBaseMarker in the JSON.
+            // Count levels from permanent upgrades. These are applied by the
+            // native spawn pipeline. Do NOT touch live Level here.
             int oldLevel = Math.Max(1, 1 + CountLevelUpgrades(savedUpgrades, catalog));
             long savedExp = ReadStoredExp(savedUpgrades, catalog);
             if (oldLevel == 1 && savedExp == 0 && savedUpgrades.Count > 0)
                 Info("Saved card has " + savedUpgrades.Count +
                      " upgrades, but no recognized progression. IDs: " +
                      DescribeUpgrades(savedUpgrades));
-
-            bool awardKill = effect != null && effect.GetParamInt() == 0;
-            int earned = awardKill ? CalculateKillExp(unit, parameters.dyingCharacter) : 0;
-            if (awardKill && parameters.dyingCharacter == null)
-                Warn("Siphon ran without a dyingCharacter; reconciling existing EXP only.");
 
             long total = savedExp + (long)earned;
             int newLevel = oldLevel;
@@ -212,11 +198,14 @@ namespace HexTrolls.Plugin.code
                      finalLevel + ", EXP " + finalExp +
                      ". Upgrade IDs=" + DescribeUpgrades(committed));
             }
-            SyncLiveStatus(unit, FindStatusId(unit, LevelId, "level"), finalLevel);
+            // No Level syncing/reapplication/removal. Native ApplyCardUpgrade
+            // updates Level and stats ONLY for true level-ups. The card's
+            // permanent upgrade list is the sole source of saved progression.
+            // EXP legitimately decreases when a level-up spends it.
             SyncLiveStatus(unit, FindStatusId(unit, ExpId, "exp"), finalExp);
             sourceCard.UpdateCardBodyText();
 
-            Info((awardKill ? "Siphon" : "Reconcile") +
+            Info("Siphon" +
                  ": card=" + sourceCard.GetID() +
                  ", Level " + oldLevel + " -> " + finalLevel +
                  ", saved EXP " + savedExp + " + " + earned +
@@ -264,7 +253,19 @@ namespace HexTrolls.Plugin.code
                 new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         }
 
-        private static bool TryBuildUpgradeCatalog(out UpgradeIdCatalog catalog)
+        // All existing Trainer PocketMon lines.  Keep the entire evolution line
+        // registered so a later form can still recognize level upgrades inherited
+        // from earlier forms.  Missing optional forms are harmless; the Level
+        // mechanic must not depend on the old Assistant starter units.
+        private static readonly string[] PocketMonLines = {
+            "Cuttlfish:3", "Hyena:2", "BloodWorm:2", "Snapsaurus:3",
+            "Teslasaurus:3", "Garhound:3", "Fireary:1", "Frosset:3",
+            "Umbrabeak:3", "Magmoth:2", "Chilload:1", "DragonMoth:3",
+            "Leafshrew:2", "Manshrimp:3", "Jourmancoil:2", "Vampirant:3"
+        };
+
+        private static bool TryBuildUpgradeCatalog(out UpgradeIdCatalog catalog,
+            CardUpgradeData activeLevelBonus)
         {
             catalog = new UpgradeIdCatalog();
             var registry = Railend.GetContainer().GetInstance<IRegister<CardUpgradeData>>();
@@ -274,19 +275,40 @@ namespace HexTrolls.Plugin.code
                 return false;
             }
 
+            // The base marker and EXP bits are common progression infrastructure.
+            // They are required, independent of which individual units exist.
             if (!RegisterRuntimeId(registry, catalog, "TrainersLevelBaseMarker"))
                 return false;
-            string[] levelNames = {
-                "TrainersStarterLevelStatBonus",
-                "TrainersBannerLevelStatBonus",
-                "TrainersVeteranLevelStatBonus"
-            };
-            for (int i = 0; i < levelNames.Length; i++)
+
+            // No Assistant-specific upgrades or dependencies are required.
+
+            // Every registered PocketMon form has its own stat+Level upgrade.
+            // The saved card may also contain bonuses inherited from earlier
+            // evolutionary forms, so count all forms, not only the current one.
+            foreach (string spec in PocketMonLines)
             {
-                if (!RegisterRuntimeId(registry, catalog, levelNames[i]))
-                    return false;
-                catalog.LevelIds.Add(catalog.RuntimeIds[levelNames[i]]);
+                string[] parts = spec.Split(':');
+                int forms = int.Parse(parts[1]);
+                for (int form = 1; form <= forms; form++)
+                {
+                    string upgradeName = "TrainersPocketMon" + parts[0] +
+                        "Form" + form + "LevelStatBonus";
+                    RegisterOptionalLevelBonus(registry, catalog, upgradeName);
+                }
             }
+
+            // Future/non-PocketMon units can use this same Level effect: their
+            // configured param_upgrade is itself a recognized Level bonus,
+            // even when its name is not part of the historical form catalog.
+            if (activeLevelBonus != null)
+            {
+                var probe = new CardUpgradeState();
+                probe.Setup(activeLevelBonus, false, false);
+                string id = probe.GetCardUpgradeDataId();
+                if (!string.IsNullOrEmpty(id))
+                    catalog.LevelIds.Add(id);
+            }
+
             for (int bit = 0; bit < ExpBitCount; bit++)
             {
                 string name = "TrainersEXPBit" + bit.ToString("D2");
@@ -301,6 +323,22 @@ namespace HexTrolls.Plugin.code
                 catalog.ExpBits.Add(runtimeId, bit);
             }
             return true;
+        }
+
+        private static void RegisterOptionalLevelBonus(
+            IRegister<CardUpgradeData> registry, UpgradeIdCatalog catalog,
+            string shortName)
+        {
+            string key = MyPluginInfo.PLUGIN_GUID + "-Upgrade-" + shortName;
+            CardUpgradeData template;
+            if (!registry.TryGetValue(key, out template) || template == null)
+                return;
+
+            var probe = new CardUpgradeState();
+            probe.Setup(template, false, false);
+            string id = probe.GetCardUpgradeDataId();
+            if (!string.IsNullOrEmpty(id))
+                catalog.LevelIds.Add(id);
         }
 
         private static bool RegisterRuntimeId(IRegister<CardUpgradeData> registry,

@@ -109,7 +109,7 @@
   "sprites": [
     {
       "id": "BasicClanSmallIcon",
-      "path": "textures/icons/OrcClanSmallIcon.png"
+      "path": "textures/icons/TrainersSmallIcon.png"
     },
     {
       "id": "BasicClanMediumIcon",

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "TrainersPocketMonCaptureSpell",
+      "names": { "english": "Capture Capsule" },
+      "descriptions": {
+        "english": "Capture an enemy <b>PocketMon</b> with less than 10 current Health. It leaves combat without triggering death effects. Add that PocketMon's unit card to your run deck."
+      },
+      "cost": 1,
+      "card_type": "spell",
+      "rarity": "uncommon",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@GuildMasterCardArt",
+      "pools": ["MegaPool"],
+      "effects": [
+        "@TrainersPocketMonCaptureSelectTarget",
+        "@TrainersPocketMonCaptureEffect"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "TrainersPocketMonCaptureSelectTarget",
+      "name": "CardEffectNULL",
+      "target_mode": "drop_target_character",
+      "target_team": "both",
+      "param_bool": false,
+      "param_int_2": 1,
+      "should_test": true,
+      "should_fail_to_cast_if_test_fails": false
+    },
+    {
+      "id": "TrainersPocketMonCaptureEffect",
+      "name": "@CardEffectTrainersCapturePocketMon",
+      "target_mode": "last_targeted_characters",
+      "target_team": "both",
+      "param_int": 1,
+      "should_test": false,
+      "should_fail_to_cast_if_test_fails": false
+    }
+  ]
+}

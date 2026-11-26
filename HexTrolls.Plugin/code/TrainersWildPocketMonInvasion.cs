@@ -1,6 +1,6 @@
 // Trainers Wild PocketMon Invasion — isolated enemy-spawn replacement relic.
 // Does NOT modify your Trainer roster controller, existing roster relic,
-// run deck, or any CharacterData assets. v9 adds enemy-only facing;
+// run deck, or any CharacterData assets. v9.1 adds enemy-only facing;
 // retains v7 pools and Cuttlfish protection; no coroutine wrapping.
 using System;
 using System.Collections;
@@ -49,6 +49,9 @@ namespace HexTrolls.Plugin.code
                 {
                     if (unit == null || !TrainersWildPocketMonInvasion.IsEnemyPocketMon(unit)) continue;
                     matched++;
+                    // Apply the enemy's initial Level once per spawned CharacterState,
+                    // before/independently of the visual-mirroring work.
+                    TrainersWildPocketMonInvasion.TryAssignEnemyEntryLevel(unit);
                     CharacterUI ui = unit.GetCharacterUI();
                     if (ui == null) continue;
                     artReady++;
@@ -57,13 +60,30 @@ namespace HexTrolls.Plugin.code
                 if (diagnostics < 4 && (matched > 0 || (++diagnostics % 2) == 0))
                 {
                     TrainersWildPocketMonInvasion.LogDiagnostic(
-                        "v9 facing scan: live CharacterState=" + live.Length +
+                        "v9.1 facing scan: live CharacterState=" + live.Length +
                         "; enemy PocketMon=" + matched + "; ready CharacterUI=" + artReady);
                     if (matched > 0) diagnostics = 4;
                 }
             }
             catch (Exception ex) { TrainersWildPocketMonInvasion.LogFacingErrorOnce(ex); }
         }
+    }
+
+    // Lives on the individual enemy CharacterState, never its shared CharacterData.
+    // Ensures a random roll is used only once, even if the art watcher scans
+    // the unit hundreds of times or CharacterUI is rebuilt.
+    public sealed class TrainersWildPocketMonEntryLevelMarker : MonoBehaviour
+    {
+        internal bool Applied;
+        internal bool Rolled;
+        internal int Roll;
+        internal int EntryLevel;
+        internal bool StatsAttempted;
+        internal int Ring;
+        internal int Wave;
+        internal string WaveSource;
+        internal bool RolledAtSpawn;
+        internal bool FailureLogged;
     }
 
     // Attach to the per-unit CharacterUI, but flip ONLY the rendered artwork
@@ -89,8 +109,32 @@ namespace HexTrolls.Plugin.code
                 art = transform.Find("Quad_Default");
                 if (art == null)
                 {
-                    var spriteAnimation = GetComponentInChildren<CharacterUIMeshAnimatedSprite>(true);
-                    if (spriteAnimation != null) art = spriteAnimation.transform;
+                    // Quad_Default can be nested. Find its Transform anywhere
+                    // below this character UI without depending on a game-only type.
+                    foreach (var child in GetComponentsInChildren<Transform>(true))
+                    {
+                        if (child != transform && child.name == "Quad_Default")
+                        {
+                            art = child;
+                            break;
+                        }
+                    }
+                }
+                if (art == null)
+                {
+                    // The animated sprite class isn't always public/referenced
+                    // by consumer mod projects. Look it up by runtime type NAME;
+                    // do NOT introduce a compile-time reference to the class.
+                    foreach (var component in GetComponentsInChildren<Component>(true))
+                    {
+                        if (component == null) continue;
+                        if (component.GetType().Name.IndexOf(
+                            "CharacterUIMeshAnimatedSprite", StringComparison.OrdinalIgnoreCase) >= 0)
+                        {
+                            art = component.transform;
+                            break;
+                        }
+                    }
                 }
                 if (art == null)
                 {
@@ -172,7 +216,7 @@ namespace HexTrolls.Plugin.code
                     m.GetParameters().Length == 5 &&
                     m.GetParameters()[0].ParameterType == typeof(CharacterData) &&
                     m.GetParameters()[4].ParameterType == typeof(CharacterData));
-            TrainersWildPocketMonInvasion.LogDiagnostic("v9 CreateHeroState hook=" + found);
+            TrainersWildPocketMonInvasion.LogDiagnostic("v9.1 CreateHeroState hook=" + found);
             return found;
         }
 
@@ -190,7 +234,7 @@ namespace HexTrolls.Plugin.code
             }
             catch (Exception ex)
             {
-                TrainersWildPocketMonInvasion.LogDiagnostic("v9 CreateHeroState ERROR " + ex);
+                TrainersWildPocketMonInvasion.LogDiagnostic("v9.1 CreateHeroState ERROR " + ex);
             }
         }
     }
@@ -205,7 +249,7 @@ namespace HexTrolls.Plugin.code
                 .FirstOrDefault(m => m.Name == "SpawnHeroInRoom" &&
                     m.GetParameters().Length == 5 &&
                     m.GetParameters()[0].ParameterType == typeof(CharacterData));
-            TrainersWildPocketMonInvasion.LogDiagnostic("v9 SpawnHeroInRoom hook=" + found);
+            TrainersWildPocketMonInvasion.LogDiagnostic("v9.1 SpawnHeroInRoom hook=" + found);
             return found;
         }
 
@@ -222,7 +266,7 @@ namespace HexTrolls.Plugin.code
             }
             catch (Exception ex)
             {
-                TrainersWildPocketMonInvasion.LogDiagnostic("v9 SpawnHeroInRoom ERROR " + ex);
+                TrainersWildPocketMonInvasion.LogDiagnostic("v9.1 SpawnHeroInRoom ERROR " + ex);
             }
         }
     }
@@ -311,6 +355,195 @@ namespace HexTrolls.Plugin.code
         private static int replacementsLogged;
         private static RelicData relic;
 
+        // The existing enemy mapping labels identify the encounter Ring
+        // (e.g. "Ring 2 Large"). Cache it only when the replacement is chosen.
+        // No character prefab, pool assignment, or friendly unit is modified.
+        private static int entryRing;
+        private static bool warnedMissingWave;
+        private static bool warnedMissingRing;
+        private const string LevelStatusId = "hextrolls.plugin_level";
+        // Inclusive random range: -1, 0, +1 (equal probability).
+        private const int MinimumEntryLevel = 1;
+
+        // Each spawn stores its ring/wave/roll against the ORIGINAL registered
+        // CharacterData ID, not against a cloned ScriptableObject. A FIFO permits
+        // several identical PocketMon enemies in the same wave. The live unit
+        // consumes its entry record once; no reroll when art/UI refreshes.
+        private sealed class PendingEntry
+        {
+            internal int Ring, Wave, Roll, Level;
+            internal string WaveSource;
+        }
+        private static readonly Dictionary<string, Queue<PendingEntry>> PendingByCharacterId =
+            new Dictionary<string, Queue<PendingEntry>>(StringComparer.OrdinalIgnoreCase);
+
+        private static void QueueEnemyEntry(CharacterData data, int ring,
+            int wave, string waveSource, int roll, int level)
+        {
+            if (data == null) return;
+            string id = data.GetID();
+            if (String.IsNullOrEmpty(id)) return;
+            Queue<PendingEntry> q;
+            if (!PendingByCharacterId.TryGetValue(id, out q))
+            {
+                q = new Queue<PendingEntry>();
+                PendingByCharacterId[id] = q;
+            }
+            // Guard against pending entries from an aborted/previewed spawn.
+            if (q.Count >= 64) q.Dequeue();
+            q.Enqueue(new PendingEntry { Ring=ring, Wave=wave,
+                WaveSource=waveSource, Roll=roll, Level=level });
+        }
+
+        private static bool TryTakeEnemyEntry(CharacterData data, out PendingEntry entry)
+        {
+            entry = null;
+            if (data == null) return false;
+            Queue<PendingEntry> q;
+            if (!PendingByCharacterId.TryGetValue(data.GetID(), out q) || q.Count == 0)
+                return false;
+            entry = q.Dequeue();
+            return true;
+        }
+
+        // IMPORTANT: Always spawn the ORIGINAL registered CharacterData. Cloning
+        // a CharacterData with UnityEngine.Object.Instantiate creates an object
+        // which Trainworks' character-art registry does not recognize; the game
+        // renders the black "CHARACTER ART NOT FOUND" placeholder.
+        //
+        // Enemy stat scaling is done on the live ENEMY CharacterState, never on
+        // CharacterData and never on any permanent player card. No level or
+        // stat modifiers are added to summoned player units.
+        private static bool TryReadBaseStat(CharacterData data, string name, out int value)
+        {
+            value = 0;
+            if (data == null) return false;
+            try
+            {
+                for (Type t = data.GetType(); t != null; t = t.BaseType)
+                {
+                    FieldInfo f = t.GetField(name, BindingFlags.DeclaredOnly | Flags);
+                    if (f == null || f.FieldType != typeof(int)) continue;
+                    value = (int)f.GetValue(data);
+                    return true;
+                }
+            }
+            catch (Exception) { }
+            return false;
+        }
+
+        // Use a native CharacterState setter where the installed game version
+        // exposes one. The fallback only touches an int field on THIS live unit.
+        // Every path is verified through the public stats getters.
+        private static bool TryWriteLiveInt(CharacterState unit, int target,
+            Func<int> getter, string[] absoluteMethods, string[] deltaMethods,
+            string[] fieldNames)
+        {
+            int current = getter();
+            if (current == target) return true;
+            Type type = unit.GetType();
+            foreach (bool absolute in new[] { true, false })
+            {
+                string[] names = absolute ? absoluteMethods : deltaMethods;
+                foreach (string name in names)
+                {
+                    // Do not guess at incompatible signatures or extra params.
+                    foreach (MethodInfo m in type.GetMethods(Flags))
+                    {
+                        if (m.Name != name) continue;
+                        ParameterInfo[] pars = m.GetParameters();
+                        if (pars.Length != 1 || pars[0].ParameterType != typeof(int)) continue;
+                        try
+                        {
+                            current = getter();
+                            m.Invoke(unit, new object[] { absolute ? target : (target - current) });
+                            if (getter() == target) return true;
+                        }
+                        catch (Exception) { /* test next available setter */ }
+                    }
+                }
+            }
+            foreach (string fieldName in fieldNames)
+            {
+                for (Type t = type; t != null; t = t.BaseType)
+                {
+                    FieldInfo f = t.GetField(fieldName, BindingFlags.DeclaredOnly | Flags);
+                    if (f == null || f.FieldType != typeof(int) || f.IsInitOnly) continue;
+                    try
+                    {
+                        int prior = (int)f.GetValue(unit);
+                        f.SetValue(unit, target);
+                        if (getter() == target) return true;
+                        f.SetValue(unit, prior); // no effect: revert immediately
+                    }
+                    catch (Exception) { }
+                }
+            }
+            return false;
+        }
+
+        private static void ScaleEnemyLiveStats(CharacterState unit, int level)
+        {
+            CharacterData source = unit.GetSourceCharacterData();
+            int baseAttack, baseHp;
+            if (!TryReadBaseStat(source, "attackDamage", out baseAttack) ||
+                !TryReadBaseStat(source, "health", out baseHp) ||
+                baseHp < 1 || baseAttack < 0)
+            {
+                Warn("Enemy stats: couldn't read registered base stats for " +
+                    (source == null ? "unknown" : source.GetName()));
+                return;
+            }
+
+            int wantedAttack, wantedHp;
+            try
+            {
+                wantedAttack = checked(baseAttack * level);
+                wantedHp = checked(baseHp * level);
+            }
+            catch (OverflowException) { Warn("Enemy stat scaling overflow; skipped."); return; }
+
+            bool attackOk = TryWriteLiveInt(unit, wantedAttack,
+                () => unit.GetAttackDamage(),
+                new[] { "SetAttackDamage", "SetAttack", "SetBaseAttackDamage" },
+                new[] { "AddAttackDamage", "BuffDamage", "BuffAttackDamage", "ModifyAttackDamage" },
+                new[] { "attackDamage", "baseAttackDamage", "attack", "attackDamageBase" });
+            // Monster Train 2 uses a TWO-argument health setter:
+            // SetHealth(currentHp, maxHp). The old one-argument setter probe
+            // could change Attack but could not change Max HP, leaving every
+            // higher-Level enemy at its Level-1 HP. Use the game's native
+            // CharacterState setter, not a CharacterData clone or a status buff.
+            // This runs once per newly spawned enemy (StatsAttempted marker).
+            bool hpOk = unit.GetMaxHP() == wantedHp;
+            if (!hpOk)
+            {
+                try
+                {
+                    unit.SetHealth(wantedHp, wantedHp);
+                    hpOk = unit.GetMaxHP() == wantedHp;
+                }
+                catch (Exception ex)
+                {
+                    Warn("Native SetHealth(currentHP, maxHP) failed for " +
+                        source.GetName() + ": " + ex.GetType().Name + ": " + ex.Message);
+                }
+            }
+
+            Log("Enemy combat stats: " + source.GetName() +
+                "; level=" + level +
+                "; Attack=" + unit.GetAttackDamage() + "/" + wantedAttack +
+                "; MaxHP=" + unit.GetMaxHP() + "/" + wantedHp +
+                "; original registered art preserved" +
+                "; attackSet=" + attackOk + "; hpSet=" + hpOk);
+            if (!attackOk || !hpOk)
+            {
+                Warn("Enemy-only stat scaling incomplete for " + source.GetName() +
+                    ": Attack=" + unit.GetAttackDamage() + "/" + wantedAttack +
+                    ", MaxHP=" + unit.GetMaxHP() + "/" + wantedHp +
+                    ". Original character artwork remains registered.");
+            }
+        }
+
         private static void Log(string m) =>
             HexTrolls.Plugin.Plugin.Logger.LogInfo("[TrainersWildPocketMon] " + m);
         private static void Warn(string m) =>
@@ -332,9 +565,282 @@ namespace HexTrolls.Plugin.code
                 var host = new GameObject("TrainersWildPocketMon_FacingWatcher");
                 UnityEngine.Object.DontDestroyOnLoad(host);
                 facingWatcher = host.AddComponent<TrainersWildPocketMonFacingWatcher>();
-                Log("v9 ENEMY FACING watcher installed (checks spawned art every 0.25 sec)");
+                Log("v9.1 ENEMY FACING watcher installed (checks spawned art every 0.25 sec)");
             }
             catch (Exception ex) { LogFacingErrorOnce(ex); }
+        }
+
+        /// <summary>
+        /// Enemy PocketMon entry Level:
+        ///   max(1, 2 * ring + floor(wave / 2) + random(-1, 0, +1)).
+        ///
+        /// Fix: the previous version returned WITHOUT applying any status when
+        /// its guessed wave getters were unavailable, leaving enemies at Level 0.
+        /// A missing API now uses a visible logged fallback to Wave 1. The
+        /// per-character marker stores one random result and prevents rerolls.
+        /// </summary>
+        internal static void TryAssignEnemyEntryLevel(CharacterState unit)
+        {
+            if (unit == null || unit.IsDestroyed || !IsEnemyPocketMon(unit)) return;
+            var game = AllGameManagers.Instance;
+            var save = game == null ? null : game.GetSaveManager();
+            if (save == null || save.PreviewMode) return;
+
+            var marker = unit.GetComponent<TrainersWildPocketMonEntryLevelMarker>();
+            if (marker != null && marker.Applied) return;
+            if (marker == null)
+                marker = unit.gameObject.AddComponent<TrainersWildPocketMonEntryLevelMarker>();
+
+            if (!marker.Rolled)
+            {
+                PendingEntry pending;
+                if (TryTakeEnemyEntry(unit.GetSourceCharacterData(), out pending))
+                {
+                    marker.Ring = pending.Ring;
+                    marker.Wave = pending.Wave;
+                    marker.WaveSource = pending.WaveSource;
+                    marker.Roll = pending.Roll;
+                    marker.EntryLevel = pending.Level;
+                    marker.Rolled = true;
+                    marker.RolledAtSpawn = true;
+                }
+            }
+
+            int ring = marker.RolledAtSpawn ? marker.Ring : entryRing;
+            if (ring < 1)
+            {
+                // All mapped ring assignments in TryChoose have a Ring N label.
+                // Never leave an enemy without Level solely due to stale ring
+                // context; explicitly report that this fallback was necessary.
+                ring = 1;
+                if (!warnedMissingRing)
+                {
+                    warnedMissingRing = true;
+                    Warn("Enemy Level: ring wasn't determined by the spawn mapping; " +
+                         "using Ring 1 fallback (check encounter mappings).");
+                }
+            }
+
+            int wave;
+            string source;
+            if (marker.RolledAtSpawn)
+            {
+                wave = marker.Wave;
+                source = marker.WaveSource;
+            }
+            else if (!TryReadCurrentWave(game, out wave, out source))
+            {
+                // The previous version aborted here, yielding Level 0. Wave 1
+                // is a deliberate, explicit safety fallback, not a claim of
+                // accurate later-wave progression. Diagnostics make it visible.
+                wave = 1;
+                source = "wave-1 fallback: runtime wave/turn counter unavailable";
+                if (!warnedMissingWave)
+                {
+                    warnedMissingWave = true;
+                    Warn("Enemy Level: no game wave/turn counter found. " +
+                         "Using Wave 1 fallback to prevent Level 0. " +
+                         "Send this log to identify the correct wave API.");
+                    DiagnoseWaveAccess(game);
+                }
+            }
+
+            if (!marker.Rolled)
+            {
+                marker.Roll = UnityEngine.Random.Range(-1, 2);
+                marker.EntryLevel = Math.Max(MinimumEntryLevel,
+                    ring * 2 + wave / 2 + marker.Roll);
+                marker.Rolled = true;
+            }
+            int desired = marker.EntryLevel;
+
+            try
+            {
+                int current = unit.GetStatusEffectStacks(LevelStatusId);
+                if (current != desired)
+                {
+                    if (current > 0)
+                        unit.RemoveStatusEffect(LevelStatusId, current, false);
+                    // Use same live-status AddStatusEffect overload as
+                    // CardEffectTrainersGainExp.SyncLiveStatus.
+                    unit.AddStatusEffect(LevelStatusId, desired,
+                        (CharacterState)null, false, false);
+                }
+                int actual = unit.GetStatusEffectStacks(LevelStatusId);
+                if (actual != desired)
+                {
+                    if (!marker.FailureLogged)
+                    {
+                        marker.FailureLogged = true;
+                        Warn("Enemy entry Level did not stick: " +
+                             unit.GetSourceCharacterData().GetName() +
+                             "; requested=" + desired + ", observed=" + actual +
+                             "; status=" + LevelStatusId +
+                             "; ring=" + ring + "; wave=" + wave + " (" + source + ")");
+                    }
+                    // Leave marker.Applied=false to retry same rolled level.
+                    return;
+                }
+                marker.Applied = true;
+                if (!marker.StatsAttempted)
+                {
+                    marker.StatsAttempted = true;
+                    ScaleEnemyLiveStats(unit, desired);
+                }
+                Log("Enemy entry Level: " + unit.GetSourceCharacterData().GetName() +
+                    "; Ring=" + ring + "; Wave=" + wave + " [" + source + "]" +
+                    "; random=" + (marker.Roll >= 0 ? "+" : "") + marker.Roll +
+                    "; Level=" + actual + " (verified, native art)");
+            }
+            catch (Exception ex)
+            {
+                if (!marker.FailureLogged)
+                {
+                    marker.FailureLogged = true;
+                    Warn("Enemy Level assignment failed for " +
+                         unit.GetSourceCharacterData().GetName() + ": " + ex);
+                }
+            }
+        }
+
+        // Game versions expose wave counters through different managers.
+        // Discover them without depending on a fragile compile-time API.
+        // Prefer explicit WaveNumber getters, then zero-based WaveIndex.
+        // Only use a per-combat turn number if no wave counter is published.
+        // One-time diagnostic: if the game version publishes a wave counter
+        // under an unexpected name, log the names (not values) of candidates.
+        // This avoids silently confusing the fallback with a true wave value.
+        private static void DiagnoseWaveAccess(object game)
+        {
+            try
+            {
+                object[] hosts = {
+                    ReadMember(game, "GetHeroManager"),
+                    ReadMember(game, "GetBattleManager"),
+                    ReadMember(game, "GetCombatManager"),
+                    ReadMember(game, "GetTurnManager"), game
+                };
+                foreach (var host in hosts)
+                {
+                    if (host == null) continue;
+                    var type = host.GetType();
+                    var names = type.GetMembers(Flags)
+                        .Where(m => m.Name.IndexOf("wave", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                                    m.Name.IndexOf("turn", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                                    m.Name.IndexOf("round", StringComparison.OrdinalIgnoreCase) >= 0)
+                        .Select(m => m.Name).Distinct().Take(25).ToArray();
+                    Log("Wave API candidates on " + type.Name + ": " +
+                        (names.Length > 0 ? String.Join(", ", names) : "(none found)"));
+                }
+            }
+            catch (Exception ex) { Warn("Wave API diagnostics failed: " + ex.Message); }
+        }
+
+        private static bool TryReadCurrentWave(object game, out int wave, out string source)
+        {
+            wave = 0;
+            source = null;
+            object[] hosts = {
+                ReadMember(game, "GetHeroManager"),
+                ReadMember(game, "GetBattleManager"),
+                ReadMember(game, "GetCombatManager"),
+                ReadMember(game, "GetTurnManager"),
+                ReadMember(game, "GetSaveManager"), game
+            };
+            foreach (var host in hosts)
+            {
+                if (host == null) continue;
+                foreach (string name in new[] {
+                    "GetCurrentWaveNumber", "GetWaveNumber", "CurrentWaveNumber",
+                    "WaveNumber", "currentWaveNumber", "waveNumber",
+                    "GetCurrentWaveIndex", "GetWaveIndex", "CurrentWaveIndex",
+                    "WaveIndex", "currentWaveIndex", "waveIndex",
+                    "GetCurrentWave", "GetWave", "CurrentWave", "currentWave"
+                })
+                {
+                    int raw;
+                    if (!TryInt(ReadMember(host, name), out raw)) continue;
+                    bool zeroBased = name.IndexOf("Index", StringComparison.OrdinalIgnoreCase) >= 0;
+                    int candidate = zeroBased ? raw + 1 : Math.Max(1, raw);
+                    if (raw < 0 || candidate < 1 || candidate > 100) continue;
+                    wave = candidate;
+                    source = host.GetType().Name + "." + name;
+                    return true;
+                }
+                // A few game builds store an active WaveState object rather
+                // than a direct integer; inspect only its index/number fields.
+                foreach (string parent in new[] { "GetCurrentWave", "CurrentWave", "currentWave" })
+                {
+                    object state = ReadMember(host, parent);
+                    if (state == null) continue;
+                    foreach (string member in new[] { "GetWaveNumber", "WaveNumber",
+                        "GetWaveIndex", "WaveIndex", "Index", "Number" })
+                    {
+                        int raw;
+                        if (!TryInt(ReadMember(state, member), out raw)) continue;
+                        int candidate = member.IndexOf("Index", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                                        member == "Index" ? raw + 1 : raw;
+                        if (candidate < 1 || candidate > 100) continue;
+                        wave = candidate;
+                        source = host.GetType().Name + "." + parent + "." + member;
+                        return true;
+                    }
+                }
+            }
+            foreach (var host in hosts)
+            {
+                if (host == null) continue;
+                // Monster Train normally introduces one wave each combat turn.
+                // This is a fallback only when the current wave isn't exposed.
+                foreach (string name in new[] {
+                    "GetCurrentTurnNumber", "GetTurnNumber", "CurrentTurnNumber",
+                    "currentTurnNumber", "GetCurrentTurn", "CurrentTurn",
+                    "GetCurrentTurnIndex", "CurrentTurnIndex", "currentTurnIndex",
+                    "GetTurnIndex", "TurnIndex", "turnIndex",
+                    "GetTurnCount", "TurnCount", "turnCount",
+                    "GetNumTurns", "NumTurns", "numTurns",
+                    "GetRoundNumber", "RoundNumber", "roundNumber"
+                })
+                {
+                    int value;
+                    if (!TryInt(ReadMember(host, name), out value)) continue;
+                    // TurnIndex is zero-based; zero-valued initial counters
+                    // in some builds also correspond to the first wave.
+                    int candidate = name.IndexOf("Index", StringComparison.OrdinalIgnoreCase) >= 0
+                        ? value + 1 : Math.Max(1, value);
+                    if (candidate < 1 || candidate > 100) continue;
+                    wave = candidate;
+                    source = host.GetType().Name + "." + name + " (turn fallback)";
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private static object ReadMember(object owner, string name)
+        {
+            if (owner == null) return null;
+            try
+            {
+                var type = owner.GetType();
+                var method = type.GetMethod(name, Flags, null, Type.EmptyTypes, null);
+                if (method != null && method.ReturnType != typeof(void))
+                    return method.Invoke(owner, null);
+                var property = type.GetProperty(name, Flags);
+                if (property != null && property.GetIndexParameters().Length == 0)
+                    return property.GetValue(owner, null);
+                var field = type.GetField(name, Flags);
+                return field == null ? null : field.GetValue(owner);
+            }
+            catch { return null; }
+        }
+
+        private static bool TryInt(object value, out int result)
+        {
+            result = 0;
+            if (value == null || value is bool) return false;
+            try { result = Convert.ToInt32(value); return true; }
+            catch { return false; }
         }
 
         internal static bool IsEnemyPocketMon(CharacterState unit)
@@ -373,10 +879,13 @@ namespace HexTrolls.Plugin.code
                     if (marker != null) marker.Restore();
                     return;
                 }
+                // Also initialize on UI creation so the Level is visible at
+                // first render, not only at the next quarter-second scan.
+                TryAssignEnemyEntryLevel(unit);
                 if (marker == null)
                     marker = ui.gameObject.AddComponent<TrainersWildPocketMonFacingVisual>();
                 if (marker.SetEnemy(unit) && facingLogs++ < 20)
-                    Log("v9 MIRRORED enemy PocketMon LEFT: " +
+                    Log("v9.1 MIRRORED enemy PocketMon LEFT: " +
                         unit.GetSourceCharacterData().GetName() +
                         " using artwork child " + marker.ArtPath);
             }
@@ -387,38 +896,40 @@ namespace HexTrolls.Plugin.code
         {
             if (facingErrorLogged) return;
             facingErrorLogged = true;
-            Warn("v9 enemy-only facing visual skipped: " + ex);
+            Warn("v9.1 enemy-only facing visual skipped: " + ex);
         }
 
         internal static void RecordSpawn(CharacterData original, CharacterData candidate, string path)
         {
             if (original == null || candidate == null) return;
             if (loggedSwapPaths++ < 35)
-                Log("v9 SWAPPED " + path + ": " + original.GetName() +
+                Log("v9.1 SWAPPED " + path + ": " + original.GetName() +
                     " -> " + candidate.GetName());
         }
 
         internal static void DiagnoseBattleStart()
         {
-            Log("v9 BeginInitialSpawn entered. Checking relic ownership and safe catalog before wave.");
+            // Reset pending per-spawn bookkeeping before the initial enemy wave.
+            PendingByCharacterId.Clear();
+            Log("v9.1 BeginInitialSpawn entered. Checking relic ownership and safe catalog before wave.");
             try
             {
                 var game=AllGameManagers.Instance;
                 var save=game==null ? null : game.GetSaveManager();
                 if (save == null || save.PreviewMode) return;
                 bool owned=OwnsThisRelic(save);
-                Log("v9 battle-start ownership=" + owned);
+                Log("v9.1 battle-start ownership=" + owned);
                 if (owned)
                 {
-                    Log("v9 battle-start PocketMon catalog=" + EnsureCatalog() +
+                    Log("v9.1 battle-start PocketMon catalog=" + EnsureCatalog() +
                         "; enemy-safe forms=" + Candidates.Count);
-                    Log("v9 explicit mappings=" + EnemyPools.Count +
+                    Log("v9.1 explicit mappings=" + EnemyPools.Count +
                         "; defined pools=" + PocketMonPools.Count +
                         "; unmapped enemies stay original. Cuttlfish excluded.");
                     EnableFacingWatcher();
                 }
             }
-            catch(Exception ex) { Warn("v9 battle-start probe failed: " + ex); }
+            catch(Exception ex) { Warn("v9.1 battle-start probe failed: " + ex); }
         }
 
         internal static bool TryChoose(CharacterData original, out CharacterData replacement)
@@ -440,7 +951,7 @@ namespace HexTrolls.Plugin.code
             if (!IsOrdinaryEnemy(original))
             {
                 if (blockedMappedEnemiesLogged++ < 8)
-                    Warn("v9 MAPPED BUT PROTECTED by boss/special safeguards: " +
+                    Warn("v9.1 MAPPED BUT PROTECTED by boss/special safeguards: " +
                          enemyName + " (pool " + poolName + ")");
                 return false;
             }
@@ -463,7 +974,7 @@ namespace HexTrolls.Plugin.code
                 configuredForms == null || configuredForms.Length == 0)
             {
                 if (WarnedMissingPool.Add(poolName))
-                    Warn("v9 no configured forms for pool '" + poolName +
+                    Warn("v9.1 no configured forms for pool '" + poolName +
                          "'. Skipping enemy replacement rather than choosing randomly.");
                 return false;
             }
@@ -483,16 +994,39 @@ namespace HexTrolls.Plugin.code
             if (eligible.Count == 0)
             {
                 if (WarnedMissingPool.Add(poolName))
-                    Warn("v9 pool '" + poolName + "' has no enemy-safe registered forms. " +
+                    Warn("v9.1 pool '" + poolName + "' has no enemy-safe registered forms. " +
                          "Keeping original enemy " + enemyName);
                 return false;
             }
             var chosen = eligible[UnityEngine.Random.Range(0, eligible.Count)];
+            // Ring is determined by the ACTIVE enemy's mapped encounter pool;
+            // it is not inferred from the chosen PocketMon's species/form.
+            var ringParts = poolName.Split(' ');
+            int parsedRing = 0;
+            if (ringParts.Length >= 2 &&
+                string.Equals(ringParts[0], "Ring", StringComparison.OrdinalIgnoreCase) &&
+                Int32.TryParse(ringParts[1], out parsedRing) && parsedRing > 0)
+                entryRing = parsedRing;
+            // Spawn with the ORIGINAL registered CharacterData so its Trainworks
+            // art/prefab registration works. Per-enemy stats and Level are applied
+            // to the live CharacterState by TryAssignEnemyEntryLevel, once.
+            int ring = parsedRing > 0 ? parsedRing : Math.Max(1, entryRing);
+            int wave;
+            string waveSource;
+            if (!TryReadCurrentWave(game, out wave, out waveSource))
+            {
+                wave = 1;
+                waveSource = "wave-1 fallback: runtime counter unavailable";
+            }
+            int roll = UnityEngine.Random.Range(-1, 2);
+            int targetLevel = Math.Max(MinimumEntryLevel,
+                ring * 2 + wave / 2 + roll);
+            QueueEnemyEntry(chosen, ring, wave, waveSource, roll, targetLevel);
             replacement = chosen;
             if (replacementsLogged < 35)
             {
                 ++replacementsLogged;
-                Log("v9 Enemy swap [" + poolName + "]: " + enemyName +
+                Log("v9.1 Enemy swap [" + poolName + "]: " + enemyName +
                     " -> " + chosen.GetName() + " (enemy team)");
                 if (replacementsLogged == 35)
                     Log("Further per-unit swap messages suppressed until restart.");
@@ -609,7 +1143,7 @@ namespace HexTrolls.Plugin.code
                 }
                 catalogReady = Candidates.Count > 0;
                 if (catalogReady)
-                    Log("v9 Loaded " + Candidates.Count + "/39 enemy-safe Trainer PocketMon characters" +
+                    Log("v9.1 Loaded " + Candidates.Count + "/39 enemy-safe Trainer PocketMon characters" +
                         " (skipped " + excludedUnsafe + " Conduit-bearing Cuttlfish forms)" +
                         (unresolved > 0 ? " (missing " + unresolved + "; check unit JSON registration)" : ""));
                 else if (!loggedMissingCatalog)

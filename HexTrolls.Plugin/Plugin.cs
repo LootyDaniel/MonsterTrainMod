@@ -86,7 +86,6 @@ namespace HexTrolls.Plugin
                         "json/status_effects/Mercenary.json",
                         "json/status_effects/TrainersLevel.json",
                         "json/status_effects/TrainersEXP.json",
-                        "json/status_effects/TrainersEvolve.json",
                         "json/status_effects/TrainersRosterSlot.json",
 
                         //triggers
@@ -100,6 +99,7 @@ namespace HexTrolls.Plugin
                         "json/spells/CallForViolence.json",
                         "json/spells/SpikeOfProscription.json",
                         "json/spells/RecruitSpell.json",
+                        "json/spells/TrainersPocketMonCaptureSpell.json",
 
                         //equipment
                         "json/equipment/HuntersBow.json",

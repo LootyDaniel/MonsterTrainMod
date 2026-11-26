@@ -56,12 +56,22 @@
         {
           "id": "TrainersRedChampion",
           "card_data": "@TrainersRedChampionCard",
-          "starter_card": "@TrainersRedStarterCard",
+          "starter_card": "@TrainersPocketMonCaptureSpell",
           "upgrade_tree": [
             [
               "@TrainersRedPathI",
               "@TrainersRedPathII",
               "@TrainersRedPathIII"
+            ],
+            [
+              "@TrainersRedTeslaPathI",
+              "@TrainersRedTeslaPathII",
+              "@TrainersRedTeslaPathIII"
+            ],
+            [
+              "@TrainersRedFrostPathI",
+              "@TrainersRedFrostPathII",
+              "@TrainersRedFrostPathIII"
             ]
           ],
           "icon": "@TrainersRedChampionIcon",
@@ -71,12 +81,22 @@
         {
           "id": "TrainersBlueChampion",
           "card_data": "@TrainersBlueChampionCard",
-          "starter_card": "@TrainersBlueStarterCard",
+          "starter_card": "@TrainersPocketMonCaptureSpell",
           "upgrade_tree": [
             [
               "@TrainersBluePathI",
               "@TrainersBluePathII",
               "@TrainersBluePathIII"
+            ],
+            [
+              "@TrainersBlueCuttlefishPathI",
+              "@TrainersBlueCuttlefishPathII",
+              "@TrainersBlueCuttlefishPathIII"
+            ],
+            [
+              "@TrainersBlueManshrimpPathI",
+              "@TrainersBlueManshrimpPathII",
+              "@TrainersBlueManshrimpPathIII"
             ]
           ],
           "icon": "@TrainersBlueChampionIcon",
@@ -85,310 +105,8 @@
         }
       ],
       "starter_relics": [
-        "@TrainersRosterProtocol"
-      ]
-    }
-  ],
-  "cards": [
-    {
-      "id": "TrainersStarterCard",
-      "card_art": "@GuildMasterCardArt",
-      "cost": 1,
-      "card_type": "monster",
-      "rarity": "common",
-      "class": "@TrainersClan",
-      "targets_room": true,
-      "targetless": false,
-      "effects": [
-        "@SpawnTrainersStarter"
-      ],
-      "pools": [
-        "MegaPool"
-      ],
-      "names": {
-        "english": "Trainer's Assistant"
-      },
-      "initial_upgrades": [
-        "@TrainersLevelBaseMarker"
-      ]
-    },
-    {
-      "id": "TrainersBannerCard",
-      "card_art": "@GuildMasterCardArt",
-      "cost": 1,
-      "card_type": "monster",
-      "rarity": "uncommon",
-      "class": "@TrainersClan",
-      "targets_room": true,
-      "targetless": false,
-      "pools": [
-        "UnitsAllBanner",
-        "@UnitsTrainersBanner"
-      ],
-      "effects": [
-        "@SpawnTrainersBanner"
-      ],
-      "names": {
-        "english": "Practice Recruit"
-      },
-      "initial_upgrades": [
-        "@TrainersLevelBaseMarker"
-      ]
-    },
-    {
-      "id": "TrainersVeteranAssistantCard",
-      "names": {
-        "english": "Veteran Assistant"
-      },
-      "card_art": "@GuildMasterCardArt",
-      "cost": 2,
-      "card_type": "monster",
-      "rarity": "uncommon",
-      "class": "@TrainersClan",
-      "targets_room": true,
-      "targetless": false,
-      "effects": [
-        "@SpawnTrainersVeteranAssistant"
-      ]
-    }
-  ],
-  "characters": [
-    {
-      "id": "TrainersStarterCharacter",
-      "names": {
-        "english": "Trainer's Assistant"
-      },
-      "character_art": "@GuildMasterCharacterArt",
-      "size": 2,
-      "attack_damage": 5,
-      "health": 10,
-      "starting_status_effects": [
-        {
-          "status": "@evolve",
-          "count": 16
-        }
-      ],
-      "triggers": [
-        "@TrainersStarterReconcileSpawnTrigger",
-        "@TrainersStarterEarnEXP",
-        "@TrainersStarterReconcileCelebrateTrigger",
-        "@TrainersStarterEvolveCelebrate"
-      ],
-      "subtypes": [
-        "@TrainersPocketMon"
-      ]
-    },
-    {
-      "id": "TrainersBannerCharacter",
-      "names": {
-        "english": "Practice Recruit"
-      },
-      "character_art": "@GuildMasterCharacterArt",
-      "size": 2,
-      "attack_damage": 10,
-      "health": 15,
-      "subtypes": [
-        "SubtypesData_BannerUnit",
-        "@TrainersPocketMon"
-      ],
-      "starting_status_effects": [],
-      "triggers": [
-        "@TrainersBannerReconcileSpawnTrigger",
-        "@TrainersBannerEarnEXP",
-        "@TrainersBannerReconcileCelebrateTrigger"
-      ]
-    },
-    {
-      "id": "TrainersVeteranAssistantCharacter",
-      "names": {
-        "english": "Veteran Assistant"
-      },
-      "character_art": "@GuildMasterCharacterArt",
-      "size": 2,
-      "attack_damage": 15,
-      "health": 30,
-      "starting_status_effects": [],
-      "triggers": [
-        "@TrainersVeteranReconcileSpawnTrigger",
-        "@TrainersVeteranEarnEXP",
-        "@TrainersVeteranReconcileCelebrateTrigger"
-      ],
-      "subtypes": [
-        "@TrainersPocketMon"
-      ]
-    }
-  ],
-  "effects": [
-    {
-      "id": "SpawnTrainersStarter",
-      "name": "CardEffectSpawnMonster",
-      "target_mode": "room",
-      "param_character": "@TrainersStarterCharacter",
-      "param_bool": false
-    },
-    {
-      "id": "SpawnTrainersBanner",
-      "name": "CardEffectSpawnMonster",
-      "target_mode": "room",
-      "param_character": "@TrainersBannerCharacter",
-      "param_bool": false
-    },
-    {
-      "id": "TrainersStarterEXPOnKill",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersStarterLevelStatBonus",
-      "param_int": 0
-    },
-    {
-      "id": "TrainersBannerEXPOnKill",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersBannerLevelStatBonus",
-      "param_int": 0
-    },
-    {
-      "id": "SpawnTrainersVeteranAssistant",
-      "name": "CardEffectSpawnMonster",
-      "target_mode": "room",
-      "param_character": "@TrainersVeteranAssistantCharacter",
-      "param_bool": false
-    },
-    {
-      "id": "TrainersStarterEvolveEffect",
-      "name": "@CardEffectTrainersEvolveOnCelebrate",
-      "target_mode": "self",
-      "target_team": "monsters",
-      "param_card": "@TrainersVeteranAssistantCard"
-    },
-    {
-      "id": "TrainersVeteranEXPOnKill",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersVeteranLevelStatBonus",
-      "param_int": 0
-    },
-    {
-      "id": "TrainersStarterReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersStarterLevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersStarterReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersStarterLevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersBannerReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersBannerLevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersBannerReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersBannerLevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersVeteranReconcileOnSpawn",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersVeteranLevelStatBonus",
-      "param_int": 1
-    },
-    {
-      "id": "TrainersVeteranReconcileOnCelebrate",
-      "name": "@CardEffectTrainersGainExp",
-      "target_mode": "self",
-      "param_upgrade": "@TrainersVeteranLevelStatBonus",
-      "param_int": 1
-    }
-  ],
-  "character_triggers": [
-    {
-      "id": "TrainersStarterEarnEXP",
-      "trigger": "on_any_hero_death_on_floor",
-      "descriptions": {
-        "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
-      },
-      "effects": [
-        "@TrainersStarterEXPOnKill"
-      ]
-    },
-    {
-      "id": "TrainersBannerEarnEXP",
-      "trigger": "on_any_hero_death_on_floor",
-      "descriptions": {
-        "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
-      },
-      "effects": [
-        "@TrainersBannerEXPOnKill"
-      ]
-    },
-    {
-      "id": "TrainersStarterEvolveCelebrate",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersStarterEvolveEffect"
-      ]
-    },
-    {
-      "id": "TrainersVeteranEarnEXP",
-      "trigger": "on_any_hero_death_on_floor",
-      "descriptions": {
-        "english": "Siphon: Gain shared EXP when an enemy dies on this floor."
-      },
-      "effects": [
-        "@TrainersVeteranEXPOnKill"
-      ]
-    },
-    {
-      "id": "TrainersStarterReconcileSpawnTrigger",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersStarterReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersStarterReconcileCelebrateTrigger",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersStarterReconcileOnCelebrate"
-      ]
-    },
-    {
-      "id": "TrainersBannerReconcileSpawnTrigger",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersBannerReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersBannerReconcileCelebrateTrigger",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersBannerReconcileOnCelebrate"
-      ]
-    },
-    {
-      "id": "TrainersVeteranReconcileSpawnTrigger",
-      "trigger": "on_spawn",
-      "effects": [
-        "@TrainersVeteranReconcileOnSpawn"
-      ]
-    },
-    {
-      "id": "TrainersVeteranReconcileCelebrateTrigger",
-      "trigger": "on_encounter_complete",
-      "effects": [
-        "@TrainersVeteranReconcileOnCelebrate"
+        "@TrainersRosterProtocol",
+        "@TrainersWildPocketMonInvasion"
       ]
     }
   ],
