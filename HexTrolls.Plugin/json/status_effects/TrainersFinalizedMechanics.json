@@ -1,0 +1,234 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "status_effects": [
+    {
+      "id": "trainer_snap",
+      "names": {
+        "english": "Snap"
+      },
+      "stackable_names": {
+        "english": "Snap {0}"
+      },
+      "card_tooltips": {
+        "english": "Spend one stack when a successful Snap kills an attacker. An attacker with maximum HP below this unit’s current HP is killed, and this unit heals for that attacker’s maximum HP."
+      },
+      "character_tooltips": {
+        "english": "Spend one stack when a successful Snap kills an attacker. An attacker with maximum HP below this unit’s current HP is killed, and this unit heals for that attacker’s maximum HP."
+      },
+      "replacement_texts": {
+        "english": "<b>Snap</b>"
+      },
+      "display_category": "positive",
+      "trigger_stage": "on_pre_attacked",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainersSnapState",
+      "icon": "@TrainersTypePlantIcon"
+    },
+    {
+      "id": "trainer_tesla_charge",
+      "names": {
+        "english": "Tesla Charge"
+      },
+      "stackable_names": {
+        "english": "Tesla Charge {0}"
+      },
+      "card_tooltips": {
+        "english": "Resolve: Deal 1 damage per Tesla Charge to all enemies on this floor. Charges are not consumed and reset between battles."
+      },
+      "character_tooltips": {
+        "english": "Resolve: Deal 1 damage per Tesla Charge to all enemies on this floor. Charges are not consumed and reset between battles."
+      },
+      "replacement_texts": {
+        "english": "<b>Tesla Charge</b>"
+      },
+      "display_category": "positive",
+      "trigger_stage": "on_post_room_combat",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainersTeslaChargeState",
+      "icon": "@TrainersTypeElectricIcon"
+    },
+    {
+      "id": "trainer_freeze",
+      "names": {
+        "english": "Freeze"
+      },
+      "stackable_names": {
+        "english": "Freeze {0}"
+      },
+      "card_tooltips": {
+        "english": "Each stack increases incoming direct Attack and Spell damage by 20%. Lose one stack after direct damage and one at end of turn; status damage does not consume stacks."
+      },
+      "character_tooltips": {
+        "english": "Each stack increases incoming direct Attack and Spell damage by 20%. Lose one stack after direct damage and one at end of turn; status damage does not consume stacks."
+      },
+      "replacement_texts": {
+        "english": "<b>Freeze</b>"
+      },
+      "display_category": "negative",
+      "trigger_stage": "none",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainersFreezeState",
+      "remove_stack_at_end_of_turn": true,
+      "icon": "@TrainersTypeIceIcon"
+    },
+    {
+      "id": "trainer_freeze_breaker",
+      "names": {
+        "english": "Freeze Breaker"
+      },
+      "stackable_names": {
+        "english": "Freeze Breaker {0}"
+      },
+      "card_tooltips": {
+        "english": "This unit gets twice the normal bonus from Freeze when it attacks: 40% extra damage per Freeze stack."
+      },
+      "character_tooltips": {
+        "english": "This unit gets twice the normal bonus from Freeze when it attacks: 40% extra damage per Freeze stack."
+      },
+      "replacement_texts": {
+        "english": "<b>Freeze Breaker</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainersFreezeBreakerState",
+      "icon": "@TrainersTypeIceIcon"
+    },
+    {
+      "id": "trainer_leech",
+      "names": {
+        "english": "Leech"
+      },
+      "stackable_names": {
+        "english": "Leech {0}"
+      },
+      "card_tooltips": {
+        "english": "At end of turn, lose HP equal to stacks, bypassing Armor. The most recent applier heals for actual HP lost; Leech does not decay."
+      },
+      "character_tooltips": {
+        "english": "At end of turn, lose HP equal to stacks, bypassing Armor. The most recent applier heals for actual HP lost; Leech does not decay."
+      },
+      "replacement_texts": {
+        "english": "<b>Leech</b>"
+      },
+      "display_category": "negative",
+      "trigger_stage": "on_post_room_combat",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainersLeechState",
+      "icon": "@TrainersTypePlantIcon"
+    },
+    {
+      "id": "trainer_payback",
+      "names": {
+        "english": "Payback"
+      },
+      "stackable_names": {
+        "english": "Payback {0}"
+      },
+      "card_tooltips": {
+        "english": "Next normal attack gains 50% damage per stack, then consumes all Payback stacks."
+      },
+      "character_tooltips": {
+        "english": "Next normal attack gains 50% damage per stack, then consumes all Payback stacks."
+      },
+      "replacement_texts": {
+        "english": "<b>Payback</b>"
+      },
+      "display_category": "positive",
+      "trigger_stage": "on_post_attacking",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainersPaybackState",
+      "icon": "@TrainersTypeElectricIcon"
+    },
+    {
+      "id": "trainer_shadow_walker",
+      "names": {
+        "english": "Shadow Walker"
+      },
+      "stackable_names": {
+        "english": "Shadow Walker {0}"
+      },
+      "card_tooltips": {
+        "english": "While Stealthed, this unit deals 20% more direct damage with its attacks and Burst."
+      },
+      "character_tooltips": {
+        "english": "While Stealthed, this unit deals 20% more direct damage with its attacks and Burst."
+      },
+      "replacement_texts": {
+        "english": "<b>Shadow Walker</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainersShadowWalkerState",
+      "icon": "@TrainersTypeShadowIcon"
+    },
+    {
+      "id": "trainer_stoneform",
+      "names": {
+        "english": "Stoneform"
+      },
+      "stackable_names": {
+        "english": "Stoneform {0}"
+      },
+      "card_tooltips": {
+        "english": "Once per deployment, after surviving damage below 20% maximum HP, gain Armor 5 per current Level and Root for the rest of this deployment."
+      },
+      "character_tooltips": {
+        "english": "Once per deployment, after surviving damage below 20% maximum HP, gain Armor 5 per current Level and Root for the rest of this deployment."
+      },
+      "replacement_texts": {
+        "english": "<b>Stoneform</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "on_hit",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainersStoneformState",
+      "icon": "@TrainersTypeNormalIcon"
+    },
+    {
+      "id": "trainer_swift",
+      "names": {
+        "english": "Swift"
+      },
+      "stackable_names": {
+        "english": "Swift {0}"
+      },
+      "card_tooltips": {
+        "english": "Grants Quick while any stacks remain. Lose one stack each turn."
+      },
+      "character_tooltips": {
+        "english": "Grants Quick while any stacks remain. Lose one stack each turn."
+      },
+      "replacement_texts": {
+        "english": "<b>Swift</b>"
+      },
+      "display_category": "positive",
+      "trigger_stage": "on_monster_team_turn_begin",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainersSwiftState",
+      "remove_stack_at_end_of_turn": true,
+      "icon": "@TrainersTypeElectricIcon"
+    }
+  ],
+  "sprites": [],
+  "atlas_icons": []
+}

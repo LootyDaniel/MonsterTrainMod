@@ -11,10 +11,10 @@
         "english": "Evolve {0}"
       },
       "card_tooltips": {
-        "english": "Celebrate: At Level equal to or greater than Evolve stacks, replace this card with its next form. Existing card upgrades are carried over."
+        "english": "Evolves at the end of combat into a great form when Level Stacks are equal to or greater than Evolve Stacks."
       },
       "character_tooltips": {
-        "english": "Celebrate: At Level equal to or above this Evolve threshold, replace the card with its configured next form and preserve permanent upgrades."
+        "english": "Evolves at the end of combat into a great form when Level Stacks are equal to or greater than Evolve Stacks."
       },
       "replacement_texts": {
         "english": "<b>Evolve</b>"

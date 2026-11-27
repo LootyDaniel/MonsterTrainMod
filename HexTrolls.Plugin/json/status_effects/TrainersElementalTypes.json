@@ -1,0 +1,513 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "status_effects": [
+    {
+      "id": "trainer_type_fire",
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "names": {
+        "english": "Fire Type"
+      },
+      "card_tooltips": {
+        "english": "Takes double damage from Water and Shadow Damage. Basic attacks gain Fire Damage."
+      },
+      "character_tooltips": {
+        "english": "Takes double damage from Water and Shadow Damage. Basic attacks gain Fire Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Fire Type</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@TrainersTypeFireIcon"
+    },
+    {
+      "id": "trainer_type_ice",
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "names": {
+        "english": "Ice Type"
+      },
+      "card_tooltips": {
+        "english": "Takes double damage from Fire and Light Damage. Basic attacks gain Ice Damage."
+      },
+      "character_tooltips": {
+        "english": "Takes double damage from Fire and Light Damage. Basic attacks gain Ice Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Ice Type</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@TrainersTypeIceIcon"
+    },
+    {
+      "id": "trainer_type_electric",
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "names": {
+        "english": "Electric Type"
+      },
+      "card_tooltips": {
+        "english": "Takes double damage from Shadow Damage. Basic attacks gain Electric Damage."
+      },
+      "character_tooltips": {
+        "english": "Takes double damage from Shadow Damage. Basic attacks gain Electric Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Electric Type</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@TrainersTypeElectricIcon"
+    },
+    {
+      "id": "trainer_type_water",
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "names": {
+        "english": "Water Type"
+      },
+      "card_tooltips": {
+        "english": "Takes double damage from Ice, Electric, and Plant Damage. Basic attacks gain Water Damage."
+      },
+      "character_tooltips": {
+        "english": "Takes double damage from Ice, Electric, and Plant Damage. Basic attacks gain Water Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Water Type</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@TrainersTypeWaterIcon"
+    },
+    {
+      "id": "trainer_type_plant",
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "names": {
+        "english": "Plant Type"
+      },
+      "card_tooltips": {
+        "english": "Takes double damage from Fire and Ice Damage. Basic attacks gain Plant Damage."
+      },
+      "character_tooltips": {
+        "english": "Takes double damage from Fire and Ice Damage. Basic attacks gain Plant Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Plant Type</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@TrainersTypePlantIcon"
+    },
+    {
+      "id": "trainer_type_shadow",
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "names": {
+        "english": "Shadow Type"
+      },
+      "card_tooltips": {
+        "english": "Takes double damage from Water and Light Damage. Basic attacks gain Shadow Damage."
+      },
+      "character_tooltips": {
+        "english": "Takes double damage from Water and Light Damage. Basic attacks gain Shadow Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Shadow Type</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@TrainersTypeShadowIcon"
+    },
+    {
+      "id": "trainer_type_light",
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "names": {
+        "english": "Light Type"
+      },
+      "card_tooltips": {
+        "english": "Takes double damage from Plant and Normal Damage. Basic attacks gain Light Damage."
+      },
+      "character_tooltips": {
+        "english": "Takes double damage from Plant and Normal Damage. Basic attacks gain Light Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Light Type</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@TrainersTypeLightIcon"
+    },
+    {
+      "id": "trainer_type_normal",
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "names": {
+        "english": "Normal Type"
+      },
+      "card_tooltips": {
+        "english": "Takes double damage from Electric Damage. Basic attacks gain Normal Damage."
+      },
+      "character_tooltips": {
+        "english": "Takes double damage from Electric Damage. Basic attacks gain Normal Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Normal Type</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@TrainersTypeNormalIcon"
+    },
+    {
+      "id": "trainer_damage_plant",
+      "names": {
+        "english": "Plant Damage"
+      },
+      "stackable_names": {
+        "english": "Plant Damage {0}"
+      },
+      "card_tooltips": {
+        "english": "Basic attacks from this unit deal Plant Damage."
+      },
+      "character_tooltips": {
+        "english": "Basic attacks from this unit deal Plant Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Plant Damage</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "icon": "@TrainersDamagePlantIcon"
+    },
+    {
+      "id": "trainer_damage_fire",
+      "names": {
+        "english": "Fire Damage"
+      },
+      "stackable_names": {
+        "english": "Fire Damage {0}"
+      },
+      "card_tooltips": {
+        "english": "Basic attacks from this unit deal Fire Damage."
+      },
+      "character_tooltips": {
+        "english": "Basic attacks from this unit deal Fire Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Fire Damage</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "icon": "@TrainersDamageFireIcon"
+    },
+    {
+      "id": "trainer_damage_ice",
+      "names": {
+        "english": "Ice Damage"
+      },
+      "stackable_names": {
+        "english": "Ice Damage {0}"
+      },
+      "card_tooltips": {
+        "english": "Basic attacks from this unit deal Ice Damage."
+      },
+      "character_tooltips": {
+        "english": "Basic attacks from this unit deal Ice Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Ice Damage</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "icon": "@TrainersDamageIceIcon"
+    },
+    {
+      "id": "trainer_damage_electric",
+      "names": {
+        "english": "Electric Damage"
+      },
+      "stackable_names": {
+        "english": "Electric Damage {0}"
+      },
+      "card_tooltips": {
+        "english": "Basic attacks from this unit deal Electric Damage."
+      },
+      "character_tooltips": {
+        "english": "Basic attacks from this unit deal Electric Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Electric Damage</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "icon": "@TrainersDamageElectricIcon"
+    },
+    {
+      "id": "trainer_damage_water",
+      "names": {
+        "english": "Water Damage"
+      },
+      "stackable_names": {
+        "english": "Water Damage {0}"
+      },
+      "card_tooltips": {
+        "english": "Basic attacks from this unit deal Water Damage."
+      },
+      "character_tooltips": {
+        "english": "Basic attacks from this unit deal Water Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Water Damage</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "icon": "@TrainersDamageWaterIcon"
+    },
+    {
+      "id": "trainer_damage_shadow",
+      "names": {
+        "english": "Shadow Damage"
+      },
+      "stackable_names": {
+        "english": "Shadow Damage {0}"
+      },
+      "card_tooltips": {
+        "english": "Basic attacks from this unit deal Shadow Damage."
+      },
+      "character_tooltips": {
+        "english": "Basic attacks from this unit deal Shadow Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Shadow Damage</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "icon": "@TrainersDamageShadowIcon"
+    },
+    {
+      "id": "trainer_damage_light",
+      "names": {
+        "english": "Light Damage"
+      },
+      "stackable_names": {
+        "english": "Light Damage {0}"
+      },
+      "card_tooltips": {
+        "english": "Basic attacks from this unit deal Light Damage."
+      },
+      "character_tooltips": {
+        "english": "Basic attacks from this unit deal Light Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Light Damage</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "icon": "@TrainersDamageLightIcon"
+    },
+    {
+      "id": "trainer_damage_normal",
+      "names": {
+        "english": "Normal Damage"
+      },
+      "stackable_names": {
+        "english": "Normal Damage {0}"
+      },
+      "card_tooltips": {
+        "english": "Basic attacks from this unit deal Normal Damage."
+      },
+      "character_tooltips": {
+        "english": "Basic attacks from this unit deal Normal Damage."
+      },
+      "replacement_texts": {
+        "english": "<b>Normal Damage</b>"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "class_name": "@StatusEffectTrainerElementTypeState",
+      "icon": "@TrainersDamageNormalIcon"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersTypeFireIcon",
+      "path": "textures/icons/Element_Fire.png"
+    },
+    {
+      "id": "TrainersTypeIceIcon",
+      "path": "textures/icons/Element_Ice.png"
+    },
+    {
+      "id": "TrainersTypeElectricIcon",
+      "path": "textures/icons/Element_Electric.png"
+    },
+    {
+      "id": "TrainersTypeWaterIcon",
+      "path": "textures/icons/Element_Water.png"
+    },
+    {
+      "id": "TrainersTypePlantIcon",
+      "path": "textures/icons/Element_Plant.png"
+    },
+    {
+      "id": "TrainersTypeShadowIcon",
+      "path": "textures/icons/Element_Shadow.png"
+    },
+    {
+      "id": "TrainersTypeLightIcon",
+      "path": "textures/icons/Element_Light.png"
+    },
+    {
+      "id": "TrainersTypeNormalIcon",
+      "path": "textures/icons/Element_Normal.png"
+    },
+    {
+      "id": "TrainersDamageFireIcon",
+      "path": "textures/icons/Element_Damage_Fire.png"
+    },
+    {
+      "id": "TrainersDamageIceIcon",
+      "path": "textures/icons/Element_Damage_Ice.png"
+    },
+    {
+      "id": "TrainersDamageElectricIcon",
+      "path": "textures/icons/Element_Damage_Electric.png"
+    },
+    {
+      "id": "TrainersDamageWaterIcon",
+      "path": "textures/icons/Element_Damage_Water.png"
+    },
+    {
+      "id": "TrainersDamagePlantIcon",
+      "path": "textures/icons/Element_Damage_Plant.png"
+    },
+    {
+      "id": "TrainersDamageShadowIcon",
+      "path": "textures/icons/Element_Damage_Shadow.png"
+    },
+    {
+      "id": "TrainersDamageLightIcon",
+      "path": "textures/icons/Element_Damage_Light.png"
+    },
+    {
+      "id": "TrainersDamageNormalIcon",
+      "path": "textures/icons/Element_Damage_Normal.png"
+    }
+  ],
+  "atlas_icons": [
+    {
+      "id": "TrainersTypeFireIcon",
+      "path": "textures/icons/Element_Fire.png"
+    },
+    {
+      "id": "TrainersTypeIceIcon",
+      "path": "textures/icons/Element_Ice.png"
+    },
+    {
+      "id": "TrainersTypeElectricIcon",
+      "path": "textures/icons/Element_Electric.png"
+    },
+    {
+      "id": "TrainersTypeWaterIcon",
+      "path": "textures/icons/Element_Water.png"
+    },
+    {
+      "id": "TrainersTypePlantIcon",
+      "path": "textures/icons/Element_Plant.png"
+    },
+    {
+      "id": "TrainersTypeShadowIcon",
+      "path": "textures/icons/Element_Shadow.png"
+    },
+    {
+      "id": "TrainersTypeLightIcon",
+      "path": "textures/icons/Element_Light.png"
+    },
+    {
+      "id": "TrainersTypeNormalIcon",
+      "path": "textures/icons/Element_Normal.png"
+    },
+    {
+      "id": "TrainersDamageFireIcon",
+      "path": "textures/icons/Element_Damage_Fire.png"
+    },
+    {
+      "id": "TrainersDamageIceIcon",
+      "path": "textures/icons/Element_Damage_Ice.png"
+    },
+    {
+      "id": "TrainersDamageElectricIcon",
+      "path": "textures/icons/Element_Damage_Electric.png"
+    },
+    {
+      "id": "TrainersDamageWaterIcon",
+      "path": "textures/icons/Element_Damage_Water.png"
+    },
+    {
+      "id": "TrainersDamagePlantIcon",
+      "path": "textures/icons/Element_Damage_Plant.png"
+    },
+    {
+      "id": "TrainersDamageShadowIcon",
+      "path": "textures/icons/Element_Damage_Shadow.png"
+    },
+    {
+      "id": "TrainersDamageLightIcon",
+      "path": "textures/icons/Element_Damage_Light.png"
+    },
+    {
+      "id": "TrainersDamageNormalIcon",
+      "path": "textures/icons/Element_Damage_Normal.png"
+    }
+  ]
+}

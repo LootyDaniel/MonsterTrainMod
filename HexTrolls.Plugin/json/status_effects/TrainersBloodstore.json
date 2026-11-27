@@ -1,0 +1,45 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "status_effects": [
+    {
+      "id": "bloodstore",
+      "class_name": "@StatusEffectTrainerBloodstoreState",
+      "names": {
+        "english": "Bloodstore"
+      },
+      "stackable_names": {
+        "english": "Bloodstore {0}"
+      },
+      "card_tooltips": {
+        "english": "At the end of each turn, restore 5 Health to this unit if it has Bloodstore, then lose 1 stack. Bloodbag consumes all stacks to heal a selected ally 3 Health per stack."
+      },
+      "character_tooltips": {
+        "english": "At end of turn, heal 5 Health total and lose 1 stack. Bloodbag consumes all stacks."
+      },
+      "replacement_texts": {
+        "english": "<b>Bloodstore</b>"
+      },
+      "notifications": {
+        "english": "Bloodstore"
+      },
+      "display_category": "positive",
+      "trigger_stage": "none",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@TrainersBloodstoreIcon"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersBloodstoreIcon",
+      "path": "textures/icons/Element_Shadow.png"
+    }
+  ],
+  "atlas_icons": [
+    {
+      "id": "TrainersBloodstoreIcon",
+      "path": "textures/icons/Element_Shadow.png"
+    }
+  ]
+}

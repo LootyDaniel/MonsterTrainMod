@@ -1,0 +1,45 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "status_effects": [
+    {
+      "id": "electric_charge",
+      "class_name": "@StatusEffectTrainerElectricChargeState",
+      "names": {
+        "english": "Electric Charge"
+      },
+      "stackable_names": {
+        "english": "Electric Charge {0}"
+      },
+      "card_tooltips": {
+        "english": "Stored electrical energy. While Stealthed, gain 1 at Resolve. Charged Sap spends 1 Electric Charge to apply Sap 2 to a selected enemy on this floor."
+      },
+      "character_tooltips": {
+        "english": "Gain 1 Electric Charge at Resolve while Stealthed. Spend 1 to Sap a selected enemy with Charged Sap."
+      },
+      "replacement_texts": {
+        "english": "<b>Electric Charge</b>"
+      },
+      "notifications": {
+        "english": "Electric Charge"
+      },
+      "display_category": "positive",
+      "trigger_stage": "none",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@TrainersElectricChargeIcon"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersElectricChargeIcon",
+      "path": "textures/icons/Element_Electric.png"
+    }
+  ],
+  "atlas_icons": [
+    {
+      "id": "TrainersElectricChargeIcon",
+      "path": "textures/icons/Element_Electric.png"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-﻿using BepInEx;
+using BepInEx;
 using BepInEx.Logging;
 using Conductor.Extensions;
 using Conductor.TrackedValues;
@@ -87,6 +87,13 @@ namespace HexTrolls.Plugin
                         "json/status_effects/TrainersLevel.json",
                         "json/status_effects/TrainersEXP.json",
                         "json/status_effects/TrainersRosterSlot.json",
+                        "json/status_effects/TrainersEvolve.json",
+                        "json/status_effects/TrainersWeb.json",
+                        "json/status_effects/TrainersElectricCharge.json",
+                        "json/status_effects/TrainersBloodstore.json",
+                        "json/status_effects/TrainersFrostSkin.json",
+                        "json/status_effects/TrainersElementalTypes.json",
+                        "json/status_effects/TrainersFinalizedMechanics.json",
 
                         //triggers
                         "json/triggers/MarkedTrigger.json",
@@ -100,6 +107,7 @@ namespace HexTrolls.Plugin
                         "json/spells/SpikeOfProscription.json",
                         "json/spells/RecruitSpell.json",
                         "json/spells/TrainersPocketMonCaptureSpell.json",
+                        "json/spells/TrainersEvolutionGems.json",
 
                         //equipment
                         "json/equipment/HuntersBow.json",
@@ -116,7 +124,8 @@ namespace HexTrolls.Plugin
                         "json/units/BluntTrap.json",
                         "json/units/StunTrap.json",
                         "json/units/AttackTrap.json",
-                        "json/units/TrainersPocketMon39.json",
+                        "json/units/TrainersPocketMon39_Typed_REPLACE.json",
+                        "json/units/TrainersPocketMon18_ADD.json",
 
                         //upgrades
                         "json/upgrades/Tremorstone.json",
@@ -169,6 +178,10 @@ namespace HexTrolls.Plugin
             // Uncomment if you need Harmony Patch support.
             var harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
             harmony.PatchAll();
+
+            // Web damage/Root synchronization. Installed once with its own Harmony ID.
+            TrainersWebRuntime.Install();
+            TrainersFinalizedCombatRuntime.Install();
 
         }
 

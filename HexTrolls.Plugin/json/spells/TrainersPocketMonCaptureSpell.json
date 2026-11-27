@@ -3,9 +3,11 @@
   "cards": [
     {
       "id": "TrainersPocketMonCaptureSpell",
-      "names": { "english": "Capture Capsule" },
+      "names": {
+        "english": "Capture Capsule"
+      },
       "descriptions": {
-        "english": "Capture an enemy <b>PocketMon</b> with less than 10 current Health. It leaves combat without triggering death effects. Add that PocketMon's unit card to your run deck."
+        "english": "Capture an enemy <b>PocketMon</b> with less than 10 current Health."
       },
       "cost": 1,
       "card_type": "spell",
@@ -13,8 +15,10 @@
       "class": "@TrainersClan",
       "targets_room": true,
       "targetless": false,
-      "card_art": "@GuildMasterCardArt",
-      "pools": ["MegaPool"],
+      "card_art": "@TrainersCaptureCapsuleCardArt",
+      "pools": [
+        "MegaPool"
+      ],
       "effects": [
         "@TrainersPocketMonCaptureSelectTarget",
         "@TrainersPocketMonCaptureEffect"
@@ -40,6 +44,23 @@
       "param_int": 1,
       "should_test": false,
       "should_fail_to_cast_if_test_fails": false
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersCaptureCapsuleSprite",
+      "path": "textures/cards/CaptureCapsule.png"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "TrainersCaptureCapsuleCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersCaptureCapsuleSprite"
+        }
+      }
     }
   ]
 }

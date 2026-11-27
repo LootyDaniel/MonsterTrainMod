@@ -33,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="json\cards\" />
     <Folder Include="json\rewards\" />
   </ItemGroup>
 </Project>

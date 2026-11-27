@@ -157,7 +157,7 @@
         "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
-        "english": "Activated (Cooldown 2): Gain Stealth 1 and Hook Pull."
+        "english": ""
       }
     },
     {
@@ -178,13 +178,13 @@
       ],
       "initial_upgrades": [],
       "descriptions": {
-        "english": "Activated (Cooldown 2): Gain Stealth 1 and Hook Pull. End of Turn: Recover 10 Health."
+        "english": ""
       }
     },
     {
       "id": "TrainersPocketMonSnapsaurusForm1Card",
       "names": {
-        "english": "Snapsaurus"
+        "english": "Dinosnap"
       },
       "cost": 3,
       "card_type": "monster",
@@ -204,13 +204,13 @@
         "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
-        "english": "Start with Snap 1. Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful."
+        "english": "Start with Snap 5. Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful."
       }
     },
     {
       "id": "TrainersPocketMonSnapsaurusForm2Card",
       "names": {
-        "english": "Snapsaurus 2"
+        "english": "Snapasaur"
       },
       "cost": 3,
       "card_type": "monster",
@@ -225,13 +225,13 @@
       ],
       "initial_upgrades": [],
       "descriptions": {
-        "english": "Start with Snap 2. Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful. Activated (Cooldown 4): Trigger Snap on a chosen target; requires and consumes one Snap stack."
+        "english": "Start with Snap 8. Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful. Activated (Cooldown 4): Trigger Snap on a chosen target; requires and consumes one Snap stack."
       }
     },
     {
       "id": "TrainersPocketMonSnapsaurusForm3Card",
       "names": {
-        "english": "Snapsaurus 3"
+        "english": "Snaphydra"
       },
       "cost": 3,
       "card_type": "monster",
@@ -246,7 +246,7 @@
       ],
       "initial_upgrades": [],
       "descriptions": {
-        "english": "Start with Snap 6. Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful. Activated (Cooldown 4): Trigger Snap on a chosen target; requires and consumes one Snap stack."
+        "english": "Start with Snap 12. Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful. Activated (Cooldown 4): Trigger Snap on a chosen target; requires and consumes one Snap stack."
       }
     },
     {
@@ -272,7 +272,7 @@
         "@TrainersLevelBaseMarker"
       ],
       "descriptions": {
-        "english": "Revenge: Gain Tesla Charge 1. Resolve: Deal 1 damage for each Tesla Charge to ALL enemies. Charges are not consumed by Resolve; reset after combat."
+        "english": "Revenge: Gain 1 Tesla Charge."
       }
     },
     {
@@ -293,7 +293,7 @@
       ],
       "initial_upgrades": [],
       "descriptions": {
-        "english": "Revenge: Gain Tesla Charge 2. Resolve: Deal 1 damage for each Tesla Charge to ALL enemies. Charges are not consumed by Resolve; reset after combat."
+        "english": "Revenge: Gain 2 Tesla Charges."
       }
     },
     {
@@ -314,7 +314,7 @@
       ],
       "initial_upgrades": [],
       "descriptions": {
-        "english": "Revenge: Gain Tesla Charge 3. Resolve: Deal 1 damage for each Tesla Charge to ALL enemies. Charges are not consumed by Resolve; reset after combat."
+        "english": "Revenge: Gain 3 Tesla Charges."
       }
     },
     {
@@ -455,7 +455,7 @@
       ],
       "initial_upgrades": [],
       "descriptions": {
-        "english": "Strike: Apply Freeze 5. Haste 3: Has Quick while Haste stacks remain; loses one stack at the end of each turn."
+        "english": "Strike: Apply Freeze 5. Swift 3."
       }
     },
     {
@@ -476,7 +476,7 @@
       ],
       "initial_upgrades": [],
       "descriptions": {
-        "english": "Strike: Apply Freeze 5. Haste 3. Freeze Breaker: Doubles the physical damage bonus from Freeze against this unit’s targets."
+        "english": "Strike: Apply Freeze 5. Swift 3. Freeze Breaker: Doubles the physical damage bonus from Freeze against this unit’s targets."
       }
     },
     {
@@ -685,7 +685,7 @@
       ],
       "initial_upgrades": [],
       "descriptions": {
-        "english": "Death Dusting (Cooldown 1): Deal 15 damage to all enemies and apply Web 1 to each. Revenge: Apply Sap 1 to attacker. No starting armor and no Resolve."
+        "english": "Revenge: Apply Sap 1 to attacker."
       }
     },
     {
@@ -917,6 +917,66 @@
       "descriptions": {
         "english": "Strike: Gain BloodStore 4. Bloodbag (Cooldown 1): Consume ALL BloodStore to heal selected target 3 Health per stack. BloodStore: At end of turn, heal its holder 5 Health (once, not per stack), then lose 1 stack."
       }
+    },
+    {
+      "id": "TrainersPocketMonDragonMothForm3DeathDustingAbility",
+      "names": {
+        "english": "Death Dusting"
+      },
+      "descriptions": {
+        "english": "Deal 15 damage to all enemies, then apply Web 1 to survivors."
+      },
+      "is_an_ability": true,
+      "card_type": "spell",
+      "cost": 0,
+      "cooldown": 1,
+      "initial_cooldown": 0,
+      "targets_room": true,
+      "targetless": true,
+      "effects": [
+        "@TrainersPocketMonDragonMothForm3DeathDustingDamage",
+        "@TrainersPocketMonDragonMothForm3DeathDustingWeb"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonBloodWormForm1HookPullAbility",
+      "names": {
+        "english": "Hook Pull"
+      },
+      "descriptions": {
+        "english": "Pull a selected enemy to the front, then gain Stealth 1."
+      },
+      "is_an_ability": true,
+      "card_type": "spell",
+      "cost": 0,
+      "cooldown": 2,
+      "initial_cooldown": 0,
+      "targetless": false,
+      "targets_room": true,
+      "effects": [
+        "@TrainersPocketMonBloodWormForm1PullTarget",
+        "@TrainersPocketMonBloodWormForm1StealthAfterPull"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonBloodWormForm2HookPullAbility",
+      "names": {
+        "english": "Hook Pull"
+      },
+      "descriptions": {
+        "english": "Pull a selected enemy to the front, then gain Stealth 1."
+      },
+      "is_an_ability": true,
+      "card_type": "spell",
+      "cost": 0,
+      "cooldown": 2,
+      "initial_cooldown": 0,
+      "targetless": false,
+      "targets_room": true,
+      "effects": [
+        "@TrainersPocketMonBloodWormForm2PullTarget",
+        "@TrainersPocketMonBloodWormForm2StealthAfterPull"
+      ]
     }
   ],
   "characters": [
@@ -1064,7 +1124,8 @@
       ],
       "subtypes": [
         "@TrainersPocketMon"
-      ]
+      ],
+      "ability": "@TrainersPocketMonBloodWormForm1HookPullAbility"
     },
     {
       "id": "TrainersPocketMonBloodWormForm2Character",
@@ -1082,12 +1143,13 @@
       ],
       "subtypes": [
         "@TrainersPocketMon"
-      ]
+      ],
+      "ability": "@TrainersPocketMonBloodWormForm2HookPullAbility"
     },
     {
       "id": "TrainersPocketMonSnapsaurusForm1Character",
       "names": {
-        "english": "Snapsaurus"
+        "english": "Dinosnap"
       },
       "character_art": "@TrainersPocketMonSnapsaurusForm1CharacterArt",
       "size": 3,
@@ -1111,7 +1173,7 @@
     {
       "id": "TrainersPocketMonSnapsaurusForm2Character",
       "names": {
-        "english": "Snapsaurus 2"
+        "english": "Snapasaur"
       },
       "character_art": "@TrainersPocketMonSnapsaurusForm2CharacterArt",
       "size": 3,
@@ -1135,7 +1197,7 @@
     {
       "id": "TrainersPocketMonSnapsaurusForm3Character",
       "names": {
-        "english": "Snapsaurus 3"
+        "english": "Snaphydra"
       },
       "character_art": "@TrainersPocketMonSnapsaurusForm3CharacterArt",
       "size": 3,
@@ -1574,7 +1636,8 @@
       ],
       "subtypes": [
         "@TrainersPocketMon"
-      ]
+      ],
+      "ability": "@TrainersPocketMonDragonMothForm3DeathDustingAbility"
     },
     {
       "id": "TrainersPocketMonLeafshrewForm1Character",
@@ -3039,6 +3102,63 @@
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
       "param_character": "@TrainersPocketMonVampirantForm3Character"
+    },
+    {
+      "id": "TrainersPocketMonDragonMothForm3DeathDustingDamage",
+      "name": "CardEffectDamage",
+      "target_mode": "room",
+      "target_team": "heroes",
+      "param_int": 15
+    },
+    {
+      "id": "TrainersPocketMonDragonMothForm3DeathDustingWeb",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "room",
+      "target_team": "heroes",
+      "param_status_effects": [
+        {
+          "status": "@web",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonBloodWormForm1PullTarget",
+      "name": "CardEffectFloorRearrange",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonBloodWormForm1StealthAfterPull",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "stealth",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonBloodWormForm2PullTarget",
+      "name": "CardEffectFloorRearrange",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonBloodWormForm2StealthAfterPull",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "stealth",
+          "count": 1
+        }
+      ]
     }
   ],
   "card_pools": [
@@ -3160,7 +3280,37 @@
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@TrainersPocketMonBloodWormForm1Sprite"
+          "shader": "Shiny Shoe/CardEffects Non-Additive",
+          "base_layer": {
+            "type": "texture",
+            "texture": "@TrainersVampirantForestBackground",
+            "additive": false,
+            "stretch": true
+          },
+          "layers": [
+            {
+              "type": "texture",
+              "texture": "@TrainersBloodWormForm1Centered",
+              "additive": false,
+              "stretch": true
+            },
+            {
+              "type": "moving_texture",
+              "texture": "@TrainersDragonMothSunRays",
+              "additive": true,
+              "stretch": true,
+              "linear_speed": {
+                "x": 0.002,
+                "y": 0.0005
+              },
+              "tint": {
+                "r": 1,
+                "g": 0.95,
+                "b": 0.79,
+                "a": 0.12
+              }
+            }
+          ]
         }
       }
     },
@@ -3178,7 +3328,37 @@
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@TrainersPocketMonBloodWormForm2Sprite"
+          "shader": "Shiny Shoe/CardEffects Non-Additive",
+          "base_layer": {
+            "type": "texture",
+            "texture": "@TrainersVampirantForestBackground",
+            "additive": false,
+            "stretch": true
+          },
+          "layers": [
+            {
+              "type": "texture",
+              "texture": "@TrainersBloodWormForm2Centered",
+              "additive": false,
+              "stretch": true
+            },
+            {
+              "type": "moving_texture",
+              "texture": "@TrainersDragonMothSunRays",
+              "additive": true,
+              "stretch": true,
+              "linear_speed": {
+                "x": 0.002,
+                "y": 0.0005
+              },
+              "tint": {
+                "r": 1,
+                "g": 0.95,
+                "b": 0.79,
+                "a": 0.12
+              }
+            }
+          ]
         }
       }
     },
@@ -3187,7 +3367,39 @@
       "type": "character_art",
       "extensions": {
         "character_art": {
-          "sprite": "@TrainersPocketMonBloodWormForm2Sprite"
+          "sprite": "@TrainersPocketMonBloodWormForm2Sprite",
+          "animations": [
+            {
+              "animation": "idle",
+              "frames": [
+                "@TrainersBloodWormForm2IdleFrame1",
+                "@TrainersBloodWormForm2IdleFrame2",
+                "@TrainersBloodWormForm2IdleFrame3"
+              ],
+              "framerate": 5,
+              "loop": true
+            },
+            {
+              "animation": "attack",
+              "frames": [
+                "@TrainersBloodWormForm2AttackFrame1",
+                "@TrainersBloodWormForm2AttackFrame2",
+                "@TrainersBloodWormForm2AttackFrame3"
+              ],
+              "framerate": 12,
+              "loop": false
+            },
+            {
+              "animation": "hit_react",
+              "frames": [
+                "@TrainersBloodWormForm2HurtFrame1",
+                "@TrainersBloodWormForm2HurtFrame2",
+                "@TrainersBloodWormForm2HurtFrame3"
+              ],
+              "framerate": 8,
+              "loop": false
+            }
+          ]
         }
       }
     },
@@ -3196,7 +3408,37 @@
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@TrainersPocketMonSnapsaurusForm1Sprite"
+          "shader": "Shiny Shoe/CardEffects Non-Additive",
+          "base_layer": {
+            "type": "texture",
+            "texture": "@TrainersVampirantForestBackground",
+            "additive": false,
+            "stretch": true
+          },
+          "layers": [
+            {
+              "type": "texture",
+              "texture": "@TrainersSnapsaurusForm1Centered",
+              "additive": false,
+              "stretch": true
+            },
+            {
+              "type": "moving_texture",
+              "texture": "@TrainersDragonMothSunRays",
+              "additive": true,
+              "stretch": true,
+              "linear_speed": {
+                "x": 0.002,
+                "y": 0.0005
+              },
+              "tint": {
+                "r": 1,
+                "g": 0.95,
+                "b": 0.79,
+                "a": 0.12
+              }
+            }
+          ]
         }
       }
     },
@@ -3205,7 +3447,39 @@
       "type": "character_art",
       "extensions": {
         "character_art": {
-          "sprite": "@TrainersPocketMonSnapsaurusForm1Sprite"
+          "sprite": "@TrainersPocketMonSnapsaurusForm1Sprite",
+          "animations": [
+            {
+              "animation": "idle",
+              "frames": [
+                "@TrainersSnapsaurusForm1IdleFrame1",
+                "@TrainersSnapsaurusForm1IdleFrame2",
+                "@TrainersSnapsaurusForm1IdleFrame3"
+              ],
+              "framerate": 5,
+              "loop": true
+            },
+            {
+              "animation": "attack",
+              "frames": [
+                "@TrainersSnapsaurusForm1AttackFrame1",
+                "@TrainersSnapsaurusForm1AttackFrame2",
+                "@TrainersSnapsaurusForm1AttackFrame3"
+              ],
+              "framerate": 12,
+              "loop": false
+            },
+            {
+              "animation": "hit_react",
+              "frames": [
+                "@TrainersSnapsaurusForm1HurtFrame1",
+                "@TrainersSnapsaurusForm1HurtFrame2",
+                "@TrainersSnapsaurusForm1HurtFrame3"
+              ],
+              "framerate": 8,
+              "loop": false
+            }
+          ]
         }
       }
     },
@@ -3214,7 +3488,37 @@
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@TrainersPocketMonSnapsaurusForm2Sprite"
+          "shader": "Shiny Shoe/CardEffects Non-Additive",
+          "base_layer": {
+            "type": "texture",
+            "texture": "@TrainersVampirantForestBackground",
+            "additive": false,
+            "stretch": true
+          },
+          "layers": [
+            {
+              "type": "texture",
+              "texture": "@TrainersSnapsaurusForm2Centered",
+              "additive": false,
+              "stretch": true
+            },
+            {
+              "type": "moving_texture",
+              "texture": "@TrainersDragonMothSunRays",
+              "additive": true,
+              "stretch": true,
+              "linear_speed": {
+                "x": 0.002,
+                "y": 0.0005
+              },
+              "tint": {
+                "r": 1,
+                "g": 0.95,
+                "b": 0.79,
+                "a": 0.12
+              }
+            }
+          ]
         }
       }
     },
@@ -3223,7 +3527,39 @@
       "type": "character_art",
       "extensions": {
         "character_art": {
-          "sprite": "@TrainersPocketMonSnapsaurusForm2Sprite"
+          "sprite": "@TrainersPocketMonSnapsaurusForm2Sprite",
+          "animations": [
+            {
+              "animation": "idle",
+              "frames": [
+                "@TrainersSnapsaurusForm2IdleFrame1",
+                "@TrainersSnapsaurusForm2IdleFrame2",
+                "@TrainersSnapsaurusForm2IdleFrame3"
+              ],
+              "framerate": 5,
+              "loop": true
+            },
+            {
+              "animation": "attack",
+              "frames": [
+                "@TrainersSnapsaurusForm2AttackFrame1",
+                "@TrainersSnapsaurusForm2AttackFrame2",
+                "@TrainersSnapsaurusForm2AttackFrame3"
+              ],
+              "framerate": 12,
+              "loop": false
+            },
+            {
+              "animation": "hit_react",
+              "frames": [
+                "@TrainersSnapsaurusForm2HurtFrame1",
+                "@TrainersSnapsaurusForm2HurtFrame2",
+                "@TrainersSnapsaurusForm2HurtFrame3"
+              ],
+              "framerate": 8,
+              "loop": false
+            }
+          ]
         }
       }
     },
@@ -3232,7 +3568,37 @@
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@TrainersPocketMonSnapsaurusForm3Sprite"
+          "shader": "Shiny Shoe/CardEffects Non-Additive",
+          "base_layer": {
+            "type": "texture",
+            "texture": "@TrainersVampirantForestBackground",
+            "additive": false,
+            "stretch": true
+          },
+          "layers": [
+            {
+              "type": "texture",
+              "texture": "@TrainersSnapsaurusForm3Centered",
+              "additive": false,
+              "stretch": true
+            },
+            {
+              "type": "moving_texture",
+              "texture": "@TrainersDragonMothSunRays",
+              "additive": true,
+              "stretch": true,
+              "linear_speed": {
+                "x": 0.002,
+                "y": 0.0005
+              },
+              "tint": {
+                "r": 1,
+                "g": 0.95,
+                "b": 0.79,
+                "a": 0.12
+              }
+            }
+          ]
         }
       }
     },
@@ -3241,7 +3607,39 @@
       "type": "character_art",
       "extensions": {
         "character_art": {
-          "sprite": "@TrainersPocketMonSnapsaurusForm3Sprite"
+          "sprite": "@TrainersPocketMonSnapsaurusForm3Sprite",
+          "animations": [
+            {
+              "animation": "idle",
+              "frames": [
+                "@TrainersSnapsaurusForm3IdleFrame1",
+                "@TrainersSnapsaurusForm3IdleFrame2",
+                "@TrainersSnapsaurusForm3IdleFrame3"
+              ],
+              "framerate": 5,
+              "loop": true
+            },
+            {
+              "animation": "attack",
+              "frames": [
+                "@TrainersSnapsaurusForm3AttackFrame1",
+                "@TrainersSnapsaurusForm3AttackFrame2",
+                "@TrainersSnapsaurusForm3AttackFrame3"
+              ],
+              "framerate": 12,
+              "loop": false
+            },
+            {
+              "animation": "hit_react",
+              "frames": [
+                "@TrainersSnapsaurusForm3HurtFrame1",
+                "@TrainersSnapsaurusForm3HurtFrame2",
+                "@TrainersSnapsaurusForm3HurtFrame3"
+              ],
+              "framerate": 8,
+              "loop": false
+            }
+          ]
         }
       }
     },
@@ -3538,7 +3936,31 @@
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@TrainersPocketMonDragonMothForm1Sprite"
+          "shader": "Shiny Shoe/CardEffects Non-Additive",
+          "base_layer": {
+            "type": "texture",
+            "texture": "@TrainersDragonMothForm1Approved",
+            "additive": false,
+            "stretch": true
+          },
+          "layers": [
+            {
+              "type": "moving_texture",
+              "texture": "@TrainersDragonMothSunRays",
+              "additive": true,
+              "stretch": true,
+              "linear_speed": {
+                "x": 0.002,
+                "y": 0.0005
+              },
+              "tint": {
+                "r": 1,
+                "g": 0.95,
+                "b": 0.79,
+                "a": 0.2
+              }
+            }
+          ]
         }
       }
     },
@@ -3556,7 +3978,31 @@
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@TrainersPocketMonDragonMothForm2Sprite"
+          "shader": "Shiny Shoe/CardEffects Non-Additive",
+          "base_layer": {
+            "type": "texture",
+            "texture": "@TrainersDragonMothForm2Approved",
+            "additive": false,
+            "stretch": true
+          },
+          "layers": [
+            {
+              "type": "moving_texture",
+              "texture": "@TrainersDragonMothSunRays",
+              "additive": true,
+              "stretch": true,
+              "linear_speed": {
+                "x": 0.002,
+                "y": 0.0005
+              },
+              "tint": {
+                "r": 1,
+                "g": 0.95,
+                "b": 0.79,
+                "a": 0.2
+              }
+            }
+          ]
         }
       }
     },
@@ -3574,7 +4020,31 @@
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@TrainersPocketMonDragonMothForm3Sprite"
+          "shader": "Shiny Shoe/CardEffects Non-Additive",
+          "base_layer": {
+            "type": "texture",
+            "texture": "@TrainersDragonMothForm3Approved",
+            "additive": false,
+            "stretch": true
+          },
+          "layers": [
+            {
+              "type": "moving_texture",
+              "texture": "@TrainersDragonMothSunRays",
+              "additive": true,
+              "stretch": true,
+              "linear_speed": {
+                "x": 0.002,
+                "y": 0.0005
+              },
+              "tint": {
+                "r": 1,
+                "g": 0.95,
+                "b": 0.79,
+                "a": 0.2
+              }
+            }
+          ]
         }
       }
     },
@@ -3592,7 +4062,37 @@
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@TrainersPocketMonLeafshrewForm1Sprite"
+          "shader": "Shiny Shoe/CardEffects Non-Additive",
+          "base_layer": {
+            "type": "texture",
+            "texture": "@TrainersVampirantForestBackground",
+            "additive": false,
+            "stretch": true
+          },
+          "layers": [
+            {
+              "type": "texture",
+              "texture": "@TrainersLeafshrewForm1Centered",
+              "additive": false,
+              "stretch": true
+            },
+            {
+              "type": "moving_texture",
+              "texture": "@TrainersDragonMothSunRays",
+              "additive": true,
+              "stretch": true,
+              "linear_speed": {
+                "x": 0.002,
+                "y": 0.0005
+              },
+              "tint": {
+                "r": 1,
+                "g": 0.95,
+                "b": 0.79,
+                "a": 0.12
+              }
+            }
+          ]
         }
       }
     },
@@ -3610,7 +4110,37 @@
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@TrainersPocketMonLeafshrewForm2Sprite"
+          "shader": "Shiny Shoe/CardEffects Non-Additive",
+          "base_layer": {
+            "type": "texture",
+            "texture": "@TrainersVampirantForestBackground",
+            "additive": false,
+            "stretch": true
+          },
+          "layers": [
+            {
+              "type": "texture",
+              "texture": "@TrainersLeafshrewForm2Centered",
+              "additive": false,
+              "stretch": true
+            },
+            {
+              "type": "moving_texture",
+              "texture": "@TrainersDragonMothSunRays",
+              "additive": true,
+              "stretch": true,
+              "linear_speed": {
+                "x": 0.002,
+                "y": 0.0005
+              },
+              "tint": {
+                "r": 1,
+                "g": 0.95,
+                "b": 0.79,
+                "a": 0.12
+              }
+            }
+          ]
         }
       }
     },
@@ -3718,7 +4248,37 @@
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@TrainersPocketMonVampirantForm1Sprite"
+          "shader": "Shiny Shoe/CardEffects Non-Additive",
+          "base_layer": {
+            "type": "texture",
+            "texture": "@TrainersVampirantForestBackground",
+            "additive": false,
+            "stretch": true
+          },
+          "layers": [
+            {
+              "type": "texture",
+              "texture": "@TrainersVampirantForm1Centered",
+              "additive": false,
+              "stretch": true
+            },
+            {
+              "type": "moving_texture",
+              "texture": "@TrainersDragonMothSunRays",
+              "additive": true,
+              "stretch": true,
+              "linear_speed": {
+                "x": 0.002,
+                "y": 0.0005
+              },
+              "tint": {
+                "r": 1,
+                "g": 0.95,
+                "b": 0.79,
+                "a": 0.12
+              }
+            }
+          ]
         }
       }
     },
@@ -3736,7 +4296,37 @@
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@TrainersPocketMonVampirantForm2Sprite"
+          "shader": "Shiny Shoe/CardEffects Non-Additive",
+          "base_layer": {
+            "type": "texture",
+            "texture": "@TrainersVampirantForestBackground",
+            "additive": false,
+            "stretch": true
+          },
+          "layers": [
+            {
+              "type": "texture",
+              "texture": "@TrainersVampirantForm2Centered",
+              "additive": false,
+              "stretch": true
+            },
+            {
+              "type": "moving_texture",
+              "texture": "@TrainersDragonMothSunRays",
+              "additive": true,
+              "stretch": true,
+              "linear_speed": {
+                "x": 0.002,
+                "y": 0.0005
+              },
+              "tint": {
+                "r": 1,
+                "g": 0.95,
+                "b": 0.79,
+                "a": 0.12
+              }
+            }
+          ]
         }
       }
     },
@@ -3754,7 +4344,37 @@
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@TrainersPocketMonVampirantForm3Sprite"
+          "shader": "Shiny Shoe/CardEffects Non-Additive",
+          "base_layer": {
+            "type": "texture",
+            "texture": "@TrainersVampirantForestBackground",
+            "additive": false,
+            "stretch": true
+          },
+          "layers": [
+            {
+              "type": "texture",
+              "texture": "@TrainersVampirantForm3Centered",
+              "additive": false,
+              "stretch": true
+            },
+            {
+              "type": "moving_texture",
+              "texture": "@TrainersDragonMothSunRays",
+              "additive": true,
+              "stretch": true,
+              "linear_speed": {
+                "x": 0.002,
+                "y": 0.0005
+              },
+              "tint": {
+                "r": 1,
+                "g": 0.95,
+                "b": 0.79,
+                "a": 0.12
+              }
+            }
+          ]
         }
       }
     },
@@ -3795,19 +4415,19 @@
     },
     {
       "id": "TrainersPocketMonBloodWormForm2Sprite",
-      "path": "textures/units/PocketMon_BloodWorm_Form2.png"
+      "path": "textures/character_art/BloodWorm_Form2_Idle_1.png"
     },
     {
       "id": "TrainersPocketMonSnapsaurusForm1Sprite",
-      "path": "textures/units/PocketMon_Snapsaurus_Form1.png"
+      "path": "textures/character_art/Snapsaurus_Form1_Idle_1.png"
     },
     {
       "id": "TrainersPocketMonSnapsaurusForm2Sprite",
-      "path": "textures/units/PocketMon_Snapsaurus_Form2.png"
+      "path": "textures/character_art/Snapsaurus_Form2_Idle_1.png"
     },
     {
       "id": "TrainersPocketMonSnapsaurusForm3Sprite",
-      "path": "textures/units/PocketMon_Snapsaurus_Form3.png"
+      "path": "textures/character_art/Snapsaurus_Form3_Idle_1.png"
     },
     {
       "id": "TrainersPocketMonTeslasaurusForm1Sprite",
@@ -3924,6 +4544,210 @@
     {
       "id": "TrainersPocketMonVampirantForm3Sprite",
       "path": "textures/units/PocketMon_Vampirant_Form3.png"
+    },
+    {
+      "id": "TrainersDragonMothForm1Approved",
+      "path": "textures/card_art/TrainersDragonMothForm1Approved.png"
+    },
+    {
+      "id": "TrainersDragonMothForm2Approved",
+      "path": "textures/card_art/TrainersDragonMothForm2Approved.png"
+    },
+    {
+      "id": "TrainersDragonMothForm3Approved",
+      "path": "textures/card_art/TrainersDragonMothForm3Approved.png"
+    },
+    {
+      "id": "TrainersDragonMothSunRays",
+      "path": "textures/card_art/TrainersDragonMothSunRays.png"
+    },
+    {
+      "id": "TrainersVampirantForestBackground",
+      "path": "textures/card_art/TrainersVampirantForestBackground.png"
+    },
+    {
+      "id": "TrainersVampirantForm1Centered",
+      "path": "textures/card_art/TrainersVampirantForm1Centered.png"
+    },
+    {
+      "id": "TrainersVampirantForm2Centered",
+      "path": "textures/card_art/TrainersVampirantForm2Centered.png"
+    },
+    {
+      "id": "TrainersVampirantForm3Centered",
+      "path": "textures/card_art/TrainersVampirantForm3Centered.png"
+    },
+    {
+      "id": "TrainersBloodWormForm1Centered",
+      "path": "textures/card_art/TrainersBloodWormForm1Centered.png"
+    },
+    {
+      "id": "TrainersBloodWormForm2Centered",
+      "path": "textures/card_art/TrainersBloodWormForm2Centered.png"
+    },
+    {
+      "id": "TrainersLeafshrewForm1Centered",
+      "path": "textures/card_art/TrainersLeafshrewForm1Centered.png"
+    },
+    {
+      "id": "TrainersLeafshrewForm2Centered",
+      "path": "textures/card_art/TrainersLeafshrewForm2Centered.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm1IdleFrame1",
+      "path": "textures/character_art/Snapsaurus_Form1_Idle_1.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm1IdleFrame2",
+      "path": "textures/character_art/Snapsaurus_Form1_Idle_2.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm1IdleFrame3",
+      "path": "textures/character_art/Snapsaurus_Form1_Idle_3.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm1AttackFrame1",
+      "path": "textures/character_art/Snapsaurus_Form1_Attack_1.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm1AttackFrame2",
+      "path": "textures/character_art/Snapsaurus_Form1_Attack_2.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm1AttackFrame3",
+      "path": "textures/character_art/Snapsaurus_Form1_Attack_3.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm1HurtFrame1",
+      "path": "textures/character_art/Snapsaurus_Form1_Hurt_1.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm1HurtFrame2",
+      "path": "textures/character_art/Snapsaurus_Form1_Hurt_2.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm1HurtFrame3",
+      "path": "textures/character_art/Snapsaurus_Form1_Hurt_3.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm1Centered",
+      "path": "textures/card_art/TrainersSnapsaurusForm1Centered.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm2IdleFrame1",
+      "path": "textures/character_art/Snapsaurus_Form2_Idle_1.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm2IdleFrame2",
+      "path": "textures/character_art/Snapsaurus_Form2_Idle_2.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm2IdleFrame3",
+      "path": "textures/character_art/Snapsaurus_Form2_Idle_3.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm2AttackFrame1",
+      "path": "textures/character_art/Snapsaurus_Form2_Attack_1.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm2AttackFrame2",
+      "path": "textures/character_art/Snapsaurus_Form2_Attack_2.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm2AttackFrame3",
+      "path": "textures/character_art/Snapsaurus_Form2_Attack_3.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm2HurtFrame1",
+      "path": "textures/character_art/Snapsaurus_Form2_Hurt_1.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm2HurtFrame2",
+      "path": "textures/character_art/Snapsaurus_Form2_Hurt_2.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm2HurtFrame3",
+      "path": "textures/character_art/Snapsaurus_Form2_Hurt_3.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm2Centered",
+      "path": "textures/card_art/TrainersSnapsaurusForm2Centered.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm3IdleFrame1",
+      "path": "textures/character_art/Snapsaurus_Form3_Idle_1.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm3IdleFrame2",
+      "path": "textures/character_art/Snapsaurus_Form3_Idle_2.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm3IdleFrame3",
+      "path": "textures/character_art/Snapsaurus_Form3_Idle_3.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm3AttackFrame1",
+      "path": "textures/character_art/Snapsaurus_Form3_Attack_1.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm3AttackFrame2",
+      "path": "textures/character_art/Snapsaurus_Form3_Attack_2.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm3AttackFrame3",
+      "path": "textures/character_art/Snapsaurus_Form3_Attack_3.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm3HurtFrame1",
+      "path": "textures/character_art/Snapsaurus_Form3_Hurt_1.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm3HurtFrame2",
+      "path": "textures/character_art/Snapsaurus_Form3_Hurt_2.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm3HurtFrame3",
+      "path": "textures/character_art/Snapsaurus_Form3_Hurt_3.png"
+    },
+    {
+      "id": "TrainersSnapsaurusForm3Centered",
+      "path": "textures/card_art/TrainersSnapsaurusForm3Centered.png"
+    },
+    {
+      "id": "TrainersBloodWormForm2IdleFrame1",
+      "path": "textures/character_art/BloodWorm_Form2_Idle_1.png"
+    },
+    {
+      "id": "TrainersBloodWormForm2IdleFrame2",
+      "path": "textures/character_art/BloodWorm_Form2_Idle_2.png"
+    },
+    {
+      "id": "TrainersBloodWormForm2IdleFrame3",
+      "path": "textures/character_art/BloodWorm_Form2_Idle_3.png"
+    },
+    {
+      "id": "TrainersBloodWormForm2AttackFrame1",
+      "path": "textures/character_art/BloodWorm_Form2_Attack_1.png"
+    },
+    {
+      "id": "TrainersBloodWormForm2AttackFrame2",
+      "path": "textures/character_art/BloodWorm_Form2_Attack_2.png"
+    },
+    {
+      "id": "TrainersBloodWormForm2AttackFrame3",
+      "path": "textures/character_art/BloodWorm_Form2_Attack_3.png"
+    },
+    {
+      "id": "TrainersBloodWormForm2HurtFrame1",
+      "path": "textures/character_art/BloodWorm_Form2_Hurt_1.png"
+    },
+    {
+      "id": "TrainersBloodWormForm2HurtFrame2",
+      "path": "textures/character_art/BloodWorm_Form2_Hurt_2.png"
+    },
+    {
+      "id": "TrainersBloodWormForm2HurtFrame3",
+      "path": "textures/character_art/BloodWorm_Form2_Hurt_3.png"
     }
   ],
   "upgrades": [

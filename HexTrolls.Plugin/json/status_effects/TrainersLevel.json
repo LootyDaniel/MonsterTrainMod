@@ -11,10 +11,10 @@
         "english": "Level {0}"
       },
       "card_tooltips": {
-        "english": "Training Level. Starts at 1. Every 10 x current Level EXP is spent to gain one Level; excess EXP is retained."
+        "english": "Unit gains a 100% Stat Increase with each stack of Level.  Consumes EXP equal to 10 x Level, to increase Level by 1 permanently.\nSiphon: Gain shared EXP when an enemy dies on this floor."
       },
       "character_tooltips": {
-        "english": "Earn 10 x current Level EXP to gain a level; spend that many EXP stacks, then check again. Each level increases Attack and Health by this unit's original stats."
+        "english": "Unit gains a 100% Stat Increase with each stack of Level.  Consumes EXP equal to 10 x Level, to increase Level by 1 permanently.\nSiphon: Gain shared EXP when an enemy dies on this floor."
       },
       "replacement_texts": {
         "english": "<b>Level</b>"

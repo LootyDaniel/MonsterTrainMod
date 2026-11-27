@@ -1,0 +1,42 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "status_effects": [
+    {
+      "id": "trainer_frost_skin",
+      "class_name": "@StatusEffectTrainerFrostSkinState",
+      "names": {
+        "english": "Frost Skin"
+      },
+      "card_tooltips": {
+        "english": "Revenge: Apply Frostbite 1 to the attacker. Strike: Apply Frostbite 1 to the attacked enemy. Resolve: Gain Armor 5, then apply Frostbite to all enemies on this floor equal to current Armor divided by 5 (rounded down)."
+      },
+      "character_tooltips": {
+        "english": "Revenge: Frostbite 1 to attacker. Strike: Frostbite 1 to defender. Resolve: Gain Armor 5, then apply Frostbite equal to floor(current Armor / 5) to all enemies on this floor."
+      },
+      "replacement_texts": {
+        "english": "<b>Frost Skin</b>"
+      },
+      "notifications": {
+        "english": "Frost Skin"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "none",
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "is_propagatable": false,
+      "icon": "@TrainersFrostSkinIcon"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersFrostSkinIcon",
+      "path": "textures/icons/Element_Ice.png"
+    }
+  ],
+  "atlas_icons": [
+    {
+      "id": "TrainersFrostSkinIcon",
+      "path": "textures/icons/Element_Ice.png"
+    }
+  ]
+}

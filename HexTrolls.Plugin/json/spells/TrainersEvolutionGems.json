@@ -1,0 +1,342 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "TrainersFireGemCard",
+      "names": {
+        "english": "Fire Gem"
+      },
+      "cost": 1,
+      "card_type": "spell",
+      "rarity": "uncommon",
+      "class": "@TrainersClan",
+      "targetless": false,
+      "targets_room": true,
+      "card_art": "@TrainersFireGemArt",
+      "effects": [
+        "@TrainersFireGemSelectTarget",
+        "@TrainersFireGemEffect"
+      ],
+      "descriptions": {
+        "english": "Immediately evolve an eligible Fire-type PocketMon, ignoring its level requirement."
+      }
+    },
+    {
+      "id": "TrainersIceGemCard",
+      "names": {
+        "english": "Ice Gem"
+      },
+      "cost": 1,
+      "card_type": "spell",
+      "rarity": "uncommon",
+      "class": "@TrainersClan",
+      "targetless": false,
+      "targets_room": true,
+      "card_art": "@TrainersIceGemArt",
+      "effects": [
+        "@TrainersIceGemSelectTarget",
+        "@TrainersIceGemEffect"
+      ],
+      "descriptions": {
+        "english": "Immediately evolve an eligible Ice-type PocketMon, ignoring its level requirement."
+      }
+    },
+    {
+      "id": "TrainersElectricGemCard",
+      "names": {
+        "english": "Electric Gem"
+      },
+      "cost": 1,
+      "card_type": "spell",
+      "rarity": "uncommon",
+      "class": "@TrainersClan",
+      "targetless": false,
+      "targets_room": true,
+      "card_art": "@TrainersElectricGemArt",
+      "effects": [
+        "@TrainersElectricGemSelectTarget",
+        "@TrainersElectricGemEffect"
+      ],
+      "descriptions": {
+        "english": "Immediately evolve an eligible Electric-type PocketMon, ignoring its level requirement."
+      }
+    },
+    {
+      "id": "TrainersWaterGemCard",
+      "names": {
+        "english": "Water Gem"
+      },
+      "cost": 1,
+      "card_type": "spell",
+      "rarity": "uncommon",
+      "class": "@TrainersClan",
+      "targetless": false,
+      "targets_room": true,
+      "card_art": "@TrainersWaterGemArt",
+      "effects": [
+        "@TrainersWaterGemSelectTarget",
+        "@TrainersWaterGemEffect"
+      ],
+      "descriptions": {
+        "english": "Immediately evolve an eligible Water-type PocketMon, ignoring its level requirement."
+      }
+    },
+    {
+      "id": "TrainersPlantGemCard",
+      "names": {
+        "english": "Plant Gem"
+      },
+      "cost": 1,
+      "card_type": "spell",
+      "rarity": "uncommon",
+      "class": "@TrainersClan",
+      "targetless": false,
+      "targets_room": true,
+      "card_art": "@TrainersPlantGemArt",
+      "effects": [
+        "@TrainersPlantGemSelectTarget",
+        "@TrainersPlantGemEffect"
+      ],
+      "descriptions": {
+        "english": "Immediately evolve an eligible Plant-type PocketMon, ignoring its level requirement."
+      }
+    },
+    {
+      "id": "TrainersMoonGemCard",
+      "names": {
+        "english": "Moon Gem"
+      },
+      "cost": 1,
+      "card_type": "spell",
+      "rarity": "uncommon",
+      "class": "@TrainersClan",
+      "targetless": false,
+      "targets_room": true,
+      "card_art": "@TrainersMoonGemArt",
+      "effects": [
+        "@TrainersMoonGemSelectTarget",
+        "@TrainersMoonGemEffect"
+      ],
+      "descriptions": {
+        "english": "Evolve an eligible unit according to the current moon phase: Shadow at New Moon or Light at Full Moon."
+      }
+    }
+  ],
+  "effects": [
+    {
+      "id": "TrainersFireGemSelectTarget",
+      "name": "CardEffectNULL",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_bool": false,
+      "param_int_2": 1,
+      "should_test": true,
+      "should_fail_to_cast_if_test_fails": false
+    },
+    {
+      "id": "TrainersFireGemEffect",
+      "name": "@CardEffectTrainersEvolutionGem",
+      "target_mode": "last_targeted_characters",
+      "target_team": "monsters",
+      "param_str": "Fire",
+      "should_test": false,
+      "should_fail_to_cast_if_test_fails": false,
+      "param_int": 1
+    },
+    {
+      "id": "TrainersIceGemSelectTarget",
+      "name": "CardEffectNULL",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_bool": false,
+      "param_int_2": 1,
+      "should_test": true,
+      "should_fail_to_cast_if_test_fails": false
+    },
+    {
+      "id": "TrainersIceGemEffect",
+      "name": "@CardEffectTrainersEvolutionGem",
+      "target_mode": "last_targeted_characters",
+      "target_team": "monsters",
+      "param_str": "Ice",
+      "should_test": false,
+      "should_fail_to_cast_if_test_fails": false,
+      "param_int": 1
+    },
+    {
+      "id": "TrainersElectricGemSelectTarget",
+      "name": "CardEffectNULL",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_bool": false,
+      "param_int_2": 1,
+      "should_test": true,
+      "should_fail_to_cast_if_test_fails": false
+    },
+    {
+      "id": "TrainersElectricGemEffect",
+      "name": "@CardEffectTrainersEvolutionGem",
+      "target_mode": "last_targeted_characters",
+      "target_team": "monsters",
+      "param_str": "Electric",
+      "should_test": false,
+      "should_fail_to_cast_if_test_fails": false,
+      "param_int": 1
+    },
+    {
+      "id": "TrainersWaterGemSelectTarget",
+      "name": "CardEffectNULL",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_bool": false,
+      "param_int_2": 1,
+      "should_test": true,
+      "should_fail_to_cast_if_test_fails": false
+    },
+    {
+      "id": "TrainersWaterGemEffect",
+      "name": "@CardEffectTrainersEvolutionGem",
+      "target_mode": "last_targeted_characters",
+      "target_team": "monsters",
+      "param_str": "Water",
+      "should_test": false,
+      "should_fail_to_cast_if_test_fails": false,
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPlantGemSelectTarget",
+      "name": "CardEffectNULL",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_bool": false,
+      "param_int_2": 1,
+      "should_test": true,
+      "should_fail_to_cast_if_test_fails": false
+    },
+    {
+      "id": "TrainersPlantGemEffect",
+      "name": "@CardEffectTrainersEvolutionGem",
+      "target_mode": "last_targeted_characters",
+      "target_team": "monsters",
+      "param_str": "Plant",
+      "should_test": false,
+      "should_fail_to_cast_if_test_fails": false,
+      "param_int": 1
+    },
+    {
+      "id": "TrainersMoonGemSelectTarget",
+      "name": "CardEffectNULL",
+      "target_mode": "drop_target_character",
+      "target_team": "monsters",
+      "param_bool": false,
+      "param_int_2": 1,
+      "should_test": true,
+      "should_fail_to_cast_if_test_fails": false
+    },
+    {
+      "id": "TrainersMoonGemEffect",
+      "name": "@CardEffectTrainersEvolutionGem",
+      "target_mode": "last_targeted_characters",
+      "target_team": "monsters",
+      "param_str": "Moon",
+      "should_test": false,
+      "should_fail_to_cast_if_test_fails": false,
+      "param_int": 1
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersFireGemSprite",
+      "path": "textures/cards/FireGem.png"
+    },
+    {
+      "id": "TrainersIceGemSprite",
+      "path": "textures/cards/IceGem.png"
+    },
+    {
+      "id": "TrainersElectricGemSprite",
+      "path": "textures/cards/ElectricGem.png"
+    },
+    {
+      "id": "TrainersWaterGemSprite",
+      "path": "textures/cards/WaterGem.png"
+    },
+    {
+      "id": "TrainersPlantGemSprite",
+      "path": "textures/cards/PlantGem.png"
+    },
+    {
+      "id": "TrainersMoonGemSprite",
+      "path": "textures/cards/MoonGem.png"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "TrainersFireGemArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersFireGemSprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersIceGemArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersIceGemSprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersElectricGemArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersElectricGemSprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersWaterGemArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersWaterGemSprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPlantGemArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPlantGemSprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersMoonGemArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersMoonGemSprite"
+        }
+      }
+    }
+  ],
+  "card_pools": [
+    {
+      "id": "TrainersEvolutionGemsPool",
+      "cards": [
+        "@TrainersFireGemCard",
+        "@TrainersIceGemCard",
+        "@TrainersElectricGemCard",
+        "@TrainersWaterGemCard",
+        "@TrainersPlantGemCard",
+        "@TrainersMoonGemCard"
+      ]
+    }
+  ]
+}

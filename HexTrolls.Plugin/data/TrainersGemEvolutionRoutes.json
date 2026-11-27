@@ -1,0 +1,51 @@
+{
+  "normal_next_evolutions": {
+    "TrainersPocketMonChameleonForm1Card": "TrainersPocketMonChameleonForm2Card",
+    "TrainersPocketMonChameleonForm2Card": "TrainersPocketMonChameleonForm3Card",
+    "TrainersPocketMonYetiForm1Card": "TrainersPocketMonYetiForm2Card",
+    "TrainersPocketMonYetiForm2Card": "TrainersPocketMonYetiForm3Card",
+    "TrainersPocketMonForgeSnailForm1Card": "TrainersPocketMonForgeSnailForm2Card",
+    "TrainersPocketMonForgeSnailForm2Card": "TrainersPocketMonForgeSnailForm3Card",
+    "TrainersPocketMonCuttlfishForm1Card": "TrainersPocketMonCuttlfishForm2Card",
+    "TrainersPocketMonCuttlfishForm2Card": "TrainersPocketMonCuttlfishForm3Card",
+    "TrainersPocketMonHyenaForm1Card": "TrainersPocketMonHyenaForm2Card",
+    "TrainersPocketMonBloodWormForm1Card": "TrainersPocketMonBloodWormForm2Card",
+    "TrainersPocketMonSnapsaurusForm1Card": "TrainersPocketMonSnapsaurusForm2Card",
+    "TrainersPocketMonSnapsaurusForm2Card": "TrainersPocketMonSnapsaurusForm3Card",
+    "TrainersPocketMonTeslasaurusForm1Card": "TrainersPocketMonTeslasaurusForm2Card",
+    "TrainersPocketMonTeslasaurusForm2Card": "TrainersPocketMonTeslasaurusForm3Card",
+    "TrainersPocketMonGarhoundForm1Card": "TrainersPocketMonGarhoundForm2Card",
+    "TrainersPocketMonGarhoundForm2Card": "TrainersPocketMonGarhoundForm3Card",
+    "TrainersPocketMonFrossetForm1Card": "TrainersPocketMonFrossetForm2Card",
+    "TrainersPocketMonFrossetForm2Card": "TrainersPocketMonFrossetForm3Card",
+    "TrainersPocketMonUmbrabeakForm1Card": "TrainersPocketMonUmbrabeakForm2Card",
+    "TrainersPocketMonUmbrabeakForm2Card": "TrainersPocketMonUmbrabeakForm3Card",
+    "TrainersPocketMonMagmothForm1Card": "TrainersPocketMonMagmothForm2Card",
+    "TrainersPocketMonDragonMothForm1Card": "TrainersPocketMonDragonMothForm2Card",
+    "TrainersPocketMonDragonMothForm2Card": "TrainersPocketMonDragonMothForm3Card",
+    "TrainersPocketMonLeafshrewForm1Card": "TrainersPocketMonLeafshrewForm2Card",
+    "TrainersPocketMonManshrimpForm1Card": "TrainersPocketMonManshrimpForm2Card",
+    "TrainersPocketMonManshrimpForm2Card": "TrainersPocketMonManshrimpForm3Card",
+    "TrainersPocketMonJourmancoilForm1Card": "TrainersPocketMonJourmancoilForm2Card",
+    "TrainersPocketMonVampirantForm1Card": "TrainersPocketMonVampirantForm2Card",
+    "TrainersPocketMonVampirantForm2Card": "TrainersPocketMonVampirantForm3Card"
+  },
+  "dragon_whelp_base": "TrainersPocketMonDragonWhelpForm1Card",
+  "dragon_whelp_branches": {
+    "Fire": "TrainersPocketMonDragonFireForm1Card",
+    "Ice": "TrainersPocketMonDragonIceForm1Card",
+    "Electric": "TrainersPocketMonDragonElectricForm1Card",
+    "Water": "TrainersPocketMonDragonWaterForm1Card",
+    "Plant": "TrainersPocketMonDragonPlantForm1Card"
+  },
+  "moon_gem": {
+    "new_moon": "TrainersPocketMonDragonShadowForm1Card",
+    "full_moon": "TrainersPocketMonDragonLightForm1Card"
+  },
+  "parriot_evolved_card_id": null,
+  "notes": [
+    "Gem must match target current type, except normal Dragon Whelp branching.",
+    "Parriot route is intentionally unresolved until evolved form name/art/stats are defined.",
+    "Do not mutate every card sharing a definition ID; transform exactly one card instance."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "elements": [
+    "Fire",
+    "Ice",
+    "Electric",
+    "Water",
+    "Plant",
+    "Shadow",
+    "Light",
+    "Normal"
+  ],
+  "double_damage_against": {
+    "Fire": [
+      "Plant",
+      "Ice"
+    ],
+    "Ice": [
+      "Water",
+      "Plant"
+    ],
+    "Electric": [
+      "Water",
+      "Normal"
+    ],
+    "Water": [
+      "Fire",
+      "Shadow"
+    ],
+    "Plant": [
+      "Water",
+      "Light"
+    ],
+    "Shadow": [
+      "Fire",
+      "Electric"
+    ],
+    "Light": [
+      "Shadow",
+      "Ice"
+    ],
+    "Normal": [
+      "Light"
+    ]
+  },
+  "default_multiplier": 1,
+  "strong_multiplier": 2,
+  "note": "A type is weak to attacking types that name it as a target; no self-type is weak to itself."
+}

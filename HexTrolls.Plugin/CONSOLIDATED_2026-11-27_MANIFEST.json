@@ -1,0 +1,124 @@
+{
+  "release": "2026-11-27",
+  "baseline": "HexTrollsPlugin_Bloodworm_Woodland_MinimalForm2.zip",
+  "staged": "MonsterTrain2_Consolidated_Staging",
+  "animation_frames": {
+    "Snapsaurus_Form1": {
+      "sheet": "textures/character_art/Snapsaurus_Form1_3x3_768x768.png",
+      "frame_count": 9,
+      "size": [
+        768,
+        768
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "source": "snapsaurus_form_1_sprite_sheet.png",
+      "row_order": [
+        "Idle",
+        "Attack",
+        "Hurt"
+      ]
+    },
+    "Snapsaurus_Form2": {
+      "sheet": "textures/character_art/Snapsaurus_Form2_3x3_768x768.png",
+      "frame_count": 9,
+      "size": [
+        768,
+        768
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "source": "snapsaurus_form_2_animation_sheet.png",
+      "row_order": [
+        "Idle",
+        "Attack",
+        "Hurt"
+      ]
+    },
+    "Snapsaurus_Form3": {
+      "sheet": "textures/character_art/Snapsaurus_Form3_3x3_768x768.png",
+      "frame_count": 9,
+      "size": [
+        768,
+        768
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "source": "snapsaurus_form_3_sprite_sheet.png",
+      "row_order": [
+        "Idle",
+        "Attack",
+        "Hurt"
+      ]
+    },
+    "BloodWorm_Form2": {
+      "sheet": "textures/character_art/BloodWorm_Form2_3x3_768x768.png",
+      "frame_count": 9,
+      "size": [
+        768,
+        768
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "source": "image(20261127-135336).png",
+      "row_order": [
+        "Idle",
+        "Attack",
+        "Hurt"
+      ]
+    }
+  },
+  "card_art": [
+    {
+      "unit": "Snapsaurus Form 1",
+      "layer": "textures/card_art/TrainersSnapsaurusForm1Centered.png",
+      "placement": [
+        108,
+        189
+      ],
+      "layered": true
+    },
+    {
+      "unit": "Snapsaurus Form 2",
+      "layer": "textures/card_art/TrainersSnapsaurusForm2Centered.png",
+      "placement": [
+        100,
+        184
+      ],
+      "layered": true
+    },
+    {
+      "unit": "Snapsaurus Form 3",
+      "layer": "textures/card_art/TrainersSnapsaurusForm3Centered.png",
+      "placement": [
+        104,
+        170
+      ],
+      "layered": true
+    },
+    {
+      "unit": "BloodWorm Form 2",
+      "layer": "textures/card_art/TrainersBloodWormForm2Centered.png",
+      "placement": [
+        106,
+        182
+      ],
+      "layered": true
+    }
+  ],
+  "notes": [
+    "TESLA CHARGE: status-driven Resolve in the staged C# source; changed DLL was NOT compiled by this packaging script. Rebuild plugin in the user development environment before treating this as a ready-to-run binary.",
+    "Approved sprites are wired as JSON character_art animations (idle/attack/hit_react); an in-game test is required.",
+    "Original static textures/units are retained unchanged for rollback; only the approved units have new character_art animation sprites.",
+    "Card art is layered, using the identical existing forest background and moving sunray overlay.",
+    "Snapsaurus internal IDs are unchanged; names Dinosnap / Snapasaur / Snaphydra are display-only."
+  ]
+}

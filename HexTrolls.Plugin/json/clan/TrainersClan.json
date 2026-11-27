@@ -13,10 +13,10 @@
         "english": "A team of companions ready to be trained."
       },
       "icons": {
-        "small": "@BasicClanSmallIcon",
-        "medium": "@BasicClanMediumIcon",
-        "large": "@BasicClanLargeIcon",
-        "silhouette": "@BasicClanSilhouetteIcon"
+        "small": "@TrainersSphereSmallIcon",
+        "medium": "@TrainersSphereMediumIcon",
+        "large": "@TrainersSphereLargeIcon",
+        "silhouette": "@TrainersSphereSilhouetteIcon"
       },
       "card_draft_icon": "@CardDraftIcon",
       "class_select_character_displays": [
@@ -378,6 +378,24 @@
       "names": {
         "english": "PocketMon"
       }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersSphereSmallIcon",
+      "path": "textures/icons/TrainersSphereSmallIcon.png"
+    },
+    {
+      "id": "TrainersSphereMediumIcon",
+      "path": "textures/icons/TrainersSphereMediumIcon.png"
+    },
+    {
+      "id": "TrainersSphereLargeIcon",
+      "path": "textures/icons/TrainersSphereLargeIcon.png"
+    },
+    {
+      "id": "TrainersSphereSilhouetteIcon",
+      "path": "textures/icons/TrainersSphereSilhouetteIcon.png"
     }
   ]
 }

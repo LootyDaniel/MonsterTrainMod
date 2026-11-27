@@ -1,0 +1,3406 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "TrainersPocketMonParriotForm1Card",
+      "names": {
+        "english": "Parriot"
+      },
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonParriotForm1CardArt",
+      "pools": [
+        "UnitsAllBanner",
+        "@UnitsTrainersBanner"
+      ],
+      "effects": [
+        "@TrainersPocketMonParriotForm1SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ],
+      "descriptions": {
+        "english": "Adaptive Element: Changes its permanent Type and Damage when hit by an elemental attack. Evolves with a matching Gem."
+      }
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1Card",
+      "names": {
+        "english": "Chameleon"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonChameleonForm1CardArt",
+      "pools": [
+        "UnitsAllBanner",
+        "@UnitsTrainersBanner"
+      ],
+      "effects": [
+        "@TrainersPocketMonChameleonForm1SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ],
+      "descriptions": {
+        "english": ""
+      }
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2Card",
+      "names": {
+        "english": "Chameleon 2"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonChameleonForm2CardArt",
+      "pools": [],
+      "effects": [
+        "@TrainersPocketMonChameleonForm2SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ],
+      "descriptions": {
+        "english": ""
+      }
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3Card",
+      "names": {
+        "english": "Chameleon 3"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonChameleonForm3CardArt",
+      "pools": [],
+      "effects": [
+        "@TrainersPocketMonChameleonForm3SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ],
+      "descriptions": {
+        "english": ""
+      }
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1Card",
+      "names": {
+        "english": "Yeti"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonYetiForm1CardArt",
+      "pools": [
+        "UnitsAllBanner",
+        "@UnitsTrainersBanner"
+      ],
+      "effects": [
+        "@TrainersPocketMonYetiForm1SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2Card",
+      "names": {
+        "english": "Yeti 2"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonYetiForm2CardArt",
+      "pools": [],
+      "effects": [
+        "@TrainersPocketMonYetiForm2SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3Card",
+      "names": {
+        "english": "Yeti 3"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonYetiForm3CardArt",
+      "pools": [],
+      "effects": [
+        "@TrainersPocketMonYetiForm3SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1Card",
+      "names": {
+        "english": "Smeltrails"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonForgeSnailForm1CardArt",
+      "pools": [
+        "UnitsAllBanner",
+        "@UnitsTrainersBanner"
+      ],
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm1SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2Card",
+      "names": {
+        "english": "Tempersnail"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonForgeSnailForm2CardArt",
+      "pools": [],
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm2SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3Card",
+      "names": {
+        "english": "Forgewhelk"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonForgeSnailForm3CardArt",
+      "pools": [],
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm3SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1Card",
+      "names": {
+        "english": "Dragon Whelp"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonDragonWhelpForm1CardArt",
+      "pools": [
+        "UnitsAllBanner",
+        "@UnitsTrainersBanner"
+      ],
+      "effects": [
+        "@TrainersPocketMonDragonWhelpForm1SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1Card",
+      "names": {
+        "english": "DragonFire"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonDragonFireForm1CardArt",
+      "pools": [],
+      "effects": [
+        "@TrainersPocketMonDragonFireForm1SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ],
+      "descriptions": {
+        "english": "On Floor Entry: Deal 15 damage to all enemies on this floor, then apply Pyregel 5 to them."
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1Card",
+      "names": {
+        "english": "DragonIce"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonDragonIceForm1CardArt",
+      "pools": [],
+      "effects": [
+        "@TrainersPocketMonDragonIceForm1SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ],
+      "descriptions": {
+        "english": "On Floor Entry: Deal 15 damage to all enemies on this floor, then apply Freeze 2 to them."
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1Card",
+      "names": {
+        "english": "DragonElectric"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonDragonElectricForm1CardArt",
+      "pools": [],
+      "effects": [
+        "@TrainersPocketMonDragonElectricForm1SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ],
+      "descriptions": {
+        "english": "On Floor Entry: Deal 15 damage to all enemies on this floor, then apply Daze 1 to the front enemy."
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1Card",
+      "names": {
+        "english": "DragonWater"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonDragonWaterForm1CardArt",
+      "pools": [],
+      "effects": [
+        "@TrainersPocketMonDragonWaterForm1SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ],
+      "descriptions": {
+        "english": "On Floor Entry: Deal 15 damage to all enemies on this floor and remove negative statuses from friendly units on this floor."
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1Card",
+      "names": {
+        "english": "DragonPlant"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonDragonPlantForm1CardArt",
+      "pools": [],
+      "effects": [
+        "@TrainersPocketMonDragonPlantForm1SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ],
+      "descriptions": {
+        "english": "On Floor Entry: Deal 15 damage to all enemies on this floor, then Root them."
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1Card",
+      "names": {
+        "english": "DragonShadow"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonDragonShadowForm1CardArt",
+      "pools": [],
+      "effects": [
+        "@TrainersPocketMonDragonShadowForm1SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ],
+      "descriptions": {
+        "english": "On Floor Entry: Deal 15 damage to all enemies on this floor, then apply Weak 1 to them."
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1Card",
+      "names": {
+        "english": "DragonLight"
+      },
+      "cost": 3,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@TrainersClan",
+      "targets_room": true,
+      "targetless": false,
+      "card_art": "@TrainersPocketMonDragonLightForm1CardArt",
+      "pools": [],
+      "effects": [
+        "@TrainersPocketMonDragonLightForm1SpawnEffect"
+      ],
+      "initial_upgrades": [
+        "@TrainersLevelBaseMarker"
+      ],
+      "descriptions": {
+        "english": "On Floor Entry: Deal 15 damage to all enemies on this floor, then apply Mute 2 to them."
+      }
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1ActiveAbility",
+      "names": {
+        "english": "Forge Cannon"
+      },
+      "descriptions": {
+        "english": "Deal 20 damage to the front enemy, then move to the back."
+      },
+      "is_an_ability": true,
+      "card_type": "spell",
+      "cost": 0,
+      "cooldown": 6,
+      "initial_cooldown": 0,
+      "targets_room": false,
+      "targetless": true,
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm1ActiveDamage",
+        "@TrainersPocketMonForgeSnailForm1ActiveRetreat"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2ActiveAbility",
+      "names": {
+        "english": "Forge Cannon"
+      },
+      "descriptions": {
+        "english": "Deal 50 damage to the front enemy, then move to the back."
+      },
+      "is_an_ability": true,
+      "card_type": "spell",
+      "cost": 0,
+      "cooldown": 6,
+      "initial_cooldown": 0,
+      "targets_room": false,
+      "targetless": true,
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm2ActiveDamage",
+        "@TrainersPocketMonForgeSnailForm2ActiveRetreat"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3ActiveAbility",
+      "names": {
+        "english": "Forge Cannon"
+      },
+      "descriptions": {
+        "english": "Deal 100 damage to the front enemy, then move to the back."
+      },
+      "is_an_ability": true,
+      "card_type": "spell",
+      "cost": 0,
+      "cooldown": 6,
+      "initial_cooldown": 0,
+      "targets_room": false,
+      "targetless": true,
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm3ActiveDamage",
+        "@TrainersPocketMonForgeSnailForm3ActiveRetreat"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1ChargedSapAbility",
+      "names": {
+        "english": "Charged Sap"
+      },
+      "descriptions": {
+        "english": "Consume 1 Electric Charge to apply Sap 2 to a selected enemy on this floor."
+      },
+      "is_an_ability": true,
+      "card_type": "spell",
+      "cost": 0,
+      "cooldown": 1,
+      "initial_cooldown": 0,
+      "targetless": false,
+      "targets_room": true,
+      "effects": [
+        "@TrainersPocketMonChameleonForm1ChargedSapEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2ChargedSapAbility",
+      "names": {
+        "english": "Charged Sap"
+      },
+      "descriptions": {
+        "english": "Consume 1 Electric Charge to apply Sap 2 to a selected enemy on this floor."
+      },
+      "is_an_ability": true,
+      "card_type": "spell",
+      "cost": 0,
+      "cooldown": 1,
+      "initial_cooldown": 0,
+      "targetless": false,
+      "targets_room": true,
+      "effects": [
+        "@TrainersPocketMonChameleonForm2ChargedSapEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3ChargedSapAbility",
+      "names": {
+        "english": "Charged Sap"
+      },
+      "descriptions": {
+        "english": "Consume 1 Electric Charge to apply Sap 2 to a selected enemy on this floor."
+      },
+      "is_an_ability": true,
+      "card_type": "spell",
+      "cost": 0,
+      "cooldown": 1,
+      "initial_cooldown": 0,
+      "targetless": false,
+      "targets_room": true,
+      "effects": [
+        "@TrainersPocketMonChameleonForm3ChargedSapEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1FlightAbility",
+      "names": {
+        "english": "Fly"
+      },
+      "descriptions": {
+        "english": "Move this unit to a targeted location on any floor."
+      },
+      "is_an_ability": true,
+      "cooldown": 2,
+      "initial_cooldown": 0,
+      "card_type": "spell",
+      "targetless": true,
+      "targets_room": false,
+      "effects": [
+        "@TrainersPocketMonDragonWhelpForm1TeleportEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1FlightAbility",
+      "names": {
+        "english": "Fly"
+      },
+      "descriptions": {
+        "english": "Move this unit to a targeted location on any floor."
+      },
+      "is_an_ability": true,
+      "cooldown": 2,
+      "initial_cooldown": 0,
+      "card_type": "spell",
+      "targetless": true,
+      "targets_room": false,
+      "effects": [
+        "@TrainersPocketMonDragonFireForm1TeleportEffect",
+        "@TrainersPocketMonDragonFireForm1FloorEntryEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1FlightAbility",
+      "names": {
+        "english": "Fly"
+      },
+      "descriptions": {
+        "english": "Move this unit to a targeted location on any floor."
+      },
+      "is_an_ability": true,
+      "cooldown": 2,
+      "initial_cooldown": 0,
+      "card_type": "spell",
+      "targetless": true,
+      "targets_room": false,
+      "effects": [
+        "@TrainersPocketMonDragonIceForm1TeleportEffect",
+        "@TrainersPocketMonDragonIceForm1FloorEntryEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1FlightAbility",
+      "names": {
+        "english": "Fly"
+      },
+      "descriptions": {
+        "english": "Move this unit to a targeted location on any floor."
+      },
+      "is_an_ability": true,
+      "cooldown": 2,
+      "initial_cooldown": 0,
+      "card_type": "spell",
+      "targetless": true,
+      "targets_room": false,
+      "effects": [
+        "@TrainersPocketMonDragonElectricForm1TeleportEffect",
+        "@TrainersPocketMonDragonElectricForm1FloorEntryEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1FlightAbility",
+      "names": {
+        "english": "Fly"
+      },
+      "descriptions": {
+        "english": "Move this unit to a targeted location on any floor."
+      },
+      "is_an_ability": true,
+      "cooldown": 2,
+      "initial_cooldown": 0,
+      "card_type": "spell",
+      "targetless": true,
+      "targets_room": false,
+      "effects": [
+        "@TrainersPocketMonDragonWaterForm1TeleportEffect",
+        "@TrainersPocketMonDragonWaterForm1FloorEntryEffect",
+        "@TrainersPocketMonDragonWaterForm1FloorEntryCleanse"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1FlightAbility",
+      "names": {
+        "english": "Fly"
+      },
+      "descriptions": {
+        "english": "Move this unit to a targeted location on any floor."
+      },
+      "is_an_ability": true,
+      "cooldown": 2,
+      "initial_cooldown": 0,
+      "card_type": "spell",
+      "targetless": true,
+      "targets_room": false,
+      "effects": [
+        "@TrainersPocketMonDragonPlantForm1TeleportEffect",
+        "@TrainersPocketMonDragonPlantForm1FloorEntryEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1FlightAbility",
+      "names": {
+        "english": "Fly"
+      },
+      "descriptions": {
+        "english": "Move this unit to a targeted location on any floor."
+      },
+      "is_an_ability": true,
+      "cooldown": 2,
+      "initial_cooldown": 0,
+      "card_type": "spell",
+      "targetless": true,
+      "targets_room": false,
+      "effects": [
+        "@TrainersPocketMonDragonShadowForm1TeleportEffect",
+        "@TrainersPocketMonDragonShadowForm1FloorEntryEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1FlightAbility",
+      "names": {
+        "english": "Fly"
+      },
+      "descriptions": {
+        "english": "Move this unit to a targeted location on any floor."
+      },
+      "is_an_ability": true,
+      "cooldown": 2,
+      "initial_cooldown": 0,
+      "card_type": "spell",
+      "targetless": true,
+      "targets_room": false,
+      "effects": [
+        "@TrainersPocketMonDragonLightForm1TeleportEffect",
+        "@TrainersPocketMonDragonLightForm1FloorEntryEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonParriotForm1ElementalConversionAbility",
+      "names": {
+        "english": "Elemental Conversion"
+      },
+      "descriptions": {
+        "english": "Change all allied Types and Damage on this floor to match Parriot’s current element. Applies to allies present when activated."
+      },
+      "is_an_ability": true,
+      "card_type": "spell",
+      "cost": 0,
+      "cooldown": 3,
+      "initial_cooldown": 0,
+      "targetless": true,
+      "targets_room": false,
+      "effects": [
+        "@TrainersPocketMonParriotForm1ElementalConversionEffect"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "TrainersPocketMonParriotForm1Character",
+      "names": {
+        "english": "Parriot"
+      },
+      "character_art": "@TrainersPocketMonParriotForm1CharacterArt",
+      "size": 1,
+      "health": 1,
+      "attack_damage": 1,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_normal",
+          "count": 1
+        },
+        {
+          "status": "@trainer_damage_normal",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonParriotForm1ReconcileSpawn",
+        "@TrainersPocketMonParriotForm1EarnEXP",
+        "@TrainersPocketMonParriotForm1ReconcileCelebrate",
+        "@TrainersPocketMonParriotForm1RestoreElementSpawn"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonParriotForm1ElementalConversionAbility"
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1Character",
+      "names": {
+        "english": "Chameleon"
+      },
+      "character_art": "@TrainersPocketMonChameleonForm1CharacterArt",
+      "size": 3,
+      "health": 4,
+      "attack_damage": 5,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_electric",
+          "count": 1
+        },
+        {
+          "status": "stealth",
+          "count": 3
+        },
+        {
+          "status": "@trainer_damage_electric",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonChameleonForm1ReconcileSpawn",
+        "@TrainersPocketMonChameleonForm1EarnEXP",
+        "@TrainersPocketMonChameleonForm1ReconcileCelebrate",
+        "@TrainersPocketMonChameleonForm1ResolveCharge"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonChameleonForm1ChargedSapAbility"
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2Character",
+      "names": {
+        "english": "Chameleon 2"
+      },
+      "character_art": "@TrainersPocketMonChameleonForm2CharacterArt",
+      "size": 3,
+      "health": 6,
+      "attack_damage": 7,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_electric",
+          "count": 1
+        },
+        {
+          "status": "stealth",
+          "count": 4
+        },
+        {
+          "status": "@trainer_damage_electric",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonChameleonForm2ReconcileSpawn",
+        "@TrainersPocketMonChameleonForm2EarnEXP",
+        "@TrainersPocketMonChameleonForm2ReconcileCelebrate",
+        "@TrainersPocketMonChameleonForm2ResolveCharge"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonChameleonForm2ChargedSapAbility"
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3Character",
+      "names": {
+        "english": "Chameleon 3"
+      },
+      "character_art": "@TrainersPocketMonChameleonForm3CharacterArt",
+      "size": 3,
+      "health": 8,
+      "attack_damage": 9,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_electric",
+          "count": 1
+        },
+        {
+          "status": "stealth",
+          "count": 4
+        },
+        {
+          "status": "@trainer_damage_electric",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonChameleonForm3ReconcileSpawn",
+        "@TrainersPocketMonChameleonForm3EarnEXP",
+        "@TrainersPocketMonChameleonForm3ReconcileCelebrate",
+        "@TrainersPocketMonChameleonForm3ResolveCharge",
+        "@TrainersPocketMonChameleonForm3Extinguish"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonChameleonForm3ChargedSapAbility"
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1Character",
+      "names": {
+        "english": "Yeti"
+      },
+      "character_art": "@TrainersPocketMonYetiForm1CharacterArt",
+      "size": 3,
+      "health": 6,
+      "attack_damage": 6,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_ice",
+          "count": 1
+        },
+        {
+          "status": "@trainer_damage_ice",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonYetiForm1ReconcileSpawn",
+        "@TrainersPocketMonYetiForm1EarnEXP",
+        "@TrainersPocketMonYetiForm1ReconcileCelebrate",
+        "@TrainersPocketMonYetiForm1PaybackRevenge"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2Character",
+      "names": {
+        "english": "Yeti 2"
+      },
+      "character_art": "@TrainersPocketMonYetiForm2CharacterArt",
+      "size": 3,
+      "health": 9,
+      "attack_damage": 9,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_ice",
+          "count": 1
+        },
+        {
+          "status": "@trainer_damage_ice",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonYetiForm2ReconcileSpawn",
+        "@TrainersPocketMonYetiForm2EarnEXP",
+        "@TrainersPocketMonYetiForm2ReconcileCelebrate",
+        "@TrainersPocketMonYetiForm2PaybackRevenge"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3Character",
+      "names": {
+        "english": "Yeti 3"
+      },
+      "character_art": "@TrainersPocketMonYetiForm3CharacterArt",
+      "size": 3,
+      "health": 12,
+      "attack_damage": 12,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_ice",
+          "count": 1
+        },
+        {
+          "status": "@trainer_damage_ice",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonYetiForm3ReconcileSpawn",
+        "@TrainersPocketMonYetiForm3EarnEXP",
+        "@TrainersPocketMonYetiForm3ReconcileCelebrate",
+        "@TrainersPocketMonYetiForm3PaybackRevenge"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1Character",
+      "names": {
+        "english": "Smeltrails"
+      },
+      "character_art": "@TrainersPocketMonForgeSnailForm1CharacterArt",
+      "size": 3,
+      "health": 5,
+      "attack_damage": 3,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_fire",
+          "count": 1
+        },
+        {
+          "status": "@trainer_damage_fire",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonForgeSnailForm1ReconcileSpawn",
+        "@TrainersPocketMonForgeSnailForm1EarnEXP",
+        "@TrainersPocketMonForgeSnailForm1ReconcileCelebrate",
+        "@TrainersPocketMonForgeSnailForm1Resolve",
+        "@TrainersPocketMonForgeSnailForm1Shift"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonForgeSnailForm1ActiveAbility"
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2Character",
+      "names": {
+        "english": "Tempersnail"
+      },
+      "character_art": "@TrainersPocketMonForgeSnailForm2CharacterArt",
+      "size": 3,
+      "health": 7,
+      "attack_damage": 5,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_fire",
+          "count": 1
+        },
+        {
+          "status": "@trainer_damage_fire",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonForgeSnailForm2ReconcileSpawn",
+        "@TrainersPocketMonForgeSnailForm2EarnEXP",
+        "@TrainersPocketMonForgeSnailForm2ReconcileCelebrate",
+        "@TrainersPocketMonForgeSnailForm2Resolve",
+        "@TrainersPocketMonForgeSnailForm2Shift"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonForgeSnailForm2ActiveAbility"
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3Character",
+      "names": {
+        "english": "Forgewhelk"
+      },
+      "character_art": "@TrainersPocketMonForgeSnailForm3CharacterArt",
+      "size": 3,
+      "health": 9,
+      "attack_damage": 7,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_fire",
+          "count": 1
+        },
+        {
+          "status": "@trainer_damage_fire",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonForgeSnailForm3ReconcileSpawn",
+        "@TrainersPocketMonForgeSnailForm3EarnEXP",
+        "@TrainersPocketMonForgeSnailForm3ReconcileCelebrate",
+        "@TrainersPocketMonForgeSnailForm3Resolve",
+        "@TrainersPocketMonForgeSnailForm3Shift"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonForgeSnailForm3ActiveAbility"
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1Character",
+      "names": {
+        "english": "Dragon Whelp"
+      },
+      "character_art": "@TrainersPocketMonDragonWhelpForm1CharacterArt",
+      "size": 3,
+      "health": 5,
+      "attack_damage": 5,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_normal",
+          "count": 1
+        },
+        {
+          "status": "@trainer_damage_normal",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonDragonWhelpForm1ReconcileSpawn",
+        "@TrainersPocketMonDragonWhelpForm1EarnEXP",
+        "@TrainersPocketMonDragonWhelpForm1ReconcileCelebrate"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonDragonWhelpForm1FlightAbility"
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1Character",
+      "names": {
+        "english": "DragonFire"
+      },
+      "character_art": "@TrainersPocketMonDragonFireForm1CharacterArt",
+      "size": 3,
+      "health": 5,
+      "attack_damage": 7,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_fire",
+          "count": 1
+        },
+        {
+          "status": "@trainer_damage_fire",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonDragonFireForm1ReconcileSpawn",
+        "@TrainersPocketMonDragonFireForm1EarnEXP",
+        "@TrainersPocketMonDragonFireForm1ReconcileCelebrate",
+        "@TrainersPocketMonDragonFireForm1EntrySummon"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonDragonFireForm1FlightAbility"
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1Character",
+      "names": {
+        "english": "DragonIce"
+      },
+      "character_art": "@TrainersPocketMonDragonIceForm1CharacterArt",
+      "size": 3,
+      "health": 5,
+      "attack_damage": 5,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_ice",
+          "count": 1
+        },
+        {
+          "status": "armor",
+          "count": 15
+        },
+        {
+          "status": "@trainer_damage_ice",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonDragonIceForm1ReconcileSpawn",
+        "@TrainersPocketMonDragonIceForm1EarnEXP",
+        "@TrainersPocketMonDragonIceForm1ReconcileCelebrate",
+        "@TrainersPocketMonDragonIceForm1EntrySummon"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonDragonIceForm1FlightAbility"
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1Character",
+      "names": {
+        "english": "DragonElectric"
+      },
+      "character_art": "@TrainersPocketMonDragonElectricForm1CharacterArt",
+      "size": 3,
+      "health": 5,
+      "attack_damage": 5,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_electric",
+          "count": 1
+        },
+        {
+          "status": "ambush",
+          "count": 1
+        },
+        {
+          "status": "@trainer_damage_electric",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonDragonElectricForm1ReconcileSpawn",
+        "@TrainersPocketMonDragonElectricForm1EarnEXP",
+        "@TrainersPocketMonDragonElectricForm1ReconcileCelebrate",
+        "@TrainersPocketMonDragonElectricForm1EntrySummon"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonDragonElectricForm1FlightAbility"
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1Character",
+      "names": {
+        "english": "DragonWater"
+      },
+      "character_art": "@TrainersPocketMonDragonWaterForm1CharacterArt",
+      "size": 3,
+      "health": 7,
+      "attack_damage": 5,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_water",
+          "count": 1
+        },
+        {
+          "status": "@trainer_damage_water",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonDragonWaterForm1ReconcileSpawn",
+        "@TrainersPocketMonDragonWaterForm1EarnEXP",
+        "@TrainersPocketMonDragonWaterForm1ReconcileCelebrate",
+        "@TrainersPocketMonDragonWaterForm1EntrySummon"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonDragonWaterForm1FlightAbility"
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1Character",
+      "names": {
+        "english": "DragonPlant"
+      },
+      "character_art": "@TrainersPocketMonDragonPlantForm1CharacterArt",
+      "size": 3,
+      "health": 5,
+      "attack_damage": 5,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_plant",
+          "count": 1
+        },
+        {
+          "status": "spikes",
+          "count": 15
+        },
+        {
+          "status": "@trainer_damage_plant",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonDragonPlantForm1ReconcileSpawn",
+        "@TrainersPocketMonDragonPlantForm1EarnEXP",
+        "@TrainersPocketMonDragonPlantForm1ReconcileCelebrate",
+        "@TrainersPocketMonDragonPlantForm1EntrySummon"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonDragonPlantForm1FlightAbility"
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1Character",
+      "names": {
+        "english": "DragonShadow"
+      },
+      "character_art": "@TrainersPocketMonDragonShadowForm1CharacterArt",
+      "size": 3,
+      "health": 5,
+      "attack_damage": 5,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_shadow",
+          "count": 1
+        },
+        {
+          "status": "stealth",
+          "count": 1
+        },
+        {
+          "status": "@trainer_damage_shadow",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonDragonShadowForm1ReconcileSpawn",
+        "@TrainersPocketMonDragonShadowForm1EarnEXP",
+        "@TrainersPocketMonDragonShadowForm1ReconcileCelebrate",
+        "@TrainersPocketMonDragonShadowForm1EntrySummon"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonDragonShadowForm1FlightAbility"
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1Character",
+      "names": {
+        "english": "DragonLight"
+      },
+      "character_art": "@TrainersPocketMonDragonLightForm1CharacterArt",
+      "size": 1,
+      "health": 5,
+      "attack_damage": 5,
+      "can_attack": true,
+      "starting_status_effects": [
+        {
+          "status": "@trainer_type_light",
+          "count": 1
+        },
+        {
+          "status": "@trainer_damage_light",
+          "count": 1
+        }
+      ],
+      "triggers": [
+        "@TrainersPocketMonDragonLightForm1ReconcileSpawn",
+        "@TrainersPocketMonDragonLightForm1EarnEXP",
+        "@TrainersPocketMonDragonLightForm1ReconcileCelebrate",
+        "@TrainersPocketMonDragonLightForm1EntrySummon"
+      ],
+      "subtypes": [
+        "@TrainersPocketMon"
+      ],
+      "ability": "@TrainersPocketMonDragonLightForm1FlightAbility"
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "TrainersPocketMonParriotForm1ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonParriotForm1ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonParriotForm1EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonParriotForm1EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonParriotForm1ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonParriotForm1ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonChameleonForm1ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonChameleonForm1EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonChameleonForm1ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonChameleonForm2ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonChameleonForm2EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonChameleonForm2ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonChameleonForm3ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonChameleonForm3EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonChameleonForm3ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonYetiForm1ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonYetiForm1EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonYetiForm1ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonYetiForm2ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonYetiForm2EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonYetiForm2ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonYetiForm3ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonYetiForm3EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonYetiForm3ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm1ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm1EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm1ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm2ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm2EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm2ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm3ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm3EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm3ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonWhelpForm1ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonDragonWhelpForm1EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonDragonWhelpForm1ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonFireForm1ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonDragonFireForm1EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonDragonFireForm1ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonIceForm1ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonDragonIceForm1EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonDragonIceForm1ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonElectricForm1ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonDragonElectricForm1EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonDragonElectricForm1ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonWaterForm1ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonDragonWaterForm1EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonDragonWaterForm1ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonPlantForm1ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonDragonPlantForm1EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonDragonPlantForm1ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonShadowForm1ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonDragonShadowForm1EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonDragonShadowForm1ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1ReconcileSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonLightForm1ReconcileOnSpawn"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1EarnEXP",
+      "trigger": "on_any_hero_death_on_floor",
+      "effects": [
+        "@TrainersPocketMonDragonLightForm1EXPOnKill"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1ReconcileCelebrate",
+      "trigger": "on_encounter_complete",
+      "effects": [
+        "@TrainersPocketMonDragonLightForm1ReconcileOnCelebrate"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1Resolve",
+      "trigger": "post_combat",
+      "descriptions": {
+        "english": "Move forward one position."
+      },
+      "effects": []
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1Shift",
+      "trigger": "on_shift",
+      "descriptions": {
+        "english": "Deal 10 damage to the front enemy."
+      },
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm1ShiftDamage"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2Resolve",
+      "trigger": "post_combat",
+      "descriptions": {
+        "english": "Move forward one position."
+      },
+      "effects": []
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2Shift",
+      "trigger": "on_shift",
+      "descriptions": {
+        "english": "Deal 20 damage to the front enemy."
+      },
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm2ShiftDamage"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3Resolve",
+      "trigger": "post_combat",
+      "descriptions": {
+        "english": "Move forward one position."
+      },
+      "effects": []
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3Shift",
+      "trigger": "on_shift",
+      "descriptions": {
+        "english": "Deal 30 damage to the front enemy."
+      },
+      "effects": [
+        "@TrainersPocketMonForgeSnailForm3ShiftDamage"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1ResolveCharge",
+      "trigger": "post_combat",
+      "effects": [
+        "@TrainersPocketMonChameleonForm1ChargeIfStealthedEffect"
+      ],
+      "descriptions": {
+        "english": "If this unit has Stealth, gain Electric Charge 1."
+      }
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2ResolveCharge",
+      "trigger": "post_combat",
+      "effects": [
+        "@TrainersPocketMonChameleonForm2ChargeIfStealthedEffect"
+      ],
+      "descriptions": {
+        "english": "If this unit has Stealth, gain Electric Charge 1."
+      }
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3ResolveCharge",
+      "trigger": "post_combat",
+      "effects": [
+        "@TrainersPocketMonChameleonForm3ChargeIfStealthedEffect"
+      ],
+      "descriptions": {
+        "english": "If this unit has Stealth, gain Electric Charge 1."
+      }
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3Extinguish",
+      "trigger": "on_death",
+      "descriptions": {
+        "english": "Deal 5 damage per Electric Charge to all enemies on this floor."
+      },
+      "effects": [
+        "@TrainersPocketMonChameleonForm3ExtinguishDamage"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1PaybackRevenge",
+      "trigger": "on_hit",
+      "effects": [
+        "@TrainersPocketMonYetiForm1PaybackGainEffect"
+      ],
+      "descriptions": {
+        "english": "Gain Payback 1."
+      }
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2PaybackRevenge",
+      "trigger": "on_hit",
+      "effects": [
+        "@TrainersPocketMonYetiForm2PaybackGainEffect"
+      ],
+      "descriptions": {
+        "english": "Gain Payback 1."
+      }
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3PaybackRevenge",
+      "trigger": "on_hit",
+      "effects": [
+        "@TrainersPocketMonYetiForm3PaybackGainEffect"
+      ],
+      "descriptions": {
+        "english": "Gain Payback 1."
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1EntrySummon",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonFireForm1FloorEntryEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1EntrySummon",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonIceForm1FloorEntryEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1EntrySummon",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonElectricForm1FloorEntryEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1EntrySummon",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonWaterForm1FloorEntryEffect",
+        "@TrainersPocketMonDragonWaterForm1FloorEntryCleanse"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1EntrySummon",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonPlantForm1FloorEntryEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1EntrySummon",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonShadowForm1FloorEntryEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1EntrySummon",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonDragonLightForm1FloorEntryEffect"
+      ]
+    },
+    {
+      "id": "TrainersPocketMonParriotForm1RestoreElementSpawn",
+      "trigger": "on_spawn",
+      "effects": [
+        "@TrainersPocketMonParriotForm1RestoreElementEffect"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "TrainersPocketMonParriotForm1SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonParriotForm1Character"
+    },
+    {
+      "id": "TrainersPocketMonParriotForm1EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonParriotForm1LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonParriotForm1ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonParriotForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonParriotForm1ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonParriotForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonChameleonForm1Character"
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonChameleonForm1LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonChameleonForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonChameleonForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonChameleonForm2Character"
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonChameleonForm2LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonChameleonForm2LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonChameleonForm2LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonChameleonForm3Character"
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonChameleonForm3LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonChameleonForm3LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonChameleonForm3LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonYetiForm1Character"
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonYetiForm1LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonYetiForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonYetiForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonYetiForm2Character"
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonYetiForm2LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonYetiForm2LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonYetiForm2LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonYetiForm3Character"
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonYetiForm3LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonYetiForm3LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonYetiForm3LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonForgeSnailForm1Character"
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonForgeSnailForm1LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonForgeSnailForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonForgeSnailForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonForgeSnailForm2Character"
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonForgeSnailForm2LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonForgeSnailForm2LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonForgeSnailForm2LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonForgeSnailForm3Character"
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonForgeSnailForm3LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonForgeSnailForm3LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonForgeSnailForm3LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonDragonWhelpForm1Character"
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonWhelpForm1LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonWhelpForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonWhelpForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonDragonFireForm1Character"
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonFireForm1LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonFireForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonFireForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonDragonIceForm1Character"
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonIceForm1LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonIceForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonIceForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonDragonElectricForm1Character"
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonElectricForm1LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonElectricForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonElectricForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonDragonWaterForm1Character"
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonWaterForm1LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonWaterForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonWaterForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonDragonPlantForm1Character"
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonPlantForm1LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonPlantForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonPlantForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonDragonShadowForm1Character"
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonShadowForm1LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonShadowForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonShadowForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1SpawnEffect",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@TrainersPocketMonDragonLightForm1Character"
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1EXPOnKill",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonLightForm1LevelStatBonus",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1ReconcileOnSpawn",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonLightForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1ReconcileOnCelebrate",
+      "name": "@CardEffectTrainersGainExp",
+      "target_mode": "self",
+      "param_upgrade": "@TrainersPocketMonDragonLightForm1LevelStatBonus",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1ResolveAdvance",
+      "name": "CardEffectFloorRearrange",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1ShiftDamage",
+      "name": "CardEffectDamage",
+      "target_mode": "front_in_room",
+      "target_team": "heroes",
+      "param_int": 10
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1ActiveDamage",
+      "name": "CardEffectDamage",
+      "target_mode": "front_in_room",
+      "target_team": "heroes",
+      "param_int": 20
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2ResolveAdvance",
+      "name": "CardEffectFloorRearrange",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2ShiftDamage",
+      "name": "CardEffectDamage",
+      "target_mode": "front_in_room",
+      "target_team": "heroes",
+      "param_int": 20
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2ActiveDamage",
+      "name": "CardEffectDamage",
+      "target_mode": "front_in_room",
+      "target_team": "heroes",
+      "param_int": 50
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3ResolveAdvance",
+      "name": "CardEffectFloorRearrange",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_int": 0
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3ShiftDamage",
+      "name": "CardEffectDamage",
+      "target_mode": "front_in_room",
+      "target_team": "heroes",
+      "param_int": 30
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3ActiveDamage",
+      "name": "CardEffectDamage",
+      "target_mode": "front_in_room",
+      "target_team": "heroes",
+      "param_int": 100
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1ActiveRetreat",
+      "name": "CardEffectFloorRearrange",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2ActiveRetreat",
+      "name": "CardEffectFloorRearrange",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3ActiveRetreat",
+      "name": "CardEffectFloorRearrange",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_int": 1
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1ChargeIfStealthedEffect",
+      "name": "@CardEffectTrainersChameleonChargeIfStealthed",
+      "target_mode": "self",
+      "target_team": "monsters"
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2ChargeIfStealthedEffect",
+      "name": "@CardEffectTrainersChameleonChargeIfStealthed",
+      "target_mode": "self",
+      "target_team": "monsters"
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3ChargeIfStealthedEffect",
+      "name": "@CardEffectTrainersChameleonChargeIfStealthed",
+      "target_mode": "self",
+      "target_team": "monsters"
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1ChargedSapEffect",
+      "name": "@CardEffectTrainersChameleonSapFromCharge",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_int": 2,
+      "should_test": true,
+      "should_fail_to_cast_if_test_fails": true
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2ChargedSapEffect",
+      "name": "@CardEffectTrainersChameleonSapFromCharge",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_int": 2,
+      "should_test": true,
+      "should_fail_to_cast_if_test_fails": true
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3ChargedSapEffect",
+      "name": "@CardEffectTrainersChameleonSapFromCharge",
+      "target_mode": "drop_target_character",
+      "target_team": "heroes",
+      "param_int": 2,
+      "should_test": true,
+      "should_fail_to_cast_if_test_fails": true
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1TeleportEffect",
+      "name": "CardEffectUnitAbilityTeleport"
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1TeleportEffect",
+      "name": "CardEffectUnitAbilityTeleport"
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1TeleportEffect",
+      "name": "CardEffectUnitAbilityTeleport"
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1TeleportEffect",
+      "name": "CardEffectUnitAbilityTeleport"
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1TeleportEffect",
+      "name": "CardEffectUnitAbilityTeleport"
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1TeleportEffect",
+      "name": "CardEffectUnitAbilityTeleport"
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1TeleportEffect",
+      "name": "CardEffectUnitAbilityTeleport"
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1TeleportEffect",
+      "name": "CardEffectUnitAbilityTeleport"
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3ExtinguishDamage",
+      "name": "@CardEffectTrainersChameleonExtinguish",
+      "target_mode": "room",
+      "target_team": "heroes",
+      "param_int": 5
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1PaybackGainEffect",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "@trainer_payback",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2PaybackGainEffect",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "@trainer_payback",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3PaybackGainEffect",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "@trainer_payback",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1FloorEntryEffect",
+      "name": "CardEffectTrainersFloorEntry",
+      "target_mode": "room",
+      "target_team": "heroes",
+      "param_str": "fire",
+      "param_int": 15
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1FloorEntryEffect",
+      "name": "CardEffectTrainersFloorEntry",
+      "target_mode": "room",
+      "target_team": "heroes",
+      "param_str": "ice",
+      "param_int": 15
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1FloorEntryEffect",
+      "name": "CardEffectTrainersFloorEntry",
+      "target_mode": "room",
+      "target_team": "heroes",
+      "param_str": "electric",
+      "param_int": 15
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1FloorEntryEffect",
+      "name": "CardEffectTrainersFloorEntry",
+      "target_mode": "room",
+      "target_team": "heroes",
+      "param_str": "water",
+      "param_int": 15
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1FloorEntryEffect",
+      "name": "CardEffectTrainersFloorEntry",
+      "target_mode": "room",
+      "target_team": "heroes",
+      "param_str": "plant",
+      "param_int": 15
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1FloorEntryEffect",
+      "name": "CardEffectTrainersFloorEntry",
+      "target_mode": "room",
+      "target_team": "heroes",
+      "param_str": "shadow",
+      "param_int": 15
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1FloorEntryEffect",
+      "name": "CardEffectTrainersFloorEntry",
+      "target_mode": "room",
+      "target_team": "heroes",
+      "param_str": "light",
+      "param_int": 15
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1FloorEntryCleanse",
+      "name": "CardEffectTrainersWaterCleanse",
+      "target_mode": "room",
+      "target_team": "monsters"
+    },
+    {
+      "id": "TrainersPocketMonParriotForm1ElementalConversionEffect",
+      "name": "CardEffectTrainersElementalConversion",
+      "target_mode": "room",
+      "target_team": "monsters"
+    },
+    {
+      "id": "TrainersPocketMonParriotForm1RestoreElementEffect",
+      "name": "CardEffectTrainersParriotRestore",
+      "target_mode": "self",
+      "target_team": "monsters"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "TrainersPocketMonParriotForm1CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonParriotForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonParriotForm1CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonParriotForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonChameleonForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonChameleonForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonChameleonForm2Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonChameleonForm2Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonChameleonForm3Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonChameleonForm3Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonYetiForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonYetiForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonYetiForm2Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonYetiForm2Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonYetiForm3Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonYetiForm3Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonForgeSnailForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonForgeSnailForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonForgeSnailForm2Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonForgeSnailForm2Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonForgeSnailForm3Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonForgeSnailForm3Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonDragonWhelpForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonDragonWhelpForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonDragonFireForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonDragonFireForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonDragonIceForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonDragonIceForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonDragonElectricForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonDragonElectricForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonDragonWaterForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonDragonWaterForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "shader": "Shiny Shoe/CardEffects Non-Additive",
+          "base_layer": {
+            "type": "texture",
+            "texture": "@TrainersDragonPlantForestBackground",
+            "additive": false,
+            "stretch": true
+          },
+          "layers": [
+            {
+              "type": "texture",
+              "texture": "@TrainersDragonPlantForm1Centered",
+              "additive": false,
+              "stretch": true
+            },
+            {
+              "type": "moving_texture",
+              "texture": "@TrainersDragonPlantSunRays",
+              "additive": true,
+              "stretch": true,
+              "linear_speed": {
+                "x": 0.002,
+                "y": 0.0005
+              },
+              "tint": {
+                "r": 1,
+                "g": 0.95,
+                "b": 0.79,
+                "a": 0.12
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonDragonPlantForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonDragonShadowForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonDragonShadowForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1CardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@TrainersPocketMonDragonLightForm1Sprite"
+        }
+      }
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1CharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@TrainersPocketMonDragonLightForm1Sprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersPocketMonParriotForm1Sprite",
+      "path": "textures/units/PocketMon_Parriot_Form1.png"
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1Sprite",
+      "path": "textures/units/PocketMon_Chameleon_Form1.png"
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2Sprite",
+      "path": "textures/units/PocketMon_Chameleon_Form2.png"
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3Sprite",
+      "path": "textures/units/PocketMon_Chameleon_Form3.png"
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1Sprite",
+      "path": "textures/units/PocketMon_Yeti_Form1.png"
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2Sprite",
+      "path": "textures/units/PocketMon_Yeti_Form2.png"
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3Sprite",
+      "path": "textures/units/PocketMon_Yeti_Form3.png"
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1Sprite",
+      "path": "textures/units/PocketMon_ForgeSnail_Form1.png"
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2Sprite",
+      "path": "textures/units/PocketMon_ForgeSnail_Form2.png"
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3Sprite",
+      "path": "textures/units/PocketMon_ForgeSnail_Form3.png"
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1Sprite",
+      "path": "textures/units/PocketMon_DragonWhelp_Form1.png"
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1Sprite",
+      "path": "textures/units/PocketMon_DragonFire_Form1.png"
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1Sprite",
+      "path": "textures/units/PocketMon_DragonIce_Form1.png"
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1Sprite",
+      "path": "textures/units/PocketMon_DragonElectric_Form1.png"
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1Sprite",
+      "path": "textures/units/PocketMon_DragonWater_Form1.png"
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1Sprite",
+      "path": "textures/units/PocketMon_DragonPlant_Form1.png"
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1Sprite",
+      "path": "textures/units/PocketMon_DragonShadow_Form1.png"
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1Sprite",
+      "path": "textures/units/PocketMon_DragonLight_Form1.png"
+    },
+    {
+      "id": "TrainersDragonPlantForestBackground",
+      "path": "textures/card_art/TrainersVampirantForestBackground.png"
+    },
+    {
+      "id": "TrainersDragonPlantSunRays",
+      "path": "textures/card_art/TrainersDragonMothSunRays.png"
+    },
+    {
+      "id": "TrainersDragonPlantForm1Centered",
+      "path": "textures/card_art/TrainersDragonPlantForm1Centered.png"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "TrainersPocketMonParriotForm1LevelStatBonus",
+      "titles": {
+        "english": "Parriot Training Level Gain"
+      },
+      "bonus_damage": 1,
+      "bonus_hp": 1,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm1LevelStatBonus",
+      "titles": {
+        "english": "Chameleon Training Level Gain"
+      },
+      "bonus_damage": 5,
+      "bonus_hp": 4,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm2LevelStatBonus",
+      "titles": {
+        "english": "Chameleon Training Level Gain"
+      },
+      "bonus_damage": 7,
+      "bonus_hp": 6,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonChameleonForm3LevelStatBonus",
+      "titles": {
+        "english": "Chameleon Training Level Gain"
+      },
+      "bonus_damage": 9,
+      "bonus_hp": 8,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm1LevelStatBonus",
+      "titles": {
+        "english": "Yeti Training Level Gain"
+      },
+      "bonus_damage": 6,
+      "bonus_hp": 6,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm2LevelStatBonus",
+      "titles": {
+        "english": "Yeti Training Level Gain"
+      },
+      "bonus_damage": 9,
+      "bonus_hp": 9,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonYetiForm3LevelStatBonus",
+      "titles": {
+        "english": "Yeti Training Level Gain"
+      },
+      "bonus_damage": 12,
+      "bonus_hp": 12,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm1LevelStatBonus",
+      "titles": {
+        "english": "ForgeSnail Training Level Gain"
+      },
+      "bonus_damage": 3,
+      "bonus_hp": 5,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm2LevelStatBonus",
+      "titles": {
+        "english": "ForgeSnail Training Level Gain"
+      },
+      "bonus_damage": 5,
+      "bonus_hp": 7,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonForgeSnailForm3LevelStatBonus",
+      "titles": {
+        "english": "ForgeSnail Training Level Gain"
+      },
+      "bonus_damage": 7,
+      "bonus_hp": 9,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonWhelpForm1LevelStatBonus",
+      "titles": {
+        "english": "DragonWhelp Training Level Gain"
+      },
+      "bonus_damage": 5,
+      "bonus_hp": 5,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonFireForm1LevelStatBonus",
+      "titles": {
+        "english": "DragonFire Training Level Gain"
+      },
+      "bonus_damage": 7,
+      "bonus_hp": 5,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonIceForm1LevelStatBonus",
+      "titles": {
+        "english": "DragonIce Training Level Gain"
+      },
+      "bonus_damage": 5,
+      "bonus_hp": 5,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonElectricForm1LevelStatBonus",
+      "titles": {
+        "english": "DragonElectric Training Level Gain"
+      },
+      "bonus_damage": 5,
+      "bonus_hp": 5,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonWaterForm1LevelStatBonus",
+      "titles": {
+        "english": "DragonWater Training Level Gain"
+      },
+      "bonus_damage": 5,
+      "bonus_hp": 7,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonPlantForm1LevelStatBonus",
+      "titles": {
+        "english": "DragonPlant Training Level Gain"
+      },
+      "bonus_damage": 5,
+      "bonus_hp": 5,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonShadowForm1LevelStatBonus",
+      "titles": {
+        "english": "DragonShadow Training Level Gain"
+      },
+      "bonus_damage": 5,
+      "bonus_hp": 5,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersPocketMonDragonLightForm1LevelStatBonus",
+      "titles": {
+        "english": "DragonLight Training Level Gain"
+      },
+      "bonus_damage": 5,
+      "bonus_hp": 5,
+      "status_effect_upgrades": [
+        {
+          "status": "@level",
+          "count": 1,
+          "from_permanent_upgrade": true
+        }
+      ]
+    },
+    {
+      "id": "TrainersParriotElementNormal",
+      "titles": {
+        "english": "Adapted Normal Type"
+      },
+      "bonus_damage": 0,
+      "bonus_hp": 0
+    },
+    {
+      "id": "TrainersParriotElementFire",
+      "titles": {
+        "english": "Adapted Fire Type"
+      },
+      "bonus_damage": 0,
+      "bonus_hp": 0
+    },
+    {
+      "id": "TrainersParriotElementIce",
+      "titles": {
+        "english": "Adapted Ice Type"
+      },
+      "bonus_damage": 0,
+      "bonus_hp": 0
+    },
+    {
+      "id": "TrainersParriotElementElectric",
+      "titles": {
+        "english": "Adapted Electric Type"
+      },
+      "bonus_damage": 0,
+      "bonus_hp": 0
+    },
+    {
+      "id": "TrainersParriotElementWater",
+      "titles": {
+        "english": "Adapted Water Type"
+      },
+      "bonus_damage": 0,
+      "bonus_hp": 0
+    },
+    {
+      "id": "TrainersParriotElementPlant",
+      "titles": {
+        "english": "Adapted Plant Type"
+      },
+      "bonus_damage": 0,
+      "bonus_hp": 0
+    },
+    {
+      "id": "TrainersParriotElementShadow",
+      "titles": {
+        "english": "Adapted Shadow Type"
+      },
+      "bonus_damage": 0,
+      "bonus_hp": 0
+    },
+    {
+      "id": "TrainersParriotElementLight",
+      "titles": {
+        "english": "Adapted Light Type"
+      },
+      "bonus_damage": 0,
+      "bonus_hp": 0
+    }
+  ],
+  "card_pools": [
+    {
+      "id": "TrainersNew18Pool",
+      "cards": [
+        "@TrainersPocketMonParriotForm1Card",
+        "@TrainersPocketMonChameleonForm1Card",
+        "@TrainersPocketMonYetiForm1Card",
+        "@TrainersPocketMonForgeSnailForm1Card",
+        "@TrainersPocketMonDragonWhelpForm1Card"
+      ]
+    }
+  ]
+}

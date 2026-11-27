@@ -1,0 +1,48 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "status_effects": [
+    {
+      "id": "web",
+      "class_name": "@StatusEffectTrainerWebState",
+      "names": {
+        "english": "Web"
+      },
+      "stackable_names": {
+        "english": "Web {0}"
+      },
+      "card_tooltips": {
+        "english": "Reduces Attack by 20% per stack (max 5), Roots the unit, and loses 1 stack after direct Attack/Spell damage and at the end of each turn."
+      },
+      "character_tooltips": {
+        "english": "Reduces Attack by 20% per stack (max 5), Roots the unit, and loses 1 stack after direct Attack/Spell damage and at the end of each turn."
+      },
+      "replacement_texts": {
+        "english": "<b>Web</b>"
+      },
+      "notifications": {
+        "english": "Web"
+      },
+      "display_category": "negative",
+      "trigger_stage": "on_hit",
+      "is_stackable": true,
+      "remove_when_triggered": false,
+      "remove_stack_at_end_of_turn": true,
+      "is_propagatable": false,
+      "exclude_monster_propagation": true,
+      "param_int": 20,
+      "icon": "@TrainersWebIcon"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "TrainersWebIcon",
+      "path": "textures/icons/TrainersWeb.png"
+    }
+  ],
+  "atlas_icons": [
+    {
+      "id": "TrainersWebIcon",
+      "path": "textures/icons/TrainersWeb.png"
+    }
+  ]
+}

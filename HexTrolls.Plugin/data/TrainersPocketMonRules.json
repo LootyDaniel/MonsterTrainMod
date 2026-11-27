@@ -145,13 +145,16 @@
       "ability": {
         "name": "Hook Pull",
         "cooldown": 2,
-        "target": "self",
-        "description": "Gain Stealth 1 and Hook Pull.",
-        "effects": []
+        "target": "chosen_enemy_on_same_floor",
+        "description": "Pull the selected enemy to the front, then gain Stealth 1.",
+        "effects": [
+          "CardEffectFloorRearrange: chosen enemy to front",
+          "CardEffectAddStatusEffect: Stealth 1 on caster"
+        ]
       },
       "rule_events": [],
-      "description": "Activated (Cooldown 2): Gain Stealth 1 and Hook Pull.",
-      "runtime_binding": "description_and_rules_only"
+      "description": "Active (Cooldown 2): Pull a selected enemy to the front, then gain Stealth 1.",
+      "runtime_binding": "native_activated_ability"
     },
     {
       "line": "BloodWorm",
@@ -165,22 +168,19 @@
       "ability": {
         "name": "Hook Pull",
         "cooldown": 2,
-        "target": "self",
-        "description": "Gain Stealth 1 and Hook Pull.",
-        "effects": []
+        "target": "chosen_enemy_on_same_floor",
+        "description": "Pull the selected enemy to the front, then gain Stealth 1.",
+        "effects": [
+          "CardEffectFloorRearrange: chosen enemy to front",
+          "CardEffectAddStatusEffect: Stealth 1 on caster"
+        ]
       },
-      "rule_events": [
-        {
-          "trigger": "end_turn",
-          "description": "Recover 10 Health.",
-          "amount": 10
-        }
-      ],
-      "description": "Activated (Cooldown 2): Gain Stealth 1 and Hook Pull. End of Turn: Recover 10 Health.",
-      "runtime_binding": "description_and_rules_only"
+      "rule_events": [],
+      "description": "Active (Cooldown 2): Pull a selected enemy to the front, then gain Stealth 1.",
+      "runtime_binding": "native_activated_ability"
     },
     {
-      "line": "Snapsaurus",
+      "line": "Dinosnap",
       "stage": 1,
       "attack": 2,
       "health": 4,
@@ -192,15 +192,15 @@
       "rule_events": [
         {
           "trigger": "on_attacked",
-          "description": "Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful.",
-          "stacks": 1
+          "description": "Snap: When attacked, if the attacker’s Max Health is strictly less than Dinosnap’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful.",
+          "stacks": 5
         }
       ],
-      "description": "Start with Snap 1. Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful.",
+      "description": "Start with Snap 5. Snap: When attacked, if the attacker’s Max Health is strictly less than Dinosnap’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful.",
       "runtime_binding": "description_and_rules_only"
     },
     {
-      "line": "Snapsaurus",
+      "line": "Snapasaur",
       "stage": 2,
       "attack": 3,
       "health": 5,
@@ -209,7 +209,7 @@
       "starting_armor": 0,
       "native_statuses": [],
       "ability": {
-        "name": "Snap",
+        "name": "Snapper Strike",
         "cooldown": 4,
         "target": "front_enemy",
         "description": "Trigger Snap on target; requires and consumes Snap 1.",
@@ -224,15 +224,15 @@
       "rule_events": [
         {
           "trigger": "on_attacked",
-          "description": "Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful.",
-          "stacks": 2
+          "description": "Snap: When attacked, if the attacker’s Max Health is strictly less than Snapasaur’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful.",
+          "stacks": 8
         }
       ],
-      "description": "Start with Snap 2. Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful. Activated (Cooldown 4): Trigger Snap on a chosen target; requires and consumes one Snap stack.",
+      "description": "Start with Snap 8. Snap: When attacked, if the attacker’s Max Health is strictly less than Snapasaur’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful. Activated (Cooldown 4): Trigger Snap on a chosen target; requires and consumes one Snap stack.",
       "runtime_binding": "description_and_rules_only"
     },
     {
-      "line": "Snapsaurus",
+      "line": "Snaphydra",
       "stage": 3,
       "attack": 4,
       "health": 6,
@@ -241,7 +241,7 @@
       "starting_armor": 0,
       "native_statuses": [],
       "ability": {
-        "name": "Snap",
+        "name": "Snapper Strike",
         "cooldown": 4,
         "target": "front_enemy",
         "description": "Trigger Snap on target; requires and consumes Snap 1.",
@@ -256,11 +256,11 @@
       "rule_events": [
         {
           "trigger": "on_attacked",
-          "description": "Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful.",
-          "stacks": 6
+          "description": "Snap: When attacked, if the attacker’s Max Health is strictly less than Snaphydra’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful.",
+          "stacks": 12
         }
       ],
-      "description": "Start with Snap 6. Snap: When attacked, if the attacker’s Max Health is strictly less than Snapsaurus’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful. Activated (Cooldown 4): Trigger Snap on a chosen target; requires and consumes one Snap stack.",
+      "description": "Start with Snap 12. Snap: When attacked, if the attacker’s Max Health is strictly less than Snaphydra’s CURRENT Health, kill it, consume Snap 1, and heal by the killed enemy’s Max Health. Consume only when successful. Activated (Cooldown 4): Trigger Snap on a chosen target; requires and consumes one Snap stack.",
       "runtime_binding": "description_and_rules_only"
     },
     {
@@ -276,19 +276,13 @@
       "rule_events": [
         {
           "trigger": "revenge",
-          "description": "Gain Tesla Charge 1.",
+          "description": "Gain 1 Tesla Charge.",
           "count": 1,
           "status": "tesla_charge"
-        },
-        {
-          "trigger": "resolve",
-          "description": "Deal damage equal to all Tesla Charge stacks to all enemies.",
-          "multiplier": 1,
-          "target": "all_enemies"
         }
       ],
-      "description": "Revenge: Gain Tesla Charge 1. Resolve: Deal 1 damage for each Tesla Charge to ALL enemies. Charges are not consumed by Resolve; reset after combat.",
-      "runtime_binding": "description_and_rules_only"
+      "description": "Revenge: Gain 1 Tesla Charge.",
+      "runtime_binding": "native_revenge_and_tesla_status_resolve"
     },
     {
       "line": "Teslasaurus",
@@ -303,19 +297,13 @@
       "rule_events": [
         {
           "trigger": "revenge",
-          "description": "Gain Tesla Charge 2.",
+          "description": "Gain 2 Tesla Charges.",
           "count": 2,
           "status": "tesla_charge"
-        },
-        {
-          "trigger": "resolve",
-          "description": "Deal damage equal to all Tesla Charge stacks to all enemies.",
-          "multiplier": 1,
-          "target": "all_enemies"
         }
       ],
-      "description": "Revenge: Gain Tesla Charge 2. Resolve: Deal 1 damage for each Tesla Charge to ALL enemies. Charges are not consumed by Resolve; reset after combat.",
-      "runtime_binding": "description_and_rules_only"
+      "description": "Revenge: Gain 2 Tesla Charges.",
+      "runtime_binding": "native_revenge_and_tesla_status_resolve"
     },
     {
       "line": "Teslasaurus",
@@ -330,19 +318,13 @@
       "rule_events": [
         {
           "trigger": "revenge",
-          "description": "Gain Tesla Charge 3.",
+          "description": "Gain 3 Tesla Charges.",
           "count": 3,
           "status": "tesla_charge"
-        },
-        {
-          "trigger": "resolve",
-          "description": "Deal damage equal to all Tesla Charge stacks to all enemies.",
-          "multiplier": 1,
-          "target": "all_enemies"
         }
       ],
-      "description": "Revenge: Gain Tesla Charge 3. Resolve: Deal 1 damage for each Tesla Charge to ALL enemies. Charges are not consumed by Resolve; reset after combat.",
-      "runtime_binding": "description_and_rules_only"
+      "description": "Revenge: Gain 3 Tesla Charges.",
+      "runtime_binding": "native_revenge_and_tesla_status_resolve"
     },
     {
       "line": "Garhound",
@@ -1070,7 +1052,10 @@
       "accumulates_during_combat": true,
       "resolve_damage_per_stack": 1,
       "resolve_consumes_stacks": false,
-      "resets_after_combat": true
+      "resets_after_combat": true,
+      "trigger": "resolve",
+      "target": "all_enemies_on_same_floor",
+      "description": "At Resolve, deal 1 damage per Tesla Charge stack to all enemies on this floor. Charges are not consumed. They reset between battles."
     },
     "shadow_walker": {
       "passive_damage_bonus_percent_when_stealthed": 20

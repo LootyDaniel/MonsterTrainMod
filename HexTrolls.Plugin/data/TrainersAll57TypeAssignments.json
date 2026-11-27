@@ -1,0 +1,287 @@
+[
+  {
+    "character": "TrainersPocketMonCuttlfishForm1Character",
+    "type": "Water",
+    "auto_attack_keyword": "Water Damage"
+  },
+  {
+    "character": "TrainersPocketMonCuttlfishForm2Character",
+    "type": "Water",
+    "auto_attack_keyword": "Water Damage"
+  },
+  {
+    "character": "TrainersPocketMonCuttlfishForm3Character",
+    "type": "Water",
+    "auto_attack_keyword": "Water Damage"
+  },
+  {
+    "character": "TrainersPocketMonHyenaForm1Character",
+    "type": "Shadow",
+    "auto_attack_keyword": "Shadow Damage"
+  },
+  {
+    "character": "TrainersPocketMonHyenaForm2Character",
+    "type": "Shadow",
+    "auto_attack_keyword": "Shadow Damage"
+  },
+  {
+    "character": "TrainersPocketMonBloodWormForm1Character",
+    "type": "Shadow",
+    "auto_attack_keyword": "Shadow Damage"
+  },
+  {
+    "character": "TrainersPocketMonBloodWormForm2Character",
+    "type": "Shadow",
+    "auto_attack_keyword": "Shadow Damage"
+  },
+  {
+    "character": "TrainersPocketMonSnapsaurusForm1Character",
+    "type": "Plant",
+    "auto_attack_keyword": "Plant Damage"
+  },
+  {
+    "character": "TrainersPocketMonSnapsaurusForm2Character",
+    "type": "Plant",
+    "auto_attack_keyword": "Plant Damage"
+  },
+  {
+    "character": "TrainersPocketMonSnapsaurusForm3Character",
+    "type": "Plant",
+    "auto_attack_keyword": "Plant Damage"
+  },
+  {
+    "character": "TrainersPocketMonTeslasaurusForm1Character",
+    "type": "Electric",
+    "auto_attack_keyword": "Electric Damage"
+  },
+  {
+    "character": "TrainersPocketMonTeslasaurusForm2Character",
+    "type": "Electric",
+    "auto_attack_keyword": "Electric Damage"
+  },
+  {
+    "character": "TrainersPocketMonTeslasaurusForm3Character",
+    "type": "Electric",
+    "auto_attack_keyword": "Electric Damage"
+  },
+  {
+    "character": "TrainersPocketMonGarhoundForm1Character",
+    "type": "Fire",
+    "auto_attack_keyword": "Fire Damage"
+  },
+  {
+    "character": "TrainersPocketMonGarhoundForm2Character",
+    "type": "Fire",
+    "auto_attack_keyword": "Fire Damage"
+  },
+  {
+    "character": "TrainersPocketMonGarhoundForm3Character",
+    "type": "Fire",
+    "auto_attack_keyword": "Fire Damage"
+  },
+  {
+    "character": "TrainersPocketMonFirearyForm1Character",
+    "type": "Fire",
+    "auto_attack_keyword": "Fire Damage"
+  },
+  {
+    "character": "TrainersPocketMonFrossetForm1Character",
+    "type": "Ice",
+    "auto_attack_keyword": "Ice Damage"
+  },
+  {
+    "character": "TrainersPocketMonFrossetForm2Character",
+    "type": "Ice",
+    "auto_attack_keyword": "Ice Damage"
+  },
+  {
+    "character": "TrainersPocketMonFrossetForm3Character",
+    "type": "Ice",
+    "auto_attack_keyword": "Ice Damage"
+  },
+  {
+    "character": "TrainersPocketMonUmbrabeakForm1Character",
+    "type": "Shadow",
+    "auto_attack_keyword": "Shadow Damage"
+  },
+  {
+    "character": "TrainersPocketMonUmbrabeakForm2Character",
+    "type": "Shadow",
+    "auto_attack_keyword": "Shadow Damage"
+  },
+  {
+    "character": "TrainersPocketMonUmbrabeakForm3Character",
+    "type": "Shadow",
+    "auto_attack_keyword": "Shadow Damage"
+  },
+  {
+    "character": "TrainersPocketMonMagmothForm1Character",
+    "type": "Fire",
+    "auto_attack_keyword": "Fire Damage"
+  },
+  {
+    "character": "TrainersPocketMonMagmothForm2Character",
+    "type": "Fire",
+    "auto_attack_keyword": "Fire Damage"
+  },
+  {
+    "character": "TrainersPocketMonChilloadForm1Character",
+    "type": "Ice",
+    "auto_attack_keyword": "Ice Damage"
+  },
+  {
+    "character": "TrainersPocketMonDragonMothForm1Character",
+    "type": "Plant",
+    "auto_attack_keyword": "Plant Damage"
+  },
+  {
+    "character": "TrainersPocketMonDragonMothForm2Character",
+    "type": "Plant",
+    "auto_attack_keyword": "Plant Damage"
+  },
+  {
+    "character": "TrainersPocketMonDragonMothForm3Character",
+    "type": "Plant",
+    "auto_attack_keyword": "Plant Damage"
+  },
+  {
+    "character": "TrainersPocketMonLeafshrewForm1Character",
+    "type": "Plant",
+    "auto_attack_keyword": "Plant Damage"
+  },
+  {
+    "character": "TrainersPocketMonLeafshrewForm2Character",
+    "type": "Plant",
+    "auto_attack_keyword": "Plant Damage"
+  },
+  {
+    "character": "TrainersPocketMonManshrimpForm1Character",
+    "type": "Water",
+    "auto_attack_keyword": "Water Damage"
+  },
+  {
+    "character": "TrainersPocketMonManshrimpForm2Character",
+    "type": "Water",
+    "auto_attack_keyword": "Water Damage"
+  },
+  {
+    "character": "TrainersPocketMonManshrimpForm3Character",
+    "type": "Water",
+    "auto_attack_keyword": "Water Damage"
+  },
+  {
+    "character": "TrainersPocketMonJourmancoilForm1Character",
+    "type": "Electric",
+    "auto_attack_keyword": "Electric Damage"
+  },
+  {
+    "character": "TrainersPocketMonJourmancoilForm2Character",
+    "type": "Electric",
+    "auto_attack_keyword": "Electric Damage"
+  },
+  {
+    "character": "TrainersPocketMonVampirantForm1Character",
+    "type": "Shadow",
+    "auto_attack_keyword": "Shadow Damage"
+  },
+  {
+    "character": "TrainersPocketMonVampirantForm2Character",
+    "type": "Shadow",
+    "auto_attack_keyword": "Shadow Damage"
+  },
+  {
+    "character": "TrainersPocketMonVampirantForm3Character",
+    "type": "Shadow",
+    "auto_attack_keyword": "Shadow Damage"
+  },
+  {
+    "character": "TrainersPocketMonParriotForm1Character",
+    "type": "Normal",
+    "auto_attack_keyword": "Normal Damage"
+  },
+  {
+    "character": "TrainersPocketMonChameleonForm1Character",
+    "type": "Electric",
+    "auto_attack_keyword": "Electric Damage"
+  },
+  {
+    "character": "TrainersPocketMonChameleonForm2Character",
+    "type": "Electric",
+    "auto_attack_keyword": "Electric Damage"
+  },
+  {
+    "character": "TrainersPocketMonChameleonForm3Character",
+    "type": "Electric",
+    "auto_attack_keyword": "Electric Damage"
+  },
+  {
+    "character": "TrainersPocketMonYetiForm1Character",
+    "type": "Ice",
+    "auto_attack_keyword": "Ice Damage"
+  },
+  {
+    "character": "TrainersPocketMonYetiForm2Character",
+    "type": "Ice",
+    "auto_attack_keyword": "Ice Damage"
+  },
+  {
+    "character": "TrainersPocketMonYetiForm3Character",
+    "type": "Ice",
+    "auto_attack_keyword": "Ice Damage"
+  },
+  {
+    "character": "TrainersPocketMonForgeSnailForm1Character",
+    "type": "Fire",
+    "auto_attack_keyword": "Fire Damage"
+  },
+  {
+    "character": "TrainersPocketMonForgeSnailForm2Character",
+    "type": "Fire",
+    "auto_attack_keyword": "Fire Damage"
+  },
+  {
+    "character": "TrainersPocketMonForgeSnailForm3Character",
+    "type": "Fire",
+    "auto_attack_keyword": "Fire Damage"
+  },
+  {
+    "character": "TrainersPocketMonDragonWhelpForm1Character",
+    "type": "Normal",
+    "auto_attack_keyword": "Normal Damage"
+  },
+  {
+    "character": "TrainersPocketMonDragonFireForm1Character",
+    "type": "Fire",
+    "auto_attack_keyword": "Fire Damage"
+  },
+  {
+    "character": "TrainersPocketMonDragonIceForm1Character",
+    "type": "Ice",
+    "auto_attack_keyword": "Ice Damage"
+  },
+  {
+    "character": "TrainersPocketMonDragonElectricForm1Character",
+    "type": "Electric",
+    "auto_attack_keyword": "Electric Damage"
+  },
+  {
+    "character": "TrainersPocketMonDragonWaterForm1Character",
+    "type": "Water",
+    "auto_attack_keyword": "Water Damage"
+  },
+  {
+    "character": "TrainersPocketMonDragonPlantForm1Character",
+    "type": "Plant",
+    "auto_attack_keyword": "Plant Damage"
+  },
+  {
+    "character": "TrainersPocketMonDragonShadowForm1Character",
+    "type": "Shadow",
+    "auto_attack_keyword": "Shadow Damage"
+  },
+  {
+    "character": "TrainersPocketMonDragonLightForm1Character",
+    "type": "Light",
+    "auto_attack_keyword": "Light Damage"
+  }
+]
